@@ -1,298 +1,1807 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neuro Sports Centre – Ahmedabad's Premier Physiotherapy & Fitness Clinic</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neuro Sports Centre – Ahmedabad's Premier Physiotherapy & Fitness Clinic</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --navy: #1a3a5c;
+  --blue: #1a6fb5;
+  --sky: #2196F3;
+  --green: #00897B;
+  --mint: #00796B;
+  --light-green: #e0f2f1;
+  --light: #e3f2fd;
+  --white: #FAFFFE;
+  --gray: #f0f7ff;
+  --mint-bg: #e0f2f1;
+  --text: #0d1b2b;
+  --muted: #4a6580;
+  --gold: #FF8F00;
+  --shadow: 0 4px 24px rgba(26,111,181,0.10);
+  --shadow-lg: 0 20px 60px rgba(26,111,181,0.15);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body { font-family:'DM Sans',sans-serif; color:var(--text); background:var(--white); overflow-x:hidden; }
+a { color:inherit; }
+img { max-width:100%; }
+ul { list-style:none; }
+
+.max-wrap { max-width:1200px; margin:0 auto; }
+.text-center { text-align:center; }
+.color-green { color:var(--green); }
+.color-navy { color:var(--navy); }
+.color-blue { color:var(--blue); }
+.gradient-text { background:linear-gradient(135deg,var(--sky),var(--blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+.section-pill {
+  display:inline-flex; align-items:center;
+  background:rgba(26,111,181,.08); color:var(--blue);
+  border:1px solid rgba(26,111,181,.2); border-radius:50px;
+  padding:6px 18px; font-size:0.8rem; font-weight:600;
+  letter-spacing:0.5px; margin-bottom:1rem;
+}
+.section-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.9rem,3.2vw,2.8rem); font-weight:700;
+  line-height:1.2; color:var(--navy); margin-bottom:1.2rem;
+}
+.section-sub { color:var(--muted); font-size:1.02rem; line-height:1.8; max-width:580px; }
+.section-desc { color:var(--muted); font-size:1rem; line-height:1.85; margin-bottom:1.5rem; }
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--green); color:white;
+  padding:13px 28px; border-radius:50px;
+  font-weight:600; font-size:0.95rem; text-decoration:none;
+  transition:all .3s; border:none; cursor:pointer; font-family:'DM Sans',sans-serif;
+}
+.btn-primary:hover { background:var(--navy); transform:translateY(-2px); box-shadow:0 12px 30px rgba(0,137,123,.35); }
+.btn-ghost {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:white;
+  padding:13px 28px; border-radius:50px;
+  font-weight:600; font-size:0.95rem; text-decoration:none;
+  border:2px solid rgba(255,255,255,.35); transition:all .3s; cursor:pointer;
+}
+.btn-ghost:hover { border-color:var(--sky); color:var(--sky); transform:translateY(-2px); }
+.btn-white {
+  display:inline-flex; align-items:center; gap:8px;
+  background:white; color:var(--navy);
+  padding:13px 28px; border-radius:50px;
+  font-weight:700; font-size:0.95rem; text-decoration:none;
+  transition:all .3s; cursor:pointer;
+}
+.btn-white:hover { transform:translateY(-2px); box-shadow:0 12px 30px rgba(0,0,0,.2); }
+.btn-ghost-white {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:white;
+  padding:13px 28px; border-radius:50px;
+  font-weight:600; font-size:0.95rem; text-decoration:none;
+  border:2px solid rgba(255,255,255,.35); transition:all .3s;
+}
+.btn-ghost-white:hover { border-color:white; transform:translateY(-2px); }
+.btn-outline-green {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:var(--green);
+  padding:12px 28px; border-radius:50px;
+  font-weight:600; font-size:0.95rem; text-decoration:none;
+  border:2px solid var(--green); transition:all .3s;
+}
+.btn-outline-green:hover { background:var(--green); color:white; transform:translateY(-2px); }
+.whatsapp-book-btn {
+  display:inline-flex; align-items:center; gap:10px;
+  background:#25D366; color:white;
+  padding:14px 24px; border-radius:50px;
+  font-weight:600; font-size:0.9rem; text-decoration:none;
+  transition:all .3s;
+}
+.whatsapp-book-btn:hover { background:#128C7E; transform:translateY(-2px); box-shadow:0 10px 30px rgba(37,211,102,.4); }
+
+/* ===== NAVBAR ===== */
+#navbar {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:#ffffff;
+  box-shadow: 0 2px 20px rgba(26,58,92,0.08);
+  transition: box-shadow .3s;
+  overflow: visible;
+}
+.nav-inner {
+  max-width:1320px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 4%; height:76px;
+  gap: 20px; overflow:visible;
+}
+.nav-logo { display:flex; flex-direction:row; align-items:center; text-align:left; gap:10px; text-decoration:none; flex-shrink:0; }
+.nav-logo-img { width:52px; height:52px; border-radius:10px; object-fit:cover; transition:transform .3s ease; flex-shrink:0; }
+.nav-logo:hover .nav-logo-img { transform:rotate(10deg) scale(1.08); }
+.nav-brand-text { display:flex; flex-direction:column; line-height:1; gap:3px; }
+.nav-brand-name { font-weight:800; font-size:1.05rem; color:#0d1b2a; letter-spacing:0.2px; font-family:'Playfair Display',serif; line-height:1.15; white-space:nowrap; }
+.nav-brand-tagline { font-weight:400; font-size:0.68rem; color:#666; letter-spacing:0.3px; text-transform:none; white-space:nowrap; }
+.nav-links { display:flex; align-items:center; gap:0; flex:1; justify-content:center; }
+.nav-link {
+  color:#1a1a2e; text-decoration:none; font-weight:500; font-size:0.93rem;
+  padding:10px 16px; border-radius:0; transition:all .2s;
+  display:flex; align-items:center; gap:4px; white-space:nowrap;
+  position:relative; letter-spacing:0.1px;
+}
+.nav-link::after {
+  content:''; position:absolute; bottom:0; left:50%;
+  width:0; height:2px; background:linear-gradient(90deg,var(--sky),var(--blue));
+  transition:all .3s ease; transform:translateX(-50%); border-radius:2px;
+}
+.nav-link:hover::after { width:80%; }
+.nav-link:hover { color:var(--blue); }
+.has-dropdown { position:relative; }
+.dropdown-menu {
+  position:absolute; top:calc(100% + 4px); left:0;
+  background:white; border-radius:16px;
+  box-shadow:0 20px 50px rgba(26,111,181,.15);
+  border:1px solid rgba(26,111,181,.06);
+  min-width:260px; padding:8px;
+  opacity:0; visibility:hidden; transform:translateY(-8px);
+  transition:all .25s; z-index:100;
+}
+.has-dropdown:hover .dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.dropdown-item {
+  display:flex; align-items:center; gap:14px;
+  padding:14px 16px; border-radius:10px; text-decoration:none;
+  transition:all .2s; color:var(--text);
+}
+.dropdown-item:hover { background:var(--gray); transform:translateX(6px); }
+.dd-icon { font-size:1.4rem; width:40px; height:40px; background:var(--light); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.dd-title { font-weight:600; font-size:0.9rem; color:var(--navy); }
+.dd-sub { font-size:0.78rem; color:var(--muted); margin-top:2px; }
+.nav-actions { display:flex; align-items:center; gap:12px; }
+.btn-book {
+  background:var(--green); color:white; padding:10px 22px;
+  border-radius:50px; font-weight:600; font-size:0.88rem;
+  text-decoration:none; transition:all .2s;
+}
+.btn-book:hover { background:var(--navy); transform:translateY(-1px); }
+.hamburger {
+  display:none; flex-direction:column; gap:5px; border:none; cursor:pointer;
+  padding:10px 14px; border-radius:50px;
+  background:var(--green);
+  flex-shrink:0; align-items:center; justify-content:center;
+}
+.hamburger span { width:20px; height:2px; background:white; border-radius:2px; transition:.3s; display:block; }
+.hamburger:hover { background:var(--navy); }
+.hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+/* ===== PAGES ===== */
+.page { display:none; padding-top:76px; }
+.page.active { display:block; animation:fadeInUp 0.5s cubic-bezier(0.4,0,0.2,1) both; }
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);
+  padding:50px 5% 40px; text-align:center; position:relative; overflow:hidden;
+}
+.page-header::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse at 80% 50%,rgba(33,150,243,0.12) 0%,transparent 60%);
+}
+.ph-breadcrumb { font-size:0.82rem; color:rgba(255,255,255,.5); margin-bottom:1rem; }
+.page-header h1 {
+  font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem);
+  margin-bottom:0.8rem;
+  background:linear-gradient(135deg,#fff 0%,var(--sky) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.page-header p { color:rgba(255,255,255,.75); font-size:1.05rem; max-width:500px; margin:0 auto; }
+
+/* ===== HERO ===== */
+.hero-section {
+  background:#ffffff !important;
+  padding:0 !important;
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.hero-inner {
+  display:flex; align-items:center; gap:60px;
+  padding:60px 40px 40px;
+  min-height:calc(100vh - 76px);
+  max-width:1200px; margin:0 auto; width:100%;
+}
+.hero-left { flex:0 0 50%; max-width:560px; }
+.hero-clinic-brand { display:flex; align-items:center; gap:18px; margin-bottom:1.8rem; }
+.hero-brand-logo { width:72px; height:72px; border-radius:14px; object-fit:cover; box-shadow:0 4px 20px rgba(0,0,0,.2); flex-shrink:0; border:2px solid rgba(26,111,181,0.3); }
+.hero-brand-words { display:flex; flex-direction:column; line-height:0.92; }
+.hbw-line1 { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,4.5vw,3.6rem); font-weight:400; color:var(--blue) !important; letter-spacing:-1px; }
+.hbw-line2 { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,4.5vw,3.6rem); font-weight:800; color:var(--navy) !important; letter-spacing:-0.5px; margin-top:-4px; }
+.hero-slide-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(26,111,181,0.08); color:var(--blue);
+  border:1px solid rgba(26,111,181,0.2); border-radius:40px;
+  padding:8px 18px; font-size:0.82rem; font-weight:700;
+  margin-bottom:1.4rem; letter-spacing:.3px;
+}
+.hero-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.5vw,3.2rem); font-weight:800; color:#0d1b2a; line-height:1.18; margin-bottom:1.2rem; }
+.hero-accent { background:linear-gradient(135deg,#00897B,#2196F3); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hero-sub { font-size:1rem; color:#5a6a7a; line-height:1.75; margin-bottom:2rem; max-width:500px; }
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:2.5rem; }
+.hero-btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(135deg,#00897B,#00796B);
+  color:white; font-weight:700; font-size:0.95rem;
+  padding:14px 28px; border-radius:50px; text-decoration:none;
+  box-shadow:0 8px 24px rgba(0,137,123,.4);
+  transition:all .35s cubic-bezier(0.4,0,0.2,1);
+}
+.hero-btn-primary:hover { transform:translateY(-3px); box-shadow:0 14px 36px rgba(0,137,123,.4); }
+.hero-btn-ghost {
+  display:inline-flex; align-items:center; gap:8px;
+  background:white; color:#0d1b2a; font-weight:700; font-size:0.95rem;
+  padding:13px 26px; border-radius:50px;
+  border:2px solid rgba(26,111,181,0.3); text-decoration:none;
+  transition:all .3s ease;
+}
+.hero-btn-ghost:hover { border-color:var(--blue); color:var(--blue); transform:translateY(-3px); }
+.hero-dots { display:flex; gap:8px; margin-top:2rem; }
+.hero-dot { width:8px; height:8px; border-radius:50%; background:#d0d8e4; cursor:pointer; transition:all .3s ease; border:none; padding:0; }
+.hero-dot.active { width:24px; border-radius:4px; background:var(--green); }
+.hero-right { flex:1; display:flex; justify-content:center; align-items:center; position:relative; }
+.hero-oval-pill { position:absolute; width:440px; height:580px; background:linear-gradient(160deg,#e3f2fd,#e0f2f1); border-radius:200px; top:50%; left:50%; transform:translate(-46%,-50%); z-index:0; }
+.hero-oval-wrap { position:relative; width:400px; height:540px; border-radius:180px; overflow:visible; box-shadow:0 30px 80px rgba(26,111,181,0.35),0 8px 24px rgba(0,0,0,.1); z-index:1; flex-shrink:0; }
+.hero-slides { width:100%; height:100%; position:relative; border-radius:180px; overflow:hidden; }
+.hero-slide { position:absolute; inset:0; opacity:0; transition:opacity .8s ease; }
+.hero-slide.active { opacity:1; }
+.hero-slide img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 6s ease; }
+.hero-slide.active img { transform:scale(1.05); }
+.oval-badge { position:absolute; z-index:4; background:white; border-radius:30px; padding:8px 18px; box-shadow:0 6px 20px rgba(0,0,0,.12); font-size:0.8rem; font-weight:700; color:#0d1b2a; white-space:nowrap; }
+.oval-badge-top { top:20px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,var(--navy),var(--blue)); color:white; animation:float 3.5s ease-in-out infinite; z-index:5; }
+.oval-badge-bot { bottom:20px; left:50%; transform:translateX(-50%); border:2px solid var(--blue); color:var(--blue); animation:float 3.5s ease-in-out infinite 1s; z-index:5; }
+
+/* ===== TRUST BAR ===== */
+.trust-bar {
+  background:var(--navy); color:rgba(255,255,255,.8);
+  padding:18px 5%; display:flex; align-items:center; justify-content:center;
+  gap:2.5rem; flex-wrap:wrap;
+}
+.trust-item { display:flex; align-items:center; gap:8px; font-size:0.86rem; }
+.ti-icon { font-size:1rem; }
+
+/* ===== QUALITY SECTION ===== */
+.quality-section { padding:100px 5%; background:white; }
+.quality-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.quality-images { position:relative; height:380px; }
+.qi-photo { position:absolute; border-radius:20px; overflow:hidden; transition:transform .6s ease,box-shadow .6s ease; }
+.qi-photo1 { top:0; left:0; width:55%; height:100%; }
+.qi-photo2 { bottom:0; right:0; width:58%; height:75%; }
+.qi-photo:hover { transform:scale(1.04) rotate(1deg); box-shadow:0 30px 70px rgba(26,111,181,.25); }
+.qi-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.quality-checks { margin:1.5rem 0; }
+.qcheck { display:flex; gap:12px; align-items:flex-start; margin-bottom:1rem; }
+.qc-dot { width:20px; height:20px; min-width:20px; background:var(--light-green); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+.qc-dot::after { content:'✓'; font-size:0.65rem; color:var(--green); font-weight:700; }
+.qcheck p { color:var(--muted); font-size:0.93rem; line-height:1.6; }
+
+/* ===== MVA ===== */
+.mva-section { padding:100px 5%; background:var(--mint-bg); }
+.mva-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:3rem; }
+.mva-card { background:white; border-radius:20px; padding:32px 28px; box-shadow:var(--shadow); border:1px solid rgba(26,111,181,.05); transition:transform .3s,box-shadow .3s; }
+.mva-card:hover { transform:translateY(-8px) scale(1.02); box-shadow:var(--shadow-lg); }
+.mva-card-icon { font-size:2rem; margin-bottom:1rem; width:56px; height:56px; background:var(--light); border-radius:14px; display:flex; align-items:center; justify-content:center; }
+.mva-card h3 { font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:0.8rem; }
+.mva-card p { color:var(--muted); font-size:0.9rem; line-height:1.7; }
+.mva-cta-banner { display:flex; align-items:center; justify-content:space-between; gap:2rem; background:var(--navy); border-radius:20px; padding:28px 36px; margin-top:2.5rem; flex-wrap:wrap; }
+.mcb-left { display:flex; align-items:center; gap:20px; }
+.mcb-icon { font-size:2.2rem; }
+.mcb-left h4 { font-size:1.1rem; font-weight:700; color:white; margin-bottom:4px; }
+.mcb-left p { color:rgba(255,255,255,.65); font-size:0.9rem; }
+
+/* ===== SERVICES HOME ===== */
+.services-home-section { padding:100px 5%; background:white; }
+.services-home-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:auto auto;
+  gap:20px; margin-top:3rem;
+  grid-template-areas:"c1 c2 c3" "c4 c5 c3";
+}
+.sh-card { position:relative; border-radius:20px; overflow:hidden; cursor:pointer; min-height:220px; transition:transform .5s cubic-bezier(0.4,0,0.2,1),box-shadow .5s ease; }
+.sh-card:nth-child(1){grid-area:c1;} .sh-card:nth-child(2){grid-area:c2;} .sh-card:nth-child(3){grid-area:c3;min-height:460px;} .sh-card:nth-child(4){grid-area:c4;} .sh-card:nth-child(5){grid-area:c5;}
+.sh-card:hover { transform:translateY(-10px) scale(1.02); box-shadow:0 30px 70px rgba(26,111,181,.3); }
+.shc-bg-img { position:absolute; inset:0; background-image:var(--bg-url); background-size:cover; background-position:center; transition:transform .7s cubic-bezier(0.4,0,0.2,1); }
+.sh-card:hover .shc-bg-img { transform:scale(1.12); }
+.shc-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(10,20,40,.85) 0%,rgba(10,20,40,.4) 50%,rgba(10,20,40,.2) 100%); }
+.shc-content { position:relative; z-index:2; padding:28px; display:flex; flex-direction:column; height:100%; justify-content:flex-end; }
+.shc-icon-wrap { font-size:1.8rem; margin-bottom:0.8rem; width:50px; height:50px; background:rgba(255,255,255,.15); backdrop-filter:blur(10px); border-radius:12px; display:flex; align-items:center; justify-content:center; }
+.shc-content h3 { font-size:1.1rem; font-weight:700; color:white; margin-bottom:0.5rem; font-family:'Playfair Display',serif; }
+.shc-content p { color:rgba(255,255,255,.75); font-size:0.85rem; line-height:1.6; margin-bottom:1rem; }
+.shc-arrow { width:36px; height:36px; background:rgba(255,255,255,.15); backdrop-filter:blur(8px); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1rem; transition:background .2s,transform .2s; }
+.sh-card:hover .shc-arrow { background:var(--green); transform:rotate(-45deg); }
+
+/* ===== THERAPY PROCESS ===== */
+.therapy-process-section { padding:100px 5%; background:#fff; position:relative; overflow:hidden; }
+.therapy-process-section::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--green),var(--sky),var(--blue),var(--green)); background-size:200%; animation:gradientShift 4s ease infinite; }
+.tp-dot-line { display:flex; justify-content:center; align-items:center; margin-top:0.5rem; }
+.tp-center-dot { width:10px; height:10px; border-radius:50%; background:var(--navy); display:inline-block; box-shadow:0 0 0 4px rgba(26,111,181,0.1); }
+.tp-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; align-items:start; }
+.tp-step { text-align:center; padding:0 20px; position:relative; }
+.tp-img-wrap { position:relative; width:130px; height:130px; margin:0 auto 1.5rem; }
+.tp-img-wrap img { width:100%; height:100%; border-radius:50%; object-fit:cover; border:4px solid white; box-shadow:0 8px 30px rgba(26,111,181,.18); transition:transform .5s ease,box-shadow .5s ease; }
+.tp-step:hover .tp-img-wrap img { transform:scale(1.08); box-shadow:0 16px 50px rgba(26,111,181,.28); }
+.tp-step-number { position:absolute; top:-6px; right:-6px; width:30px; height:30px; border-radius:50%; background:linear-gradient(135deg,var(--green),var(--mint)); color:white; font-weight:700; font-size:0.8rem; display:flex; align-items:center; justify-content:center; border:2px solid white; box-shadow:0 4px 12px rgba(0,137,123,.4); }
+.tp-arrow { position:absolute; top:50px; right:-20px; width:80px; z-index:2; opacity:0.7; animation:float 3s ease-in-out infinite; }
+.tp-step-last .tp-arrow { display:none; }
+.tp-step h4 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:0.75rem; line-height:1.4; }
+.tp-step:hover h4 { color:var(--green); }
+.tp-step p { font-size:0.875rem; color:var(--muted); line-height:1.7; }
+
+/* ===== PAIN SECTION ===== */
+.pain-section { position:relative; padding:100px 5%; overflow:hidden; background:var(--navy); }
+.pain-bg-img { position:absolute; inset:0; background:url('images/physio2.png') center/cover no-repeat; opacity:0.18; }
+.pain-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,20,40,0.92) 0%,rgba(26,111,181,0.88) 50%,rgba(30,73,118,0.85) 100%); }
+.pain-inner { position:relative; z-index:2; }
+.attn-row { display:flex; align-items:center; gap:14px; padding:13px 28px; border-bottom:1px solid rgba(255,255,255,0.08); color:white; font-size:0.92rem; font-weight:500; cursor:pointer; transition:all .25s ease; position:relative; }
+.attn-row:hover { background:rgba(255,255,255,.1); padding-left:36px; color:#00BCD4; }
+.attn-dash { color:#00BCD4; font-weight:700; font-size:1rem; flex-shrink:0; }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-section { padding:100px 5%; background:var(--gray); }
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:3rem; }
+.testi-card { background:white; border-radius:20px; padding:28px; box-shadow:var(--shadow); border:1px solid rgba(26,111,181,.05); transition:transform .4s ease,box-shadow .4s ease; display:flex; flex-direction:column; gap:12px; position:relative; overflow:hidden; }
+.testi-card::before { content:'❝'; position:absolute; top:-10px; right:20px; font-size:7rem; color:rgba(26,111,181,.06); font-family:Georgia,serif; line-height:1; pointer-events:none; }
+.testi-card:hover { transform:translateY(-8px); box-shadow:0 25px 60px rgba(26,111,181,.14); }
+.featured-testi { border:2px solid rgba(26,111,181,.25) !important; background:linear-gradient(160deg,#f0f7ff,white) !important; }
+.featured-testi::after { content:'Top Review'; position:absolute; top:16px; right:16px; background:linear-gradient(135deg,var(--green),var(--mint)); color:white; font-size:0.68rem; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:.5px; }
+.testi-stars { color:#f59e0b; font-size:1rem; letter-spacing:2px; }
+.testi-text { color:var(--muted); font-size:0.875rem; line-height:1.75; font-style:italic; flex:1; }
+.testi-more { background:none; border:none; color:var(--blue); cursor:pointer; font-size:0.8rem; font-weight:600; padding:0; text-align:left; transition:color .2s; }
+.testi-more:hover { color:var(--green); }
+.testi-author { display:flex; align-items:center; gap:12px; margin-top:auto; }
+.ta-avatar { width:44px; height:44px; border-radius:50%; background:var(--navy); color:white; font-weight:700; font-size:0.9rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ta-name { font-weight:700; color:var(--navy); font-size:0.9rem; }
+.ta-role { font-size:0.75rem; color:var(--muted); margin-top:2px; }
+.testi-stats-row { display:flex; justify-content:center; gap:40px; margin:1.5rem 0 2rem; flex-wrap:wrap; }
+.ts-stat { text-align:center; }
+.ts-num { font-size:2rem; font-weight:800; background:linear-gradient(135deg,var(--blue),var(--sky)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.ts-lbl { font-size:0.8rem; color:var(--muted); font-weight:500; }
+
+/* ===== OUR VALUES ===== */
+.values-section { padding:100px 5%; background:#f0f7ff; }
+.values-grid-top { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1200px; margin:3rem auto 0; }
+.values-grid-bottom { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:820px; margin:24px auto 0; }
+.value-card {
+  background:white; border-radius:20px; padding:36px 32px;
+  box-shadow:0 4px 24px rgba(26,111,181,.07);
+  border:1px solid rgba(26,111,181,.07);
+  transition:transform .3s, box-shadow .3s;
+  text-align:center;
+}
+.value-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(26,111,181,.13); }
+.value-card-icon {
+  width:56px; height:56px; border-radius:14px;
+  background:var(--light-green); display:flex; align-items:center; justify-content:center;
+  margin:0 auto 1.2rem; font-size:1.5rem;
+}
+.value-card h3 { font-family:'Playfair Display',serif; font-size:1.25rem; color:var(--navy); font-weight:700; margin-bottom:.7rem; }
+.value-card p { color:var(--muted); font-size:.93rem; line-height:1.75; }
+.value-card.active-card { background:linear-gradient(135deg,#b2dfdb,#e0f2f1); border-color:transparent; }
+.value-card.active-card h3 { color:var(--navy); }
+.value-card.active-card .value-card-icon { background:rgba(0,137,123,.18); }
+@media(max-width:900px){.values-grid-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.values-grid-top,.values-grid-bottom{grid-template-columns:1fr;max-width:100%;}}
+
+/* ===== DYNAMIC STATS ===== */
+.dynamic-stats-section { position:relative; padding:70px 5%; background:linear-gradient(135deg,var(--navy) 0%,#1a3a6e 60%,var(--blue) 100%); overflow:hidden; }
+.ds-bg-overlay { position:absolute; inset:0; background:url('images/physio1.png') center/cover no-repeat; opacity:0.06; }
+.ds-inner { position:relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
+.ds-stat { text-align:center; flex:1; min-width:160px; padding:20px 10px; }
+.ds-icon { font-size:2rem; margin-bottom:0.5rem; }
+.ds-num { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,4vw,3.5rem); font-weight:800; color:white; line-height:1; margin-bottom:0.4rem; }
+.ds-label { font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; }
+.ds-divider { width:1px; height:80px; background:rgba(255,255,255,.15); flex-shrink:0; }
+
+/* ===== FINAL CTA ===== */
+.final-cta { background:linear-gradient(135deg,var(--navy),#1a3a6e 50%,var(--blue)); padding:100px 5%; text-align:center; position:relative; overflow:hidden; }
+.fca-orb { position:absolute; border-radius:50%; }
+.fca-orb1 { width:500px; height:500px; background:radial-gradient(circle,rgba(33,150,243,.1),transparent 70%); right:-100px; top:-100px; }
+.fca-orb2 { width:300px; height:300px; background:radial-gradient(circle,rgba(0,137,123,.15),transparent 70%); left:-50px; bottom:-50px; }
+
+/* ===== COMPASSIONATE / ABOUT SECTION ===== */
+.compassionate-section { padding:100px 5%; background:white; }
+.comp-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.comp-img-main { border-radius:24px; overflow:hidden; box-shadow:var(--shadow-lg); }
+.comp-img-badge { position:absolute; bottom:-20px; right:-20px; background:var(--navy); border-radius:16px; padding:20px 24px; text-align:center; box-shadow:0 10px 30px rgba(26,111,181,.25); animation:float 5s ease-in-out infinite; }
+.cib-num { font-size:2rem; font-weight:800; color:var(--sky); font-family:'Playfair Display',serif; }
+.cib-label { font-size:0.78rem; color:rgba(255,255,255,.6); margin-top:2px; }
+.comp-checks { list-style:none; margin:1.5rem 0 2rem; }
+.comp-checks li { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #edf2f7; font-size:0.95rem; color:var(--text); font-weight:500; }
+.cc-dot { width:22px; height:22px; min-width:22px; background:var(--light-green); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.cc-dot::after { content:'✓'; font-size:0.65rem; color:var(--green); font-weight:700; }
+
+/* ===== SERVICE HERO ===== */
+.service-hero-section { padding:100px 5%; background:white; }
+.shs-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.shs-badge { background:var(--green); border-radius:16px; padding:18px 22px; text-align:center; box-shadow:0 10px 30px rgba(0,137,123,.3); animation:float 5s ease-in-out infinite; }
+.sb-num { font-size:1.8rem; font-weight:800; color:white; font-family:'Playfair Display',serif; }
+.sb-label { font-size:0.75rem; color:rgba(255,255,255,.75); margin-top:2px; }
+.shs-features { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:1.5rem; }
+.shs-feat { display:flex; align-items:center; gap:10px; font-weight:500; color:var(--text); font-size:0.92rem; }
+.sf-dot { width:8px; height:8px; background:var(--green); border-radius:50%; flex-shrink:0; }
+
+/* ===== BENEFITS GRID ===== */
+.benefits-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:3rem; }
+.benefit-card { background:white; border-radius:20px; padding:32px 28px; box-shadow:var(--shadow); border:1px solid rgba(26,111,181,.05); transition:transform .3s; }
+.benefit-card:hover { transform:translateY(-6px); }
+.benefit-card h4 { font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:1rem; padding-bottom:0.8rem; border-bottom:2px solid var(--light-green); }
+.benefit-card ul li { color:var(--muted); font-size:0.88rem; line-height:1.6; padding:5px 0; display:flex; align-items:flex-start; gap:8px; }
+.benefit-card ul li::before { content:'✓'; color:var(--green); font-weight:700; font-size:0.8rem; margin-top:1px; flex-shrink:0; }
+
+/* ===== DR. PROFILE SECTION ===== */
+.dr-profile-section { padding:100px 5%; background:linear-gradient(160deg,#f8fbff 0%,#e3f2fd 100%); position:relative; overflow:hidden; }
+.dr-profile-inner { display:flex; gap:64px; align-items:flex-start; }
+.dr-photo-col { flex:0 0 360px; }
+.dr-info-col { flex:1; min-width:0; }
+.dr-photo-wrap { position:relative; border-radius:24px; overflow:visible; }
+.dr-photo-img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:24px; box-shadow:0 20px 60px rgba(26,111,181,.18); display:block; transition:transform .5s ease; }
+.dr-photo-wrap:hover .dr-photo-img { transform:scale(1.02); }
+.dr-photo-badge { position:absolute; bottom:24px; left:-20px; background:white; border-radius:16px; padding:14px 20px; box-shadow:0 8px 30px rgba(26,111,181,.18); text-align:center; border:2px solid rgba(26,111,181,.2); animation:float 4s ease-in-out infinite; }
+.dpb-num { font-size:1.8rem; font-weight:800; background:linear-gradient(135deg,var(--blue),var(--sky)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; }
+.dpb-lbl { font-size:0.72rem; color:var(--muted); font-weight:600; margin-top:4px; text-transform:uppercase; letter-spacing:.5px; }
+.dr-photo-tag { position:absolute; top:20px; right:-14px; background:linear-gradient(135deg,var(--green),var(--mint)); color:white; font-size:0.78rem; font-weight:700; padding:8px 16px; border-radius:20px; box-shadow:0 4px 16px rgba(0,137,123,.35); }
+.dr-subtitle { color:var(--sky); font-weight:600; font-size:1rem; margin:-0.5rem 0 1.2rem; letter-spacing:.3px; }
+.dr-bio { color:var(--muted); font-size:0.95rem; line-height:1.8; }
+.dr-quals { margin-top:1.8rem; }
+.dr-quals-title { font-size:0.9rem; font-weight:700; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.5px; }
+.dr-qual-list { display:flex; flex-direction:column; gap:10px; }
+.dr-qual-item { display:flex; align-items:flex-start; gap:12px; background:white; border-radius:12px; padding:12px 16px; border:1px solid rgba(26,111,181,.07); box-shadow:0 2px 10px rgba(26,111,181,.05); transition:all .3s ease; }
+.dr-qual-item:hover { transform:translateX(6px); border-color:rgba(26,111,181,0.3); }
+.dqi-dot { width:8px; height:8px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--sky)); flex-shrink:0; margin-top:6px; }
+.dr-qual-item strong { display:block; font-size:0.875rem; color:var(--navy); font-weight:700; }
+.dr-qual-item span { display:block; font-size:0.78rem; color:var(--muted); margin-top:2px; }
+.dr-marathon-badge { display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#FF6F00,#FF8F00); color:white; padding:10px 20px; border-radius:50px; font-size:0.85rem; font-weight:700; margin-top:1rem; box-shadow:0 4px 16px rgba(255,143,0,.35); }
+
+/* ===== BOOKING ===== */
+.booking-wrap { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1.4fr; gap:50px; align-items:start; }
+.bwl-info { background:var(--navy); border-radius:24px; padding:40px; color:white; }
+.bwl-info h3 { font-family:'Playfair Display',serif; font-size:1.6rem; margin-bottom:2rem; }
+.bwl-items { display:flex; flex-direction:column; gap:1.5rem; margin-bottom:2rem; }
+.bwl-item { display:flex; gap:16px; align-items:flex-start; }
+.bwli-icon { font-size:1.3rem; width:44px; height:44px; min-width:44px; background:rgba(255,255,255,.1); border-radius:12px; display:flex; align-items:center; justify-content:center; }
+.bwl-item h5 { font-weight:600; color:white; margin-bottom:4px; }
+.bwl-item p { color:rgba(255,255,255,.6); font-size:0.86rem; line-height:1.5; }
+.booking-form-card { background:white; border-radius:24px; padding:40px; box-shadow:var(--shadow-lg); }
+.booking-form-card h3 { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--navy); margin-bottom:0.4rem; }
+.booking-form-card > p { color:var(--muted); font-size:0.9rem; margin-bottom:1.8rem; }
+.form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:1rem; }
+.form-group label { font-weight:600; font-size:0.84rem; color:var(--navy); }
+.form-group input, .form-group select, .form-group textarea, .contact-form input, .contact-form select, .contact-form textarea {
+  padding:12px 16px; border:1.5px solid #e2e8f0; border-radius:12px;
+  font-family:'DM Sans',sans-serif; font-size:0.93rem; color:var(--text);
+  transition:border-color .2s,box-shadow .2s; outline:none; background:#f8fafc;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus,
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+  border-color:var(--green); box-shadow:0 0 0 3px rgba(0,137,123,.1); background:white;
+}
+.form-group textarea { resize:vertical; min-height:100px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.booking-submit-btn { width:100%; padding:15px; background:var(--green); color:white; border:none; border-radius:50px; font-size:1rem; font-weight:600; cursor:pointer; margin-top:0.5rem; transition:all .3s; font-family:'DM Sans',sans-serif; }
+.booking-submit-btn:hover { background:var(--navy); transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,137,123,.3); }
+
+/* ===== CONTACT ===== */
+.contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:50px; align-items:start; }
+.contact-info-card { background:var(--navy); border-radius:24px; padding:40px; color:white; }
+.contact-info-card h3 { font-family:'Playfair Display',serif; font-size:1.6rem; margin-bottom:2rem; }
+.ci-item { display:flex; gap:16px; margin-bottom:1.8rem; align-items:flex-start; }
+.ci-icon { font-size:1.3rem; width:44px; height:44px; min-width:44px; background:rgba(255,255,255,.1); border-radius:12px; display:flex; align-items:center; justify-content:center; }
+.ci-label { font-size:0.78rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+.ci-value { color:white; font-size:0.92rem; line-height:1.6; }
+
+/* ===== FOOTER ===== */
+footer { background:linear-gradient(135deg,#0a2d4a 0%,var(--navy) 50%,var(--blue) 100%) !important; color:rgba(255,255,255,.65); padding:70px 5% 0; position:relative; }
+footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--sky),var(--blue),transparent); }
+.footer-inner { display:grid; grid-template-columns:2fr 1fr 1fr 1.3fr; gap:50px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,.07); }
+.footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:1.2rem; }
+.footer-logo-img { width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid rgba(33,150,243,0.3); box-shadow:0 4px 20px rgba(33,150,243,0.2); transition:transform .4s ease; }
+.footer-logo-img:hover { transform:rotate(-8deg) scale(1.05); }
+.footer-brand p { font-size:0.85rem; line-height:1.7; color:rgba(255,255,255,.45); max-width:260px; margin-bottom:1.5rem; }
+.footer-socials { display:flex; gap:10px; }
+.fs-btn { width:38px; height:38px; background:rgba(255,255,255,.08); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1rem; text-decoration:none; transition:all .3s; animation:float 3s ease-in-out infinite; }
+.fs-btn:nth-child(2){animation-delay:.5s;} .fs-btn:nth-child(3){animation-delay:1s;}
+.fs-btn:hover { background:var(--green); transform:translateY(-6px) scale(1.15) !important; }
+.footer-col h4 { color:white; font-weight:600; font-size:0.95rem; margin-bottom:1.2rem; position:relative; padding-bottom:10px; }
+.footer-col h4::after { content:''; position:absolute; bottom:0; left:0; width:30px; height:2px; background:linear-gradient(90deg,var(--sky),var(--blue)); border-radius:2px; transition:width .4s; }
+.footer-col:hover h4::after { width:60px; }
+.footer-col ul li { margin-bottom:0.65rem; }
+.footer-col ul li a { color:rgba(255,255,255,.45); text-decoration:none; font-size:0.86rem; transition:all .3s ease; display:inline-block; }
+.footer-col ul li a:hover { color:var(--sky); transform:translateX(6px); }
+.footer-bottom { padding:24px 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.8rem; color:rgba(255,255,255,.3); }
+
+/* ===== FAB GROUP ===== */
+.fab-group { position:fixed; bottom:24px; right:20px; z-index:999; display:flex; flex-direction:column; align-items:center; gap:12px; }
+.fab-trigger { width:58px; height:58px; border-radius:50%; background:#25D366; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(37,211,102,.5); position:relative; transition:transform .3s ease,background .3s ease; z-index:2; }
+.fab-trigger:hover { transform:scale(1.08); }
+.fab-trigger.open { background:#555; box-shadow:0 6px 24px rgba(0,0,0,.3); }
+.fab-child { width:50px; height:50px; border-radius:50%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,.2); text-decoration:none; position:relative; opacity:0; transform:translateY(20px) scale(0.7); transition:opacity .25s ease,transform .25s ease,box-shadow .2s; pointer-events:none; }
+.fab-child svg { width:24px; height:24px; }
+.fab-child-label { position:absolute; right:62px; background:rgba(0,0,0,.72); color:white; font-size:0.75rem; font-weight:600; padding:4px 10px; border-radius:20px; white-space:nowrap; opacity:0; transition:opacity .2s; pointer-events:none; }
+.fab-child:hover .fab-child-label { opacity:1; }
+.fab-call { background:#1a6fb5; } .fab-wa { background:#25D366; } .fab-chat { background:var(--navy); }
+.fab-group.open .fab-child { opacity:1; transform:translateY(0) scale(1); pointer-events:all; }
+.fab-group.open .fab-child:nth-child(1){transition-delay:.08s;} .fab-group.open .fab-child:nth-child(2){transition-delay:.04s;} .fab-group.open .fab-child:nth-child(3){transition-delay:0s;}
+.wa-pulse { position:absolute; width:100%; height:100%; border-radius:50%; pointer-events:none; background:rgba(37,211,102,.35); animation:fabPulse 2s infinite; }
+.chat-float-badge { position:absolute; top:-5px; right:-5px; width:17px; height:17px; background:var(--blue); border-radius:50%; font-size:0.6rem; font-weight:700; color:white; display:flex; align-items:center; justify-content:center; }
+@keyframes fabPulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.65);opacity:0;} }
+
+/* ===== CHATBOT ===== */
+.chatbot-window { position:fixed; bottom:100px; right:28px; z-index:1000; width:360px; height:520px; background:white; border-radius:20px; box-shadow:0 20px 60px rgba(26,111,181,.22); display:flex; flex-direction:column; overflow:hidden; transform:scale(0.85) translateY(20px); opacity:0; pointer-events:none; transition:all .3s cubic-bezier(0.4,0,0.2,1); transform-origin:bottom right; }
+.chatbot-window.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
+.chatbot-header { background:linear-gradient(135deg,var(--navy),var(--blue)); padding:16px 20px; display:flex; align-items:center; gap:12px; flex-shrink:0; }
+.chatbot-avatar { width:40px; height:40px; background:rgba(255,255,255,.15); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+.chatbot-title { flex:1; }
+.chatbot-title strong { display:block; color:white; font-size:0.92rem; }
+.chatbot-title span { font-size:0.75rem; color:rgba(255,255,255,.6); }
+.chatbot-close { width:28px; height:28px; background:rgba(255,255,255,.1); border:none; border-radius:50%; cursor:pointer; color:rgba(255,255,255,.8); font-size:1rem; display:flex; align-items:center; justify-content:center; }
+.chatbot-close:hover { background:rgba(255,255,255,.2); }
+.chatbot-messages { flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:12px; background:#f8fafc; scroll-behavior:smooth; }
+.chatbot-messages::-webkit-scrollbar { width:4px; }
+.chatbot-messages::-webkit-scrollbar-thumb { background:#d0d8e4; border-radius:2px; }
+.chat-msg { max-width:85%; padding:10px 14px; border-radius:14px; font-size:0.875rem; line-height:1.6; animation:fadeInUp .3s ease; }
+.chat-msg.bot { background:white; color:var(--text); border-bottom-left-radius:4px; box-shadow:0 2px 8px rgba(26,111,181,.08); align-self:flex-start; }
+.chat-msg.user { background:var(--navy); color:white; border-bottom-right-radius:4px; align-self:flex-end; }
+.chat-typing { display:flex; align-items:center; gap:4px; background:white; padding:10px 14px; border-radius:14px; border-bottom-left-radius:4px; box-shadow:0 2px 8px rgba(26,111,181,.08); align-self:flex-start; width:fit-content; }
+.chat-typing span { width:7px; height:7px; background:#a0aec0; border-radius:50%; animation:typingDot 1.2s infinite ease-in-out; }
+.chat-typing span:nth-child(2){animation-delay:.2s;} .chat-typing span:nth-child(3){animation-delay:.4s;}
+@keyframes typingDot { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+.chatbot-quick { padding:10px 12px; display:flex; gap:8px; flex-wrap:wrap; background:white; border-top:1px solid #e2e8f0; flex-shrink:0; }
+.quick-btn { background:var(--light); color:var(--navy); border:1px solid #d0dce8; border-radius:20px; padding:5px 12px; font-size:0.75rem; font-weight:600; cursor:pointer; transition:all .2s; white-space:nowrap; }
+.quick-btn:hover { background:var(--navy); color:white; border-color:var(--navy); }
+.chatbot-input-row { display:flex; align-items:center; gap:8px; padding:12px 16px; border-top:1px solid #e2e8f0; background:white; flex-shrink:0; }
+.chatbot-input { flex:1; border:1.5px solid #e2e8f0; border-radius:50px; padding:9px 16px; font-size:0.875rem; font-family:'DM Sans',sans-serif; outline:none; transition:border-color .2s; color:var(--text); }
+.chatbot-input:focus { border-color:var(--navy); }
+.chatbot-send { width:38px; height:38px; background:var(--navy); border:none; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; flex-shrink:0; }
+.chatbot-send:hover { background:var(--green); }
+.chatbot-send svg { width:18px; height:18px; }
+
+/* ===== TOAST ===== */
+.toast { position:fixed; top:86px; right:20px; z-index:9999; background:var(--green); color:white; padding:14px 22px; border-radius:12px; font-weight:600; font-size:0.9rem; box-shadow:0 10px 30px rgba(0,0,0,.15); transform:translateX(130%); transition:transform .4s cubic-bezier(.175,.885,.32,1.275); }
+.toast.show { transform:translateX(0); }
+
+/* ===== CURSOR GLOW ===== */
+.cursor-glow { position:fixed; width:20px; height:20px; border-radius:50%; background:radial-gradient(circle,rgba(33,150,243,.5),transparent 70%); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .1s ease,opacity .3s ease; mix-blend-mode:screen; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeInRight { from{opacity:0;transform:translateX(50px)} to{opacity:1;transform:translateX(0)} }
+@keyframes float { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-12px)} }
+@keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+/* ===== AOS ===== */
+[data-aos] { opacity:0; transform:translateY(30px); transition:opacity .7s cubic-bezier(0.4,0,0.2,1),transform .7s cubic-bezier(0.4,0,0.2,1); }
+[data-aos="fade-right"] { transform:translateX(-40px); }
+[data-aos="fade-left"] { transform:translateX(40px); }
+[data-aos].aos-animate { opacity:1 !important; transform:none !important; }
+[data-aos-delay="100"]{transition-delay:.1s;} [data-aos-delay="200"]{transition-delay:.2s;} [data-aos-delay="300"]{transition-delay:.3s;}
+.hero-left { opacity:0; transform:translateX(-40px); transition:opacity .8s ease .2s,transform .8s ease .2s; }
+.hero-left.aos-animate { opacity:1; transform:translateX(0); }
+.hero-right { opacity:0; transform:translateX(40px); transition:opacity .8s ease .4s,transform .8s ease .4s; }
+.hero-right.aos-animate { opacity:1; transform:translateX(0); }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .quality-inner,.comp-inner,.shs-inner{grid-template-columns:1fr;}
+  .quality-images{height:300px;margin-bottom:3rem;}
+  .mva-cards{grid-template-columns:1fr 1fr;}
+  .testi-grid{grid-template-columns:1fr 1fr;}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:30px;}
+  .services-home-grid{grid-template-columns:1fr 1fr;grid-template-areas:"c1 c2" "c3 c3" "c4 c5";}
+  .sh-card:nth-child(3){min-height:220px;}
+  .tp-steps{grid-template-columns:1fr 1fr;gap:40px 20px;}
+  .tp-arrow{display:none;}
+  .dr-profile-inner{gap:40px;}
+  .dr-photo-col{flex:0 0 280px;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:fixed;top:76px;left:0;right:0;background:white;padding:1rem 5%;box-shadow:0 10px 30px rgba(0,0,0,.1);gap:0;z-index:999;}
+  .nav-links.open{display:flex !important;}
+  .hamburger{display:flex !important;}
+  .hero-inner{flex-direction:column-reverse;gap:24px;padding:30px 20px 40px;text-align:center;min-height:auto;}
+  .hero-left{flex:none;width:100%;max-width:100%;}
+  .hero-right{width:100%;}
+  .hero-btns,.hero-dots{justify-content:center;}
+  .hero-oval-wrap{width:300px;height:400px;}
+  .hero-oval-pill{width:325px;height:430px;}
+  .hero-sub{margin:0 auto 1.5rem;font-size:.9rem;}
+  .hero-clinic-brand{justify-content:center;}
+  .mva-cards,.benefits-grid{grid-template-columns:1fr;}
+  .testi-grid,.testi-grid-all{grid-template-columns:1fr;}
+  .services-home-grid{grid-template-columns:1fr;grid-template-areas:"c1""c2""c3""c4""c5";}
+  .booking-wrap,.contact-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .mva-cta-banner{flex-direction:column;text-align:center;}
+  .form-row{grid-template-columns:1fr;}
+  .dr-profile-inner{flex-direction:column;}
+  .dr-photo-col{flex:none;width:100%;max-width:300px;margin:0 auto;}
+  .nav-inner{height:64px !important;padding:0 16px !important;}
+  .page{padding-top:76px !important;}
+  .trust-bar{overflow-x:auto;flex-wrap:nowrap;padding:14px 16px;justify-content:flex-start;gap:1.5rem;-webkit-overflow-scrolling:touch;}
+  .trust-item{white-space:nowrap;flex-shrink:0;font-size:0.8rem;}
+  .has-dropdown .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:0 0 0 16px;border:none;min-width:unset;}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column;align-items:center;gap:10px;}
+  .hero-btn-primary,.hero-btn-ghost{width:100%;max-width:280px;justify-content:center;}
+  .hero-oval-wrap{width:260px;height:350px;}
+  .hero-oval-pill{width:280px;height:375px;}
+  .tp-steps{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo" onclick="showPage('home'); return false;">
-        <div class="logo-circle">🧠</div>
-        <div class="logo-text">
-          <span class="logo-top">NEURO SPORTS</span>
-          <span class="logo-bot">CENTRE</span>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" onclick="showPage('home')">
+      <img src="images/logo.png" alt="Neuro Sports Centre" class="nav-logo-img">
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">Neuro Sports Centre</span>
+        <span class="nav-brand-tagline">Physiotherapy · Fitness · Rehabilitation</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="showPage('home');return false;" class="nav-link">Home</a></li>
+      <li><a href="#" onclick="showPage('about');return false;" class="nav-link">About Us</a></li>
+      <li class="has-dropdown">
+        <a href="#" class="nav-link">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item" onclick="showPage('physio');return false;">
+            <div class="dd-icon">💪</div>
+            <div><div class="dd-title">Physiotherapy</div><div class="dd-sub">Pain relief & rehab</div></div>
+          </a>
+          <a href="#" class="dropdown-item" onclick="showPage('gym');return false;">
+            <div class="dd-icon">🏋️</div>
+            <div><div class="dd-title">Fitness Training</div><div class="dd-sub">Personal & group training</div></div>
+          </a>
+          <a href="#" class="dropdown-item" onclick="showPage('rehab');return false;">
+            <div class="dd-icon">🧠</div>
+            <div><div class="dd-title">Rehabilitation</div><div class="dd-sub">Neuro & sports rehab</div></div>
+          </a>
         </div>
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#" class="nav-link active" onclick="showPage('home'); return false;">Home</a>
-        <a href="#" class="nav-link" onclick="showPage('about'); return false;">About Us</a>
-        <div class="has-dropdown">
-          <a href="#" class="nav-link">Services <span class="icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></a>
-          <div class="dropdown-menu">
-            <a href="#" class="dropdown-item" onclick="showPage('services'); return false;"><div class="dd-icon">🏃</div><div><div class="dd-title">Physiotherapy</div><div class="dd-sub">Pain relief & rehab</div></div></a>
-            <a href="#" class="dropdown-item" onclick="showPage('fitness'); return false;"><div class="dd-icon">🏋️</div><div><div class="dd-title">Fitness Training</div><div class="dd-sub">Personal & group training</div></div></a>
-            <a href="#" class="dropdown-item" onclick="showPage('rehab'); return false;"><div class="dd-icon">🧠</div><div><div class="dd-title">Rehabilitation</div><div class="dd-sub">Neuro & sports rehab</div></div></a>
+      </li>
+      <li><a href="#" onclick="showPage('team');return false;" class="nav-link">Our Team</a></li>
+      <li><a href="#" onclick="showPage('testimonials');return false;" class="nav-link">Reviews</a></li>
+      <li><a href="#" onclick="showPage('contact');return false;" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions" style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+      <a href="https://wa.me/919429554422" target="_blank" class="btn-book nav-book-btn" style="background:var(--green);color:white;padding:8px 16px;border-radius:50px;font-weight:600;font-size:0.82rem;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;">📅 Book Now</a>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== HOME PAGE ============================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero-section" id="heroSection">
+    <div class="hero-inner">
+      <div class="hero-left" id="heroLeft">
+        <div class="hero-clinic-brand">
+          <img src="images/logo.png" alt="Neuro Sports Centre" class="hero-brand-logo">
+          <div class="hero-brand-words">
+            <span class="hbw-line1">Neuro Sports</span>
+            <span class="hbw-line2">Centre</span>
           </div>
         </div>
-        <a href="#" class="nav-link" onclick="showPage('team'); return false;">Our Team</a>
-        <a href="#" class="nav-link" onclick="showPage('reviews'); return false;">Reviews</a>
-        <a href="#" class="nav-link" onclick="showPage('contact'); return false;">Contact</a>
+        <div class="hero-slide-badge" id="heroBadge">🏃 Ahmedabad's Premier Physio & Fitness Clinic</div>
+        <h1 class="hero-title" id="heroTitle">Move Better.<br><span class="hero-accent">Recover Faster.</span><br>Live Stronger.</h1>
+        <p class="hero-sub" id="heroSub">Expert physiotherapy, fitness training & rehabilitation for all age groups — led by Dr. Ruchit Shah (MPT) and a team of 15+ specialised professionals at Neuro Sports Centre, Bodakdev, Ahmedabad.</p>
+        <div class="hero-btns">
+          <a href="#" onclick="showPage('booking');return false;" class="hero-btn-primary" id="heroBtnPrimary">📅 Book Appointment</a>
+          <a href="https://wa.me/919429554422" target="_blank" class="hero-btn-ghost">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-dots" id="heroDots">
+          <span class="hero-dot active" onclick="goHeroSlide(0)"></span>
+          <span class="hero-dot" onclick="goHeroSlide(1)"></span>
+          <span class="hero-dot" onclick="goHeroSlide(2)"></span>
+          <span class="hero-dot" onclick="goHeroSlide(3)"></span>
+        </div>
       </div>
-      <div class="nav-actions">
-        <a href="https://wa.me/919429554422" class="btn-book">📅 Book Now</a>
-        <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      <div class="hero-right">
+        <div class="hero-oval-wrap">
+          <div class="hero-slides" id="heroSlides">
+            <div class="hero-slide active"><img src="images/physio1.png" alt="Physiotherapy Treatment" style="object-position:top"></div>
+            <div class="hero-slide"><img src="images/rehabilitation.png" alt="Rehabilitation" style="object-position:top"></div>
+            <div class="hero-slide"><img src="images/manual_therapy.png" alt="Manual Therapy" style="object-position:top"></div>
+            <div class="hero-slide"><img src="images/dr_clinic.png" alt="Clinic" style="object-position:top"></div>
+          </div>
+          <div class="oval-badge oval-badge-top"><span>⭐ 5.0 Google Rating</span></div>
+          <div class="oval-badge oval-badge-bot"><span id="slideConditionTag">Physio & Fitness</span></div>
+        </div>
+        <div class="hero-oval-pill"></div>
       </div>
     </div>
-  </nav>
+    <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:#aaa;font-size:0.78rem;">
+      <div style="width:24px;height:38px;border:2px solid #ddd;border-radius:12px;display:flex;justify-content:center;padding-top:6px;"><div style="width:4px;height:8px;background:#bbb;border-radius:2px;animation:scrollAnim 2s ease-in-out infinite;"></div></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
 
-  <!-- PAGES -->
-  <main>
-    <!-- HOME -->
-    <section id="page-home" class="page active">
-      <div class="hero-section">
-        <div class="hero-bg-orb orb1"></div>
-        <div class="hero-bg-orb orb2"></div>
-        <div class="hero-bg-orb orb3"></div>
-        <div class="hero-content">
-          <div class="hero-left">
-            <div class="hero-badge"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span> Neuro Sports Centre</div>
-            <h1 class="hero-title">Move Better.<br>Recover Faster.<br><span class="gradient-text">Live Stronger.</span></h1>
-            <p class="hero-sub">Expert physiotherapy, fitness training & rehabilitation for all age groups — led by Dr. Ruchit Shah (MPT) and a team of 15+ specialised professionals.</p>
-            <div class="hero-btns">
-              <a href="#" class="btn-primary" onclick="showPage('booking'); return false;">📅 Book Appointment</a>
-              <a href="https://wa.me/919429554422" class="btn-ghost">💬 WhatsApp Us</a>
-            </div>
-            <div class="hero-stats">
-              <div class="stat-item"><span class="stat-n">5000+</span><span class="stat-l">Patients Treated</span></div>
-              <div class="stat-divider"></div>
-              <div class="stat-item"><span class="stat-n">15+</span><span class="stat-l">Specialised Professionals</span></div>
-              <div class="stat-divider"></div>
-              <div class="stat-item"><span class="stat-n">10+</span><span class="stat-l">Years of Excellence</span></div>
-            </div>
-          </div>
-          <div class="hero-right">
-            <div class="hero-card-float">
-              <div class="hero-card">
-                <div class="hc-head">Why Patients Choose Us</div>
-                <div class="hc-items">
-                  <div class="hc-item"><div class="hci-dot"></div> Evidence-based physiotherapy</div>
-                  <div class="hc-item"><div class="hci-dot"></div> 15+ specialised professionals</div>
-                  <div class="hc-item"><div class="hci-dot"></div> Integrated fitness & rehab</div>
-                  <div class="hc-item"><div class="hci-dot"></div> Mon–Sat: 8:00 AM – 8:00 PM</div>
-                </div>
-                <a href="#" class="hc-btn" onclick="showPage('booking'); return false;">Book Your Slot →</a>
-              </div>
-              <div class="hero-float-badge badge-patients">
-                <div class="fb-num">5.0</div>
-                <div class="fb-stars">★★★★★</div>
-                <div class="fb-label">Google Rating</div>
-              </div>
-              <div class="hero-float-badge badge-rating">
-                <div class="fb-num">100%</div>
-                <div class="fb-label">Patient Satisfaction</div>
-              </div>
-            </div>
-          </div>
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item"><span class="ti-icon">✅</span> 15+ Specialised Professionals</div>
+    <div class="trust-item"><span class="ti-icon">⏰</span> Mon–Sat: 8am–8pm</div>
+    <div class="trust-item"><span class="ti-icon">📍</span> Bodakdev, Sandesh Press Road, Ahmedabad</div>
+    <div class="trust-item"><span class="ti-icon">📞</span> +91 94295 54422</div>
+    <div class="trust-item"><span class="ti-icon">🏃</span> All Age Groups Welcome</div>
+  </div>
+
+  <!-- QUALITY SECTION -->
+  <section class="quality-section">
+    <div class="quality-inner max-wrap">
+      <div class="quality-images" data-aos="fade-right">
+        <div class="qi-photo qi-photo1">
+          <img src="images/physio1.png" alt="Physiotherapy Treatment">
         </div>
-        <div class="hero-scroll-hint">
-          <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-          <span>Scroll to explore</span>
+        <div class="qi-photo qi-photo2">
+          <img src="images/manual_therapy.png" alt="Manual Therapy">
         </div>
       </div>
+      <div class="quality-text" data-aos="fade-left">
+        <div class="section-pill">Solution To Your Health</div>
+        <h2 class="section-title">We Proudly <span class="color-green">Give</span> Quality <span class="color-navy">Treatment</span></h2>
+        <p class="section-desc">At Neuro Sports Centre, we understand that pain, injury, and recovery needs can arise at any stage of life. That's why we offer expert physiotherapy, personalised fitness training, and comprehensive rehabilitation — all under one roof. Our goal is evidence-based, compassionate care tailored to every patient.</p>
+        <div class="quality-checks">
+          <div class="qcheck"><div class="qc-dot"></div><p>Physiotherapy for all conditions — from back pain to neurological recovery.</p></div>
+          <div class="qcheck"><div class="qc-dot"></div><p>Specialised fitness training programmes for all age groups and fitness levels.</p></div>
+          <div class="qcheck"><div class="qc-dot"></div><p>Sports and neuro rehabilitation using the latest evidence-based techniques.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="trust-bar">
-        <div class="trust-item"><span class="icon ti-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span> 15+ Specialised Professionals</div>
-        <div class="trust-item"><span class="icon ti-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span> Mon–Sat: 8am–8pm</div>
-        <div class="trust-item"><span class="icon ti-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span> Bodakdev, Ahmedabad</div>
-        <div class="trust-item"><span class="icon ti-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm8 16H4v-1l4-1h4l2 2h4v-1l-2-1h-4l-2-2h-4v-1l4-1h4l2 2h4z"/></svg></span> +91 94295 54422</div>
+  <!-- MISSION / VISION / APPROACH -->
+  <section class="mva-section">
+    <div class="max-wrap">
+      <div class="section-pill" style="text-align:center;display:block;width:fit-content;margin:0 auto 1.2rem">Vision To Victory</div>
+      <h2 class="section-title text-center">A <span class="color-green">Trusted Leader</span> in<br>Physiotherapy, Fitness & Rehabilitation</h2>
+      <div class="mva-cards" data-aos="fade-up">
+        <div class="mva-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="mva-card-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To deliver personalised, evidence-based physiotherapy and fitness solutions for every patient — from young athletes to senior citizens — empowering them to move better, recover faster, and live stronger.</p>
+        </div>
+        <div class="mva-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="mva-card-icon">🔭</div>
+          <h3>Our Vision</h3>
+          <p>To be Ahmedabad's most trusted centre for integrated physiotherapy and fitness — where cutting-edge clinical techniques, modern training facilities, and genuine compassionate care come together.</p>
+        </div>
+        <div class="mva-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="mva-card-icon">💡</div>
+          <h3>Our Approach</h3>
+          <p>We combine hands-on physiotherapy with functional fitness training and structured rehabilitation — addressing root causes, not just symptoms. Every plan is personalised, progressive, and results-focused.</p>
+        </div>
+      </div>
+      <div class="mva-cta-banner" data-aos="fade-up">
+        <div class="mcb-left">
+          <div class="mcb-icon">🚀</div>
+          <div><h4>Ready To Start Your Journey To Recovery?</h4><p>Take the first step toward a pain-free, active life. Book your consultation today.</p></div>
+        </div>
+        <a href="https://wa.me/919429554422" target="_blank" class="btn-primary" onclick="showToast('Booking sent via WhatsApp! We\'ll confirm shortly ✅')">Book Appointment 💬</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN CONDITIONS PHOTO CARDS -->
+  <section style="padding:90px 5%;background:#f0f7ff;">
+    <div class="max-wrap">
+      <div class="text-center" style="margin-bottom:3rem">
+        <div class="section-pill">Conditions We Treat</div>
+        <h2 class="section-title">Common <span class="color-green">Pain</span> <span class="color-navy">Conditions</span></h2>
+        <p class="section-sub text-center" style="margin:0 auto .5rem">From neck pain to sports injuries — we treat them all with expert care.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="pain-photo-grid">
+        <div onclick="showPage('physio')" style="position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;box-shadow:0 8px 30px rgba(26,111,181,.15);">
+          <img src="images/pain_neck.png" alt="Neck Pain" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.88) 0%,rgba(26,58,92,.1) 60%);"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">NECK PAIN</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">Expert cervical care →</div></div>
+        </div>
+        <div onclick="showPage('physio')" style="position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;box-shadow:0 8px 30px rgba(26,111,181,.15);">
+          <img src="images/pain_back.png" alt="Back Pain" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.88) 0%,rgba(0,137,123,.1) 60%);"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">BACK PAIN</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">Spine specialists →</div></div>
+        </div>
+        <div onclick="showPage('rehab')" style="position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;box-shadow:0 8px 30px rgba(26,111,181,.15);">
+          <img src="images/pain_headache.png" alt="Neurological" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.88) 0%,rgba(26,58,92,.1) 60%);"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">NEURO REHAB</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">Stroke & nerve recovery →</div></div>
+        </div>
+        <div onclick="showPage('physio')" style="position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;box-shadow:0 8px 30px rgba(26,111,181,.15);">
+          <img src="images/pain_injury.png" alt="Sports Injury" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.88) 0%,rgba(0,137,123,.1) 60%);"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">SPORTS INJURY</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">Sports rehabilitation →</div></div>
+        </div>
+        <div onclick="showPage('physio')" style="position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;box-shadow:0 8px 30px rgba(26,111,181,.15);">
+          <img src="images/pain_posture.png" alt="Posture" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.88) 0%,rgba(26,58,92,.1) 60%);"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">BAD POSTURE</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">Posture correction →</div></div>
+        </div>
+        <div onclick="showPage('gym')" style="position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;box-shadow:0 8px 30px rgba(26,111,181,.15);">
+          <img src="images/rehabilitation.png" alt="Fitness" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.88) 0%,rgba(0,137,123,.1) 60%);"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">FITNESS TRAINING</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">All age groups →</div></div>
+        </div>
+      </div>
+      <style>.pain-photo-grid div:hover img{transform:scale(1.06);}@media(max-width:768px){.pain-photo-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:480px){.pain-photo-grid{grid-template-columns:1fr!important;}}</style>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-home-section">
+    <div class="max-wrap">
+      <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Our Services</div>
+      <h2 class="section-title text-center">We Provide <span class="color-green">The Best</span> <span class="color-navy">Services</span></h2>
+      <div class="services-home-grid">
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/manual_therapy.png')">
+          <div class="shc-bg-img"></div><div class="shc-overlay"></div>
+          <div class="shc-content"><div class="shc-icon-wrap">🏃</div><h3>Sports Physio &amp; Rehab</h3><p>Expert physiotherapy and rehabilitation for sports injuries &mdash; from sprains to complex athletic recoveries.</p><div class="shc-arrow">→</div></div>
+        </div>
+        <div class="sh-card" onclick="showPage('rehab')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/rehabilitation.png')">
+          <div class="shc-bg-img"></div><div class="shc-overlay"></div>
+          <div class="shc-content"><div class="shc-icon-wrap">🧠</div><h3>Neuro Physio &amp; Rehab</h3><p>Advanced neurological physiotherapy for stroke, Parkinson’s, spinal cord injuries, and developmental conditions.</p><div class="shc-arrow">→</div></div>
+        </div>
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="100" style="--bg-url:url('images/alignment.png')">
+          <div class="shc-bg-img"></div><div class="shc-overlay"></div>
+          <div class="shc-content"><div class="shc-icon-wrap">🦴</div><h3>Ortho Physio &amp; Rehab</h3><p>Orthopaedic physiotherapy for joint pain, fractures, post-surgical recovery, and musculoskeletal conditions.</p><div class="shc-arrow">→</div></div>
+        </div>
+        <div class="sh-card" onclick="showPage('gym')" data-aos="fade-up" data-aos-delay="200" style="--bg-url:url('images/physio2.png')">
+          <div class="shc-bg-img"></div><div class="shc-overlay"></div>
+          <div class="shc-content"><div class="shc-icon-wrap">🏋️</div><h3>Personal Fitness Training</h3><p>Personalised fitness programmes designed by physiotherapists &mdash; safe, structured, and results-focused.</p><div class="shc-arrow">→</div></div>
+        </div>
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="400" style="--bg-url:url('images/dry_needling.png')">
+          <div class="shc-bg-img"></div><div class="shc-overlay"></div>
+          <div class="shc-content"><div class="shc-icon-wrap">⚡</div><h3>Advanced Physiotherapy</h3><p>TECAR Therapy, Class IV Laser Therapy, Aqua Hydrotherapy, Dry Needling, and more cutting-edge modalities.</p><div class="shc-arrow">→</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THERAPY PROCESS -->
+  <section class="therapy-process-section">
+    <div class="max-wrap">
+      <div class="text-center" style="margin-bottom:3.5rem">
+        <div class="section-pill">Our Process</div>
+        <h2 class="section-title"><span class="color-green">How We</span> Help You</h2>
+        <div class="tp-dot-line"><span class="tp-center-dot"></span></div>
+      </div>
+      <div class="tp-steps">
+        <div class="tp-step" data-aos="fade-up" data-aos-delay="0">
+          <div class="tp-img-wrap">
+            <img src="images/physio2.png" alt="Assessment" style="object-position:top">
+            <div class="tp-step-number">1</div>
+          </div>
+          <div class="tp-arrow"><svg viewBox="0 0 80 20" fill="none"><path d="M0 10 Q20 2 40 10 Q60 18 80 10" stroke="#00897B" stroke-width="2" stroke-dasharray="6 4"/><polyline points="70,5 80,10 70,15" stroke="#00897B" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h4>Assessment & Diagnosis</h4>
+          <p>A thorough evaluation of your condition, movement, and goals by our expert team.</p>
+        </div>
+        <div class="tp-step" data-aos="fade-up" data-aos-delay="150">
+          <div class="tp-img-wrap">
+            <img src="images/manual_therapy.png" alt="Treatment Plan" style="object-position:top">
+            <div class="tp-step-number">2</div>
+          </div>
+          <div class="tp-arrow"><svg viewBox="0 0 80 20" fill="none"><path d="M0 10 Q20 18 40 10 Q60 2 80 10" stroke="#00897B" stroke-width="2" stroke-dasharray="6 4"/><polyline points="70,5 80,10 70,15" stroke="#00897B" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h4>Personalised Plan</h4>
+          <p>A customised treatment and fitness plan designed specifically for your condition and goals.</p>
+        </div>
+        <div class="tp-step" data-aos="fade-up" data-aos-delay="300">
+          <div class="tp-img-wrap">
+            <img src="images/rehabilitation.png" alt="Treatment" style="object-position:top">
+            <div class="tp-step-number">3</div>
+          </div>
+          <div class="tp-arrow"><svg viewBox="0 0 80 20" fill="none"><path d="M0 10 Q20 2 40 10 Q60 18 80 10" stroke="#00897B" stroke-width="2" stroke-dasharray="6 4"/><polyline points="70,5 80,10 70,15" stroke="#00897B" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+          <h4>Expert Treatment</h4>
+          <p>Hands-on therapy, rehabilitation exercises, and guided fitness training by 15+ professionals.</p>
+        </div>
+        <div class="tp-step tp-step-last" data-aos="fade-up" data-aos-delay="450">
+          <div class="tp-img-wrap">
+            <img src="images/physio1.png" alt="Results" style="object-position:top">
+            <div class="tp-step-number">4</div>
+          </div>
+          <h4>Long-Term Results</h4>
+          <p>Sustainable recovery and fitness maintenance with ongoing support and home programmes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE DO YOU NEED ATTENTION -->
+  <section class="pain-section">
+    <div class="pain-bg-img"></div>
+    <div class="pain-overlay"></div>
+    <div class="max-wrap pain-inner">
+      <div class="text-center" style="position:relative;z-index:2;margin-bottom:3rem">
+        <div class="section-pill" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:white">Need Attention</div>
+        <h2 class="section-title" style="color:white">Where Do You Need <span style="color:white;font-weight:bold;">Attention?</span></h2>
+        <p class="section-sub text-center" style="color:rgba(255,255,255,.75);margin:0 auto;max-width:620px">At Neuro Sports Centre, we offer personalised care for every condition — from acute pain to chronic conditions to fitness goals. Choose your area of concern below.</p>
+      </div>
+      <div style="position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px;margin:0 auto;" class="attention-table-grid">
+        <div style="background:rgba(255,255,255,.10);backdrop-filter:blur(14px);border:1.5px solid rgba(255,255,255,.22);border-radius:20px;overflow:hidden;">
+          <div style="background:rgba(255,255,255,.15);padding:16px 28px;border-bottom:1px solid rgba(255,255,255,.15);"><h3 style="color:white;font-size:1.05rem;font-weight:800;text-decoration:underline;text-underline-offset:5px;">Physiotherapy :</h3></div>
+          <div style="padding:10px 0;">
+            <div class="attn-row" onclick="showPage('physio')"><span class="attn-dash">—</span><span>Back and Neck Pain</span></div>
+            <div class="attn-row" onclick="showPage('physio')"><span class="attn-dash">—</span><span>Slip Disc / Sciatica</span></div>
+            <div class="attn-row" onclick="showPage('physio')"><span class="attn-dash">—</span><span>Knee & Joint Pain</span></div>
+            <div class="attn-row" onclick="showPage('physio')"><span class="attn-dash">—</span><span>Frozen Shoulder</span></div>
+            <div class="attn-row" onclick="showPage('physio')"><span class="attn-dash">—</span><span>Sports Injuries</span></div>
+            <div class="attn-row" onclick="showPage('physio')"><span class="attn-dash">—</span><span>Post-Surgical Rehab</span></div>
+            <div class="attn-row" onclick="showPage('physio')"><span class="attn-dash">—</span><span>Headache / Migraine</span></div>
+            <div class="attn-row" onclick="showPage('physio')" style="border-bottom:none;"><span class="attn-dash">—</span><span>Paediatric Physio</span></div>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,.10);backdrop-filter:blur(14px);border:1.5px solid rgba(255,255,255,.22);border-radius:20px;overflow:hidden;">
+          <div style="background:rgba(255,255,255,.15);padding:16px 28px;border-bottom:1px solid rgba(255,255,255,.15);"><h3 style="color:white;font-size:1.05rem;font-weight:800;text-decoration:underline;text-underline-offset:5px;">Fitness & Rehab :</h3></div>
+          <div style="padding:10px 0;">
+            <div class="attn-row" onclick="showPage('gym')"><span class="attn-dash">—</span><span>Personal Fitness Training</span></div>
+            <div class="attn-row" onclick="showPage('gym')"><span class="attn-dash">—</span><span>Weight Management</span></div>
+            <div class="attn-row" onclick="showPage('gym')"><span class="attn-dash">—</span><span>Senior Fitness (60+)</span></div>
+            <div class="attn-row" onclick="showPage('rehab')"><span class="attn-dash">—</span><span>Stroke Rehabilitation</span></div>
+            <div class="attn-row" onclick="showPage('rehab')"><span class="attn-dash">—</span><span>Neurological Conditions</span></div>
+            <div class="attn-row" onclick="showPage('rehab')"><span class="attn-dash">—</span><span>Spinal Cord Injury Rehab</span></div>
+            <div class="attn-row" onclick="showPage('physio')"><span class="attn-dash">—</span><span>ACL / Ligament Rehab</span></div>
+            <div class="attn-row" onclick="showPage('gym')" style="border-bottom:none;"><span class="attn-dash">—</span><span>Marathon / Runner Training</span></div>
+          </div>
+        </div>
+      </div>
+      <style>@media(max-width:600px){.attention-table-grid{grid-template-columns:1fr!important;}}</style>
+      <div style="position:relative;z-index:2;text-align:center;margin-top:2.5rem;">
+        <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="display:inline-flex;gap:8px;align-items:center;background:white;color:var(--navy);font-weight:700;">📅 Book Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS PREVIEW -->
+  <section class="testimonials-section">
+    <div class="max-wrap">
+      <div class="text-center" data-aos="fade-up">
+        <div class="section-pill">What Patients Say</div>
+        <h2 class="section-title">Trusted by <span class="color-green">Hundreds of Patients</span></h2>
+        <p class="section-sub text-center">Real verified Google reviews from our patients.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card featured-testi" data-aos="fade-up" data-aos-delay="0">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Best physiotherapists ever! I was suffering with a partial meniscus tear for more than an year. Even after going to 2-3 docs, trying yoga, applying oils and balms of all sorts, the problem was just getting worse. Then I went to Dr. Rachit and got relief within a month! It was no less than a miracle for me. The almost continuous pain I had for an year simply just stopped! The exercises might seem simple and boring to do but the routine is expertly designed and highly effective. The fees is absolutely worth it. Dr. Rachit and his team are doing excellent work." data-short="Best physiotherapists ever! I was suffering with a partial meniscus tear for more than an year. Even after going to 2-3…">&ldquo;Best physiotherapists ever! I was suffering with a partial meniscus tear for more than an year. Even after going to 2-3…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:linear-gradient(135deg,var(--navy),var(--blue));color:white">SG</div><div><div class="ta-name">Shilpa Gavane</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Dear Dr. Ruchit, Wishing you a Happy New Year! Thank you for being there during my injuries and helping me come back stronger with your expert physiotherapy and strength-building techniques. Your dedication and commitment to my recovery and growth have been remarkable. I am truly grateful for your support. Here&#39;s to a healthy and strong year ahead!" data-short="Dear Dr. Ruchit, Wishing you a Happy New Year! Thank you for being there during my injuries and helping me come back…">&ldquo;Dear Dr. Ruchit, Wishing you a Happy New Year! Thank you for being there during my injuries and helping me come back…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#00897B">HS</div><div><div class="ta-name">Hemal Shah</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Dear Dr. RUCHIT Sir, First of all thank you so much for all the physio sessions over last 3 months and the time spent at your center. All such therapies helped me a lot during my journey of becoming Ironman. Kudos to your team, especially VIMAL and Hardik. You and your team are contributor to my success journey from pain to pleasantly completing Ironman at the Finish. I will always be Grateful to you and your team for all the support provided so far. Thank you so much and keep making difference in others life like this. Regards Jaimin - The J is an Ironman" data-short="Dear Dr. RUCHIT Sir, First of all thank you so much for all the physio sessions over last 3 months and the time spent…">&ldquo;Dear Dr. RUCHIT Sir, First of all thank you so much for all the physio sessions over last 3 months and the time spent…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#1a6fb5">JP</div><div><div class="ta-name">Jaimin Panchal</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:2.5rem">
+        <a href="#" onclick="showPage('testimonials');return false;" class="btn-outline-green">See All Reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR VALUES -->
+  <section class="values-section">
+    <div class="max-wrap">
+      <div class="text-center" style="margin-bottom:0;">
+        <div class="section-pill">What We Stand For</div>
+        <h2 class="section-title">Our Core <span class="color-green">Values</span></h2>
+        <p class="section-sub text-center" style="margin:0 auto 0.5rem;">The principles that guide every treatment, every interaction, and every outcome at Neuro Sports Centre.</p>
+      </div>
+      <div class="values-grid-top">
+        <div class="value-card active-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="value-card-icon">🤝</div>
+          <h3>Compassion</h3>
+          <p>We know that visiting a clinic can sometimes feel overwhelming, so we work hard to create a warm, supportive space where every patient feels comfortable, cared for, and valued.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="value-card-icon">💡</div>
+          <h3>Excellence</h3>
+          <p>We are committed to providing excellent medical care and services to our patients. We believe in continuously improving our skills, knowledge, and resources to ensure the highest quality care possible.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="value-card-icon">🔒</div>
+          <h3>Integrity</h3>
+          <p>We practise medicine with honesty and integrity at the core. Our communication is clear and transparent, and every decision we make is guided by what is best for our patients.</p>
+        </div>
+      </div>
+      <div class="values-grid-bottom">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="value-card-icon">🙏</div>
+          <h3>Respect</h3>
+          <p>We treat everyone with respect and dignity no matter their background, beliefs, or circumstances. Compassion and kindness are at the heart of everything we do, because every person deserves to feel valued and cared for.</p>
+        </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="value-card-icon">🤜</div>
+          <h3>Teamwork</h3>
+          <p>We believe in the strength of collaboration — partnering with our team and other healthcare professionals to provide well-rounded, coordinated care that truly meets the needs of our patients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC STATS -->
+  <section class="dynamic-stats-section">
+    <div class="ds-bg-overlay"></div>
+    <div class="max-wrap ds-inner">
+      <div class="ds-stat" data-target="5000" data-suffix="+"><div class="ds-icon">🏥</div><div class="ds-num" id="stat-patients">5000+</div><div class="ds-label">Patients Treated</div></div>
+      <div class="ds-divider"></div>
+      <div class="ds-stat" data-target="15" data-suffix="+"><div class="ds-icon">👨‍⚕️</div><div class="ds-num" id="stat-team">15+</div><div class="ds-label">Specialised Professionals</div></div>
+      <div class="ds-divider"></div>
+      <div class="ds-stat" data-target="10" data-suffix="+"><div class="ds-icon">🏃</div><div class="ds-num" id="stat-exp">10+</div><div class="ds-label">Years of Excellence</div></div>
+      <div class="ds-divider"></div>
+      <div class="ds-stat" data-target="100" data-suffix="+"><div class="ds-icon">⭐</div><div class="ds-num" id="stat-reviews">100+</div><div class="ds-label">Verified Reviews</div></div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="fca-orb fca-orb1"></div>
+    <div class="fca-orb fca-orb2"></div>
+    <div class="max-wrap" style="position:relative;z-index:1">
+      <h2 class="section-title text-center" style="color:white">Ready to Move <span style="color:#26C6DA">Better?</span></h2>
+      <p style="color:rgba(255,255,255,.75);text-align:center;font-size:1.05rem;margin-bottom:2.5rem">Book your consultation today and take the first step toward a healthier, more active life.</p>
+      <div class="text-center" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="#" onclick="showPage('booking');return false;" class="btn-white">📅 Book Appointment</a>
+        <a href="https://wa.me/919429554422" target="_blank" class="btn-ghost-white">💬 WhatsApp +91 94295 54422</a>
+      </div>
+    </div>
+  </section>
+</div><!-- end home -->
+
+<!-- ============================== ABOUT PAGE ============================== -->
+<div id="page-about" class="page">
+  <div class="page-header">
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>About Us</span></div>
+    <h1>About Neuro Sports Centre</h1>
+    <p>Led by Dr. Ruchit Shah (MPT) — Ahmedabad's specialist in physiotherapy, fitness & neuro rehabilitation.</p>
+  </div>
+
+  <!-- DR. PROFILE -->
+  <section class="dr-profile-section">
+    <div class="max-wrap dr-profile-inner">
+      <div class="dr-photo-col" data-aos="fade-right">
+        <div class="dr-photo-wrap">
+          <img src="images/dr_hiren_new.png" alt="Dr. Ruchit Shah – Neuro Sports Centre" class="dr-photo-img" style="object-position:top;object-fit:cover;">
+          <div class="dr-photo-badge">
+            <div class="dpb-num">15+</div>
+            <div class="dpb-lbl">Expert<br>Team</div>
+          </div>
+          <div class="dr-photo-tag"><span>🏅 MPT Certified</span></div>
+        </div>
+      </div>
+      <div class="dr-info-col" data-aos="fade-left">
+        <div class="section-pill">Meet Your Specialist</div>
+        <h2 class="section-title">Dr. Ruchit Shah <span class="color-green">MPT</span></h2>
+        <p class="dr-subtitle">Physiotherapist, Fitness Expert & Neuro Rehab Specialist · Ahmedabad</p>
+        <p class="dr-bio">Dr. Ruchit Shah is a highly qualified physiotherapist (MPT) with over 10 years of dedicated clinical experience in Ahmedabad. As the founder of Neuro Sports Centre, he has built Ahmedabad's premier integrated centre for physiotherapy, fitness training, and neurological rehabilitation — serving patients of all age groups, from children to senior citizens.</p>
+        <p class="dr-bio" style="margin-top:.75rem">A passionate marathon runner himself, Dr. Ruchit brings unique insight into athletic performance, injury prevention, and sports rehabilitation. His personal experience in endurance sports enriches every treatment programme he designs — helping athletes of all levels recover smarter and perform better.</p>
+        <div class="dr-marathon-badge">🏅 Marathon Runner · Endurance Sports Advocate</div>
+        <div class="dr-quals">
+          <h4 class="dr-quals-title">🎓 Qualifications & Specialisations</h4>
+          <div class="dr-qual-list">
+            <div class="dr-qual-item"><span class="dqi-dot"></span><div><strong>BPT & MPT – Master of Physiotherapy</strong><span>Bachelor & Master's in Physiotherapy</span></div></div>
+            <div class="dr-qual-item"><span class="dqi-dot"></span><div><strong>Neurological Physiotherapy</strong><span>Stroke, Parkinson's, Spinal Cord Injury, CP rehabilitation</span></div></div>
+            <div class="dr-qual-item"><span class="dqi-dot"></span><div><strong>Sports Medicine & Rehabilitation</strong><span>Sports injury management and athlete rehabilitation</span></div></div>
+            <div class="dr-qual-item"><span class="dqi-dot"></span><div><strong>Manual Therapy & Joint Mobilisation</strong><span>Maitland, Mulligan, and McKenzie techniques</span></div></div>
+            <div class="dr-qual-item"><span class="dqi-dot"></span><div><strong>Exercise Therapy & Fitness Training</strong><span>Therapeutic exercise, strength & conditioning for all ages</span></div></div>
+          </div>
+        </div>
+        <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Book with Dr. Ruchit →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARATHON / RUNNING HIGHLIGHT -->
+  <section style="padding:80px 5%;background:linear-gradient(135deg,#1a3a5c,#1a6fb5);position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:url('images/physio1.png') center/cover no-repeat;opacity:0.08;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,58,92,0.95),rgba(26,111,181,0.88));"></div>
+    <div class="max-wrap" style="position:relative;z-index:2;text-align:center;">
+      <div class="section-pill" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:white">The Athlete's Physiotherapist</div>
+      <h2 class="section-title" style="color:white;margin-bottom:1.5rem">Dr. Ruchit Shah — <span style="color:#26C6DA">A Marathon Runner's Perspective</span></h2>
+      <p style="color:rgba(255,255,255,.8);max-width:700px;margin:0 auto 3rem;font-size:1rem;line-height:1.8;">Dr. Ruchit Shah has personally completed multiple marathons and endurance events, giving him a rare, first-hand understanding of an athlete's body, injury patterns, and performance demands. This experience directly shapes how he treats his patients — with empathy, precision, and a genuine understanding of athletic recovery.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;margin:0 auto;" class="marathon-grid">
+        <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:.8rem;">🏃</div>
+          <h4 style="color:white;font-size:0.95rem;margin-bottom:.5rem;">Marathon Finisher</h4>
+          <p style="color:rgba(255,255,255,.7);font-size:0.82rem;line-height:1.65;">Multiple marathon completions — understanding athlete demands from personal experience.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:.8rem;">⚡</div>
+          <h4 style="color:white;font-size:0.95rem;margin-bottom:.5rem;">Sports Rehab Expert</h4>
+          <p style="color:rgba(255,255,255,.7);font-size:0.82rem;line-height:1.65;">Specialised in running injury recovery, athlete conditioning, and return-to-sport protocols.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:.8rem;">🎯</div>
+          <h4 style="color:white;font-size:0.95rem;margin-bottom:.5rem;">Performance Focused</h4>
+          <p style="color:rgba(255,255,255,.7);font-size:0.82rem;line-height:1.65;">Combines clinical expertise with sports science for peak athletic performance and longevity.</p>
+        </div>
+      </div>
+      <style>@media(max-width:600px){.marathon-grid{grid-template-columns:1fr!important;}}</style>
+    </div>
+  </section>
+
+  <!-- MVA -->
+  <section class="mva-section" style="background:white">
+    <div class="max-wrap">
+      <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1.2rem">Vision To Victory</div>
+      <h2 class="section-title text-center">Recognised & Trusted Leader in<br><span class="color-green">Physiotherapy, Fitness & Rehabilitation</span></h2>
+      <div class="mva-cards">
+        <div class="mva-card" data-aos="fade-up" data-aos-delay="0"><div class="mva-card-icon">🎯</div><h3>Our Mission</h3><p>To deliver personalised, evidence-based physiotherapy and fitness care that empowers every patient — from children to senior citizens — to live actively, move freely, and recover fully.</p></div>
+        <div class="mva-card" data-aos="fade-up" data-aos-delay="100"><div class="mva-card-icon">🔭</div><h3>Our Vision</h3><p>To be Ahmedabad's most trusted integrated centre for physiotherapy, fitness, and neuro rehabilitation — combining clinical excellence with genuine human connection.</p></div>
+        <div class="mva-card" data-aos="fade-up" data-aos-delay="200"><div class="mva-card-icon">💡</div><h3>Our Approach</h3><p>We treat root causes, not just symptoms. Every treatment plan integrates physiotherapy, fitness, and rehabilitation in a progressively designed, results-focused programme — tailored to each individual.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY SECTION -->
+  <section class="quality-section" style="background:#e3f2fd">
+    <div class="quality-inner max-wrap">
+      <div class="quality-images" data-aos="fade-right">
+        <div class="qi-photo qi-photo1"><img src="images/physio2.png" alt="Physiotherapy" style="object-position:top"></div>
+        <div class="qi-photo qi-photo2"><img src="images/rehabilitation.png" alt="Rehabilitation" style="object-position:top"></div>
+      </div>
+      <div class="quality-text" data-aos="fade-left">
+        <div class="section-pill">Why Choose Us</div>
+        <h2 class="section-title">Quality <span class="color-green">Care</span> That Makes a <span class="color-navy">Difference</span></h2>
+        <p class="section-desc">Neuro Sports Centre is built around a simple belief: every patient deserves personalised, expert care that goes beyond symptom management. With 15+ specialised professionals, we offer a comprehensive approach to health and recovery.</p>
+        <div class="quality-checks">
+          <div class="qcheck"><div class="qc-dot"></div><p>15+ specialised physiotherapists and fitness professionals under one roof.</p></div>
+          <div class="qcheck"><div class="qc-dot"></div><p>Services for all age groups — from paediatric to geriatric care.</p></div>
+          <div class="qcheck"><div class="qc-dot"></div><p>State-of-the-art gym and rehabilitation facility integrated with clinical physiotherapy.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="mva-cta-banner" style="margin:0;border-radius:0;padding:2.5rem 5%">
+    <div class="mcb-left"><div class="mcb-icon">🚀</div><div><h4>Ready To Start Your Journey?</h4><p>Book your consultation with Dr. Ruchit Shah and his expert team today.</p></div></div>
+    <a href="https://wa.me/919429554422" target="_blank" class="btn-primary" onclick="showToast('Booking sent via WhatsApp! We\'ll confirm shortly ✅')">Book Appointment 💬</a>
+  </div>
+</div><!-- end about -->
+
+<!-- ============================== PHYSIOTHERAPY PAGE ============================== -->
+<div id="page-physio" class="page">
+  <div class="page-header" style="background:linear-gradient(135deg,var(--navy),var(--blue))">
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Physiotherapy</span></div>
+    <h1>Physiotherapy Services</h1>
+    <p>Comprehensive physiotherapy for all ages — from acute pain to post-surgical recovery.</p>
+  </div>
+
+  <section class="service-hero-section">
+    <div class="shs-inner max-wrap">
+      <div data-aos="fade-right">
+        <img src="images/manual_therapy.png" alt="Physiotherapy" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
+        <div class="shs-badge" style="display:inline-block;margin-top:1rem"><div class="sb-num">5000+</div><div class="sb-label">Patients Treated</div></div>
+      </div>
+      <div data-aos="fade-left">
+        <div class="section-pill">Expert Physiotherapy</div>
+        <h2 class="section-title">Evidence-Based <span class="color-navy">Physiotherapy</span> For <span class="color-green">Faster Recovery</span></h2>
+        <p class="section-desc">Our physiotherapy services are driven by clinical expertise and the latest evidence-based techniques. Whether you're dealing with acute pain, recovering from surgery, or managing a chronic condition — our 15+ professionals build a personalised plan for you.</p>
+        <div class="shs-features">
+          <div class="shs-feat"><span class="sf-dot"></span>Back & Neck Pain</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Post-Surgical Rehab</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Sports Injury Recovery</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Paediatric Physio</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Geriatric Care</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Electrotherapy (TENS/IFT)</div>
+        </div>
+        <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Book Appointment →</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#f0f7ff;padding:90px 5%">
+    <div class="max-wrap">
+      <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Key Benefits</div>
+      <h2 class="section-title text-center">Why Choose Our <span class="color-navy">Physiotherapy?</span></h2>
+      <div class="benefits-grid">
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="0"><h4>🏃 Faster Recovery</h4><ul><li>Evidence-based exercise programmes</li><li>Manual therapy and joint mobilisation</li><li>Personalised rehabilitation milestones</li><li>Regular progress assessments</li><li>Home exercise programmes for continued improvement</li></ul></div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="100"><h4>⚡ Pain Management</h4><ul><li>TENS, IFT, and Ultrasound therapy</li><li>Dry needling and trigger point release</li><li>Hot/cold therapy protocols</li><li>Soft tissue and myofascial release</li><li>Non-pharmacological pain relief</li></ul></div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="200"><h4>💪 Strength & Mobility</h4><ul><li>Progressive strengthening programmes</li><li>Flexibility and range of motion exercises</li><li>Balance and proprioception training</li><li>Core stabilisation techniques</li><li>Return-to-sport protocols</li></ul></div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="300"><h4>🧘 Prevention & Wellness</h4><ul><li>Ergonomic and workplace assessments</li><li>Postural correction programmes</li><li>Injury prevention strategies</li><li>Long-term maintenance plans</li><li>Patient education and self-management</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDITIONS TREATED -->
+  <section style="padding:100px 5%;background:white;">
+    <div class="max-wrap">
+      <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Conditions We Treat</div>
+      <h2 class="section-title text-center">Who We <span class="color-green">Help</span></h2>
+      <p class="section-sub text-center" style="margin:0 auto 3rem">Our physiotherapy programme treats a wide range of musculoskeletal and neurological conditions for patients of all ages.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="cond-grid">
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--blue);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">🦴 Back & Neck Pain</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Disc herniation, spondylosis, cervicogenic headaches, and postural pain.</div></div>
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--green);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">🏃 Sports Injuries</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">ACL, rotator cuff, ankle sprains, hamstring tears, and overuse injuries.</div></div>
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--navy);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">🦵 Knee & Hip Pain</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Osteoarthritis, bursitis, meniscus injuries, hip replacement rehab.</div></div>
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--blue);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">🤸 Frozen Shoulder</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Staged mobilisation and strengthening to restore full shoulder motion.</div></div>
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--green);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">🏥 Post-Surgical Rehab</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Structured recovery after joint replacement, ligament repair, and spine surgery.</div></div>
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--navy);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">👶 Paediatric Physio</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Developmental delays, scoliosis, cerebral palsy, and childhood sports injuries.</div></div>
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--blue);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">👴 Geriatric Care</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Falls prevention, balance training, and mobility improvement for seniors.</div></div>
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--green);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">⚡ Plantar Fasciitis</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Targeted loading protocols and manual therapy for foot and heel pain.</div></div>
+        <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--navy);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">🧘 Posture Correction</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Desk workers, students, and professionals — postural assessment and structured correction.</div></div>
+      </div>
+      <style>@media(max-width:768px){.cond-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:480px){.cond-grid{grid-template-columns:1fr!important;}}</style>
+    </div>
+  </section>
+
+  <div class="mva-cta-banner" style="margin:0;border-radius:0;padding:2.5rem 5%">
+    <div class="mcb-left"><div class="mcb-icon">💪</div><div><h4>Ready To Start Your Recovery?</h4><p>Book your physiotherapy consultation with our expert team today.</p></div></div>
+    <a href="https://wa.me/919429554422" target="_blank" class="btn-primary" onclick="showToast('Booking sent! We\'ll confirm shortly ✅')">Book Appointment 💬</a>
+  </div>
+</div><!-- end physio -->
+
+<!-- ============================== GYM / FITNESS PAGE ============================== -->
+<div id="page-gym" class="page">
+  <div class="page-header" style="background:linear-gradient(135deg,#00897B,var(--blue))">
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Fitness Training</span></div>
+    <h1>Fitness Training</h1>
+    <p>Physio-guided fitness training for all age groups — safe, structured, and results-focused.</p>
+  </div>
+
+  <section class="service-hero-section">
+    <div class="shs-inner max-wrap">
+      <div data-aos="fade-right">
+        <img src="images/physio2.png" alt="Fitness Training" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
+      </div>
+      <div data-aos="fade-left">
+        <div class="section-pill">Physio-Guided Fitness</div>
+        <h2 class="section-title">Fitness Training <span class="color-green">Designed</span> by <span class="color-navy">Physiotherapists</span></h2>
+        <p class="section-desc">What sets our fitness training apart is that every programme is designed and supervised by qualified physiotherapists — making it the safest, most effective way to get fit. Whether you're a complete beginner, an active senior, or an athlete in training, we have a programme for you.</p>
+        <div class="shs-features">
+          <div class="shs-feat"><span class="sf-dot"></span>Personal Training</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Group Fitness Classes</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Senior Fitness (60+)</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Weight Management</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Athlete Conditioning</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Runner's Training</div>
+        </div>
+        <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Start Training →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING PROGRAMMES -->
+  <section style="padding:100px 5%;background:#e3f2fd;">
+    <div class="max-wrap">
+      <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Our Programmes</div>
+      <h2 class="section-title text-center">Training <span class="color-green">Programmes</span> For Everyone</h2>
+      <p class="section-sub text-center" style="margin:0 auto 3rem">From beginner to advanced — our physio-guided programmes are designed for safe, progressive, and lasting results.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;" class="prog-grid">
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio1.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">PERSONAL TRAINING</div></div>
+          <div style="padding:22px 24px;"><h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">One-on-One Training</h4><p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Completely personalised fitness sessions designed around your health history, goals, and abilities — supervised by qualified physiotherapists for safety and effectiveness.</p></div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/osteopathy.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">SENIOR FITNESS</div></div>
+          <div style="padding:22px 24px;"><h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Senior Fitness (60+)</h4><p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Gentle, safe, and evidence-based fitness for senior citizens — improving strength, balance, flexibility, and independence to enable an active, fulfilling lifestyle.</p></div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/dry_needling.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">SPORTS CONDITIONING</div></div>
+          <div style="padding:22px 24px;"><h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Athlete & Runner Training</h4><p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Designed by a marathon runner and physiotherapist — performance training, injury prevention, and conditioning programmes for recreational to competitive athletes.</p></div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/rehabilitation.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">WEIGHT MANAGEMENT</div></div>
+          <div style="padding:22px 24px;"><h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Weight Management</h4><p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Safe, structured weight management combining therapeutic exercise and functional training — guided by physiotherapists who understand the clinical side of weight loss.</p></div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio2.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">CORE & POSTURE</div></div>
+          <div style="padding:22px 24px;"><h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Core & Posture Training</h4><p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Targeted core strengthening and postural correction programmes — ideal for desk workers, students, and anyone with chronic back or neck discomfort from poor posture.</p></div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/manual_therapy.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">POST-REHAB FITNESS</div></div>
+          <div style="padding:22px 24px;"><h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Post-Rehab Fitness</h4><p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Bridging the gap between physiotherapy and independent fitness — progressive training for patients transitioning from clinical rehab to long-term active wellness.</p></div>
+        </div>
+      </div>
+      <style>@media(max-width:900px){.prog-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:560px){.prog-grid{grid-template-columns:1fr!important;}}</style>
+    </div>
+  </section>
+
+  <div class="mva-cta-banner" style="margin:0;border-radius:0;padding:2.5rem 5%">
+    <div class="mcb-left"><div class="mcb-icon">🏋️</div><div><h4>Start Your Fitness Journey Today</h4><p>Book a consultation and let our expert team design your personalised training programme.</p></div></div>
+    <a href="https://wa.me/919429554422" target="_blank" class="btn-primary" onclick="showToast('Booking sent! We\'ll confirm shortly ✅')">Book Consultation 💬</a>
+  </div>
+</div><!-- end gym -->
+
+<!-- ============================== REHABILITATION PAGE ============================== -->
+<div id="page-rehab" class="page">
+  <div class="page-header" style="background:linear-gradient(135deg,#1a3a5c,#1a6fb5)">
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Rehabilitation</span></div>
+    <h1>Rehabilitation Services</h1>
+    <p>Advanced neuro and sports rehabilitation to restore function, independence, and quality of life.</p>
+  </div>
+
+  <section class="service-hero-section">
+    <div class="shs-inner max-wrap">
+      <div data-aos="fade-right">
+        <img src="images/rehabilitation.png" alt="Rehabilitation" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
+        <div class="shs-badge" style="display:inline-block;margin-top:1rem"><div class="sb-num">15+</div><div class="sb-label">Rehab Specialists</div></div>
+      </div>
+      <div data-aos="fade-left">
+        <div class="section-pill">Expert Rehabilitation</div>
+        <h2 class="section-title">Comprehensive <span class="color-navy">Rehabilitation</span> for <span class="color-green">Every Condition</span></h2>
+        <p class="section-desc">Our rehabilitation services bring together neurological, orthopaedic, and sports rehabilitation under one roof. With a team of 15+ specialised professionals and state-of-the-art facilities, we deliver the best possible recovery outcomes for complex and chronic conditions.</p>
+        <div class="shs-features">
+          <div class="shs-feat"><span class="sf-dot"></span>Stroke Rehabilitation</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Neurological Conditions</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Spinal Cord Injury</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Sports Rehab</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Post-Surgical Rehab</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Cerebral Palsy (CP)</div>
+        </div>
+        <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Book Consultation →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEURO REHAB -->
+  <section style="padding:100px 5%;background:#e3f2fd;">
+    <div class="max-wrap">
+      <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Neurological Rehabilitation</div>
+      <h2 class="section-title text-center">Conditions We <span class="color-green">Specialise In</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="rehab-grid">
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
+          <div style="height:180px;overflow:hidden;"><img src="images/physio1.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div style="padding:22px 24px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🧠</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Stroke Rehabilitation</h4></div>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Structured neurological rehabilitation for stroke survivors — focusing on movement restoration, balance re-training, muscle re-education, and functional independence to maximise quality of life.</p>
+          </div>
+        </div>
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
+          <div style="height:180px;overflow:hidden;"><img src="images/osteopathy.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div style="padding:22px 24px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🫀</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Parkinson's Disease</h4></div>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Evidence-based physiotherapy and exercise programmes for Parkinson's — improving gait, reducing fall risk, maintaining mobility, and slowing functional decline through structured progressive training.</p>
+          </div>
+        </div>
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
+          <div style="height:180px;overflow:hidden;"><img src="images/dry_needling.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div style="padding:22px 24px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🦽</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Spinal Cord Injury Rehab</h4></div>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Comprehensive SCI rehabilitation — from acute injury management through to long-term functional training, transfer skills, assistive device use, and community reintegration.</p>
+          </div>
+        </div>
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
+          <div style="height:180px;overflow:hidden;"><img src="images/manual_therapy.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div style="padding:22px 24px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👶</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Cerebral Palsy (CP) Rehab</h4></div>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Gentle, progressive physiotherapy and movement therapy for children and adults with CP — improving motor function, communication, and daily living activities with compassionate family-centred care.</p>
+          </div>
+        </div>
+      </div>
+      <style>@media(max-width:600px){.rehab-grid{grid-template-columns:1fr!important;}}</style>
+    </div>
+  </section>
+
+  <div class="mva-cta-banner" style="margin:0;border-radius:0;padding:2.5rem 5%">
+    <div class="mcb-left"><div class="mcb-icon">🧠</div><div><h4>Start Your Rehabilitation Journey</h4><p>Book your assessment and let our 15+ expert team guide your recovery.</p></div></div>
+    <a href="https://wa.me/919429554422" target="_blank" class="btn-primary" onclick="showToast('Booking sent! We\'ll confirm shortly ✅')">Book Assessment 💬</a>
+  </div>
+</div><!-- end rehab -->
+
+<!-- ============================== TEAM PAGE ============================== -->
+<div id="page-team" class="page">
+  <div class="page-header">
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Our Team</span></div>
+    <h1>Our Expert Team</h1>
+    <p>15+ specialised professionals dedicated to your health and recovery.</p>
+  </div>
+
+  <section style="padding:100px 5%;background:white;">
+    <div class="max-wrap">
+      <div class="text-center" style="margin-bottom:3rem" data-aos="fade-up">
+        <div class="section-pill">Meet The Team</div>
+        <h2 class="section-title">15+ <span class="color-green">Specialised</span> Professionals</h2>
+        <p class="section-sub text-center">Our multidisciplinary team brings together physiotherapists, fitness trainers, and rehabilitation specialists — all dedicated to delivering the best possible outcomes for our patients.</p>
       </div>
 
-      <section class="quality-section">
-        <div class="max-wrap quality-inner">
-          <div class="quality-images motion-reveal">
-            <div class="qi-photo qi-photo1"><div class="photo-placeholder ph1"><div class="ph-emoji">🏥</div><div class="ph-label">Clinical Excellence</div></div></div>
-            <div class="qi-photo qi-photo2"><div class="photo-placeholder ph2"><div class="ph-emoji">🏋️</div><div class="ph-label">Fitness & Recovery</div></div></div>
-            <div class="qi-stat-float"><div class="qsf-n">15+</div><div class="qsf-l">Expert Professionals</div></div>
-          </div>
-          <div class="quality-text motion-reveal stagger-2">
-            <span class="section-pill">Solution To Your Health</span>
-            <h2 class="section-title">We Proudly Give<br><span class="gradient-text">Quality Treatment</span></h2>
-            <p class="section-desc">At Neuro Sports Centre, we understand that pain, injury, and recovery needs can arise at any stage of life. That's why we offer expert physiotherapy, personalised fitness training, and comprehensive rehabilitation — all under one roof.</p>
-            <div class="quality-checks">
-              <div class="qcheck"><div class="qc-dot"></div><p>Physiotherapy for all conditions — from back pain to neurological recovery.</p></div>
-              <div class="qcheck"><div class="qc-dot"></div><p>Specialised fitness training programmes for all age groups and fitness levels.</p></div>
-              <div class="qcheck"><div class="qc-dot"></div><p>Sports and neuro rehabilitation using the latest evidence-based techniques.</p></div>
-            </div>
+      <!-- DR. RUCHIT FEATURED -->
+      <div style="background:linear-gradient(135deg,#e3f2fd,#e0f2f1);border-radius:24px;padding:40px;display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;margin-bottom:3rem;" class="team-lead-card" data-aos="fade-up">
+        <div style="border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(26,111,181,.2);aspect-ratio:1;"><img src="images/dr_hiren_new.png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"></div>
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:5px 14px;border-radius:20px;font-size:.75rem;font-weight:700;margin-bottom:1rem;">👑 Founder & Lead Physiotherapist</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;">Dr. Ruchit Shah</h3>
+          <p style="color:var(--blue);font-weight:600;font-size:.95rem;margin-bottom:1rem;">MPT · Sports Medicine & Neurological Physiotherapy · Marathon Runner</p>
+          <p style="color:var(--muted);font-size:.9rem;line-height:1.75;">10+ years of clinical experience in physiotherapy, neuro rehabilitation, and sports medicine. Founder of Neuro Sports Centre and a passionate marathon runner who brings an athlete's perspective to every treatment.</p>
+          <div style="display:flex;gap:10px;margin-top:1rem;flex-wrap:wrap;">
+            <span style="background:white;color:var(--navy);font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:20px;border:1px solid #d0e8f5;">Neurological Rehab</span>
+            <span style="background:white;color:var(--navy);font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:20px;border:1px solid #d0e8f5;">Sports Medicine</span>
+            <span style="background:white;color:var(--navy);font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:20px;border:1px solid #d0e8f5;">Manual Therapy</span>
+            <span style="background:#FF8F00;color:white;font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:20px;">🏅 Marathon Finisher</span>
           </div>
         </div>
-      </section>
-
-      <!-- Rest of home page sections (MVA, Services, Process, Testimonials, CTA) remain structurally identical but with .motion-reveal classes added for scroll animation -->
-      <section class="mva-section">
-        <div class="max-wrap text-center">
-          <span class="section-pill">Vision To Victory</span>
-          <h2 class="section-title">A Trusted Leader in<br><span class="gradient-text">Physiotherapy, Fitness & Rehabilitation</span></h2>
-          <div class="mva-cards">
-            <div class="mva-card motion-reveal"><div class="mva-card-icon"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span></div><h3>Our Mission</h3><p>To deliver personalised, evidence-based physiotherapy and fitness solutions for every patient.</p></div>
-            <div class="mva-card motion-reveal stagger-1"><div class="mva-card-icon"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></span></div><h3>Our Vision</h3><p>To be Ahmedabad's most trusted centre for integrated physiotherapy and fitness.</p></div>
-            <div class="mva-card motion-reveal stagger-2"><div class="mva-card-icon"><span class="icon"><svg viewBox="0 0 24 24"><path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.52.86-2.84 2.12-3.51l.04-.02C7.87 7.35 9.82 6.5 12 6.5s4.13.85 5.84 1.97l.04.02C19.14 9.16 20 10.48 20 12c0 4.41-3.59 8-8 8z"/></svg></span></div><h3>Our Approach</h3><p>We combine hands-on physiotherapy with functional fitness training and structured rehabilitation.</p></div>
-          </div>
-          <div class="mva-cta-banner motion-reveal stagger-3">
-            <div class="mcb-left"><span class="mcb-icon">🚀</span><div><h4>Ready To Start Your Journey?</h4><p>Take the first step toward a pain-free, active life. Book your consultation today.</p></div></div>
-            <a href="#" class="btn-white mcb-btn" onclick="showPage('booking'); return false;">Book Appointment →</a>
-          </div>
-        </div>
-      </section>
-      <!-- Add similar motion-reveal/stagger classes to remaining home sections -->
-    </section>
-
-    <!-- FITNESS TRAINING PAGE (Updated with Interactive Tabs) -->
-    <section id="page-fitness" class="page">
-      <div class="page-header">
-        <div class="ph-breadcrumb"><a href="#" onclick="showPage('home'); return false;">Home</a> / Fitness Training</div>
-        <h1>Fitness Training</h1>
-        <p>Physio-guided fitness training for all age groups — safe, structured, and results-focused.</p>
       </div>
-      <section class="service-hero-section">
-        <div class="max-wrap shs-inner">
-          <div class="shs-text motion-reveal">
-            <span class="section-pill">Physio-Guided Fitness</span>
-            <h2 class="section-title">Fitness Training Designed<br>by <span class="gradient-text">Physiotherapists</span></h2>
-            <p class="section-desc">What sets our fitness training apart is that every programme is designed and supervised by qualified physiotherapists — making it the safest, most effective way to get fit.</p>
-            
-            <!-- Interactive Program Selector -->
-            <div class="interactive-tabs" data-group="fitness-programs">
-              <button class="tab-btn active" data-tab="ft-personal">Personal Training</button>
-              <button class="tab-btn" data-tab="ft-senior">Senior Fitness (60+)</button>
-              <button class="tab-btn" data-tab="ft-sports">Athlete Conditioning</button>
-              <button class="tab-btn" data-tab="ft-weight">Weight Management</button>
-            </div>
+      <style>@media(max-width:768px){.team-lead-card{grid-template-columns:1fr!important;text-align:center;}}</style>
 
-            <div id="ft-personal" class="tab-content active">
-              <h3 style="margin-bottom:0.5rem; color:var(--navy);">One-on-One Training</h3>
-              <p class="section-desc" style="max-width:100%;">Completely personalised fitness sessions designed around your health history, goals, and abilities — supervised by qualified physiotherapists for safety and effectiveness.</p>
-              <ul class="comp-checks" style="margin-top:1rem;">
-                <li><div class="cc-dot"></div>Biomechanical movement screening</li>
-                <li><div class="cc-dot"></div>Progressive overload protocols</li>
-                <li><div class="cc-dot"></div>Injury-prevention focused design</li>
-              </ul>
-            </div>
-            <div id="ft-senior" class="tab-content">
-              <h3 style="margin-bottom:0.5rem; color:var(--navy);">Senior Fitness (60+)</h3>
-              <p class="section-desc" style="max-width:100%;">Gentle, safe, and evidence-based fitness for senior citizens — improving strength, balance, flexibility, and independence.</p>
-              <ul class="comp-checks" style="margin-top:1rem;">
-                <li><div class="cc-dot"></div>Fall prevention & balance training</li>
-                <li><div class="cc-dot"></div>Joint-friendly resistance work</li>
-                <li><div class="cc-dot"></div>Mobility & daily living focus</li>
-              </ul>
-            </div>
-            <div id="ft-sports" class="tab-content">
-              <h3 style="margin-bottom:0.5rem; color:var(--navy);">Athlete & Runner Training</h3>
-              <p class="section-desc" style="max-width:100%;">Designed by a marathon runner and physiotherapist — performance training, injury prevention, and conditioning programmes.</p>
-              <ul class="comp-checks" style="margin-top:1rem;">
-                <li><div class="cc-dot"></div>Return-to-sport protocols</li>
-                <li><div class="cc-dot"></div>Plyometric & endurance programming</li>
-                <li><div class="cc-dot"></div>Sport-specific biomechanics</li>
-              </ul>
-            </div>
-            <div id="ft-weight" class="tab-content">
-              <h3 style="margin-bottom:0.5rem; color:var(--navy);">Weight Management</h3>
-              <p class="section-desc" style="max-width:100%;">Safe, structured weight management combining therapeutic exercise and functional training — guided by physiotherapists.</p>
-              <ul class="comp-checks" style="margin-top:1rem;">
-                <li><div class="cc-dot"></div>Metabolic & functional conditioning</li>
-                <li><div class="cc-dot"></div>Sustainable lifestyle integration</li>
-                <li><div class="cc-dot"></div>Joint-preserving cardio/strength mix</li>
-              </ul>
-            </div>
-
-            <a href="#" class="btn-primary" onclick="showPage('booking'); return false;" style="margin-top:1.5rem;">🏋️ Start Your Fitness Journey</a>
-          </div>
-          <div class="shs-img motion-reveal stagger-2">
-            <div class="shs-img-placeholder" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">
-              <span class="icon" style="font-size:4rem; color:var(--green);"><svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57l1.43 1.43L2 13.43l1.43 1.43L2 16.29l1.43 1.43L2 19.14l1.43 1.43L4.86 19.14l1.43 1.43 1.43-1.43L9.14 20.57l1.43-1.43L12 20.57l1.43-1.43L14.86 20.57l1.43-1.43L17.71 17.71l1.43 1.43L20.57 17.71l1.43-1.43L22 17.71l-1.43-1.43L19.14 14.86z"/></svg></span>
-              <span style="color:var(--navy); font-weight:600; margin-top:1rem;">Physio-Guided Training</span>
-            </div>
-            <div class="shs-badge"><div class="sb-num">100%</div><div class="sb-label">Supervised Sessions</div></div>
-          </div>
+      <!-- TEAM GRID placeholder cards -->
+      <p class="section-sub text-center" style="margin:0 auto 2rem;font-size:.95rem;">We have a team of <strong>15+ specialised professionals</strong> — including physiotherapists, fitness trainers, neuro rehab specialists, sports rehab experts, and more. Team photos and profiles will be updated here. Please visit us or WhatsApp us to meet the team.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="team-grid">
+        <!-- Team member placeholders — to be updated with real photos -->
+        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="0">
+          <div style="width:80px;height:80px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">💪</div>
+          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Physiotherapy Team</h4>
+          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Expert physiotherapists for orthopaedic, sports, and neurological conditions.</p>
+          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">5+ Professionals</div>
         </div>
-      </section>
-      <!-- Add benefits, conditions, CTA sections as before with .motion-reveal -->
-    </section>
-
-    <!-- REHABILITATION PAGE (Updated with Interactive Timeline & Tabs) -->
-    <section id="page-rehab" class="page">
-      <div class="page-header">
-        <div class="ph-breadcrumb"><a href="#" onclick="showPage('home'); return false;">Home</a> / Rehabilitation</div>
-        <h1>Rehabilitation Services</h1>
-        <p>Advanced neuro and sports rehabilitation to restore function, independence, and quality of life.</p>
+        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="100">
+          <div style="width:80px;height:80px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">🏋️</div>
+          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Fitness Trainers</h4>
+          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Physio-trained fitness coaches for personal training, group classes, and athlete conditioning.</p>
+          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">4+ Professionals</div>
+        </div>
+        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="200">
+          <div style="width:80px;height:80px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">🧠</div>
+          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Neuro Rehab Specialists</h4>
+          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Dedicated neuro rehabilitation professionals for stroke, CP, Parkinson's, and SCI.</p>
+          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">3+ Professionals</div>
+        </div>
+        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="0">
+          <div style="width:80px;height:80px;background:#FF8F00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">🏃</div>
+          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Sports Rehab Team</h4>
+          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Sports rehabilitation specialists focused on injury recovery and return-to-sport programmes.</p>
+          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">2+ Professionals</div>
+        </div>
+        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="100">
+          <div style="width:80px;height:80px;background:#7B1FA2;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">👴</div>
+          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Geriatric Care Experts</h4>
+          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Specialised care for senior citizens — balance training, falls prevention, and gentle fitness.</p>
+          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">1+ Professional</div>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:20px;padding:28px;text-align:center;" data-aos="fade-up" data-aos-delay="200">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">📸</div>
+          <h4 style="color:white;font-weight:700;font-size:1rem;margin-bottom:.8rem;">Team Photos Coming Soon</h4>
+          <p style="color:rgba(255,255,255,.75);font-size:.82rem;line-height:1.65;">We are updating individual team profiles. WhatsApp us for details about our specialists.</p>
+          <a href="https://wa.me/919429554422" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:white;color:var(--navy);padding:8px 20px;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none;margin-top:1rem;">💬 WhatsApp Us</a>
+        </div>
       </div>
-      <section class="service-hero-section">
-        <div class="max-wrap shs-inner">
-          <div class="shs-text motion-reveal">
-            <span class="section-pill">Expert Rehabilitation</span>
-            <h2 class="section-title">Comprehensive Rehabilitation<br>for <span class="gradient-text">Every Condition</span></h2>
-            <p class="section-desc">Our rehabilitation services bring together neurological, orthopaedic, and sports rehabilitation under one roof. With a team of 15+ specialised professionals, we deliver the best possible recovery outcomes.</p>
+      <style>@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:560px){.team-grid{grid-template-columns:1fr!important;}}</style>
+    </div>
+  </section>
+</div><!-- end team -->
 
-            <!-- Interactive Rehab Tabs -->
-            <div class="interactive-tabs" data-group="rehab-programs">
-              <button class="tab-btn active" data-tab="rb-neuro">Neurological</button>
-              <button class="tab-btn" data-tab="rb-sports">Sports</button>
-              <button class="tab-btn" data-tab="rb-ortho">Orthopaedic</button>
-            </div>
-
-            <div id="rb-neuro" class="tab-content active">
-              <div class="benefits-grid" style="margin-top:0;">
-                <div class="benefit-card"><h4>🧠 Stroke Rehabilitation</h4><p>Structured neurological rehab focusing on movement restoration, balance re-training, and functional independence.</p></div>
-                <div class="benefit-card"><h4>🫀 Parkinson's Disease</h4><p>Evidence-based physiotherapy to improve gait, reduce fall risk, and maintain mobility through progressive training.</p></div>
-                <div class="benefit-card"><h4>🦽 Spinal Cord Injury</h4><p>Comprehensive rehab from acute injury management to long-term functional training and community reintegration.</p></div>
-                <div class="benefit-card"><h4>👶 Cerebral Palsy</h4><p>Gentle, progressive physiotherapy for children and adults — improving motor function and daily living activities.</p></div>
-              </div>
-            </div>
-            <div id="rb-sports" class="tab-content">
-              <div class="benefits-grid" style="margin-top:0;">
-                <div class="benefit-card"><h4>🏃 ACL & Ligament Rehab</h4><p>Structured protocols for safe return-to-sport, focusing on strength, proprioception, and biomechanical correction.</p></div>
-                <div class="benefit-card"><h4>⚡ Overuse & Running Injuries</h4><p>Biomechanical analysis, load management, and progressive loading to resolve chronic athletic pain.</p></div>
-                <div class="benefit-card"><h4>🏀 Sport-Specific Conditioning</h4><p>Cricket, football, basketball, and marathon-specific rehab bridging clinical recovery to field readiness.</p></div>
-                <div class="benefit-card"><h4>📈 Return-to-Play Testing</h4><p>Objective functional testing to ensure safe, confident return to training and competition.</p></div>
-              </div>
-            </div>
-            <div id="rb-ortho" class="tab-content">
-              <div class="benefits-grid" style="margin-top:0;">
-                <div class="benefit-card"><h4>🦴 Joint Replacement Rehab</h4><p>Post-op knee, hip, and shoulder replacement recovery with phased mobility and strength restoration.</p></div>
-                <div class="benefit-card"><h4>🩹 Fracture & Post-Surgical</h4><p>Guided tissue healing, scar mobilisation, and progressive weight-bearing protocols.</p></div>
-                <div class="benefit-card"><h4>🔄 Chronic Pain Management</h4><p>Hands-on therapy, neural glides, and graded exposure to restore pain-free movement patterns.</p></div>
-                <div class="benefit-card"><h4>📏 Postural & Ergonomic</h4><p>Workplace and lifestyle adjustments combined with targeted corrective exercise programs.</p></div>
-              </div>
-            </div>
-
-            <!-- Recovery Journey Timeline -->
-            <h3 style="margin-top:2rem; margin-bottom:1rem; color:var(--navy);">🛤️ Your Recovery Journey</h3>
-            <div class="recovery-timeline">
-              <div class="timeline-step"><h4>1. Assessment & Diagnosis</h4><p>Thorough clinical evaluation, movement screening, and goal setting with our lead physiotherapist.</p></div>
-              <div class="timeline-step"><h4>2. Personalised Plan</h4><p>Customised rehab protocol combining manual therapy, targeted exercise, and progressive loading.</p></div>
-              <div class="timeline-step"><h4>3. Guided Treatment</h4><p>Hands-on therapy, electrotherapy, hydrotherapy, and supervised functional movement sessions.</p></div>
-              <div class="timeline-step"><h4>4. Independence & Maintenance</h4><p>Transition to home programmes, strength maintenance, and periodic check-ins to prevent recurrence.</p></div>
-            </div>
-
-            <a href="#" class="btn-primary" onclick="showPage('booking'); return false;" style="margin-top:1.5rem;">🧠 Start Your Rehab Journey</a>
-          </div>
-          <div class="shs-img motion-reveal stagger-2">
-            <div class="shs-img-placeholder" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
-              <span class="icon" style="font-size:4rem; color:var(--blue);"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
-              <span style="color:var(--navy); font-weight:600; margin-top:1rem;">Neuro & Sports Rehab</span>
-            </div>
-            <div class="shs-badge"><div class="sb-num">95%</div><div class="sb-label">Success Rate</div></div>
-          </div>
+<!-- ============================== TESTIMONIALS PAGE ============================== -->
+<div id="page-testimonials" class="page">
+  <div class="page-header">
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Patient Reviews</span></div>
+    <h1>Patient Reviews</h1>
+    <p>Real stories from patients who transformed their lives at Neuro Sports Centre.</p>
+  </div>
+  <section class="testimonials-section" style="background:#f4f7fb">
+    <div class="max-wrap">
+      <div data-aos="fade-up">
+        <div class="section-pill" style="display:inline-block;margin-bottom:1rem">⭐ Verified Google Reviews</div>
+        <h2 class="section-title text-center">Real Stories, <span class="color-green">Real Recovery</span></h2>
+        <p class="section-sub text-center" style="margin-bottom:2rem">Every review below is from a real patient of Dr. Ruchit Shah and the Neuro Sports Centre team.</p>
+        <div class="testi-stats-row">
+          <div class="ts-stat"><div class="ts-num">5.0</div><div class="ts-lbl">Average Rating</div></div>
+          <div class="ts-stat"><div class="ts-num">100%</div><div class="ts-lbl">Recommend Us</div></div>
+          <div class="ts-stat"><div class="ts-num">All Ages</div><div class="ts-lbl">Patients Served</div></div>
         </div>
-      </section>
-    </section>
+      </div>
+      <div class="testi-grid testi-grid-all">
+        <div class="testi-card featured-testi" data-aos="fade-up" data-aos-delay="0">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Best physiotherapists ever! I was suffering with a partial meniscus tear for more than an year. Even after going to 2-3 docs, trying yoga, applying oils and balms of all sorts, the problem was just getting worse. Then I went to Dr. Rachit and got relief within a month! It was no less than a miracle for me. The almost continuous pain I had for an year simply just stopped! The exercises might seem simple and boring to do but the routine is expertly designed and highly effective. The fees is absolutely worth it. Dr. Rachit and his team are doing excellent work." data-short="Best physiotherapists ever! I was suffering with a partial meniscus tear for more than an year. Even after going to 2-3…">&ldquo;Best physiotherapists ever! I was suffering with a partial meniscus tear for more than an year. Even after going to 2-3…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:linear-gradient(135deg,var(--navy),var(--blue))">SG</div><div><div class="ta-name">Shilpa Gavane</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Dear Dr. Ruchit, Wishing you a Happy New Year! Thank you for being there during my injuries and helping me come back stronger with your expert physiotherapy and strength-building techniques. Your dedication and commitment to my recovery and growth have been remarkable. I am truly grateful for your support. Here&#39;s to a healthy and strong year ahead!" data-short="Dear Dr. Ruchit, Wishing you a Happy New Year! Thank you for being there during my injuries and helping me come back…">&ldquo;Dear Dr. Ruchit, Wishing you a Happy New Year! Thank you for being there during my injuries and helping me come back…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#00897B">HS</div><div><div class="ta-name">Hemal Shah</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Dear Dr. RUCHIT Sir, First of all thank you so much for all the physio sessions over last 3 months and the time spent at your center. All such therapies helped me a lot during my journey of becoming Ironman. Kudos to your team, especially VIMAL and Hardik. You and your team are contributor to my success journey from pain to pleasantly completing Ironman at the Finish. I will always be Grateful to you and your team for all the support provided so far. Thank you so much and keep making difference in others life like this. Regards Jaimin - The J is an Ironman" data-short="Dear Dr. RUCHIT Sir, First of all thank you so much for all the physio sessions over last 3 months and the time spent…">&ldquo;Dear Dr. RUCHIT Sir, First of all thank you so much for all the physio sessions over last 3 months and the time spent…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#1a6fb5">JP</div><div><div class="ta-name">Jaimin Panchal</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card featured-testi" data-aos="fade-up" data-aos-delay="0">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Fantastic team work, having care of all elderly people, always helping and supportive team. I was unable to walk and couldn&#39;t steps up and down. I have started walk easily and now can operate stairs up and down. Hats off to the whole team and Dr Ruchit." data-short="Fantastic team work, having care of all elderly people, always helping and supportive team. I was unable to walk and…">&ldquo;Fantastic team work, having care of all elderly people, always helping and supportive team. I was unable to walk and…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#0d5c6e">HN</div><div><div class="ta-name">Hetal Nayak</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="I&#39;m so glad I chose to come here as opposed to a traditional gym. This is so much better and the vibe is so good because of Dr. Ruchit and his team. I really admire every single person on the team. They make sure that everyone feels welcome and happy here and I think that&#39;s just adorable." data-short="I&#39;m so glad I chose to come here as opposed to a traditional gym. This is so much better and the vibe is so good…">&ldquo;I&#39;m so glad I chose to come here as opposed to a traditional gym. This is so much better and the vibe is so good…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#e67e22">AK</div><div><div class="ta-name">Arya Kothari</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Dr. Ruchit and team is a really genius. He analyse the problem very carefully. I was suffering for shoulders pain and numbness in left hand for almost 2 months. Consulted various hospitals like zydus as well. But no improvement. Now within 10days therapy the pain is almost gone. Really thanks to Dr. Ruchit and team. Thanks a lot." data-short="Dr. Ruchit and team is a really genius. He analyse the problem very carefully. I was suffering for shoulders pain and…">&ldquo;Dr. Ruchit and team is a really genius. He analyse the problem very carefully. I was suffering for shoulders pain and…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#c0392b">NP</div><div><div class="ta-name">Niteen Phad</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card featured-testi" data-aos="fade-up" data-aos-delay="0">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="I have been going to this place for the past 6 years. Doctors had suggested surgery for back. But with persistent and continued physiotherapy it was 360degree change for me. Ruchit and his team has been a great support and motivator. His workout regimen created specially for me has helped me come back from being a cripple to a Half Marathon runner" data-short="I have been going to this place for the past 6 years. Doctors had suggested surgery for back. But with persistent and…">&ldquo;I have been going to this place for the past 6 years. Doctors had suggested surgery for back. But with persistent and…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#27ae60">SM</div><div><div class="ta-name">Sarath Menon</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Superb experience and the doctors there are having complete solutions about every type of pain and neurological conditions. I know it because i personally am a GUILLAIN BARRE SYNDROME patient (very rare and dangerous disease). In january 2018 my full body was paralysed in just 12 hours but due to DR.RUCHIT SHAH and DR. AMRIT PARIHAR in September currently I am able to go to their clinic (inspite of being 75 days on ventilator) on my own. THANK YOU VERY MUCH NEURO PHYSIO CLINIC" data-short="Superb experience and the doctors there are having complete solutions about every type of pain and neurological…">&ldquo;Superb experience and the doctors there are having complete solutions about every type of pain and neurological…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#8e44ad">SG</div><div><div class="ta-name">Suresh Gandhi</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text" data-full="Very good experience, I consulted Dr.Ruchit for calf muscle pain, I can see a significant difference in first 3 days, staff is very cooperative. Keep up the good work." data-short="Very good experience, I consulted Dr.Ruchit for calf muscle pain, I can see a significant difference in first 3 days,…">&ldquo;Very good experience, I consulted Dr.Ruchit for calf muscle pain, I can see a significant difference in first 3 days,…&rdquo;</p>
+          <button class="testi-more" onclick="toggleReview(this)">Read more</button>
+          <div class="testi-author"><div class="ta-avatar" style="background:#17a589">JD</div><div><div class="ta-name">John Daniel</div><div class="ta-role">🌐 Google Review</div></div></div>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:3rem">
+        <a href="https://maps.app.goo.gl/ybymUuzAA5N2d6wX8" target="_blank" class="btn-outline-green">View All Google Reviews →</a>
+      </div>
+    </div>
+  </section>
+</div><!-- end testimonials -->
 
-    <!-- OTHER PAGES (About, Team, Reviews, Contact, Booking) remain structurally same but with .motion-reveal added for scroll effects -->
-    <!-- ... [Keep existing pages, just wrap key elements in .motion-reveal stagger-X classes] ... -->
-  </main>
+<!-- ============================== BOOKING PAGE ============================== -->
+<div id="page-booking" class="page">
+  <div class="page-header">
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Book Appointment</span></div>
+    <h1>Book an Appointment</h1>
+    <p>Schedule your consultation at Neuro Sports Centre, Bodakdev, Ahmedabad.</p>
+  </div>
+  <section style="background:#f4f7fb;padding:90px 5%">
+    <div class="booking-wrap">
+      <div data-aos="fade-right">
+        <div class="bwl-info">
+          <h3>Why Book With Us?</h3>
+          <div class="bwl-items">
+            <div class="bwl-item"><div class="bwli-icon">✅</div><div><h5>15+ Expert Professionals</h5><p>Qualified physiotherapists, fitness trainers, and rehab specialists.</p></div></div>
+            <div class="bwl-item"><div class="bwli-icon">⚡</div><div><h5>Fast Appointments</h5><p>We confirm your slot within 2 hours of your request.</p></div></div>
+            <div class="bwl-item"><div class="bwli-icon">📍</div><div><h5>Convenient Location</h5><p>G-2, Geetsudha Apartment, Opp. Prakash School, Bodakdev, Sandesh Press Road, Satellite, Ahmedabad.</p></div></div>
+            <div class="bwl-item"><div class="bwli-icon">⏰</div><div><h5>Flexible Hours</h5><p>Mon–Sat: 8:00 AM – 8:00 PM</p></div></div>
+          </div>
+          <a href="https://wa.me/919429554422?text=Hello%20Neuro%20Sports%20Centre%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="whatsapp-book-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Or Book Instantly via WhatsApp
+          </a>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <div class="booking-form-card">
+          <h3>Reserve Your Slot</h3>
+          <p>Fill in your details and our team will confirm your appointment.</p>
+          <div class="form-group"><label>Full Name *</label><input type="text" id="f-name" placeholder="Your full name"></div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone *</label><input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX"></div>
+            <div class="form-group"><label>Age</label><input type="number" id="f-age" placeholder="Your age"></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="f-email" placeholder="your@email.com"></div>
+          <div class="form-group"><label>Preferred Service *</label>
+            <select id="f-service">
+              <option value="">Select a service</option>
+              <option>Sports Physio &amp; Rehab</option>
+              <option>Neuro Physio &amp; Rehab</option>
+              <option>Ortho Physio &amp; Rehab</option>
+              <option>Personal Fitness Training</option>
+              <option>Sports Specific Training</option>
+              <option>Focused Fitness Sessions</option>
+              <option>Antenatal &amp; Postnatal</option>
+              <option>Aqua Hydrotherapy</option>
+              <option>Kids Fitness Workout</option>
+              <option>Weight Loss / Gain</option>
+              <option>Cross Fit Training</option>
+              <option>Functional Training</option>
+              <option>TECAR Therapy</option>
+              <option>Class IV Laser Therapy</option>
+              <option>Advanced Physiotherapy</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Preferred Slot *</label>
+            <select id="f-slot">
+              <option value="">Select a time slot</option>
+              <option>Morning – 8:00 AM to 12:00 PM</option>
+              <option>Afternoon – 12:00 PM to 4:00 PM</option>
+              <option>Evening – 4:00 PM to 8:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Describe Your Condition</label><textarea id="f-desc" placeholder="Tell us about your pain or condition..."></textarea></div>
+          <button class="booking-submit-btn" onclick="submitBooking()">📅 Confirm Appointment Request</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- end booking -->
 
-  <!-- CHATBOT & UI ELEMENTS (Unchanged but functional) -->
-  <div id="toast" class="toast"></div>
-  <div id="fabGroup" class="fab-group">...</div>
-  <div id="chatbotWindow" class="chat-window">...</div>
-  <div class="wa-float" id="waFloat"><a href="https://wa.me/919429554422"><div class="wa-pulse"></div><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></a></div>
+<!-- ============================== CONTACT PAGE ============================== -->
+<div id="page-contact" class="page">
+  <div class="page-header">
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Contact</span></div>
+    <h1>Contact Us</h1>
+    <p>Visit, call, or WhatsApp us — we're always here for you.</p>
+  </div>
+  <section style="background:#f4f7fb;padding:90px 5%">
+    <div class="contact-grid max-wrap">
+      <div class="contact-info-card" data-aos="fade-right">
+        <h3>Find Us Here</h3>
+        <div class="ci-item"><div class="ci-icon">📍</div><div><div class="ci-label">Address</div><div class="ci-value">G-2, Geetsudha Apartment, Opp. Prakash School,<br>Bodakdev, Sandesh Press Road, Satellite,<br>Ahmedabad – 380015, Gujarat</div></div></div>
+        <div class="ci-item"><div class="ci-icon">📞</div><div><div class="ci-label">Phone / WhatsApp</div><div class="ci-value"><a href="tel:+919429554422" style="color:white;text-decoration:none">+91 94295 54422</a></div></div></div>
+        <div class="ci-item"><div class="ci-icon">🕐</div><div><div class="ci-label">Clinic Hours</div><div class="ci-value">Monday – Saturday: 8:00 AM – 8:00 PM</div></div></div>
+        <div class="ci-item"><div class="ci-icon">📸</div><div><div class="ci-label">Instagram</div><div class="ci-value"><a href="https://www.instagram.com/neurosports.in/" target="_blank" style="color:rgba(255,255,255,.8);text-decoration:none">@neurosports.in</a></div></div></div>
+        <a href="https://www.instagram.com/neurosports.in/" target="_blank" class="btn-primary" style="margin-top:1rem;display:inline-flex;background:#e4405f;font-size:0.85rem;padding:10px 18px;">📸 Follow on Instagram</a><br>
+        <a href="https://wa.me/919429554422" target="_blank" class="whatsapp-book-btn" style="margin-top:1rem;display:inline-flex">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Us Now
+        </a>
+        <div style="margin-top:1.5rem;border-radius:12px;overflow:hidden">
+          <iframe src="https://maps.google.com/maps?q=Neuro+Physio+Clinic+Bodakdev+Sandesh+Press+Road+Satellite+Ahmedabad+380015&output=embed&zoom=15" width="100%" height="180" style="border:none;border-radius:12px" loading="lazy"></iframe>
+        </div>
+        <a href="https://maps.app.goo.gl/ybymUuzAA5N2d6wX8" target="_blank" style="display:block;margin-top:.8rem;color:rgba(255,255,255,.7);font-size:.85rem;text-decoration:none">📍 View on Google Maps →</a>
+      </div>
+      <div data-aos="fade-left">
+        <span class="section-pill" style="display:inline-block;margin-bottom:1rem">Send a Message</span>
+        <h2 class="section-title">Get In <span class="color-navy">Touch</span></h2>
+        <p class="section-desc" style="margin-bottom:2rem">Have a question about your condition or our services? Send us a message and we'll get back to you within a few hours.</p>
+        <div class="contact-form">
+          <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+          </div>
+          <div class="form-group"><label>Your Message</label><textarea placeholder="How can we help you?" style="min-height:120px"></textarea></div>
+          <button class="booking-submit-btn" onclick="showToast('Your message has been sent! We\'ll reply shortly.')">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- end contact -->
 
-  <script src="script.js"></script>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner max-wrap">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Neuro Sports Centre" class="footer-logo-img">
+        <div class="logo-text"><span style="color:white;font-weight:800;font-size:.85rem;letter-spacing:1px;">NEURO SPORTS</span><span style="color:rgba(255,255,255,.6);font-weight:500;font-size:.72rem;letter-spacing:2px;">CENTRE</span></div>
+      </div>
+      <p>Ahmedabad's trusted physiotherapy, fitness & rehabilitation centre. Expert care, compassionate team, lasting results — for all age groups.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/919429554422" target="_blank" class="fs-btn">💬</a>
+        <a href="https://maps.app.goo.gl/ybymUuzAA5N2d6wX8" target="_blank" class="fs-btn">📍</a>
+        <a href="tel:+919429554422" class="fs-btn">📞</a>
+        <a href="https://www.instagram.com/neurosports.in/" target="_blank" class="fs-btn">📸</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
+        <li><a href="#" onclick="showPage('about');return false;">About Us</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Physiotherapy</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Fitness Training</a></li>
+        <li><a href="#" onclick="showPage('rehab');return false;">Rehabilitation</a></li>
+        <li><a href="#" onclick="showPage('team');return false;">Our Team</a></li>
+        <li><a href="#" onclick="showPage('testimonials');return false;">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('physio');return false;">Sports Physio &amp; Rehab</a></li>
+        <li><a href="#" onclick="showPage('rehab');return false;">Neuro Physio &amp; Rehab</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Ortho Physio &amp; Rehab</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Personal Fitness Training</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Sports Specific Training</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Focused Fitness Sessions</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Antenatal &amp; Postnatal</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Aqua Hydrotherapy</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Kids Fitness Workout</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Weight Loss / Gain</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Cross Fit Training</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Functional Training</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">TECAR Therapy</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Class IV Laser Therapy</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Advanced Physiotherapy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <ul>
+        <li style="color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.6">📍 G-2, Geetsudha Apt, Opp Prakash School, Bodakdev, Sandesh Press Road, Satellite, Ahmedabad 380015</li>
+        <li><a href="tel:+919429554422">📞 +91 94295 54422</a></li>
+        <li style="color:rgba(255,255,255,.5);font-size:.85rem">🕐 Mon–Sat: 8:00 AM – 8:00 PM</li>
+        <li><a href="https://www.instagram.com/neurosports.in/" target="_blank">📸 @neurosports.in</a></li>
+      </ul>
+      <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="margin-top:1rem;font-size:.85rem;padding:10px 20px;display:inline-flex">📅 Book Now</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Neuro Sports Centre, Ahmedabad. All rights reserved.</div>
+    <div style="display:flex;gap:1.5rem;align-items:center">
+      <a href="https://maps.app.goo.gl/ybymUuzAA5N2d6wX8" target="_blank" style="color:inherit;text-decoration:none">View on Maps</a>
+      <a href="https://www.instagram.com/neurosports.in/" target="_blank" style="color:inherit;text-decoration:none">Instagram</a>
+      <a href="https://localrizz.in/" target="_blank" style="color:inherit;text-decoration:none">Created by LocalRizz</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB GROUP -->
+<div class="fab-group" id="fabGroup">
+  <a href="tel:+919429554422" class="fab-child fab-call" title="Call us">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    <span class="fab-child-label">Call</span>
+  </a>
+  <a href="https://wa.me/919429554422?text=Hello%20Neuro%20Sports%20Centre%2C%20I%20would%20like%20to%20enquire%20about%20an%20appointment." target="_blank" class="fab-child fab-wa" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span class="fab-child-label">WhatsApp</span>
+  </a>
+  <button class="fab-child fab-chat" onclick="toggleChat();" title="Chat" id="chatFloatBtn">
+    <div class="chat-float-badge" id="chatBadge">?</div>
+    <svg viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+    <span class="fab-child-label">Chat</span>
+  </button>
+  <button class="fab-trigger" id="fabTrigger" onclick="toggleFab()" aria-label="Contact options">
+    <div class="wa-pulse"></div>
+    <span class="fab-trigger-icon fab-icon-open">
+      <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </span>
+    <span class="fab-trigger-icon fab-icon-close" style="display:none;">
+      <svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </span>
+  </button>
+</div>
+
+<!-- CHATBOT -->
+<div class="chatbot-window" id="chatbotWindow">
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">🏃</div>
+    <div class="chatbot-title">
+      <strong>Neuro Sports Assistant</strong>
+      <span>🟢 Online 24/7 – Ask me anything</span>
+    </div>
+    <button class="chatbot-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chatbot-messages" id="chatMessages">
+    <div class="chat-msg bot">👋 Hi! I'm the virtual assistant for <strong>Neuro Sports Centre</strong>, Ahmedabad.<br><br>Ask me anything — services, timings, location, Dr. Ruchit, pricing, or conditions we treat!</div>
+  </div>
+  <div class="chatbot-quick" id="quickBtns">
+    <button class="quick-btn" onclick="sendQuick('What services do you offer?')">Services</button>
+    <button class="quick-btn" onclick="sendQuick('What are your clinic hours?')">Hours</button>
+    <button class="quick-btn" onclick="sendQuick('Where are you located?')">Location</button>
+    <button class="quick-btn" onclick="sendQuick('How do I book an appointment?')">Book Now</button>
+    <button class="quick-btn" onclick="sendQuick('Tell me about Dr. Ruchit Shah')">About Dr. Ruchit</button>
+  </div>
+  <div class="chatbot-input-row">
+    <input class="chatbot-input" id="chatInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter') sendChat()">
+    <button class="chatbot-send" onclick="sendChat()">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="toast" id="toast">✅ Sent! We'll contact you shortly.</div>
+<style>@keyframes scrollAnim{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(12px)}}</style>
+
+<script src="script.js"></script>
 </body>
 </html>
