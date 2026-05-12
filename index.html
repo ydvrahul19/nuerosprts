@@ -1336,86 +1336,15 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       <!-- ── VIDEO GRID ── -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="video-wall-grid" data-aos="fade-up" data-aos-delay="150">
 
-        <!-- VIDEO 1 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video1.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 1</div>
-          </div>
-        </div>
-
-        <!-- VIDEO 2 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video2.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 2</div>
-          </div>
-        </div>
-
-        <!-- VIDEO 3 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video3.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 3</div>
-          </div>
-        </div>
-
-        <!-- VIDEO 4 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video4.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 4</div>
-          </div>
-        </div>
-
-        <!-- VIDEO 5 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video5.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 5</div>
-          </div>
-        </div>
-
-        <!-- VIDEO 6 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video6.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 6</div>
-          </div>
-        </div>
-
-        <!-- VIDEO 7 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video7.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 7</div>
-          </div>
-        </div>
-
-        <!-- VIDEO 8 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video8.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 8</div>
-          </div>
-        </div>
-
-        <!-- VIDEO 9 -->
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video9.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 9</div>
-          </div>
-        </div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video1.mp4" data-thumb="images/clinic/thumb1.jpg" data-label="Session 1"></div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video2.mp4" data-thumb="images/clinic/thumb2.jpg" data-label="Session 2"></div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video3.mp4" data-thumb="images/clinic/thumb3.jpg" data-label="Session 3"></div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video4.mp4" data-thumb="images/clinic/thumb4.jpg" data-label="Session 4"></div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video5.mp4" data-thumb="images/clinic/thumb5.jpg" data-label="Session 5"></div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video6.mp4" data-thumb="images/clinic/thumb6.jpg" data-label="Session 6"></div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video7.mp4" data-thumb="images/clinic/thumb7.jpg" data-label="Session 7"></div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video8.mp4" data-thumb="images/clinic/thumb8.jpg" data-label="Session 8"></div>
+        <div class="clinic-video-card" data-vid="videos/clinic_video9.mp4" data-thumb="images/clinic/thumb9.jpg" data-label="Session 9"></div>
 
       </div><!-- end video grid -->
 
@@ -1430,14 +1359,8 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       </div>
 
       <!-- Hidden 10th video -->
-      <div id="video10-wrap" style="display:none;margin-top:20px;max-width:380px;margin-left:auto;margin-right:auto;" data-aos="fade-up">
-        <div class="clinic-video-card">
-          <div class="cvc-thumb" onclick="playVideo(this)">
-            <video src="videos/clinic_video10.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
-            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="cvc-label">Session 10</div>
-          </div>
-        </div>
+      <div id="video10-wrap" style="display:none;margin-top:20px;max-width:380px;margin-left:auto;margin-right:auto;">
+        <div class="clinic-video-card" data-vid="videos/clinic_video10.mp4" data-thumb="images/clinic/thumb10.jpg" data-label="Session 10"></div>
       </div>
 
     </div><!-- end max-wrap -->
@@ -1452,8 +1375,6 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   </div>
 
   <style>
-    /* ── Video cards ── */
-    .video-wall-grid { }
     @media(max-width:900px){.video-wall-grid{grid-template-columns:1fr 1fr!important;}}
     @media(max-width:560px){.video-wall-grid{grid-template-columns:1fr!important;}}
 
@@ -1461,77 +1382,140 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       border-radius:18px; overflow:hidden;
       box-shadow:0 6px 28px rgba(26,46,74,.12);
       transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
-      background:#000;
+      background:#111;
+      position:relative;
+      aspect-ratio:9/16;
+      cursor:pointer;
     }
     .clinic-video-card:hover {
       transform:translateY(-8px) scale(1.02);
-      box-shadow:0 20px 50px rgba(26,46,74,.2);
+      box-shadow:0 20px 50px rgba(26,46,74,.22);
     }
 
-    .cvc-thumb {
-      position:relative; cursor:pointer;
-      aspect-ratio:9/16;
-      background:#111;
-      overflow:hidden;
-    }
-    .cvc-video {
+    /* Thumbnail image shown by default */
+    .cvc-poster {
+      position:absolute; inset:0;
       width:100%; height:100%;
       object-fit:cover;
       display:block;
-      transition:transform .5s cubic-bezier(.22,1,.36,1);
+      transition:opacity .35s ease, transform .5s cubic-bezier(.22,1,.36,1);
+      z-index:1;
     }
-    .clinic-video-card:hover .cvc-video { transform:scale(1.04); }
 
-    /* Play button overlay */
-    .cvc-play-btn {
+    /* Video element hidden until hover */
+    .cvc-video {
       position:absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
-      background:linear-gradient(to top, rgba(26,46,74,.65) 0%, transparent 60%);
-      transition:background .3s ease;
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      opacity:0;
+      transition:opacity .35s ease;
+      z-index:2;
     }
-    .cvc-play-btn > svg {
+    .clinic-video-card.hovered .cvc-poster { opacity:0; }
+    .clinic-video-card.hovered .cvc-video  { opacity:1; }
+
+    /* Play button overlay — visible on poster state */
+    .cvc-play-btn {
+      position:absolute; inset:0; z-index:3;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      background:linear-gradient(to top, rgba(15,25,50,.7) 0%, rgba(15,25,50,.15) 60%, transparent 100%);
+      transition:opacity .35s ease;
+      pointer-events:none;
+    }
+    .cvc-play-icon {
+      width:58px; height:58px;
       background:rgba(255,255,255,.18);
-      backdrop-filter:blur(6px);
+      backdrop-filter:blur(8px);
       border-radius:50%;
-      padding:12px;
-      width:56px; height:56px;
-      box-sizing:border-box;
-      border:2px solid rgba(255,255,255,.35);
+      border:2px solid rgba(255,255,255,.4);
+      display:flex; align-items:center; justify-content:center;
       transition:transform .4s cubic-bezier(.34,1.56,.64,1), background .3s ease;
+      margin-bottom:8px;
     }
-    .clinic-video-card:hover .cvc-play-btn > svg {
-      transform:scale(1.18);
-      background:rgba(43,124,191,.55);
+    .clinic-video-card:hover .cvc-play-icon {
+      transform:scale(1.15);
+      background:rgba(43,124,191,.6);
+      border-color:rgba(255,255,255,.6);
     }
+    /* Hide play btn while playing */
+    .clinic-video-card.hovered .cvc-play-btn { opacity:0; }
 
-    /* Pause state */
-    .cvc-thumb.playing .cvc-play-btn { opacity:0; }
-    .cvc-thumb.playing:hover .cvc-play-btn { opacity:1; }
-
-    /* Bottom label */
+    /* Session label chip */
     .cvc-label {
-      position:absolute; bottom:12px; left:14px;
+      position:absolute; bottom:12px; left:14px; z-index:4;
       color:white; font-size:.75rem; font-weight:600;
-      background:rgba(0,0,0,.45); backdrop-filter:blur(4px);
+      background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
       padding:3px 10px; border-radius:20px;
       letter-spacing:.5px;
+      pointer-events:none;
     }
   </style>
 
   <script>
-    /* Play / pause video cards */
-    function playVideo(thumb) {
-      var vid = thumb.querySelector('.cvc-video');
-      if (vid.paused) {
-        // pause all others
-        document.querySelectorAll('.cvc-video').forEach(function(v){ v.pause(); v.closest('.cvc-thumb').classList.remove('playing'); });
-        vid.play();
-        thumb.classList.add('playing');
-      } else {
+    /* ── Build video cards from data attributes ── */
+    document.querySelectorAll('.clinic-video-card').forEach(function(card) {
+      var src   = card.dataset.vid;
+      var thumb = card.dataset.thumb;
+      var label = card.dataset.label;
+      if (!src) return;
+
+      /* Poster image */
+      var img = document.createElement('img');
+      img.src = thumb;
+      img.alt = label;
+      img.className = 'cvc-poster';
+      card.appendChild(img);
+
+      /* Video element — no src yet, loaded on first hover */
+      var vid = document.createElement('video');
+      vid.className = 'cvc-video';
+      vid.muted = true;
+      vid.loop  = true;
+      vid.playsinline = true;
+      vid.preload = 'none';
+      card.appendChild(vid);
+
+      /* Play button overlay */
+      var overlay = document.createElement('div');
+      overlay.className = 'cvc-play-btn';
+      overlay.innerHTML = '<div class="cvc-play-icon"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>';
+      card.appendChild(overlay);
+
+      /* Label chip */
+      var chip = document.createElement('div');
+      chip.className = 'cvc-label';
+      chip.textContent = label;
+      card.appendChild(chip);
+
+      var loaded = false;
+
+      /* HOVER IN → load src if needed, play */
+      card.addEventListener('mouseenter', function() {
+        /* Stop every other card */
+        document.querySelectorAll('.clinic-video-card').forEach(function(c) {
+          if (c !== card) {
+            var v = c.querySelector('.cvc-video');
+            if (v) { v.pause(); v.currentTime = 0; }
+            c.classList.remove('hovered');
+          }
+        });
+
+        /* Load src once */
+        if (!loaded) { vid.src = src; loaded = true; }
+
+        card.classList.add('hovered');
+        vid.play().catch(function(){});
+      });
+
+      /* HOVER OUT → pause, reset, show poster */
+      card.addEventListener('mouseleave', function() {
         vid.pause();
-        thumb.classList.remove('playing');
-      }
-    }
+        vid.currentTime = 0;
+        card.classList.remove('hovered');
+      });
+    });
 
     /* Photo lightbox */
     function openLightbox(src, caption) {
@@ -1547,17 +1531,13 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     }
     document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
 
-    /* Load more videos */
+    /* Load more video 10 */
     function toggleVideo10() {
       var wrap = document.getElementById('video10-wrap');
       var btn  = document.getElementById('loadMoreBtn');
-      if (wrap.style.display === 'none') {
-        wrap.style.display = 'block';
-        btn.textContent = '✕ Show Less';
-      } else {
-        wrap.style.display = 'none';
-        btn.textContent = '▶ Load More Videos';
-      }
+      var showing = wrap.style.display !== 'none';
+      wrap.style.display = showing ? 'none' : 'block';
+      btn.textContent = showing ? '▶ Load More Videos' : '✕ Show Less';
     }
   </script>
 
