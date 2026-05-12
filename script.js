@@ -1541,7 +1541,7 @@ function sendChat() {
   if (!text) return;
   input.value = '';
 
-  // Hide quick buttons permanently once user starts chatting
+  // Hide quick buttons while waiting for reply
   const quickBtns = document.getElementById('quickBtns');
   if (quickBtns) quickBtns.style.display = 'none';
 
@@ -1551,17 +1551,25 @@ function sendChat() {
   setTimeout(() => {
     if (typing) typing.remove();
     addChatMessage(getBotReply(text), 'bot');
+    // Show quick buttons again after bot replies
+    if (quickBtns) quickBtns.style.display = '';
   }, 800 + Math.random() * 600);
 }
 
 function sendQuick(text) {
-  // Hide quick buttons first, then send
+  // Hide quick buttons immediately on click
   const quickBtns = document.getElementById('quickBtns');
   if (quickBtns) quickBtns.style.display = 'none';
 
-  const input = document.getElementById('chatInput');
-  if (input) input.value = text;
-  sendChat();
+  addChatMessage(text, 'user');
+
+  const typing = showTypingIndicator();
+  setTimeout(() => {
+    if (typing) typing.remove();
+    addChatMessage(getBotReply(text), 'bot');
+    // Show quick buttons again after bot replies
+    if (quickBtns) quickBtns.style.display = '';
+  }, 800 + Math.random() * 600);
 }
 
 /* ─────────────────────────────────────────────
