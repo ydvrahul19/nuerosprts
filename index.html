@@ -1254,6 +1254,313 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     </div>
   </section>
 
+  <!-- ============================== CLINIC GALLERY & VIDEO SECTION ============================== -->
+  <section id="clinic-media-section" style="padding:110px 5%;background:white;overflow:hidden;position:relative;">
+
+    <!-- Background accent -->
+    <div style="position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(43,124,191,.06),transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-80px;left:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,.06),transparent 70%);pointer-events:none;"></div>
+
+    <div class="max-wrap" style="position:relative;z-index:1;">
+
+      <!-- Section header -->
+      <div class="text-center" data-aos="fade-up">
+        <div class="section-pill">Real Clinic. Real Results.</div>
+        <h2 class="section-title">Inside <span class="color-green">Neuro Sports Centre</span></h2>
+        <p class="section-sub text-center" style="margin:0 auto 3rem;">Take a look at our clinic, our team in action, and real patients on their journey to recovery and fitness.</p>
+      </div>
+
+      <!-- ── PHOTO STRIP ── -->
+      <div data-aos="fade-up" data-aos-delay="100" style="margin-bottom:60px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;" class="gallery-photo-grid">
+
+          <!-- Clinic photo -->
+          <div class="gallery-photo-item" style="border-radius:20px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;"
+               onclick="openLightbox('images/clinic/clinic_photo1.webp','Neuro Sports Centre Clinic')">
+            <img src="images/clinic/clinic_photo1.webp" alt="Neuro Sports Centre Clinic"
+                 style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1);">
+            <div class="gallery-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span style="color:white;font-size:.82rem;font-weight:600;margin-top:6px;">View Photo</span>
+            </div>
+          </div>
+
+          <!-- Placeholder from existing images -->
+          <div class="gallery-photo-item" style="border-radius:20px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;"
+               onclick="openLightbox('images/physio1.png','Physiotherapy Session')">
+            <img src="images/physio1.png" alt="Physiotherapy at Neuro Sports Centre"
+                 style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1);">
+            <div class="gallery-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span style="color:white;font-size:.82rem;font-weight:600;margin-top:6px;">View Photo</span>
+            </div>
+          </div>
+
+          <div class="gallery-photo-item" style="border-radius:20px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;"
+               onclick="openLightbox('images/dr_clinic.png','Our Clinic Space')">
+            <img src="images/dr_clinic.png" alt="Neuro Sports Centre Facility"
+                 style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1);">
+            <div class="gallery-overlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span style="color:white;font-size:.82rem;font-weight:600;margin-top:6px;">View Photo</span>
+            </div>
+          </div>
+        </div>
+        <style>
+          .gallery-photo-grid { }
+          @media(max-width:600px){.gallery-photo-grid{grid-template-columns:1fr!important;}}
+          .gallery-photo-item:hover img { transform:scale(1.07); }
+          .gallery-overlay {
+            position:absolute;inset:0;
+            background:linear-gradient(to top,rgba(26,46,74,.72) 0%,transparent 55%);
+            display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+            padding-bottom:20px;
+            opacity:0;transition:opacity .4s ease;
+          }
+          .gallery-photo-item:hover .gallery-overlay { opacity:1; }
+        </style>
+      </div>
+
+      <!-- ── VIDEO WALL HEADER ── -->
+      <div data-aos="fade-up" style="margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);font-weight:700;margin-bottom:4px;">Patient Sessions & Exercises <span style="color:var(--green);">in Action</span></h3>
+          <p style="color:var(--muted);font-size:.9rem;">Real sessions from our clinic — physiotherapy, rehabilitation, and fitness training.</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:#f0f7ff;border-radius:50px;padding:8px 18px;border:1px solid rgba(43,124,191,.15);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="var(--blue)" stroke="none"/></svg>
+          <span style="color:var(--blue);font-size:.82rem;font-weight:600;">10 Videos</span>
+        </div>
+      </div>
+
+      <!-- ── VIDEO GRID ── -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="video-wall-grid" data-aos="fade-up" data-aos-delay="150">
+
+        <!-- VIDEO 1 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video1.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 1</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video2.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 2</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video3.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 3</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 4 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video4.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 4</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 5 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video5.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 5</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 6 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video6.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 6</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 7 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video7.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 7</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 8 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video8.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 8</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 9 -->
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video9.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 9</div>
+          </div>
+        </div>
+
+      </div><!-- end video grid -->
+
+      <!-- Load more -->
+      <div style="text-align:center;margin-top:32px;" data-aos="fade-up" data-aos-delay="200">
+        <button onclick="toggleVideo10()" id="loadMoreBtn"
+          style="background:transparent;border:2px solid var(--blue);color:var(--blue);border-radius:50px;padding:12px 32px;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .35s cubic-bezier(.22,1,.36,1);"
+          onmouseover="this.style.background='var(--blue)';this.style.color='white';"
+          onmouseout="this.style.background='transparent';this.style.color='var(--blue)';">
+          ▶ Load More Videos
+        </button>
+      </div>
+
+      <!-- Hidden 10th video -->
+      <div id="video10-wrap" style="display:none;margin-top:20px;max-width:380px;margin-left:auto;margin-right:auto;" data-aos="fade-up">
+        <div class="clinic-video-card">
+          <div class="cvc-thumb" onclick="playVideo(this)">
+            <video src="videos/clinic_video10.mp4" preload="none" loop muted playsinline class="cvc-video"></video>
+            <div class="cvc-play-btn"><svg viewBox="0 0 24 24" fill="white" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            <div class="cvc-label">Session 10</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end max-wrap -->
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="photo-lightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;flex-direction:column;"
+       onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:85vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.6);object-fit:contain;">
+    <p id="lightbox-cap" style="color:rgba(255,255,255,.7);font-size:.85rem;margin-top:14px;"></p>
+    <button onclick="closeLightbox()" style="position:absolute;top:20px;right:24px;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.5rem;width:44px;height:44px;border-radius:50%;cursor:pointer;line-height:1;">✕</button>
+  </div>
+
+  <style>
+    /* ── Video cards ── */
+    .video-wall-grid { }
+    @media(max-width:900px){.video-wall-grid{grid-template-columns:1fr 1fr!important;}}
+    @media(max-width:560px){.video-wall-grid{grid-template-columns:1fr!important;}}
+
+    .clinic-video-card {
+      border-radius:18px; overflow:hidden;
+      box-shadow:0 6px 28px rgba(26,46,74,.12);
+      transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+      background:#000;
+    }
+    .clinic-video-card:hover {
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:0 20px 50px rgba(26,46,74,.2);
+    }
+
+    .cvc-thumb {
+      position:relative; cursor:pointer;
+      aspect-ratio:9/16;
+      background:#111;
+      overflow:hidden;
+    }
+    .cvc-video {
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .5s cubic-bezier(.22,1,.36,1);
+    }
+    .clinic-video-card:hover .cvc-video { transform:scale(1.04); }
+
+    /* Play button overlay */
+    .cvc-play-btn {
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(to top, rgba(26,46,74,.65) 0%, transparent 60%);
+      transition:background .3s ease;
+    }
+    .cvc-play-btn > svg {
+      background:rgba(255,255,255,.18);
+      backdrop-filter:blur(6px);
+      border-radius:50%;
+      padding:12px;
+      width:56px; height:56px;
+      box-sizing:border-box;
+      border:2px solid rgba(255,255,255,.35);
+      transition:transform .4s cubic-bezier(.34,1.56,.64,1), background .3s ease;
+    }
+    .clinic-video-card:hover .cvc-play-btn > svg {
+      transform:scale(1.18);
+      background:rgba(43,124,191,.55);
+    }
+
+    /* Pause state */
+    .cvc-thumb.playing .cvc-play-btn { opacity:0; }
+    .cvc-thumb.playing:hover .cvc-play-btn { opacity:1; }
+
+    /* Bottom label */
+    .cvc-label {
+      position:absolute; bottom:12px; left:14px;
+      color:white; font-size:.75rem; font-weight:600;
+      background:rgba(0,0,0,.45); backdrop-filter:blur(4px);
+      padding:3px 10px; border-radius:20px;
+      letter-spacing:.5px;
+    }
+  </style>
+
+  <script>
+    /* Play / pause video cards */
+    function playVideo(thumb) {
+      var vid = thumb.querySelector('.cvc-video');
+      if (vid.paused) {
+        // pause all others
+        document.querySelectorAll('.cvc-video').forEach(function(v){ v.pause(); v.closest('.cvc-thumb').classList.remove('playing'); });
+        vid.play();
+        thumb.classList.add('playing');
+      } else {
+        vid.pause();
+        thumb.classList.remove('playing');
+      }
+    }
+
+    /* Photo lightbox */
+    function openLightbox(src, caption) {
+      var lb = document.getElementById('photo-lightbox');
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-cap').textContent = caption;
+      lb.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('photo-lightbox').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+
+    /* Load more videos */
+    function toggleVideo10() {
+      var wrap = document.getElementById('video10-wrap');
+      var btn  = document.getElementById('loadMoreBtn');
+      if (wrap.style.display === 'none') {
+        wrap.style.display = 'block';
+        btn.textContent = '✕ Show Less';
+      } else {
+        wrap.style.display = 'none';
+        btn.textContent = '▶ Load More Videos';
+      }
+    }
+  </script>
+
   <!-- DYNAMIC STATS -->
   <section class="dynamic-stats-section">
     <div class="ds-bg-overlay"></div>
