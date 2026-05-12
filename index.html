@@ -999,7 +999,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">FITNESS TRAINING</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">All age groups →</div></div>
         </div>
       </div>
-      
+      <style>.pain-photo-grid div:hover img{transform:scale(1.06);}@media(max-width:768px){.pain-photo-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:480px){.pain-photo-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -1119,7 +1119,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
       </div>
-      
+      <style>@media(max-width:600px){.attention-table-grid{grid-template-columns:1fr!important;}}</style>
       <div style="position:relative;z-index:2;text-align:center;margin-top:2.5rem;">
         <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="display:inline-flex;gap:8px;align-items:center;background:white;color:var(--navy);font-weight:700;">📅 Book Appointment</a>
       </div>
@@ -1306,7 +1306,19 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
             </div>
           </div>
         </div>
-
+        <style>
+          .gallery-photo-grid { }
+          @media(max-width:600px){.gallery-photo-grid{grid-template-columns:1fr!important;}}
+          .gallery-photo-item:hover img { transform:scale(1.07); }
+          .gallery-overlay {
+            position:absolute;inset:0;
+            background:linear-gradient(to top,rgba(26,46,74,.72) 0%,transparent 55%);
+            display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+            padding-bottom:20px;
+            opacity:0;transition:opacity .4s ease;
+          }
+          .gallery-photo-item:hover .gallery-overlay { opacity:1; }
+        </style>
       </div>
 
       <!-- ── VIDEO WALL HEADER ── -->
@@ -1362,7 +1374,84 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     <button onclick="closeLightbox()" style="position:absolute;top:20px;right:24px;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.5rem;width:44px;height:44px;border-radius:50%;cursor:pointer;line-height:1;">✕</button>
   </div>
 
+  <style>
+    @media(max-width:900px){.video-wall-grid{grid-template-columns:1fr 1fr!important;}}
+    @media(max-width:560px){.video-wall-grid{grid-template-columns:1fr!important;}}
 
+    .clinic-video-card {
+      border-radius:18px; overflow:hidden;
+      box-shadow:0 6px 28px rgba(26,46,74,.12);
+      transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+      background:#111;
+      position:relative;
+      aspect-ratio:9/16;
+      cursor:pointer;
+    }
+    .clinic-video-card:hover {
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:0 20px 50px rgba(26,46,74,.22);
+    }
+
+    /* Thumbnail image shown by default */
+    .cvc-poster {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      transition:opacity .35s ease, transform .5s cubic-bezier(.22,1,.36,1);
+      z-index:1;
+    }
+
+    /* Video element hidden until hover */
+    .cvc-video {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      opacity:0;
+      transition:opacity .35s ease;
+      z-index:2;
+    }
+    .clinic-video-card.hovered .cvc-poster { opacity:0; }
+    .clinic-video-card.hovered .cvc-video  { opacity:1; }
+
+    /* Play button overlay — visible on poster state */
+    .cvc-play-btn {
+      position:absolute; inset:0; z-index:3;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      background:linear-gradient(to top, rgba(15,25,50,.7) 0%, rgba(15,25,50,.15) 60%, transparent 100%);
+      transition:opacity .35s ease;
+      pointer-events:none;
+    }
+    .cvc-play-icon {
+      width:58px; height:58px;
+      background:rgba(255,255,255,.18);
+      backdrop-filter:blur(8px);
+      border-radius:50%;
+      border:2px solid rgba(255,255,255,.4);
+      display:flex; align-items:center; justify-content:center;
+      transition:transform .4s cubic-bezier(.34,1.56,.64,1), background .3s ease;
+      margin-bottom:8px;
+    }
+    .clinic-video-card:hover .cvc-play-icon {
+      transform:scale(1.15);
+      background:rgba(43,124,191,.6);
+      border-color:rgba(255,255,255,.6);
+    }
+    /* Hide play btn while playing */
+    .clinic-video-card.hovered .cvc-play-btn { opacity:0; }
+
+    /* Session label chip */
+    .cvc-label {
+      position:absolute; bottom:12px; left:14px; z-index:4;
+      color:white; font-size:.75rem; font-weight:600;
+      background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
+      padding:3px 10px; border-radius:20px;
+      letter-spacing:.5px;
+      pointer-events:none;
+    }
+  </style>
 
   <script>
     /* ── Build video cards from data attributes ── */
@@ -1549,7 +1638,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <p style="color:rgba(255,255,255,.7);font-size:0.82rem;line-height:1.65;">Combines clinical expertise with sports science for peak athletic performance and longevity.</p>
         </div>
       </div>
-      
+      <style>@media(max-width:600px){.marathon-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -1654,7 +1743,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--green);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">⚡ Plantar Fasciitis</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Targeted loading protocols and manual therapy for foot and heel pain.</div></div>
         <div style="background:#f0f7ff;border-radius:16px;padding:20px;border-left:4px solid var(--navy);"><div style="font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:6px;">🧘 Posture Correction</div><div style="color:var(--muted);font-size:.82rem;line-height:1.6">Desk workers, students, and professionals — postural assessment and structured correction.</div></div>
       </div>
-      
+      <style>@media(max-width:768px){.cond-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:480px){.cond-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -1726,7 +1815,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         </div>
       </div>
     </div>
-    
+    <style>@media(max-width:600px){.stat-bar-grid{grid-template-columns:1fr 1fr!important;}}</style>
   </section>
 
   <!-- TRAINING PROGRAMMES -->
@@ -1815,7 +1904,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
       </div>
-      
+      <style>@media(max-width:900px){.prog-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:560px){.prog-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -1847,7 +1936,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <p style="color:var(--muted);font-size:.84rem;line-height:1.7;">Regular re-assessments and programme updates to keep you challenged, motivated, and on track to your goals.</p>
         </div>
       </div>
-      
+      <style>@media(max-width:700px){.journey-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:420px){.journey-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -1888,7 +1977,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <p style="color:rgba(255,255,255,.78);font-size:.875rem;line-height:1.75;">From children to senior citizens — our programmes are adapted for every stage of life, every fitness level, and every health condition.</p>
         </div>
       </div>
-      
+      <style>@media(max-width:700px){.why-physio-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:420px){.why-physio-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -1927,7 +2016,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
       </div>
-      
+      <style>@media(max-width:700px){.facility-inner{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -1999,7 +2088,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         </div>
       </div>
     </div>
-    
+    <style>@media(max-width:600px){.rehab-stat-grid{grid-template-columns:1fr 1fr!important;}}</style>
   </section>
 
   <!-- NEUROLOGICAL REHAB CONDITIONS -->
@@ -2062,7 +2151,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
       </div>
-      
+      <style>@media(max-width:600px){.rehab-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -2107,7 +2196,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </ul>
         </div>
       </div>
-      
+      <style>@media(max-width:700px){.sports-rehab-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:420px){.sports-rehab-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -2138,7 +2227,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <p style="color:rgba(255,255,255,.75);font-size:.82rem;line-height:1.7;">Functional discharge testing, home programme, and ongoing support for sustained recovery and prevention of re-injury.</p>
         </div>
       </div>
-      
+      <style>@media(max-width:700px){.phase-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:420px){.phase-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 
@@ -2190,7 +2279,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <p style="color:var(--muted);font-size:.8rem;line-height:1.6;">Task-specific repetitive training to rewire neurological pathways for movement recovery.</p>
         </div>
       </div>
-      
+      <style>@media(max-width:700px){.tech-grid{grid-template-columns:1fr 1fr!important;}}</style>
     </div>
   </section>
 
@@ -2232,7 +2321,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
       </div>
-      
+      <style>@media(max-width:768px){.team-lead-card{grid-template-columns:1fr!important;text-align:center;}}</style>
 
       <!-- TEAM GRID placeholder cards -->
       <p class="section-sub text-center" style="margin:0 auto 2rem;font-size:.95rem;">We have a team of <strong>15+ specialised professionals</strong> — including physiotherapists, fitness trainers, neuro rehab specialists, sports rehab experts, and more. Team photos and profiles will be updated here. Please visit us or WhatsApp us to meet the team.</p>
@@ -2275,7 +2364,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <a href="https://wa.me/919429554422" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:white;color:var(--navy);padding:8px 20px;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none;margin-top:1rem;">💬 WhatsApp Us</a>
         </div>
       </div>
-      
+      <style>@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:560px){.team-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
 </div><!-- end team -->
