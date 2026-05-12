@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neuro Sports Centre – Ahmedabad's Premier Physiotherapy & Fitness Clinic</title>
-<link rel="icon" type="image/png" href="images/logo.webp">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a3a5c'/%3E%3Ccircle cx='32' cy='13' r='6' fill='%2300897B'/%3E%3Cpath d='M20 28 Q24 22 32 22 Q40 22 44 28 L44 44 Q44 48 40 48 L38 48 L38 38 L36 38 L36 52 Q36 54 34 54 L30 54 Q28 54 28 52 L28 38 L26 38 L26 48 L24 48 Q20 48 20 44 Z' fill='white'/%3E%3Cpath d='M14 32 Q18 30 22 34' stroke='%232196F3' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M42 34 Q46 30 50 32' stroke='%232196F3' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* ===== ROOT VARIABLES ===== */
@@ -107,7 +107,7 @@ ul { list-style:none; }
 
 /* ===== NAVBAR ===== */
 #navbar {
-  position:fixed; top:0; left:0; right:0; z-index:1000;
+  position:fixed; top:36px; left:0; right:0; z-index:1000;
   background:#ffffff;
   box-shadow: 0 2px 20px rgba(26,58,92,0.08);
   transition: box-shadow .3s;
@@ -179,7 +179,7 @@ ul { list-style:none; }
 .hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
 
 /* ===== PAGES ===== */
-.page { display:none; padding-top:76px; }
+.page { display:none; padding-top:112px; }
 .page.active { display:block; animation:fadeInUp 0.5s cubic-bezier(0.4,0,0.2,1) both; }
 
 /* ===== PAGE HEADER ===== */
@@ -787,8 +787,8 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   .form-row{grid-template-columns:1fr;}
   .dr-profile-inner{flex-direction:column;}
   .dr-photo-col{flex:none;width:100%;max-width:300px;margin:0 auto;}
-  .nav-inner{height:64px !important;padding:0 16px !important;}
-  .page{padding-top:76px !important;}
+  .nav-inner{height:64px !important;padding:0 16px !important;} #navbar{top:0 !important;} .page{padding-top:64px !important;}
+  .page{padding-top:112px !important;}
   .trust-bar{overflow-x:auto;flex-wrap:nowrap;padding:14px 16px;justify-content:flex-start;gap:1.5rem;-webkit-overflow-scrolling:touch;}
   .trust-item{white-space:nowrap;flex-shrink:0;font-size:0.8rem;}
   .has-dropdown .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:0 0 0 16px;border:none;min-width:unset;}
@@ -811,22 +811,24 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 .topbar {
   background: var(--navy);
   color: rgba(255,255,255,.8);
-  font-size: .78rem;
+  font-size: .75rem;
   font-weight: 500;
-  padding: 0 5%;
+  padding: 0 4%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  height: 38px;
-  position: relative;
-  z-index: 1001;
-  border-bottom: 1px solid rgba(255,255,255,.07);
+  height: 36px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
 }
 .topbar-left {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   overflow: hidden;
 }
 .tb-item {
@@ -834,7 +836,8 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   align-items: center;
   gap: 5px;
   white-space: nowrap;
-  color: rgba(255,255,255,.72);
+  color: rgba(255,255,255,.65);
+  font-size: .73rem;
 }
 .tb-item a {
   color: rgba(255,255,255,.9);
@@ -846,32 +849,34 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-shrink: 0;
 }
 .tb-link {
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.65);
   text-decoration: none;
+  font-size: .73rem;
   font-weight: 500;
   transition: color .2s;
 }
 .tb-link:hover { color: white; }
 .tb-book {
-  background: linear-gradient(135deg, var(--green), #00695C);
+  background: var(--green);
   color: white !important;
   text-decoration: none;
-  padding: 5px 14px;
-  border-radius: 20px;
+  padding: 4px 13px;
+  border-radius: 4px;
   font-weight: 700;
-  font-size: .75rem;
-  letter-spacing: .3px;
-  transition: opacity .2s, transform .2s;
+  font-size: .72rem;
+  letter-spacing: .2px;
+  transition: background .2s;
   white-space: nowrap;
 }
-.tb-book:hover { opacity: .88; transform: translateY(-1px); }
-@media (max-width: 768px) {
-  .topbar { height: auto; padding: 8px 5%; flex-direction: column; align-items: flex-start; gap: 6px; }
-  .topbar-left { gap: 12px; flex-wrap: wrap; }
+.tb-book:hover { background: #00695C; }
+@media (max-width: 900px) {
+  .tb-item:nth-child(2) { display: none; }
+}
+@media (max-width: 680px) {
   .tb-item:nth-child(3) { display: none; }
 }
 @media (max-width: 480px) {
