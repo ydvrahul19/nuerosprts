@@ -1099,41 +1099,307 @@ footer { background:#0d1f35; color:rgba(255,255,255,.65); padding:70px 5% 0; }
   }
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width:1024px) {
-  .quality-inner, .comp-inner, .shs-inner, .why-grid { grid-template-columns:1fr; }
-  .quality-images { height:300px; margin-bottom:3rem; }
-  .comp-img-badge { position:static; margin-top:1rem; display:inline-block; }
-  .shs-badge { position:static; margin-top:1rem; display:inline-block; }
-  .mva-cards { grid-template-columns:1fr 1fr; }
-  .testi-grid { grid-template-columns:1fr 1fr; }
-  .footer-inner { grid-template-columns:1fr 1fr; gap:30px; }
-  .services-home-grid {
-    grid-template-columns:1fr 1fr;
-    grid-template-areas: "c1 c2" "c3 c3" "c4 c5";
-  }
-  .sh-card:nth-child(3) { min-height:220px; }
-  .process-steps { grid-template-columns:1fr 1fr; }
-  .ps-arrow { display:none; }
+/* =======================================================
+   RESPONSIVE  —  sm / md / lg
+   lg = ≤ 1100px   md = ≤ 900px   sm = ≤ 640px   xs = ≤ 400px
+======================================================= */
+
+/* ── LG ─────────────────────────────────────────────── */
+@media (max-width:1100px) {
+  .quality-inner,.comp-inner,.shs-inner,.why-grid { grid-template-columns:1fr; gap:40px; }
+  .quality-images    { height:320px; margin-bottom:2.5rem; }
+  .comp-img-badge    { position:static; margin-top:1rem; display:inline-block; }
+  .shs-badge         { position:static; margin-top:1rem; display:inline-block; }
+  .mva-cards         { grid-template-columns:1fr 1fr; }
+  .testi-grid        { grid-template-columns:1fr 1fr; gap:20px; }
+  .footer-inner      { grid-template-columns:1fr 1fr; gap:32px; }
+  .services-home-grid{ grid-template-columns:1fr 1fr; grid-template-areas:"c1 c2""c3 c3""c4 c5"; }
+  .sh-card:nth-child(3){ min-height:220px; }
+  .process-steps     { grid-template-columns:1fr 1fr; gap:24px; }
+  .ps-arrow          { display:none; }
+  .video-wall-grid   { grid-template-columns:1fr 1fr !important; gap:16px; }
+  .stat-bar-grid,.rehab-stat-grid { grid-template-columns:1fr 1fr !important; }
+  .prog-grid         { grid-template-columns:1fr 1fr !important; }
+  .journey-grid      { grid-template-columns:1fr 1fr !important; }
+  .why-physio-grid   { grid-template-columns:1fr 1fr !important; }
+  .sports-rehab-grid { grid-template-columns:1fr 1fr !important; }
+  .phase-grid        { grid-template-columns:1fr 1fr !important; }
+  .tech-grid         { grid-template-columns:1fr 1fr !important; }
+  .gallery-photo-grid{ grid-template-columns:1fr 1fr !important; }
+  .values-grid-top   { grid-template-columns:1fr 1fr; }
+  .team-grid         { grid-template-columns:1fr 1fr !important; }
+  .facility-inner    { grid-template-columns:1fr !important; }
+  .cond-grid         { grid-template-columns:1fr 1fr !important; }
+  .pain-photo-grid   { grid-template-columns:1fr 1fr !important; }
+  .marathon-grid     { grid-template-columns:1fr 1fr !important; }
+  .attention-table-grid{ grid-template-columns:1fr 1fr !important; }
+  .hero-float-badge  { display:none; }
 }
-@media (max-width:768px) {
-  .nav-links { display:none; flex-direction:column; position:absolute; top:72px; left:0; right:0; background:white; padding:1rem 5%; box-shadow:0 10px 30px rgba(0,0,0,.1); gap:0; }
+
+/* ── MD ─────────────────────────────────────────────── */
+@media (max-width:900px) {
+  /* Nav */
+  .nav-links { display:none; flex-direction:column; position:absolute; top:72px; left:0; right:0; background:white; padding:1rem 5% 1.5rem; box-shadow:0 10px 30px rgba(0,0,0,.1); gap:0; z-index:999; }
   .nav-links.open { display:flex; }
+  .nav-link  { padding:13px 16px; border-bottom:1px solid var(--gray); width:100%; }
   .hamburger { display:flex; }
-  .hero-content { grid-template-columns:1fr; padding:60px 5%; }
-  .hero-right { display:none; }
-  .mva-cards { grid-template-columns:1fr; }
-  .testi-grid { grid-template-columns:1fr; }
+
+  /* Hero */
+  .hero-content { grid-template-columns:1fr; padding:60px 5% 50px; gap:0; }
+  .hero-right   { display:none; }
+  .hero-title   { font-size:clamp(2rem,7vw,3rem); }
+  .hero-sub     { font-size:.95rem; margin-bottom:1.5rem; }
+  .hero-btns    { gap:.75rem; }
+  .hero-stats   { gap:1.2rem; }
+  .stat-n       { font-size:1.5rem; }
+  .page-header  { padding:60px 5% 44px; }
+  .page-header h1 { font-size:clamp(1.8rem,6vw,2.8rem); }
+
+  /* Grids */
+  .mva-cards    { grid-template-columns:1fr; gap:16px; }
+  .testi-grid   { grid-template-columns:1fr; }
   .services-home-grid { grid-template-columns:1fr; grid-template-areas:"c1""c2""c3""c4""c5"; }
-  .process-steps { grid-template-columns:1fr; }
-  .benefits-grid { grid-template-columns:1fr; }
-  .booking-wrap, .contact-grid { grid-template-columns:1fr; }
-  .footer-inner { grid-template-columns:1fr; }
-  .trust-bar { gap:1rem; justify-content:flex-start; }
-  .mva-cta-banner { flex-direction:column; text-align:center; }
-  .footer-bottom { flex-direction:column; text-align:center; }
+  .process-steps{ grid-template-columns:1fr; gap:20px; }
+  .benefits-grid{ grid-template-columns:1fr; }
+  .booking-wrap,.contact-grid { grid-template-columns:1fr; }
+  .footer-inner { grid-template-columns:1fr; gap:28px; }
+  .video-wall-grid { grid-template-columns:1fr 1fr !important; gap:14px; }
+  .gallery-photo-grid { grid-template-columns:1fr 1fr !important; }
+  .values-grid-top,.values-grid-bottom { grid-template-columns:1fr 1fr !important; gap:16px; }
+  .prog-grid    { grid-template-columns:1fr 1fr !important; }
+  .journey-grid { grid-template-columns:1fr 1fr !important; }
+  .why-physio-grid { grid-template-columns:1fr 1fr !important; }
+  .sports-rehab-grid { grid-template-columns:1fr 1fr !important; }
+  .phase-grid   { grid-template-columns:1fr 1fr !important; }
+  .tech-grid    { grid-template-columns:1fr 1fr !important; }
+  .rehab-grid   { grid-template-columns:1fr !important; }
+  .facility-inner{ grid-template-columns:1fr !important; }
+  .team-grid    { grid-template-columns:1fr 1fr !important; }
+  .cond-grid    { grid-template-columns:1fr 1fr !important; }
+  .pain-photo-grid { grid-template-columns:1fr 1fr !important; }
+  .marathon-grid { grid-template-columns:1fr 1fr !important; }
+  .stat-bar-grid,.rehab-stat-grid { grid-template-columns:1fr 1fr !important; }
+  .attention-table-grid { grid-template-columns:1fr !important; }
+  .team-lead-card { grid-template-columns:1fr !important; text-align:center; }
+  .shs-features { grid-template-columns:1fr 1fr !important; }
+
+  /* Misc */
+  .trust-bar    { gap:1rem 1.5rem; justify-content:flex-start; padding:14px 5%; }
+  .mva-cta-banner { flex-direction:column; text-align:center; gap:1.2rem; }
+  .footer-bottom { flex-direction:column; text-align:center; gap:.5rem; }
+  .ds-inner     { flex-wrap:wrap; }
+  .ds-stat      { min-width:50%; padding:24px 10px; }
+  .ds-divider   { display:none; }
+  .section-title { font-size:clamp(1.7rem,5vw,2.4rem); }
+  .section-sub   { font-size:.95rem; }
+  .value-card    { padding:30px 24px; }
+  .quality-section,.values-section,.testimonials-section,.compassionate-section { padding:70px 5%; }
 }
-@media (max-width:480px) {
-  .hero-btns { flex-direction:column; }
-  .form-row { grid-template-columns:1fr; }
+
+/* ── SM ─────────────────────────────────────────────── */
+@media (max-width:640px) {
+  /* Nav */
+  .nav-actions .btn-book { padding:8px 16px; font-size:.82rem; }
+  .logo-top { font-size:.78rem; } .logo-bot { font-size:.65rem; }
+  .dropdown-menu { position:static; opacity:1; visibility:visible; transform:none; box-shadow:none; border:none; padding:0 0 0 1rem; border-radius:0; background:var(--gray); margin-top:4px; }
+
+  /* Hero */
+  .hero-section  { min-height:auto; padding-bottom:40px; }
+  .hero-content  { padding:44px 5% 36px; }
+  .hero-title    { font-size:clamp(1.75rem,8vw,2.4rem); }
+  .hero-sub      { font-size:.9rem; max-width:100%; }
+  .hero-btns     { flex-direction:column; align-items:flex-start; gap:.65rem; }
+  .hero-btns a,.hero-btns button { width:100%; justify-content:center; }
+  .hero-stats    { gap:1rem; }
+  .stat-n        { font-size:1.35rem; }
+  .stat-divider  { height:30px; }
+  .hero-scroll-hint { display:none; }
+  .hero-blob     { display:none; }
+
+  /* Page header */
+  .page-header   { padding:48px 5% 36px; }
+  .page-header h1 { font-size:clamp(1.6rem,8vw,2.2rem); }
+  .page-header p  { font-size:.9rem; }
+
+  /* Typography */
+  .section-title { font-size:clamp(1.5rem,7vw,2rem); }
+  .section-sub,.section-desc { font-size:.9rem; }
+
+  /* Buttons */
+  .btn-primary,.btn-ghost,.btn-white,.btn-outline-green { padding:12px 22px; font-size:.88rem; }
+
+  /* ALL grids → 1 col on phone */
+  .video-wall-grid   { grid-template-columns:1fr !important; gap:14px; }
+  .gallery-photo-grid{ grid-template-columns:1fr !important; }
+  .values-grid-top,.values-grid-bottom { grid-template-columns:1fr !important; max-width:100%; }
+  .prog-grid         { grid-template-columns:1fr !important; }
+  .journey-grid      { grid-template-columns:1fr !important; }
+  .why-physio-grid   { grid-template-columns:1fr !important; }
+  .sports-rehab-grid { grid-template-columns:1fr !important; }
+  .phase-grid        { grid-template-columns:1fr !important; }
+  .tech-grid         { grid-template-columns:1fr 1fr !important; }
+  .stat-bar-grid,.rehab-stat-grid { grid-template-columns:1fr 1fr !important; }
+  .team-grid         { grid-template-columns:1fr !important; }
+  .cond-grid         { grid-template-columns:1fr !important; }
+  .pain-photo-grid   { grid-template-columns:1fr 1fr !important; }
+  .marathon-grid     { grid-template-columns:1fr !important; }
+  .attention-table-grid { grid-template-columns:1fr !important; }
+  .process-steps     { grid-template-columns:1fr !important; }
+  .mva-cards         { grid-template-columns:1fr !important; }
+  .testi-grid        { grid-template-columns:1fr !important; }
+  .footer-inner      { grid-template-columns:1fr !important; }
+  .form-row          { grid-template-columns:1fr !important; }
+  .shs-features      { grid-template-columns:1fr 1fr !important; }
+  .services-home-grid{ grid-template-columns:1fr !important; grid-template-areas:"c1""c2""c3""c4""c5" !important; }
+  .booking-wrap,.contact-grid { grid-template-columns:1fr !important; }
+
+  /* Video cards */
+  .clinic-video-card { aspect-ratio:3/4 !important; }
+  .cvc-play-icon     { width:48px; height:48px; }
+
+  /* Trust bar */
+  .trust-bar  { flex-direction:column; align-items:flex-start; gap:.75rem; }
+  .trust-item { font-size:.82rem; }
+
+  /* CTA banners */
+  .mva-cta-banner { padding:1.8rem 5%; gap:1rem; }
+  .mva-cta-banner .btn-primary { width:100%; justify-content:center; }
+
+  /* Stats */
+  .ds-stat  { min-width:50%; }
+  .ds-num   { font-size:2rem; }
+  .ds-label { font-size:.78rem; }
+
+  /* Value cards */
+  .value-card     { padding:26px 20px; }
+  .value-card-icon{ width:60px; height:60px; }
+  .value-card h3  { font-size:1.1rem; }
+
+  /* MCA / misc cards */
+  .mva-card { padding:24px 20px; }
+  .dr-img-wrap { max-width:240px; margin:0 auto; }
+
+  /* Footer */
+  .footer-bottom { flex-direction:column; text-align:center; gap:.5rem; padding:1rem 5%; }
+  .footer-logo-area { text-align:center; }
+
+  /* Final CTA */
+  .final-cta { padding:60px 5%; }
+  .final-cta .hero-btns { flex-direction:column; align-items:center; }
+  .final-cta .btn-white,.final-cta .btn-ghost-white { width:100%; justify-content:center; max-width:320px; }
+
+  /* Section padding override */
+  .quality-section,.values-section,.compassionate-section,.testimonials-section { padding:56px 5%; }
+
+  /* WhatsApp */
+  .wa-float { bottom:16px !important; right:16px !important; }
+}
+
+/* ── XS : very small phones ─────────────────────────── */
+@media (max-width:400px) {
+  .tech-grid      { grid-template-columns:1fr !important; }
+  .pain-photo-grid{ grid-template-columns:1fr !important; }
+  .stat-bar-grid,.rehab-stat-grid { grid-template-columns:1fr !important; }
+  .hero-title     { font-size:1.65rem; }
+  .section-title  { font-size:1.45rem; }
+  .nav-inner      { padding:0 4%; }
+}
+
+/* ── REDUCE MOTION ──────────────────────────────────── */
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
+
+/* ===== CLINIC MEDIA SECTION ===== */
+.gallery-photo-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+}
+.gallery-photo-item {
+  border-radius:20px; overflow:hidden;
+  position:relative; cursor:pointer; aspect-ratio:4/3;
+}
+.gallery-photo-item img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .6s cubic-bezier(.22,1,.36,1);
+}
+.gallery-photo-item:hover img { transform:scale(1.07); }
+.gallery-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top,rgba(26,46,74,.72) 0%,transparent 55%);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:flex-end;
+  padding-bottom:20px;
+  opacity:0; transition:opacity .4s ease;
+}
+.gallery-photo-item:hover .gallery-overlay { opacity:1; }
+
+/* Video wall grid */
+.video-wall-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+}
+.clinic-video-card {
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 6px 28px rgba(26,46,74,.12);
+  transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+  background:#111; position:relative; aspect-ratio:9/16; cursor:pointer;
+}
+.clinic-video-card:hover {
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 20px 50px rgba(26,46,74,.22);
+}
+.cvc-poster {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block;
+  transition:opacity .35s ease, transform .5s cubic-bezier(.22,1,.36,1);
+  z-index:1;
+}
+.cvc-video {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block; opacity:0;
+  transition:opacity .35s ease; z-index:2;
+}
+.clinic-video-card.hovered .cvc-poster { opacity:0; }
+.clinic-video-card.hovered .cvc-video  { opacity:1; }
+.cvc-play-btn {
+  position:absolute; inset:0; z-index:3;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  background:linear-gradient(to top,rgba(15,25,50,.7) 0%,rgba(15,25,50,.15) 60%,transparent 100%);
+  transition:opacity .35s ease; pointer-events:none;
+}
+.cvc-play-icon {
+  width:58px; height:58px;
+  background:rgba(255,255,255,.18); backdrop-filter:blur(8px);
+  border-radius:50%; border:2px solid rgba(255,255,255,.4);
+  display:flex; align-items:center; justify-content:center;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1), background .3s ease;
+  margin-bottom:8px;
+}
+.clinic-video-card:hover .cvc-play-icon {
+  transform:scale(1.15);
+  background:rgba(43,124,191,.6); border-color:rgba(255,255,255,.6);
+}
+.clinic-video-card.hovered .cvc-play-btn { opacity:0; }
+.cvc-label {
+  position:absolute; bottom:12px; left:14px; z-index:4;
+  color:white; font-size:.75rem; font-weight:600;
+  background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
+  padding:3px 10px; border-radius:20px; letter-spacing:.5px;
+  pointer-events:none;
+}
+
+/* Video responsive overrides inside the section */
+@media(max-width:900px){
+  .gallery-photo-grid { grid-template-columns:1fr 1fr; }
+  .video-wall-grid    { grid-template-columns:1fr 1fr; gap:14px; }
+}
+@media(max-width:640px){
+  .gallery-photo-grid { grid-template-columns:1fr; }
+  .video-wall-grid    { grid-template-columns:1fr; gap:14px; }
+  .clinic-video-card  { aspect-ratio:3/4; }
+  .cvc-play-icon      { width:48px; height:48px; }
 }
