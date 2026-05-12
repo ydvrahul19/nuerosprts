@@ -116,19 +116,19 @@ ul { list-style:none; }
 .nav-inner {
   max-width:1320px; margin:0 auto;
   display:flex; align-items:center; justify-content:space-between;
-  padding:0 4%; height:76px;
-  gap: 20px; overflow:visible;
+  padding:0 4%; height:68px;
+  gap: 16px; overflow:visible;
 }
 .nav-logo { display:flex; flex-direction:row; align-items:center; text-align:left; gap:10px; text-decoration:none; flex-shrink:0; }
-.nav-logo-img { width:52px; height:52px; border-radius:10px; object-fit:cover; transition:transform .3s ease; flex-shrink:0; }
+.nav-logo-img { width:46px; height:46px; border-radius:10px; object-fit:cover; transition:transform .3s ease; flex-shrink:0; }
 .nav-logo:hover .nav-logo-img { transform:rotate(10deg) scale(1.08); }
 .nav-brand-text { display:flex; flex-direction:column; line-height:1; gap:3px; }
-.nav-brand-name { font-weight:800; font-size:1.05rem; color:#0d1b2a; letter-spacing:0.2px; font-family:'Playfair Display',serif; line-height:1.15; white-space:nowrap; }
-.nav-brand-tagline { font-weight:400; font-size:0.68rem; color:#666; letter-spacing:0.3px; text-transform:none; white-space:nowrap; }
+.nav-brand-name { font-weight:800; font-size:1rem; color:#0d1b2a; letter-spacing:0.2px; font-family:'Playfair Display',serif; line-height:1.15; white-space:nowrap; }
+.nav-brand-tagline { font-weight:400; font-size:0.65rem; color:#666; letter-spacing:0.3px; white-space:nowrap; }
 .nav-links { display:flex; align-items:center; gap:0; flex:1; justify-content:center; }
 .nav-link {
-  color:#1a1a2e; text-decoration:none; font-weight:500; font-size:0.93rem;
-  padding:10px 16px; border-radius:0; transition:all .2s;
+  color:#1a1a2e; text-decoration:none; font-weight:500; font-size:0.88rem;
+  padding:8px 13px; border-radius:0; transition:all .2s;
   display:flex; align-items:center; gap:4px; white-space:nowrap;
   position:relative; letter-spacing:0.1px;
 }
@@ -159,27 +159,27 @@ ul { list-style:none; }
 .dd-icon { font-size:1.4rem; width:40px; height:40px; background:var(--light); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .dd-title { font-weight:600; font-size:0.9rem; color:var(--navy); }
 .dd-sub { font-size:0.78rem; color:var(--muted); margin-top:2px; }
-.nav-actions { display:flex; align-items:center; gap:12px; }
-.btn-book {
-  background:var(--green); color:white; padding:10px 22px;
-  border-radius:50px; font-weight:600; font-size:0.88rem;
-  text-decoration:none; transition:all .2s;
+.nav-actions { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+.nav-book-btn {
+  background:var(--green); color:white !important; padding:9px 18px;
+  border-radius:50px; font-weight:600; font-size:0.82rem;
+  text-decoration:none; transition:all .2s; white-space:nowrap;
+  display:inline-flex; align-items:center; gap:6px;
 }
-.btn-book:hover { background:var(--navy); transform:translateY(-1px); }
+.nav-book-btn:hover { background:var(--navy); transform:translateY(-1px); }
 .hamburger {
   display:none; flex-direction:column; gap:5px; border:none; cursor:pointer;
-  padding:10px 14px; border-radius:50px;
-  background:var(--green);
+  padding:9px 12px; border-radius:8px;
+  background:var(--navy);
   flex-shrink:0; align-items:center; justify-content:center;
 }
 .hamburger span { width:20px; height:2px; background:white; border-radius:2px; transition:.3s; display:block; }
-.hamburger:hover { background:var(--navy); }
 .hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
 .hamburger.active span:nth-child(2) { opacity:0; }
 .hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
 
 /* ===== PAGES ===== */
-.page { display:none; padding-top:112px; }
+.page { display:none; padding-top:104px; }
 .page.active { display:block; animation:fadeInUp 0.5s cubic-bezier(0.4,0,0.2,1) both; }
 
 /* ===== PAGE HEADER ===== */
@@ -767,9 +767,60 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   .dr-photo-col{flex:0 0 280px;}
 }
 @media(max-width:768px){
-  .nav-links{display:none;flex-direction:column;position:fixed;top:76px;left:0;right:0;background:white;padding:1rem 5%;box-shadow:0 10px 30px rgba(0,0,0,.1);gap:0;z-index:999;}
-  .nav-links.open{display:flex !important;}
-  .hamburger{display:flex !important;}
+  /* Topbar hidden → navbar goes to top:0 */
+  #navbar { top:0 !important; }
+  .page { padding-top:68px !important; }
+
+  /* Nav links — full-screen dropdown from top of navbar */
+  .nav-links {
+    display:none;
+    flex-direction:column;
+    position:fixed;
+    top:68px; left:0; right:0;
+    background:white;
+    padding:12px 20px 20px;
+    box-shadow:0 12px 40px rgba(0,0,0,.12);
+    gap:0;
+    z-index:999;
+    max-height:calc(100vh - 68px);
+    overflow-y:auto;
+  }
+  .nav-links.open { display:flex !important; }
+  .nav-link { padding:13px 8px; font-size:.95rem; border-bottom:1px solid #f0f4f8; }
+  .nav-link::after { display:none; }
+
+  /* Show hamburger, hide desktop book btn */
+  .hamburger { display:flex !important; }
+  .nav-book-btn { display:none !important; }
+
+  /* Mobile Book Now inside menu */
+  .nav-mobile-book {
+    display:block;
+    margin:12px 0 4px;
+    background:var(--green);
+    color:white !important;
+    text-align:center;
+    padding:13px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:.92rem;
+    text-decoration:none;
+  }
+
+  /* Dropdown stays open inline */
+  .has-dropdown .dropdown-menu {
+    position:static;
+    opacity:1; visibility:visible; transform:none;
+    box-shadow:none; padding:4px 0 4px 16px; border:none; min-width:unset;
+    background:transparent;
+  }
+  .dropdown-item { padding:8px 12px; }
+  .dd-icon { width:32px; height:32px; font-size:1.1rem; }
+
+  /* hide tagline on mobile */
+  .nav-brand-tagline { display:none; }
+
+  /* Other layout fixes */
   .hero-inner{flex-direction:column-reverse;gap:24px;padding:30px 20px 40px;text-align:center;min-height:auto;}
   .hero-left{flex:none;width:100%;max-width:100%;}
   .hero-right{width:100%;}
@@ -787,11 +838,8 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   .form-row{grid-template-columns:1fr;}
   .dr-profile-inner{flex-direction:column;}
   .dr-photo-col{flex:none;width:100%;max-width:300px;margin:0 auto;}
-  .nav-inner{height:64px !important;padding:0 16px !important;} #navbar{top:0 !important;} .page{padding-top:64px !important;}
-  .page{padding-top:112px !important;}
   .trust-bar{overflow-x:auto;flex-wrap:nowrap;padding:14px 16px;justify-content:flex-start;gap:1.5rem;-webkit-overflow-scrolling:touch;}
   .trust-item{white-space:nowrap;flex-shrink:0;font-size:0.8rem;}
-  .has-dropdown .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:0 0 0 16px;border:none;min-width:unset;}
 }
 @media(max-width:480px){
   .hero-btns{flex-direction:column;align-items:center;gap:10px;}
@@ -906,31 +954,32 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#" onclick="showPage('home');return false;" class="nav-link">Home</a></li>
-      <li><a href="#" onclick="showPage('about');return false;" class="nav-link">About Us</a></li>
+      <li><a href="#" onclick="showPage('home');closeMenu();return false;" class="nav-link">Home</a></li>
+      <li><a href="#" onclick="showPage('about');closeMenu();return false;" class="nav-link">About Us</a></li>
       <li class="has-dropdown">
         <a href="#" class="nav-link">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="dropdown-menu">
-          <a href="#" class="dropdown-item" onclick="showPage('physio');return false;">
+          <a href="#" class="dropdown-item" onclick="showPage('physio');closeMenu();return false;">
             <div class="dd-icon">💪</div>
             <div><div class="dd-title">Physiotherapy</div><div class="dd-sub">Pain relief & rehab</div></div>
           </a>
-          <a href="#" class="dropdown-item" onclick="showPage('gym');return false;">
+          <a href="#" class="dropdown-item" onclick="showPage('gym');closeMenu();return false;">
             <div class="dd-icon">🏋️</div>
             <div><div class="dd-title">Fitness Training</div><div class="dd-sub">Personal & group training</div></div>
           </a>
-          <a href="#" class="dropdown-item" onclick="showPage('rehab');return false;">
+          <a href="#" class="dropdown-item" onclick="showPage('rehab');closeMenu();return false;">
             <div class="dd-icon">🧠</div>
             <div><div class="dd-title">Rehabilitation</div><div class="dd-sub">Neuro & sports rehab</div></div>
           </a>
         </div>
       </li>
-      <li><a href="#" onclick="showPage('team');return false;" class="nav-link">Our Team</a></li>
-      <li><a href="#" onclick="showPage('testimonials');return false;" class="nav-link">Reviews</a></li>
-      <li><a href="#" onclick="showPage('contact');return false;" class="nav-link">Contact</a></li>
+      <li><a href="#" onclick="showPage('team');closeMenu();return false;" class="nav-link">Our Team</a></li>
+      <li><a href="#" onclick="showPage('testimonials');closeMenu();return false;" class="nav-link">Reviews</a></li>
+      <li><a href="#" onclick="showPage('contact');closeMenu();return false;" class="nav-link">Contact</a></li>
+      <li><a href="#" onclick="showPage('booking');closeMenu();return false;" class="nav-mobile-book">📅 Book Appointment</a></li>
     </ul>
-    <div class="nav-actions" style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
-      <a href="https://wa.me/919429554422" target="_blank" class="btn-book nav-book-btn" style="background:var(--green);color:white;padding:8px 16px;border-radius:50px;font-weight:600;font-size:0.82rem;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;">📅 Book Now</a>
+    <div class="nav-actions">
+      <a href="#" onclick="showPage('booking');return false;" class="nav-book-btn">📅 Book Now</a>
       <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>

@@ -1193,6 +1193,7 @@ function animateCounters() {
    1. PAGE NAVIGATION with motion
 ───────────────────────────────────────────── */
 function showPage(id) {
+  closeMenu(); // always close mobile menu when navigating
   const current = document.querySelector('.page.active');
   if (current) {
     // Quick fade-out before switching
@@ -1230,14 +1231,20 @@ function toggleMenu() {
   const hamburger = document.getElementById('hamburger');
   navLinks.classList.toggle('open');
   hamburger.classList.toggle('active');
-  // Animate menu items in
   if (navLinks.classList.contains('open')) {
-    const links = navLinks.querySelectorAll('.nav-link, .nav-book-btn');
+    const links = navLinks.querySelectorAll('.nav-link, .nav-mobile-book');
     Motion.stagger(Array.from(links), [
       { opacity: 0, transform: 'translateX(-20px)' },
       { opacity: 1, transform: 'translateX(0)' }
-    ], { duration: 320, staggerDelay: 60 });
+    ], { duration: 320, staggerDelay: 55 });
   }
+}
+
+function closeMenu() {
+  const navLinks  = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (navLinks) navLinks.classList.remove('open');
+  if (hamburger) hamburger.classList.remove('active');
 }
 
 /* ─────────────────────────────────────────────
