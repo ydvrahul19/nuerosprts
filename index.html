@@ -1087,7 +1087,99 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   </section>
 
   <style>
-<!-- OUR VALUES -->
+    
+
+
+    
+  /* ── Treatment Process Cards ── */
+  .tp-steps-grid { }
+  @media(max-width:900px){ .tp-steps-grid{ grid-template-columns:1fr 1fr !important; } }
+  @media(max-width:640px){ .tp-steps-grid{ grid-template-columns:1fr !important; gap:20px !important; } }
+
+  .tp-card {
+    background:white; border-radius:22px; padding:32px 28px;
+    border:1.5px solid rgba(43,124,191,.09);
+    box-shadow:0 4px 24px rgba(26,46,74,.07);
+    position:relative; overflow:hidden;
+    transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease, border-color .3s;
+  }
+  .tp-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg, var(--blue), var(--green));
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .45s cubic-bezier(.22,1,.36,1);
+    border-radius:22px 22px 0 0;
+  }
+  .tp-card:hover::before { transform:scaleX(1); }
+  .tp-card:hover {
+    transform:translateY(-10px);
+    box-shadow:0 24px 50px rgba(26,46,74,.14);
+    border-color:rgba(43,124,191,.18);
+  }
+  .tp-card-final { background:linear-gradient(145deg,#f0fff4,white); border-color:rgba(45,106,79,.15); }
+  .tp-card-final::before { background:linear-gradient(90deg, var(--green), var(--mint)); }
+
+  .tp-card-num {
+    position:absolute; top:20px; right:24px;
+    font-size:3rem; font-weight:800; color:rgba(43,124,191,.07);
+    font-family:'Playfair Display',serif; line-height:1;
+    transition:color .3s ease;
+  }
+  .tp-card:hover .tp-card-num { color:rgba(43,124,191,.12); }
+
+  .tp-card-icon-wrap {
+    width:56px; height:56px; border-radius:16px;
+    background:linear-gradient(135deg,#e3f2fd,#dceefb);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:1.2rem;
+    transition:transform .45s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease;
+    box-shadow:0 4px 16px rgba(43,124,191,.12);
+  }
+  .tp-card:hover .tp-card-icon-wrap {
+    transform:scale(1.15) rotate(-5deg);
+    box-shadow:0 8px 24px rgba(43,124,191,.22);
+  }
+
+  .tp-card-title {
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem; font-weight:700; color:var(--navy);
+    margin-bottom:.7rem; line-height:1.4;
+    transition:color .3s ease;
+  }
+  .tp-card:hover .tp-card-title { color:var(--blue); }
+
+  .tp-card-desc {
+    color:var(--muted); font-size:.875rem; line-height:1.75;
+    margin-bottom:1rem;
+  }
+
+  .tp-card-points {
+    list-style:none; padding:0; margin:0 0 1.2rem;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .tp-card-points li {
+    display:flex; align-items:center; gap:8px;
+    color:var(--muted); font-size:.82rem; line-height:1.5;
+  }
+  .tp-card-points li::before {
+    content:''; flex-shrink:0;
+    width:6px; height:6px; border-radius:50%;
+    background:var(--green);
+  }
+
+  .tp-card-tag {
+    display:inline-flex; align-items:center;
+    background:rgba(43,124,191,.07); color:var(--blue);
+    border:1px solid rgba(43,124,191,.15);
+    padding:4px 14px; border-radius:50px;
+    font-size:.73rem; font-weight:700; letter-spacing:.4px;
+    opacity:0; transform:translateY(6px);
+    transition:opacity .35s ease .05s, transform .35s cubic-bezier(.22,1,.36,1) .05s;
+  }
+  .tp-card:hover .tp-card-tag { opacity:1; transform:translateY(0); }
+  </style>
+
+  <!-- OUR VALUES -->
   <section class="values-section">
     <div class="max-wrap">
       <div class="text-center" style="margin-bottom:0;" data-aos="fade-up">
@@ -1180,96 +1272,6 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       </div>
     </div>
   </section>
-
-    
-  /* ── Treatment Process Cards ── */
-  .tp-steps-grid { }
-  @media(max-width:900px){ .tp-steps-grid{ grid-template-columns:1fr 1fr !important; } }
-  @media(max-width:640px){ .tp-steps-grid{ grid-template-columns:1fr !important; gap:20px !important; } }
-
-  .tp-card {
-    background:white; border-radius:22px; padding:32px 28px;
-    border:1.5px solid rgba(43,124,191,.09);
-    box-shadow:0 4px 24px rgba(26,46,74,.07);
-    position:relative; overflow:hidden;
-    transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease, border-color .3s;
-  }
-  .tp-card::before {
-    content:''; position:absolute; top:0; left:0; right:0; height:3px;
-    background:linear-gradient(90deg, var(--blue), var(--green));
-    transform:scaleX(0); transform-origin:left;
-    transition:transform .45s cubic-bezier(.22,1,.36,1);
-    border-radius:22px 22px 0 0;
-  }
-  .tp-card:hover::before { transform:scaleX(1); }
-  .tp-card:hover {
-    transform:translateY(-10px);
-    box-shadow:0 24px 50px rgba(26,46,74,.14);
-    border-color:rgba(43,124,191,.18);
-  }
-  .tp-card-final { background:linear-gradient(145deg,#f0fff4,white); border-color:rgba(45,106,79,.15); }
-  .tp-card-final::before { background:linear-gradient(90deg, var(--green), var(--mint)); }
-
-  .tp-card-num {
-    position:absolute; top:20px; right:24px;
-    font-size:3rem; font-weight:800; color:rgba(43,124,191,.07);
-    font-family:'Playfair Display',serif; line-height:1;
-    transition:color .3s ease;
-  }
-  .tp-card:hover .tp-card-num { color:rgba(43,124,191,.12); }
-
-  .tp-card-icon-wrap {
-    width:56px; height:56px; border-radius:16px;
-    background:linear-gradient(135deg,#e3f2fd,#dceefb);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:1.2rem;
-    transition:transform .45s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease;
-    box-shadow:0 4px 16px rgba(43,124,191,.12);
-  }
-  .tp-card:hover .tp-card-icon-wrap {
-    transform:scale(1.15) rotate(-5deg);
-    box-shadow:0 8px 24px rgba(43,124,191,.22);
-  }
-
-  .tp-card-title {
-    font-family:'Playfair Display',serif;
-    font-size:1.05rem; font-weight:700; color:var(--navy);
-    margin-bottom:.7rem; line-height:1.4;
-    transition:color .3s ease;
-  }
-  .tp-card:hover .tp-card-title { color:var(--blue); }
-
-  .tp-card-desc {
-    color:var(--muted); font-size:.875rem; line-height:1.75;
-    margin-bottom:1rem;
-  }
-
-  .tp-card-points {
-    list-style:none; padding:0; margin:0 0 1.2rem;
-    display:flex; flex-direction:column; gap:6px;
-  }
-  .tp-card-points li {
-    display:flex; align-items:center; gap:8px;
-    color:var(--muted); font-size:.82rem; line-height:1.5;
-  }
-  .tp-card-points li::before {
-    content:''; flex-shrink:0;
-    width:6px; height:6px; border-radius:50%;
-    background:var(--green);
-  }
-
-  .tp-card-tag {
-    display:inline-flex; align-items:center;
-    background:rgba(43,124,191,.07); color:var(--blue);
-    border:1px solid rgba(43,124,191,.15);
-    padding:4px 14px; border-radius:50px;
-    font-size:.73rem; font-weight:700; letter-spacing:.4px;
-    opacity:0; transform:translateY(6px);
-    transition:opacity .35s ease .05s, transform .35s cubic-bezier(.22,1,.36,1) .05s;
-  }
-  .tp-card:hover .tp-card-tag { opacity:1; transform:translateY(0); }
-  </style>
-
   <!-- MISSION / VISION / APPROACH -->
   <section class="mva-section">
     <div class="max-wrap">
