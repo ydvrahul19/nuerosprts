@@ -1469,15 +1469,39 @@ function getBotReply(input) {
   return `${iconBadge(ICONS.zap,'#1a6fb5')} <strong>How can I help?</strong><br><ul style="margin:8px 0 8px 16px;"><li>Our services & conditions treated</li><li>Location & directions</li><li>Clinic timings</li><li>Contact & booking</li><li>About Dr. Ruchit Shah</li><li>Pricing queries</li></ul>Or WhatsApp us at <strong>+91 94295 54422</strong>!`;
 }
 
+const CHAT_WELCOME = '👋 Hi! I\'m the virtual assistant for <strong>Neuro Sports Centre</strong>, Ahmedabad.<br><br>Ask me anything — services, timings, location, Dr. Ruchit, pricing, or conditions we treat!';
+
+function resetChat() {
+  const box       = document.getElementById('chatMessages');
+  const quickBtns = document.getElementById('quickBtns');
+  const input     = document.getElementById('chatInput');
+  if (box) {
+    box.innerHTML = '';
+    const welcome = document.createElement('div');
+    welcome.className = 'chat-msg bot';
+    welcome.innerHTML = CHAT_WELCOME;
+    box.appendChild(welcome);
+  }
+  if (quickBtns) quickBtns.style.display = '';
+  if (input) input.value = '';
+}
+
 function toggleChat() {
   const win    = document.getElementById('chatbotWindow');
-  const badge  = document.getElementById('chatBadge');
   const badge2 = document.getElementById('chatBadge2');
   if (!win) return;
-  win.classList.toggle('open');
-  if (badge)  badge.style.display  = 'none';
-  if (badge2) badge2.style.display = 'none';
-  if (win.classList.contains('open')) {
+
+  const isOpen = win.classList.contains('open');
+
+  if (isOpen) {
+    // Closing — reset for next open
+    win.classList.remove('open');
+    setTimeout(resetChat, 350); // reset after close animation
+  } else {
+    // Opening fresh
+    resetChat();
+    win.classList.add('open');
+    if (badge2) badge2.style.display = 'none';
     setTimeout(() => {
       const input = document.getElementById('chatInput');
       if (input) input.focus();
@@ -1514,10 +1538,11 @@ function sendChat() {
   if (!text) return;
   input.value = '';
 
-  addChatMessage(text, 'user');
-
+  // Hide quick buttons permanently once user starts chatting
   const quickBtns = document.getElementById('quickBtns');
   if (quickBtns) quickBtns.style.display = 'none';
+
+  addChatMessage(text, 'user');
 
   const typing = showTypingIndicator();
   setTimeout(() => {
@@ -1527,6 +1552,10 @@ function sendChat() {
 }
 
 function sendQuick(text) {
+  // Hide quick buttons first, then send
+  const quickBtns = document.getElementById('quickBtns');
+  if (quickBtns) quickBtns.style.display = 'none';
+
   const input = document.getElementById('chatInput');
   if (input) input.value = text;
   sendChat();
@@ -1850,6 +1879,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Chatbot UI upgrade
   upgradeChatbotUI();
+  resetChat();
 
   // Hero elements animate in
   setTimeout(() => {
