@@ -870,7 +870,7 @@ function injectChatStyles() {
     .chatbot-window {
       transform: scale(0.85) translateY(20px);
       opacity: 0;
-      transform-origin: bottom right;
+      transform-origin: bottom left;
       transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1),
                   opacity 0.3s ease !important;
     }
@@ -1472,9 +1472,11 @@ function getBotReply(input) {
 function toggleChat() {
   const win    = document.getElementById('chatbotWindow');
   const badge  = document.getElementById('chatBadge');
+  const badge2 = document.getElementById('chatBadge2');
   if (!win) return;
   win.classList.toggle('open');
-  if (badge) badge.style.display = 'none';
+  if (badge)  badge.style.display  = 'none';
+  if (badge2) badge2.style.display = 'none';
   if (win.classList.contains('open')) {
     setTimeout(() => {
       const input = document.getElementById('chatInput');

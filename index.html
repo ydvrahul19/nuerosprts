@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neuro Sports Centre – Ahmedabad's Premier Physiotherapy & Fitness Clinic</title>
-<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="icon" type="image/png" href="images/logo.webp">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* ===== ROOT VARIABLES ===== */
@@ -341,7 +341,7 @@ ul { list-style:none; }
   
 /* ===== PAIN SECTION ===== */
 .pain-section { position:relative; padding:100px 5%; overflow:hidden; background:var(--navy); }
-.pain-bg-img { position:absolute; inset:0; background:url('images/physio2.png') center/cover no-repeat; opacity:0.18; }
+.pain-bg-img { position:absolute; inset:0; background:url('images/physio2.webp') center/cover no-repeat; opacity:0.18; }
 .pain-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,20,40,0.92) 0%,rgba(26,111,181,0.88) 50%,rgba(30,73,118,0.85) 100%); }
 .pain-inner { position:relative; z-index:2; }
 .attn-row { display:flex; align-items:center; gap:14px; padding:13px 28px; border-bottom:1px solid rgba(255,255,255,0.08); color:white; font-size:0.92rem; font-weight:500; cursor:pointer; transition:all .25s ease; position:relative; }
@@ -551,7 +551,7 @@ ul { list-style:none; }
 
 /* ===== DYNAMIC STATS ===== */
 .dynamic-stats-section { position:relative; padding:70px 5%; background:linear-gradient(135deg,var(--navy) 0%,#1a3a6e 60%,var(--blue) 100%); overflow:hidden; }
-.ds-bg-overlay { position:absolute; inset:0; background:url('images/physio1.png') center/cover no-repeat; opacity:0.06; }
+.ds-bg-overlay { position:absolute; inset:0; background:url('images/physio1.webp') center/cover no-repeat; opacity:0.06; }
 .ds-inner { position:relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
 .ds-stat { text-align:center; flex:1; min-width:160px; padding:20px 10px; }
 .ds-icon { font-size:2rem; margin-bottom:0.5rem; }
@@ -693,8 +693,14 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 @keyframes fabPulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.65);opacity:0;} }
 
 /* ===== CHATBOT ===== */
-.chatbot-window { position:fixed; bottom:100px; right:28px; z-index:1000; width:360px; height:520px; background:white; border-radius:20px; box-shadow:0 20px 60px rgba(26,111,181,.22); display:flex; flex-direction:column; overflow:hidden; transform:scale(0.85) translateY(20px); opacity:0; pointer-events:none; transition:all .3s cubic-bezier(0.4,0,0.2,1); transform-origin:bottom right; }
+.chatbot-fab { position:fixed; bottom:24px; left:24px; z-index:1001; width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,var(--navy),var(--blue)); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(26,111,181,.5); transition:transform .3s ease,box-shadow .3s; }
+.chatbot-fab:hover { transform:scale(1.1); box-shadow:0 10px 30px rgba(26,111,181,.6); }
+.chatbot-fab svg { width:26px; height:26px; color:white; }
+.chatbot-fab-badge { position:absolute; top:-4px; right:-4px; width:18px; height:18px; background:#e53935; border-radius:50%; font-size:0.65rem; font-weight:700; color:white; display:flex; align-items:center; justify-content:center; border:2px solid white; }
+.chatbot-fab-pulse { position:absolute; width:100%; height:100%; border-radius:50%; background:rgba(26,111,181,.3); animation:fabPulse 2s infinite; pointer-events:none; }
+.chatbot-window { position:fixed; bottom:96px; left:24px; z-index:1002; width:360px; height:520px; background:white; border-radius:20px; box-shadow:0 20px 60px rgba(26,111,181,.22); display:flex; flex-direction:column; overflow:hidden; transform:scale(0.85) translateY(20px); opacity:0; pointer-events:none; transition:all .3s cubic-bezier(0.4,0,0.2,1); transform-origin:bottom left; }
 .chatbot-window.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
+@media (max-width:420px) { .chatbot-window { width:calc(100vw - 16px); left:8px; bottom:84px; } }
 .chatbot-header { background:linear-gradient(135deg,var(--navy),var(--blue)); padding:16px 20px; display:flex; align-items:center; gap:12px; flex-shrink:0; }
 .chatbot-avatar { width:40px; height:40px; background:rgba(255,255,255,.15); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
 .chatbot-title { flex:1; }
@@ -804,7 +810,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="#" onclick="showPage('home')">
-      <img src="images/logo.png" alt="Neuro Sports Centre" class="nav-logo-img">
+      <img src="images/logo.webp" alt="Neuro Sports Centre" class="nav-logo-img">
       <div class="nav-brand-text">
         <span class="nav-brand-name">Neuro Sports Centre</span>
         <span class="nav-brand-tagline">Physiotherapy · Fitness · Rehabilitation</span>
@@ -855,7 +861,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     <div class="hero-inner">
       <div class="hero-left" id="heroLeft">
         <div class="hero-clinic-brand">
-          <img src="images/logo.png" alt="Neuro Sports Centre" class="hero-brand-logo">
+          <img src="images/logo.webp" alt="Neuro Sports Centre" class="hero-brand-logo">
           <div class="hero-brand-words">
             <span class="hbw-line1">Neuro Sports</span>
             <span class="hbw-line2">Centre</span>
@@ -878,10 +884,10 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       <div class="hero-right">
         <div class="hero-oval-wrap">
           <div class="hero-slides" id="heroSlides">
-            <div class="hero-slide active"><img src="images/physio1.png" alt="Physiotherapy Treatment" style="object-position:top"></div>
-            <div class="hero-slide"><img src="images/rehabilitation.png" alt="Rehabilitation" style="object-position:top"></div>
-            <div class="hero-slide"><img src="images/manual_therapy.png" alt="Manual Therapy" style="object-position:top"></div>
-            <div class="hero-slide"><img src="images/dr_clinic.png" alt="Clinic" style="object-position:top"></div>
+            <div class="hero-slide active"><img src="images/physio1.webp" alt="Physiotherapy Treatment" style="object-position:top"></div>
+            <div class="hero-slide"><img src="images/rehabilitation.webp" alt="Rehabilitation" style="object-position:top"></div>
+            <div class="hero-slide"><img src="images/manual_therapy.webp" alt="Manual Therapy" style="object-position:top"></div>
+            <div class="hero-slide"><img src="images/dr_clinic.webp" alt="Clinic" style="object-position:top"></div>
           </div>
           <div class="oval-badge oval-badge-top"><span>⭐ 5.0 Google Rating</span></div>
           <div class="oval-badge oval-badge-bot"><span id="slideConditionTag">Physio & Fitness</span></div>
@@ -909,10 +915,10 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     <div class="quality-inner max-wrap">
       <div class="quality-images" data-aos="fade-right">
         <div class="qi-photo qi-photo1">
-          <img src="images/physio1.png" alt="Physiotherapy Treatment">
+          <img src="images/physio1.webp" alt="Physiotherapy Treatment">
         </div>
         <div class="qi-photo qi-photo2">
-          <img src="images/manual_therapy.png" alt="Manual Therapy">
+          <img src="images/manual_therapy.webp" alt="Manual Therapy">
         </div>
       </div>
       <div class="quality-text" data-aos="fade-left">
@@ -1339,7 +1345,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">BAD POSTURE</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">Posture correction →</div></div>
         </div>
         <div onclick="showPage('gym')" style="position:relative;border-radius:20px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;box-shadow:0 8px 30px rgba(26,111,181,.15);">
-          <img src="images/rehabilitation.png" alt="Fitness" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
+          <img src="images/rehabilitation.webp" alt="Fitness" style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.88) 0%,rgba(0,137,123,.1) 60%);"></div>
           <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;color:white;"><div style="font-size:1.1rem;font-weight:700;letter-spacing:.5px;">FITNESS TRAINING</div><div style="font-size:.8rem;opacity:.85;margin-top:4px;">All age groups →</div></div>
         </div>
@@ -1354,23 +1360,23 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Our Services</div>
       <h2 class="section-title text-center">We Provide <span class="color-green">The Best</span> <span class="color-navy">Services</span></h2>
       <div class="services-home-grid">
-        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/manual_therapy.png')">
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/manual_therapy.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
           <div class="shc-content"><div class="shc-icon-wrap">🏃</div><h3>Sports Physio &amp; Rehab</h3><p>Expert physiotherapy and rehabilitation for sports injuries &mdash; from sprains to complex athletic recoveries.</p><div class="shc-arrow">→</div></div>
         </div>
-        <div class="sh-card" onclick="showPage('rehab')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/rehabilitation.png')">
+        <div class="sh-card" onclick="showPage('rehab')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/rehabilitation.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
           <div class="shc-content"><div class="shc-icon-wrap">🧠</div><h3>Neuro Physio &amp; Rehab</h3><p>Advanced neurological physiotherapy for stroke, Parkinson’s, spinal cord injuries, and developmental conditions.</p><div class="shc-arrow">→</div></div>
         </div>
-        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="100" style="--bg-url:url('images/alignment.png')">
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="100" style="--bg-url:url('images/alignment.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
           <div class="shc-content"><div class="shc-icon-wrap">🦴</div><h3>Ortho Physio &amp; Rehab</h3><p>Orthopaedic physiotherapy for joint pain, fractures, post-surgical recovery, and musculoskeletal conditions.</p><div class="shc-arrow">→</div></div>
         </div>
-        <div class="sh-card" onclick="showPage('gym')" data-aos="fade-up" data-aos-delay="200" style="--bg-url:url('images/physio2.png')">
+        <div class="sh-card" onclick="showPage('gym')" data-aos="fade-up" data-aos-delay="200" style="--bg-url:url('images/physio2.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
           <div class="shc-content"><div class="shc-icon-wrap">🏋️</div><h3>Personal Fitness Training</h3><p>Personalised fitness programmes designed by physiotherapists &mdash; safe, structured, and results-focused.</p><div class="shc-arrow">→</div></div>
         </div>
-        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="400" style="--bg-url:url('images/dry_needling.png')">
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="400" style="--bg-url:url('images/dry_needling.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
           <div class="shc-content"><div class="shc-icon-wrap">⚡</div><h3>Advanced Physiotherapy</h3><p>TECAR Therapy, Class IV Laser Therapy, Aqua Hydrotherapy, Dry Needling, and more cutting-edge modalities.</p><div class="shc-arrow">→</div></div>
         </div>
@@ -1450,8 +1456,8 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Placeholder from existing images -->
           <div class="gallery-photo-item" style="border-radius:20px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;"
-               onclick="openLightbox('images/physio1.png','Physiotherapy Session')">
-            <img src="images/physio1.png" alt="Physiotherapy at Neuro Sports Centre"
+               onclick="openLightbox('images/physio1.webp','Physiotherapy Session')">
+            <img src="images/physio1.webp" alt="Physiotherapy at Neuro Sports Centre"
                  style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1);">
             <div class="gallery-overlay">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -1460,8 +1466,8 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
 
           <div class="gallery-photo-item" style="border-radius:20px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;"
-               onclick="openLightbox('images/dr_clinic.png','Our Clinic Space')">
-            <img src="images/dr_clinic.png" alt="Neuro Sports Centre Facility"
+               onclick="openLightbox('images/dr_clinic.webp','Our Clinic Space')">
+            <img src="images/dr_clinic.webp" alt="Neuro Sports Centre Facility"
                  style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1);">
             <div class="gallery-overlay">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -1778,7 +1784,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
   <!-- MARATHON / RUNNING HIGHLIGHT -->
   <section style="padding:80px 5%;background:linear-gradient(135deg,#1a3a5c,#1a6fb5);position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:url('images/physio1.png') center/cover no-repeat;opacity:0.08;"></div>
+    <div style="position:absolute;inset:0;background:url('images/physio1.webp') center/cover no-repeat;opacity:0.08;"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,58,92,0.95),rgba(26,111,181,0.88));"></div>
     <div class="max-wrap" style="position:relative;z-index:2;text-align:center;">
       <div class="section-pill" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:white">The Athlete's Physiotherapist</div>
@@ -1822,8 +1828,8 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   <section class="quality-section" style="background:#e3f2fd">
     <div class="quality-inner max-wrap">
       <div class="quality-images" data-aos="fade-right">
-        <div class="qi-photo qi-photo1"><img src="images/physio2.png" alt="Physiotherapy" style="object-position:top"></div>
-        <div class="qi-photo qi-photo2"><img src="images/rehabilitation.png" alt="Rehabilitation" style="object-position:top"></div>
+        <div class="qi-photo qi-photo1"><img src="images/physio2.webp" alt="Physiotherapy" style="object-position:top"></div>
+        <div class="qi-photo qi-photo2"><img src="images/rehabilitation.webp" alt="Rehabilitation" style="object-position:top"></div>
       </div>
       <div class="quality-text" data-aos="fade-left">
         <div class="section-pill">Why Choose Us</div>
@@ -1856,7 +1862,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   <section class="service-hero-section">
     <div class="shs-inner max-wrap">
       <div data-aos="fade-right">
-        <img src="images/manual_therapy.png" alt="Physiotherapy" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
+        <img src="images/manual_therapy.webp" alt="Physiotherapy" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
         <div class="shs-badge" style="display:inline-block;margin-top:1rem"><div class="sb-num">5000+</div><div class="sb-label">Patients Treated</div></div>
       </div>
       <div data-aos="fade-left">
@@ -1928,7 +1934,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   <section class="service-hero-section">
     <div class="shs-inner max-wrap">
       <div data-aos="fade-right">
-        <img src="images/physio2.png" alt="Fitness Training" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
+        <img src="images/physio2.webp" alt="Fitness Training" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
         <div style="display:flex;gap:16px;margin-top:1.2rem;flex-wrap:wrap;">
           <div class="shs-badge" style="display:inline-flex"><div class="sb-num">15+</div><div class="sb-label">Fitness Experts</div></div>
           <div class="shs-badge" style="display:inline-flex;background:linear-gradient(135deg,#00897B,#00695C)"><div class="sb-num">500+</div><div class="sb-label">Happy Members</div></div>
@@ -1989,7 +1995,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       <p class="section-sub text-center" style="margin:0 auto 3rem">From beginner to advanced — our physio-guided programmes are designed for safe, progressive, and lasting results.</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;" class="prog-grid">
         <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
-          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio1.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">PERSONAL TRAINING</div></div>
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">PERSONAL TRAINING</div></div>
           <div style="padding:22px 24px;">
             <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">One-on-One Training</h4>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Completely personalised fitness sessions designed around your health history, goals, and abilities — supervised by qualified physiotherapists for safety and effectiveness.</p>
@@ -2002,7 +2008,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
         <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
-          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/osteopathy.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">SENIOR FITNESS</div></div>
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/osteopathy.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">SENIOR FITNESS</div></div>
           <div style="padding:22px 24px;">
             <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Senior Fitness (60+)</h4>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Gentle, safe, and evidence-based fitness for senior citizens — improving strength, balance, flexibility, and independence to enable an active, fulfilling lifestyle.</p>
@@ -2015,7 +2021,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
         <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
-          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/dry_needling.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">SPORTS CONDITIONING</div></div>
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/dry_needling.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">SPORTS CONDITIONING</div></div>
           <div style="padding:22px 24px;">
             <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Athlete & Runner Training</h4>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Designed by a marathon runner and physiotherapist — performance training, injury prevention, and conditioning programmes for recreational to competitive athletes.</p>
@@ -2028,7 +2034,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
         <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
-          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/rehabilitation.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">WEIGHT MANAGEMENT</div></div>
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/rehabilitation.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">WEIGHT MANAGEMENT</div></div>
           <div style="padding:22px 24px;">
             <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Weight Management</h4>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Safe, structured weight management combining therapeutic exercise and functional training — guided by physiotherapists who understand the clinical side of weight loss.</p>
@@ -2041,7 +2047,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
         <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
-          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio2.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">CORE & POSTURE</div></div>
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio2.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">CORE & POSTURE</div></div>
           <div style="padding:22px 24px;">
             <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Core & Posture Training</h4>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Targeted core strengthening and postural correction programmes — ideal for desk workers, students, and anyone with chronic back or neck discomfort from poor posture.</p>
@@ -2054,7 +2060,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
         <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
-          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/manual_therapy.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">POST-REHAB FITNESS</div></div>
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/manual_therapy.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">POST-REHAB FITNESS</div></div>
           <div style="padding:22px 24px;">
             <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Post-Rehab Fitness</h4>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Bridging the gap between physiotherapy and independent fitness — progressive training for patients transitioning from clinical rehab to long-term active wellness.</p>
@@ -2152,7 +2158,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       <p class="section-sub text-center" style="margin:0 auto 2.5rem">Our gym is equipped with modern, clinical-grade equipment — designed to support safe, effective training for all needs.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" class="facility-inner">
         <div>
-          <img src="images/dr_clinic.png" alt="Neuro Sports Centre Facility" style="width:100%;border-radius:20px;box-shadow:var(--shadow-lg);object-fit:cover;height:380px;">
+          <img src="images/dr_clinic.webp" alt="Neuro Sports Centre Facility" style="width:100%;border-radius:20px;box-shadow:var(--shadow-lg);object-fit:cover;height:380px;">
         </div>
         <div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
@@ -2201,7 +2207,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   <section class="service-hero-section">
     <div class="shs-inner max-wrap">
       <div data-aos="fade-right">
-        <img src="images/rehabilitation.png" alt="Rehabilitation" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
+        <img src="images/rehabilitation.webp" alt="Rehabilitation" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
         <div style="display:flex;gap:16px;margin-top:1.2rem;flex-wrap:wrap;">
           <div class="shs-badge" style="display:inline-flex"><div class="sb-num">15+</div><div class="sb-label">Rehab Specialists</div></div>
           <div class="shs-badge" style="display:inline-flex;background:linear-gradient(135deg,#00897B,#00695C)"><div class="sb-num">1000+</div><div class="sb-label">Patients Recovered</div></div>
@@ -2262,7 +2268,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       <p class="section-sub text-center" style="margin:0 auto 2.5rem">Our neurological rehabilitation team uses the latest evidence-based techniques to help patients regain movement, function, and independence.</p>
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="rehab-grid">
         <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
-          <div style="height:180px;overflow:hidden;"><img src="images/physio1.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div style="height:180px;overflow:hidden;"><img src="images/physio1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
           <div style="padding:22px 24px;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🧠</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Stroke Rehabilitation</h4></div>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Structured neurological rehabilitation for stroke survivors — focusing on movement restoration, balance re-training, muscle re-education, and functional independence.</p>
@@ -2275,7 +2281,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
         <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
-          <div style="height:180px;overflow:hidden;"><img src="images/osteopathy.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div style="height:180px;overflow:hidden;"><img src="images/osteopathy.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
           <div style="padding:22px 24px;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🫀</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Parkinson's Disease</h4></div>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Evidence-based physiotherapy for Parkinson's — improving gait, reducing fall risk, maintaining mobility, and slowing functional decline through structured progressive training.</p>
@@ -2288,7 +2294,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
         <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
-          <div style="height:180px;overflow:hidden;"><img src="images/dry_needling.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div style="height:180px;overflow:hidden;"><img src="images/dry_needling.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
           <div style="padding:22px 24px;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🦽</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Spinal Cord Injury Rehab</h4></div>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Comprehensive SCI rehabilitation — from acute injury management through to long-term functional training, transfer skills, assistive device use, and community reintegration.</p>
@@ -2301,7 +2307,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
         <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
-          <div style="height:180px;overflow:hidden;"><img src="images/manual_therapy.png" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
+          <div style="height:180px;overflow:hidden;"><img src="images/manual_therapy.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
           <div style="padding:22px 24px;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👶</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Cerebral Palsy (CP) Rehab</h4></div>
             <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Gentle, progressive physiotherapy for children and adults with CP — improving motor function and daily living activities with compassionate, family-centred care.</p>
@@ -2732,7 +2738,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   <div class="footer-inner max-wrap">
     <div class="footer-brand">
       <div class="footer-logo">
-        <img src="images/logo.png" alt="Neuro Sports Centre" class="footer-logo-img">
+        <img src="images/logo.webp" alt="Neuro Sports Centre" class="footer-logo-img">
         <div class="logo-text"><span style="color:white;font-weight:800;font-size:.85rem;letter-spacing:1px;">NEURO SPORTS</span><span style="color:rgba(255,255,255,.6);font-weight:500;font-size:.72rem;letter-spacing:2px;">CENTRE</span></div>
       </div>
       <p>Ahmedabad's trusted physiotherapy, fitness & rehabilitation centre. Expert care, compassionate team, lasting results — for all age groups.</p>
@@ -2823,6 +2829,13 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 </div>
 
 <!-- CHATBOT -->
+<!-- Dedicated Chat FAB Button -->
+<button class="chatbot-fab" id="chatFab" onclick="toggleChat()" aria-label="Open chat assistant" title="Chat with us">
+  <div class="chatbot-fab-pulse"></div>
+  <div class="chatbot-fab-badge" id="chatBadge2">1</div>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+</button>
+
 <div class="chatbot-window" id="chatbotWindow">
   <div class="chatbot-header">
     <div class="chatbot-avatar">🏃</div>
