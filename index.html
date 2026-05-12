@@ -338,6 +338,24 @@ ul { list-style:none; }
 .tp-step:hover h4 { color:var(--green); }
 .tp-step p { font-size:0.875rem; color:var(--muted); line-height:1.7; }
 
+/* ===== THERAPY PROCESS ===== */
+
+.therapy-process-section { padding:100px 5%; background:#fff; position:relative; overflow:hidden; }
+.therapy-process-section::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--green),var(--sky),var(--blue),var(--green)); background-size:200%; animation:gradientShift 4s ease infinite; }
+.tp-dot-line { display:flex; justify-content:center; align-items:center; margin-top:0.5rem; }
+.tp-center-dot { width:10px; height:10px; border-radius:50%; background:var(--navy); display:inline-block; box-shadow:0 0 0 4px rgba(26,111,181,0.1); }
+.tp-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; align-items:start; }
+.tp-step { text-align:center; padding:0 20px; position:relative; }
+.tp-img-wrap { position:relative; width:130px; height:130px; margin:0 auto 1.5rem; }
+.tp-img-wrap img { width:100%; height:100%; border-radius:50%; object-fit:cover; border:4px solid white; box-shadow:0 8px 30px rgba(26,111,181,.18); transition:transform .5s ease,box-shadow .5s ease; }
+.tp-step:hover .tp-img-wrap img { transform:scale(1.08); box-shadow:0 16px 50px rgba(26,111,181,.28); }
+.tp-step-number { position:absolute; top:-6px; right:-6px; width:30px; height:30px; border-radius:50%; background:linear-gradient(135deg,var(--green),var(--mint)); color:white; font-weight:700; font-size:0.8rem; display:flex; align-items:center; justify-content:center; border:2px solid white; box-shadow:0 4px 12px rgba(0,137,123,.4); }
+.tp-arrow { position:absolute; top:50px; right:-20px; width:80px; z-index:2; opacity:0.7; animation:float 3s ease-in-out infinite; }
+.tp-step-last .tp-arrow { display:none; }
+.tp-step h4 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:0.75rem; line-height:1.4; }
+.tp-step:hover h4 { color:var(--green); }
+.tp-step p { font-size:0.875rem; color:var(--muted); line-height:1.7; }
+  
 /* ===== PAIN SECTION ===== */
 .pain-section { position:relative; padding:100px 5%; overflow:hidden; background:var(--navy); }
 .pain-bg-img { position:absolute; inset:0; background:url('images/physio2.png') center/cover no-repeat; opacity:0.18; }
@@ -926,6 +944,253 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       </div>
     </div>
   </section>
+
+  <!-- THERAPY PROCESS -->
+  <section class="therapy-process-section">
+    <div class="max-wrap">
+      <div class="text-center" style="margin-bottom:3.5rem" data-aos="fade-up">
+        <div class="section-pill">Dr. Ruchit's Method</div>
+        <h2 class="section-title"><span class="color-green">How Dr. Ruchit</span> Treats You</h2>
+        <p class="section-sub text-center" style="margin:.5rem auto 0;max-width:620px;">A precise, step-by-step clinical process — personally designed and supervised by Dr. Ruchit Shah to ensure every patient gets the right treatment, at the right time, with lasting results.</p>
+        <div class="tp-dot-line"><span class="tp-center-dot"></span></div>
+      </div>
+
+      <!-- STEP GRID — 6 steps, 2 rows of 3 -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px;position:relative;" class="tp-steps-grid">
+
+        <!-- STEP 1 -->
+        <div class="tp-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="tp-card-num">01</div>
+          <div class="tp-card-icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <h4 class="tp-card-title">Initial Assessment &amp; History Taking</h4>
+          <p class="tp-card-desc">Dr. Ruchit begins with a detailed 30–45 minute consultation — understanding your full medical history, lifestyle, pain patterns, prior treatments, and movement limitations. No detail is overlooked.</p>
+          <ul class="tp-card-points">
+            <li>Pain history & onset analysis</li>
+            <li>Lifestyle & occupation review</li>
+            <li>Previous treatment outcomes</li>
+            <li>Patient goals & expectations</li>
+          </ul>
+          <div class="tp-card-tag">Session 1</div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="tp-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="tp-card-num">02</div>
+          <div class="tp-card-icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <h4 class="tp-card-title">Clinical Diagnosis &amp; Movement Analysis</h4>
+          <p class="tp-card-desc">A hands-on physical examination assessing posture, joint range, muscle strength, neurological function, and movement quality. Dr. Ruchit identifies the root cause — not just the symptoms.</p>
+          <ul class="tp-card-points">
+            <li>Postural & gait analysis</li>
+            <li>Joint mobility & muscle testing</li>
+            <li>Neurological screening</li>
+            <li>Special orthopaedic tests</li>
+          </ul>
+          <div class="tp-card-tag">Session 1</div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="tp-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="tp-card-num">03</div>
+          <div class="tp-card-icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/>
+            </svg>
+          </div>
+          <h4 class="tp-card-title">Personalised Treatment Plan</h4>
+          <p class="tp-card-desc">Dr. Ruchit creates a fully individualised treatment plan with clear milestones — combining the most effective clinical techniques for your specific condition, goals, and timeline.</p>
+          <ul class="tp-card-points">
+            <li>Evidence-based protocol selection</li>
+            <li>Short & long-term goal setting</li>
+            <li>Frequency & duration planning</li>
+            <li>Integrated physio + fitness approach</li>
+          </ul>
+          <div class="tp-card-tag">Between Sessions 1 & 2</div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="tp-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="tp-card-num">04</div>
+          <div class="tp-card-icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+            </svg>
+          </div>
+          <h4 class="tp-card-title">Hands-On Clinical Treatment</h4>
+          <p class="tp-card-desc">The active phase — Dr. Ruchit and his specialist team deliver targeted manual therapy, electrotherapy, dry needling, or neurological rehab. Every session is supervised and precisely executed.</p>
+          <ul class="tp-card-points">
+            <li>Manual therapy & mobilisation</li>
+            <li>Dry needling & cupping</li>
+            <li>Electrotherapy (TENS, IFT, US)</li>
+            <li>Neuro rehab & gait training</li>
+          </ul>
+          <div class="tp-card-tag">Ongoing Sessions</div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="tp-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="tp-card-num">05</div>
+          <div class="tp-card-icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h4 class="tp-card-title">Progressive Exercise &amp; Active Rehab</h4>
+          <p class="tp-card-desc">As healing progresses, Dr. Ruchit introduces therapeutic exercise, strengthening, and functional movement training — progressively increasing challenge to rebuild strength, confidence, and ability.</p>
+          <ul class="tp-card-points">
+            <li>Therapeutic exercise prescription</li>
+            <li>Core stability & strength training</li>
+            <li>Sport-specific conditioning</li>
+            <li>Home exercise programme guidance</li>
+          </ul>
+          <div class="tp-card-tag">Mid–Late Sessions</div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="tp-card tp-card-final" data-aos="fade-up" data-aos-delay="200">
+          <div class="tp-card-num">06</div>
+          <div class="tp-card-icon-wrap" style="background:linear-gradient(135deg,var(--green),var(--mint));">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h4 class="tp-card-title">Review, Discharge &amp; Long-Term Plan</h4>
+          <p class="tp-card-desc">A formal outcome re-assessment to measure recovery against initial goals. Dr. Ruchit provides a personalised discharge plan — ensuring lasting results and preventing recurrence.</p>
+          <ul class="tp-card-points">
+            <li>Final outcome measurement</li>
+            <li>Long-term maintenance programme</li>
+            <li>Injury prevention education</li>
+            <li>Open-door follow-up support</li>
+          </ul>
+          <div class="tp-card-tag" style="background:rgba(45,106,79,.12);color:var(--green);border-color:rgba(45,106,79,.2);">Recovery Complete ✓</div>
+        </div>
+
+      </div><!-- end grid -->
+
+      <!-- BOTTOM TRUST ROW -->
+      <div data-aos="fade-up" style="margin-top:52px;background:linear-gradient(135deg,#f0f7ff,#e8f5e9);border-radius:20px;padding:28px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border:1.5px solid rgba(43,124,191,.1);">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <img src="images/dr_hiren_new.png" style="width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--blue);" alt="Dr. Ruchit Shah">
+          <div>
+            <div style="font-weight:700;color:var(--navy);font-size:.95rem;">Dr. Ruchit Shah — MPT</div>
+            <div style="color:var(--muted);font-size:.8rem;">Personally leads & supervises every patient's treatment journey</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <div style="font-size:1.5rem;font-weight:800;color:var(--blue);font-family:'Playfair Display',serif;">15+</div>
+            <div style="font-size:.75rem;color:var(--muted);font-weight:500;">Years Experience</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.5rem;font-weight:800;color:var(--green);font-family:'Playfair Display',serif;">5000+</div>
+            <div style="font-size:.75rem;color:var(--muted);font-weight:500;">Patients Treated</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:1.5rem;font-weight:800;color:var(--blue);font-family:'Playfair Display',serif;">100%</div>
+            <div style="font-size:.75rem;color:var(--muted);font-weight:500;">Personalised Care</div>
+          </div>
+        </div>
+        <a href="#" onclick="showPage('booking');return false;" class="btn-primary">Book with Dr. Ruchit →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+  /* ── Treatment Process Cards ── */
+  .tp-steps-grid { }
+  @media(max-width:900px){ .tp-steps-grid{ grid-template-columns:1fr 1fr !important; } }
+  @media(max-width:640px){ .tp-steps-grid{ grid-template-columns:1fr !important; gap:20px !important; } }
+
+  .tp-card {
+    background:white; border-radius:22px; padding:32px 28px;
+    border:1.5px solid rgba(43,124,191,.09);
+    box-shadow:0 4px 24px rgba(26,46,74,.07);
+    position:relative; overflow:hidden;
+    transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease, border-color .3s;
+  }
+  .tp-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg, var(--blue), var(--green));
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .45s cubic-bezier(.22,1,.36,1);
+    border-radius:22px 22px 0 0;
+  }
+  .tp-card:hover::before { transform:scaleX(1); }
+  .tp-card:hover {
+    transform:translateY(-10px);
+    box-shadow:0 24px 50px rgba(26,46,74,.14);
+    border-color:rgba(43,124,191,.18);
+  }
+  .tp-card-final { background:linear-gradient(145deg,#f0fff4,white); border-color:rgba(45,106,79,.15); }
+  .tp-card-final::before { background:linear-gradient(90deg, var(--green), var(--mint)); }
+
+  .tp-card-num {
+    position:absolute; top:20px; right:24px;
+    font-size:3rem; font-weight:800; color:rgba(43,124,191,.07);
+    font-family:'Playfair Display',serif; line-height:1;
+    transition:color .3s ease;
+  }
+  .tp-card:hover .tp-card-num { color:rgba(43,124,191,.12); }
+
+  .tp-card-icon-wrap {
+    width:56px; height:56px; border-radius:16px;
+    background:linear-gradient(135deg,#e3f2fd,#dceefb);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:1.2rem;
+    transition:transform .45s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease;
+    box-shadow:0 4px 16px rgba(43,124,191,.12);
+  }
+  .tp-card:hover .tp-card-icon-wrap {
+    transform:scale(1.15) rotate(-5deg);
+    box-shadow:0 8px 24px rgba(43,124,191,.22);
+  }
+
+  .tp-card-title {
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem; font-weight:700; color:var(--navy);
+    margin-bottom:.7rem; line-height:1.4;
+    transition:color .3s ease;
+  }
+  .tp-card:hover .tp-card-title { color:var(--blue); }
+
+  .tp-card-desc {
+    color:var(--muted); font-size:.875rem; line-height:1.75;
+    margin-bottom:1rem;
+  }
+
+  .tp-card-points {
+    list-style:none; padding:0; margin:0 0 1.2rem;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .tp-card-points li {
+    display:flex; align-items:center; gap:8px;
+    color:var(--muted); font-size:.82rem; line-height:1.5;
+  }
+  .tp-card-points li::before {
+    content:''; flex-shrink:0;
+    width:6px; height:6px; border-radius:50%;
+    background:var(--green);
+  }
+
+  .tp-card-tag {
+    display:inline-flex; align-items:center;
+    background:rgba(43,124,191,.07); color:var(--blue);
+    border:1px solid rgba(43,124,191,.15);
+    padding:4px 14px; border-radius:50px;
+    font-size:.73rem; font-weight:700; letter-spacing:.4px;
+    opacity:0; transform:translateY(6px);
+    transition:opacity .35s ease .05s, transform .35s cubic-bezier(.22,1,.36,1) .05s;
+  }
+  .tp-card:hover .tp-card-tag { opacity:1; transform:translateY(0); }
+  </style>
 
   <!-- MISSION / VISION / APPROACH -->
   <section class="mva-section">
