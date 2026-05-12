@@ -870,7 +870,7 @@ function injectChatStyles() {
     .chatbot-window {
       transform: scale(0.85) translateY(20px);
       opacity: 0;
-      transform-origin: bottom left;
+      transform-origin: bottom right;
       transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1),
                   opacity 0.3s ease !important;
     }
@@ -1416,12 +1416,18 @@ function iconBadge(svgIcon, color = '#1a6fb5') {
 function getBotReply(input) {
   const q = input.toLowerCase();
 
-  if (/service|offer|treat|speciali|do you|what|condition/.test(q)) {
+  // Hours — check BEFORE services (avoid "what" false-match)
+  if (/\bhour|timing|open|close|schedule|when.*open|clinic.*time|time.*clinic/.test(q)) {
+    return `${iconBadge(ICONS.clock,'#00897B')} <strong>Clinic Hours</strong><br>${clinicKnowledge.hours}<br><br>Call/WhatsApp at ${clinicKnowledge.phone} to confirm availability.`;
+  }
+  // Booking — check before services so "schedule" doesn't mis-fire
+  if (/book|appointment|slot|reserv|visit/.test(q)) {
+    return `${iconBadge(ICONS.calendar,'#FF8F00')} <strong>Book an Appointment</strong><br>${clinicKnowledge.booking}<br><br>Tap the <strong>Book Now</strong> button on any page for our quick appointment form!`;
+  }
+  // Services
+  if (/service|offer|treat|speciali|condition|physiother|fitness|rehab/.test(q)) {
     const list = clinicKnowledge.services.map(s => `<li style="padding:3px 0;">${s}</li>`).join('');
     return `${iconBadge(ICONS.activity,'#1a6fb5')} <strong>Our Services at Neuro Sports Centre:</strong><br><ul style="margin:8px 0 8px 16px;">${list}</ul>Would you like details on any specific service?`;
-  }
-  if (/hour|time|open|close|timing|schedule|when/.test(q)) {
-    return `${iconBadge(ICONS.clock,'#00897B')} <strong>Clinic Hours</strong><br>${clinicKnowledge.hours}<br><br>Call/WhatsApp at ${clinicKnowledge.phone} to confirm availability.`;
   }
   if (/locat|address|where|map|direction|find|bodakdev|satellite|ahmedabad/.test(q)) {
     return `${iconBadge(ICONS.pin,'#e53935')} <strong>Our Location</strong><br>${clinicKnowledge.location}<br><br><a href="${clinicKnowledge.gmaps}" target="_blank" style="color:#1a6fb5;font-weight:600;">View on Google Maps →</a>`;
@@ -1429,14 +1435,11 @@ function getBotReply(input) {
   if (/phone|call|number|contact|whatsapp|reach/.test(q)) {
     return `${iconBadge(ICONS.phone,'#1a6fb5')} <strong>Contact Us</strong><br><strong>${clinicKnowledge.phone}</strong><br><br>We respond quickly during clinic hours (Mon–Sat, 8 AM – 8 PM).`;
   }
-  if (/doctor|dr|ruchit|shah|founder|physio.*who|who.*physio/.test(q)) {
+  if (/doctor|dr\.|ruchit|shah|founder/.test(q)) {
     return `${iconBadge(ICONS.doctor,'#1a6fb5')} <strong>About Dr. Ruchit Shah</strong><br>${clinicKnowledge.doctor}<br><br>His personal experience as a marathon runner gives him a unique understanding of sports injuries and athlete recovery.`;
   }
   if (/team|staff|professional|specialist|how many/.test(q)) {
     return `${iconBadge(ICONS.team,'#00897B')} <strong>Our Team</strong><br>${clinicKnowledge.team}<br><br>Every professional is specialised in their domain to deliver the best outcomes for you.`;
-  }
-  if (/book|appointment|slot|reserv|schedule|visit/.test(q)) {
-    return `${iconBadge(ICONS.calendar,'#FF8F00')} <strong>Book an Appointment</strong><br>${clinicKnowledge.booking}<br><br>Tap the <strong>Book Now</strong> button on any page for our quick appointment form!`;
   }
   if (/price|cost|fee|charge|rate|how much/.test(q)) {
     return `${iconBadge(ICONS.money,'#FF8F00')} <strong>Pricing</strong><br>Our consultation fees vary by service. Please call or WhatsApp us at <strong>${clinicKnowledge.phone}</strong> for current pricing and package details. We offer personalised plans for every patient.`;
@@ -1444,22 +1447,22 @@ function getBotReply(input) {
   if (/instagram|social|follow/.test(q)) {
     return `${iconBadge(ICONS.instagram,'#E1306C')} <strong>Instagram</strong><br>${clinicKnowledge.instagram}<br>We share tips, exercises, success stories, and clinic updates there.`;
   }
-  if (/stroke|neuro|parkinson|cerebral palsy|cp|spinal|paralys/.test(q)) {
+  if (/stroke|neuro|parkinson|cerebral palsy|spinal|paralys/.test(q)) {
     return `${iconBadge(ICONS.brain,'#1a6fb5')} <strong>Neuro Rehabilitation</strong><br>Yes! We have dedicated specialists for:<br><ul style="margin:8px 0 8px 16px;"><li>Stroke rehabilitation</li><li>Parkinson's disease</li><li>Spinal cord injury rehab</li><li>Cerebral Palsy (CP)</li></ul>Would you like to book a consultation?`;
   }
   if (/sport|athlete|acl|ligament|run|marathon|cricket|football|knee/.test(q)) {
     return `${iconBadge(ICONS.run,'#00897B')} <strong>Sports Rehabilitation</strong><br>Our Sports Rehab team handles:<br><ul style="margin:8px 0 8px 16px;"><li>ACL & ligament injuries</li><li>Running & overuse injuries</li><li>Athlete conditioning & return-to-sport</li><li>Cricket, football, and all sports injuries</li></ul>Dr. Ruchit Shah is a marathon runner himself!`;
   }
-  if (/senior|elder|old|age|60|geriatric|balance|fall/.test(q)) {
+  if (/senior|elder|\bold\b|geriatric|balance|fall/.test(q)) {
     return `${iconBadge(ICONS.heart,'#00897B')} <strong>Senior & Geriatric Care</strong><br>We have a dedicated Senior Fitness programme:<br><ul style="margin:8px 0 8px 16px;"><li>Balance training & falls prevention</li><li>Gentle strength exercises</li><li>Mobility improvement</li><li>Arthritis & joint pain management</li></ul>Safe, supervised, and tailored for 60+ patients.`;
   }
   if (/back|neck|spine|disc|sciatica|shoulder|frozen|posture/.test(q)) {
     return `${iconBadge(ICONS.activity,'#1a6fb5')} <strong>Musculoskeletal Treatment</strong><br>We treat all musculoskeletal conditions including:<br><ul style="margin:8px 0 8px 16px;"><li>Back & neck pain</li><li>Disc herniation / sciatica</li><li>Frozen shoulder</li><li>Postural correction</li></ul>Our physiotherapists use evidence-based manual therapy + exercise for lasting relief.`;
   }
-  if (/child|kid|paediatric|pediatric|baby|infant|school|cerebral/.test(q)) {
+  if (/child|kid|paediatric|pediatric|baby|infant|school/.test(q)) {
     return `${iconBadge(ICONS.heart,'#FF8F00')} <strong>Paediatric Physiotherapy</strong><br>Yes, we offer Paediatric Physio for:<br><ul style="margin:8px 0 8px 16px;"><li>Developmental delays</li><li>Scoliosis</li><li>Cerebral Palsy</li><li>Childhood sports injuries</li></ul>Our team is experienced, gentle, and family-focused.`;
   }
-  if (/hi|hello|hey|good morning|good afternoon|good evening|namaste/.test(q)) {
+  if (/\bhi\b|hello|hey|good morning|good afternoon|good evening|namaste/.test(q)) {
     return `${iconBadge(ICONS.smile,'#1a6fb5')} <strong>Hello! Welcome to Neuro Sports Centre.</strong><br><br>I can help you with information about our services, timings, location, appointments, and more. What would you like to know?`;
   }
   if (/thank|thanks|great|awesome|helpful|perfect/.test(q)) {
