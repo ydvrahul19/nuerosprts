@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neuro Sports Centre – Ahmedabad's Premier Physiotherapy & Fitness Clinic</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a3a5c'/%3E%3Ccircle cx='32' cy='13' r='6' fill='%2300897B'/%3E%3Cpath d='M20 28 Q24 22 32 22 Q40 22 44 28 L44 44 Q44 48 40 48 L38 48 L38 38 L36 38 L36 52 Q36 54 34 54 L30 54 Q28 54 28 52 L28 38 L26 38 L26 48 L24 48 Q20 48 20 44 Z' fill='white'/%3E%3Cpath d='M14 32 Q18 30 22 34' stroke='%232196F3' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M42 34 Q46 30 50 32' stroke='%232196F3' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/webp" href="images/logo.webp">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* ===== ROOT VARIABLES ===== */
@@ -661,7 +661,7 @@ footer { background:linear-gradient(135deg,#0a2d4a 0%,var(--navy) 50%,var(--blue
 footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--sky),var(--blue),transparent); }
 .footer-inner { display:grid; grid-template-columns:2fr 1fr 1fr 1.3fr; gap:50px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,.07); }
 .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:1.2rem; }
-.footer-logo-img { width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid rgba(33,150,243,0.3); box-shadow:0 4px 20px rgba(33,150,243,0.2); transition:transform .4s ease; }
+.footer-logo-img { width:64px; height:64px; border-radius:12px; object-fit:cover; border:2px solid rgba(33,150,243,0.3); box-shadow:0 4px 20px rgba(33,150,243,0.2); transition:transform .4s ease; }
 .footer-logo-img:hover { transform:rotate(-8deg) scale(1.05); }
 .footer-brand p { font-size:0.85rem; line-height:1.7; color:rgba(255,255,255,.45); max-width:260px; margin-bottom:1.5rem; }
 .footer-socials { display:flex; gap:10px; }
@@ -1039,14 +1039,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-item"><span class="ti-icon">✅</span> 15+ Specialised Professionals</div>
-    <div class="trust-item"><span class="ti-icon">⏰</span> Mon–Sat: 8am–8pm</div>
-    <div class="trust-item"><span class="ti-icon">📍</span> Judges Bungalow Rd, Bodakdev, Ahmedabad</div>
-    <div class="trust-item"><span class="ti-icon">📞</span> +91 94295 54422</div>
-    <div class="trust-item"><span class="ti-icon">🏃</span> All Age Groups Welcome</div>
-  </div>
+
 
   <!-- QUALITY SECTION -->
   <section class="quality-section">
@@ -1931,33 +1924,109 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     </div>
   </section>
 
-  <!-- MARATHON / RUNNING HIGHLIGHT -->
-  <section style="padding:80px 5%;background:linear-gradient(135deg,#1a3a5c,#1a6fb5);position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:url('images/physio1.webp') center/cover no-repeat;opacity:0.08;"></div>
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,58,92,0.95),rgba(26,111,181,0.88));"></div>
-    <div class="max-wrap" style="position:relative;z-index:2;text-align:center;">
-      <div class="section-pill" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:white">The Athlete's Physiotherapist</div>
-      <h2 class="section-title" style="color:white;margin-bottom:1.5rem">Dr. Ruchit Shah — <span style="color:#26C6DA">A Marathon Runner's Perspective</span></h2>
-      <p style="color:rgba(255,255,255,.8);max-width:700px;margin:0 auto 3rem;font-size:1rem;line-height:1.8;">Dr. Ruchit Shah has personally completed multiple marathons and endurance events, giving him a rare, first-hand understanding of an athlete's body, injury patterns, and performance demands. This experience directly shapes how he treats his patients — with empathy, precision, and a genuine understanding of athletic recovery.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;margin:0 auto;" class="marathon-grid">
-        <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:.8rem;">🏃</div>
-          <h4 style="color:white;font-size:0.95rem;margin-bottom:.5rem;">Marathon Finisher</h4>
-          <p style="color:rgba(255,255,255,.7);font-size:0.82rem;line-height:1.65;">Multiple marathon completions — understanding athlete demands from personal experience.</p>
+  <!-- MARATHON / COMMUNITY RUNNING SECTION -->
+  <section style="padding:0;background:#0d1b2a;position:relative;overflow:hidden;">
+
+    <!-- Decorative running track lines -->
+    <div style="position:absolute;inset:0;opacity:.04;">
+      <div style="position:absolute;top:20%;left:0;right:0;height:2px;background:white;border-radius:2px;"></div>
+      <div style="position:absolute;top:50%;left:0;right:0;height:2px;background:white;border-radius:2px;"></div>
+      <div style="position:absolute;top:80%;left:0;right:0;height:2px;background:white;border-radius:2px;"></div>
+    </div>
+
+    <!-- Left accent bar -->
+    <div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#FF8F00,#FF6F00,#FF8F00);"></div>
+
+    <div class="max-wrap" style="position:relative;z-index:2;padding:80px 5%;">
+
+      <!-- Header -->
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+        <div style="background:linear-gradient(135deg,#FF8F00,#FF6F00);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;">🏅</div>
+        <span style="color:#FF8F00;font-size:.75rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;">Running Community · Neuro Sports Centre</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="marathon-layout">
+
+        <!-- Left: Story -->
+        <div>
+          <h2 style="color:white;font-family:'Playfair Display',serif;font-size:2.4rem;line-height:1.2;margin-bottom:1.5rem;">
+            We Don't Just<br>
+            <span style="color:#FF8F00;">Treat Runners.</span><br>
+            <span style="color:#4fc3f7;">We Are Runners.</span>
+          </h2>
+          <p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.9;margin-bottom:1.5rem;">
+            Dr. Ruchit Shah and the entire Neuro Sports Centre team don't just prescribe recovery plans — they live them. As active marathon participants, our team lines up at the starting block every season alongside hundreds of runners, experiencing every wall, every cramp, and every finish-line moment firsthand.
+          </p>
+          <p style="color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.9;margin-bottom:2rem;">
+            This isn't just motivation. When you walk into our clinic with a runner's knee, IT band syndrome, or a stress fracture — your therapist has felt what you're feeling. That empathy translates into sharper diagnosis, smarter rehab, and a genuine drive to get you back to the road faster.
+          </p>
+
+          <!-- Quote -->
+          <div style="border-left:3px solid #FF8F00;padding:16px 24px;background:rgba(255,143,0,.07);border-radius:0 12px 12px 0;margin-bottom:2rem;">
+            <p style="color:white;font-style:italic;font-size:1rem;line-height:1.7;margin:0 0 10px;">"Every patient who walks in with a running injury — I've been there. I know how it feels to watch the race calendar fill up while you're stuck on the physio table. That's why I push our team to bring the same urgency we feel on race day, into every recovery plan."</p>
+            <p style="color:#FF8F00;font-weight:700;font-size:.82rem;margin:0;">— Dr. Ruchit Shah, Founder · Marathon Runner · Physiotherapist</p>
+          </div>
+
+          <a href="https://wa.me/919429554422" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#FF8F00,#FF6F00);color:white;padding:13px 28px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;box-shadow:0 8px 24px rgba(255,143,0,.3);transition:all .3s;">
+            🏃 Join Our Running Community
+          </a>
         </div>
-        <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:.8rem;">⚡</div>
-          <h4 style="color:white;font-size:0.95rem;margin-bottom:.5rem;">Sports Rehab Expert</h4>
-          <p style="color:rgba(255,255,255,.7);font-size:0.82rem;line-height:1.65;">Specialised in running injury recovery, athlete conditioning, and return-to-sport protocols.</p>
-        </div>
-        <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:.8rem;">🎯</div>
-          <h4 style="color:white;font-size:0.95rem;margin-bottom:.5rem;">Performance Focused</h4>
-          <p style="color:rgba(255,255,255,.7);font-size:0.82rem;line-height:1.65;">Combines clinical expertise with sports science for peak athletic performance and longevity.</p>
+
+        <!-- Right: Stats + Timeline -->
+        <div>
+
+          <!-- Marathon stats -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;" class="marathon-stats">
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,143,0,.25);border-radius:20px;padding:24px 20px;text-align:center;">
+              <div style="font-size:2.4rem;font-weight:800;color:#FF8F00;font-family:'Playfair Display',serif;line-height:1;">10+</div>
+              <div style="color:rgba(255,255,255,.6);font-size:.78rem;margin-top:6px;font-weight:500;">Marathons &<br>Half-Marathons Completed</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,143,0,.25);border-radius:20px;padding:24px 20px;text-align:center;">
+              <div style="font-size:2.4rem;font-weight:800;color:#4fc3f7;font-family:'Playfair Display',serif;line-height:1;">100+</div>
+              <div style="color:rgba(255,255,255,.6);font-size:.78rem;margin-top:6px;font-weight:500;">Runners Treated &<br>Returned to Sport</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,143,0,.25);border-radius:20px;padding:24px 20px;text-align:center;">
+              <div style="font-size:2.4rem;font-weight:800;color:#00e5b0;font-family:'Playfair Display',serif;line-height:1;">5+</div>
+              <div style="color:rgba(255,255,255,.6);font-size:.78rem;margin-top:6px;font-weight:500;">Team Members<br>Active Runners</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,143,0,.25);border-radius:20px;padding:24px 20px;text-align:center;">
+              <div style="font-size:2.4rem;font-weight:800;color:#FF8F00;font-family:'Playfair Display',serif;line-height:1;">Every</div>
+              <div style="color:rgba(255,255,255,.6);font-size:.78rem;margin-top:6px;font-weight:500;">Ahmedabad Marathon<br>Season Participated</div>
+            </div>
+          </div>
+
+          <!-- What we promote -->
+          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px;">
+            <h4 style="color:white;font-weight:700;font-size:.9rem;margin-bottom:16px;display:flex;align-items:center;gap:8px;">
+              <span style="font-size:1.1rem;">🌟</span> How We Promote Running in Ahmedabad
+            </h4>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:flex-start;gap:12px;">
+                <div style="width:28px;height:28px;background:rgba(255,143,0,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem;">🏁</div>
+                <p style="color:rgba(255,255,255,.65);font-size:.82rem;line-height:1.65;margin:0;">Regular participation in Ahmedabad Marathon, Tata Mumbai Marathon, and other city events — as a clinic team</p>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:12px;">
+                <div style="width:28px;height:28px;background:rgba(79,195,247,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem;">🧘</div>
+                <p style="color:rgba(255,255,255,.65);font-size:.82rem;line-height:1.65;margin:0;">Free pre-race injury prevention workshops and post-race recovery camps for runners</p>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:12px;">
+                <div style="width:28px;height:28px;background:rgba(0,229,176,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem;">📋</div>
+                <p style="color:rgba(255,255,255,.65);font-size:.82rem;line-height:1.65;margin:0;">Customised marathon training plans combining physiotherapy assessment with structured run coaching</p>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:12px;">
+                <div style="width:28px;height:28px;background:rgba(255,143,0,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem;">🤝</div>
+                <p style="color:rgba(255,255,255,.65);font-size:.82rem;line-height:1.65;margin:0;">Community running group — patients, staff and running enthusiasts train together on weekends</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <style>@media(max-width:600px){.marathon-grid{grid-template-columns:1fr!important;}}</style>
     </div>
+    <style>
+      @media(max-width:900px){ .marathon-layout{grid-template-columns:1fr!important;gap:40px!important;} }
+      @media(max-width:600px){ .marathon-stats{grid-template-columns:1fr 1fr!important;} }
+    </style>
   </section>
 
   <!-- MVA -->
@@ -3253,7 +3322,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         </div>
       </div>
       <div class="text-center" style="margin-top:3rem">
-        <a href="https://maps.app.goo.gl/ybymUuzAA5N2d6wX8" target="_blank" class="btn-outline-green">View All Google Reviews →</a>
+        <a href="https://maps.app.goo.gl/hs4DkQFrMwGiMovx5" target="_blank" class="btn-outline-green">View All Google Reviews →</a>
       </div>
     </div>
   </section>
@@ -3350,9 +3419,9 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           WhatsApp Us Now
         </a>
         <div style="margin-top:1.5rem;border-radius:12px;overflow:hidden">
-          <iframe src="https://maps.google.com/maps?q=Shikhar+Apartment+Judges+Bungalow+Road+Bodakdev+Ahmedabad+380054&output=embed&zoom=16" width="100%" height="180" style="border:none;border-radius:12px" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.1!2d72.5074!3d23.0395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b8f3e3e3e3f%3A0x1234567890abcdef!2sShikhar+Apartment%2C+Judges+Bungalow+Rd%2C+Bodakdev%2C+Ahmedabad%2C+Gujarat+380054!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="240" style="border:none;border-radius:12px" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <a href="https://maps.app.goo.gl/ybymUuzAA5N2d6wX8" target="_blank" style="display:block;margin-top:.8rem;color:rgba(255,255,255,.7);font-size:.85rem;text-decoration:none">📍 View on Google Maps →</a>
+        <a href="https://maps.app.goo.gl/hs4DkQFrMwGiMovx5" target="_blank" style="display:block;margin-top:.8rem;color:rgba(255,255,255,.7);font-size:.85rem;text-decoration:none">📍 View on Google Maps →</a>
       </div>
       <div data-aos="fade-left">
         <span class="section-pill" style="display:inline-block;margin-bottom:1rem">Send a Message</span>
@@ -3383,7 +3452,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       <p>Ahmedabad's trusted physiotherapy, fitness & rehabilitation centre. Expert care, compassionate team, lasting results — for all age groups.</p>
       <div class="footer-socials">
         <a href="https://wa.me/919429554422" target="_blank" class="fs-btn">💬</a>
-        <a href="https://maps.app.goo.gl/ybymUuzAA5N2d6wX8" target="_blank" class="fs-btn">📍</a>
+        <a href="https://maps.app.goo.gl/hs4DkQFrMwGiMovx5" target="_blank" class="fs-btn">📍</a>
         <a href="tel:+919429554422" class="fs-btn">📞</a>
         <a href="https://www.instagram.com/neurosports.in/" target="_blank" class="fs-btn">📸</a>
       </div>
@@ -3434,7 +3503,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   <div class="footer-bottom">
     <div>© 2026 Neuro Sports Centre, Ahmedabad. All rights reserved.</div>
     <div style="display:flex;gap:1.5rem;align-items:center">
-      <a href="https://maps.app.goo.gl/ybymUuzAA5N2d6wX8" target="_blank" style="color:inherit;text-decoration:none">View on Maps</a>
+      <a href="https://maps.app.goo.gl/hs4DkQFrMwGiMovx5" target="_blank" style="color:inherit;text-decoration:none">View on Maps</a>
       <a href="https://www.instagram.com/neurosports.in/" target="_blank" style="color:inherit;text-decoration:none">Instagram</a>
       <a href="https://localrizz.in/" target="_blank" style="color:inherit;text-decoration:none">Created by LocalRizz</a>
     </div>
