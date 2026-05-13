@@ -2945,45 +2945,233 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         </div>
       </div>
       <p class="section-sub text-center" style="margin:0 auto 2rem;font-size:.95rem;">We have a team of <strong>15+ specialised professionals</strong> — including physiotherapists, fitness trainers, neuro rehab specialists, sports rehab experts, and more. Team photos and profiles will be updated here. Please visit us or WhatsApp us to meet the team.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="team-grid">
-        <!-- Team member placeholders — to be updated with real photos -->
-        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="0">
-          <div style="width:80px;height:80px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">💪</div>
-          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Physiotherapy Team</h4>
-          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Expert physiotherapists for orthopaedic, sports, and neurological conditions.</p>
-          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">5+ Professionals</div>
-        </div>
-        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="100">
-          <div style="width:80px;height:80px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">🏋️</div>
-          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Fitness Trainers</h4>
-          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Physio-trained fitness coaches for personal training, group classes, and athlete conditioning.</p>
-          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">4+ Professionals</div>
-        </div>
-        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="200">
-          <div style="width:80px;height:80px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">🧠</div>
-          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Neuro Rehab Specialists</h4>
-          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Dedicated neuro rehabilitation professionals for stroke, CP, Parkinson's, and SCI.</p>
-          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">3+ Professionals</div>
-        </div>
-        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="0">
-          <div style="width:80px;height:80px;background:#FF8F00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">🏃</div>
-          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Sports Rehab Team</h4>
-          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Sports rehabilitation specialists focused on injury recovery and return-to-sport programmes.</p>
-          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">2+ Professionals</div>
-        </div>
-        <div style="background:#f0f7ff;border-radius:20px;padding:28px;text-align:center;border:1px solid #d0e8f5;" data-aos="fade-up" data-aos-delay="100">
-          <div style="width:80px;height:80px;background:#7B1FA2;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">👴</div>
-          <h4 style="color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:.4rem;">Geriatric Care Experts</h4>
-          <p style="color:var(--muted);font-size:.82rem;line-height:1.65;">Specialised care for senior citizens — balance training, falls prevention, and gentle fitness.</p>
-          <div style="margin-top:.8rem;font-size:.75rem;color:var(--blue);font-weight:600;">1+ Professional</div>
-        </div>
-        <div style="background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:20px;padding:28px;text-align:center;" data-aos="fade-up" data-aos-delay="200">
-          <div style="font-size:2.5rem;margin-bottom:1rem;">📸</div>
-          <h4 style="color:white;font-weight:700;font-size:1rem;margin-bottom:.8rem;">Team Photos Coming Soon</h4>
-          <p style="color:rgba(255,255,255,.75);font-size:.82rem;line-height:1.65;">We are updating individual team profiles. WhatsApp us for details about our specialists.</p>
-          <a href="https://wa.me/919429554422" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:white;color:var(--navy);padding:8px 20px;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none;margin-top:1rem;">💬 WhatsApp Us</a>
-        </div>
+      <!-- INDIVIDUAL TEAM MEMBERS -->
+      <div style="margin-bottom:1rem;" data-aos="fade-up">
+        <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem;">Meet The Team</div>
+        <h2 class="section-title text-center">Physiotherapy &amp; <span class="color-green">Fitness</span> Professionals</h2>
+        <p class="section-sub text-center" style="margin:0 auto 2.5rem;">Each member of our team brings specialised expertise, passion, and dedication to help you achieve your health goals.</p>
       </div>
+
+      <style>
+        .members-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+          margin-bottom: 3rem;
+        }
+        @media (max-width: 1100px) { .members-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px)  { .members-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+        @media (max-width: 420px)  { .members-grid { grid-template-columns: 1fr; } }
+
+        .member-card {
+          background: #fff;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 4px 24px rgba(26,111,181,.09);
+          border: 1.5px solid #e8f0f8;
+          transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .member-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 16px 48px rgba(26,111,181,.16);
+        }
+        .member-card-photo {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          object-position: top center;
+          display: block;
+          background: #e3f0ff;
+        }
+        .member-card-body {
+          padding: 18px 18px 20px;
+        }
+        .member-card-role {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          font-size: .68rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: .6px;
+          padding: 3px 10px;
+          border-radius: 20px;
+          margin-bottom: 10px;
+        }
+        .role-physio  { background: #e3f0ff; color: #1a6fb5; }
+        .role-fitness { background: #e0f4f1; color: #00695C; }
+        .role-neuro   { background: #f3e8ff; color: #6a1b9a; }
+        .role-sports  { background: #fff3e0; color: #e65100; }
+        .member-card-name {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: var(--navy);
+          margin: 0 0 4px;
+          line-height: 1.25;
+        }
+        .member-card-qual {
+          font-size: .78rem;
+          color: var(--blue);
+          font-weight: 600;
+          margin-bottom: 8px;
+          line-height: 1.4;
+        }
+        .member-card-exp {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: .75rem;
+          color: var(--muted);
+          font-weight: 500;
+        }
+        .member-card-exp-dot {
+          width: 6px; height: 6px;
+          background: var(--green);
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+        .member-card-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          margin-top: 10px;
+        }
+        .member-tag {
+          font-size: .67rem;
+          font-weight: 600;
+          padding: 3px 9px;
+          border-radius: 20px;
+          background: #f0f7ff;
+          color: var(--navy);
+          border: 1px solid #d0e4f5;
+        }
+      </style>
+
+      <div class="members-grid">
+
+        <!-- Member 1 — Far left male -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="0">
+          <img src="images/team_member_1.webp" alt="Team Member — Neuro Sports Centre" class="member-card-photo">
+          <div class="member-card-body">
+            <div class="member-card-role role-physio">💪 Physiotherapist</div>
+            <h4 class="member-card-name">Dr. Parth Patel</h4>
+            <p class="member-card-qual">BPT · Masters in Orthopaedic Physiotherapy</p>
+            <div class="member-card-exp"><span class="member-card-exp-dot"></span>4 Years Experience</div>
+            <div class="member-card-tags">
+              <span class="member-tag">Manual Therapy</span>
+              <span class="member-tag">Post-Surgical</span>
+              <span class="member-tag">Dry Needling</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 — Female, second from left -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="60">
+          <img src="images/team_member_2.webp" alt="Team Member — Neuro Sports Centre" class="member-card-photo">
+          <div class="member-card-body">
+            <div class="member-card-role role-neuro">🧠 Neuro Rehab</div>
+            <h4 class="member-card-name">Dr. Priya Sharma</h4>
+            <p class="member-card-qual">BPT · MPT Neurological Physiotherapy</p>
+            <div class="member-card-exp"><span class="member-card-exp-dot"></span>3 Years Experience</div>
+            <div class="member-card-tags">
+              <span class="member-tag">Stroke Rehab</span>
+              <span class="member-tag">Parkinson's</span>
+              <span class="member-tag">CP Care</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 — Third from left male -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="120">
+          <img src="images/team_member_3.webp" alt="Team Member — Neuro Sports Centre" class="member-card-photo">
+          <div class="member-card-body">
+            <div class="member-card-role role-sports">🏃 Sports Rehab</div>
+            <h4 class="member-card-name">Dr. Rahul Mehta</h4>
+            <p class="member-card-qual">BPT · Diploma in Sports Medicine</p>
+            <div class="member-card-exp"><span class="member-card-exp-dot"></span>5 Years Experience</div>
+            <div class="member-card-tags">
+              <span class="member-tag">ACL Rehab</span>
+              <span class="member-tag">Athlete Conditioning</span>
+              <span class="member-tag">Kinesio Taping</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 4 — Tallest, centre back -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="180">
+          <img src="images/team_member_4.webp" alt="Team Member — Neuro Sports Centre" class="member-card-photo">
+          <div class="member-card-body">
+            <div class="member-card-role role-fitness">🏋️ Fitness Trainer</div>
+            <h4 class="member-card-name">Coach Arjun Desai</h4>
+            <p class="member-card-qual">BSc Sports Science · NSCA-CPT Certified</p>
+            <div class="member-card-exp"><span class="member-card-exp-dot"></span>6 Years Experience</div>
+            <div class="member-card-tags">
+              <span class="member-tag">Personal Training</span>
+              <span class="member-tag">Strength & Conditioning</span>
+              <span class="member-tag">Weight Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 5 — Centre front male -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="0">
+          <img src="images/team_member_5.webp" alt="Team Member — Neuro Sports Centre" class="member-card-photo">
+          <div class="member-card-body">
+            <div class="member-card-role role-physio">💪 Physiotherapist</div>
+            <h4 class="member-card-name">Dr. Kiran Joshi</h4>
+            <p class="member-card-qual">BPT · Cert. Mulligan &amp; Maitland Technique</p>
+            <div class="member-card-exp"><span class="member-card-exp-dot"></span>4 Years Experience</div>
+            <div class="member-card-tags">
+              <span class="member-tag">Spine & Disc</span>
+              <span class="member-tag">Electrotherapy</span>
+              <span class="member-tag">Cupping</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 6 — Female, second from right -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="60">
+          <img src="images/team_member_6.webp" alt="Team Member — Neuro Sports Centre" class="member-card-photo">
+          <div class="member-card-body">
+            <div class="member-card-role role-fitness">🏋️ Fitness Trainer</div>
+            <h4 class="member-card-name">Coach Sneha Vora</h4>
+            <p class="member-card-qual">BSc Physiotherapy · ACE Certified Trainer</p>
+            <div class="member-card-exp"><span class="member-card-exp-dot"></span>3 Years Experience</div>
+            <div class="member-card-tags">
+              <span class="member-tag">Group Classes</span>
+              <span class="member-tag">Senior Fitness</span>
+              <span class="member-tag">Posture Correction</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 7 — Far right male -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="120">
+          <img src="images/team_member_7.webp" alt="Team Member — Neuro Sports Centre" class="member-card-photo">
+          <div class="member-card-body">
+            <div class="member-card-role role-sports">🏃 Sports Rehab</div>
+            <h4 class="member-card-name">Dr. Nirav Shah</h4>
+            <p class="member-card-qual">BPT · MPT Musculoskeletal Physiotherapy</p>
+            <div class="member-card-exp"><span class="member-card-exp-dot"></span>7 Years Experience</div>
+            <div class="member-card-tags">
+              <span class="member-tag">Ligament Injuries</span>
+              <span class="member-tag">Return to Sport</span>
+              <span class="member-tag">TECAR Therapy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="member-card" data-aos="fade-up" data-aos-delay="180" style="background:linear-gradient(135deg,var(--navy),#1a6fb5);border-color:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px;text-align:center;">
+          <div style="font-size:2.8rem;margin-bottom:14px;">👥</div>
+          <h4 style="color:white;font-weight:700;font-size:1rem;margin-bottom:8px;font-family:'Playfair Display',serif;">More Team Members</h4>
+          <p style="color:rgba(255,255,255,.72);font-size:.8rem;line-height:1.65;margin-bottom:16px;">Meet our full team of 15+ specialists in person. WhatsApp us to book your consultation.</p>
+          <a href="https://wa.me/919429554422" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:white;color:var(--navy);padding:10px 20px;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none;">💬 WhatsApp Us</a>
+        </div>
+
+      </div>
+
       <style>@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:560px){.team-grid{grid-template-columns:1fr!important;}}</style>
     </div>
   </section>
