@@ -304,12 +304,10 @@ ul { list-style:none; }
 /* ===== SERVICES HOME ===== */
 .services-home-section { padding:100px 5%; background:white; }
 .services-home-grid {
-  display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:auto auto;
+  display:grid; grid-template-columns:repeat(3,1fr);
   gap:20px; margin-top:3rem;
-  grid-template-areas:"c1 c2 c3" "c4 c5 c3";
 }
-.sh-card { position:relative; border-radius:20px; overflow:hidden; cursor:pointer; min-height:220px; transition:transform .5s cubic-bezier(0.4,0,0.2,1),box-shadow .5s ease; }
-.sh-card:nth-child(1){grid-area:c1;} .sh-card:nth-child(2){grid-area:c2;} .sh-card:nth-child(3){grid-area:c3;min-height:460px;} .sh-card:nth-child(4){grid-area:c4;} .sh-card:nth-child(5){grid-area:c5;}
+.sh-card { position:relative; border-radius:20px; overflow:hidden; cursor:pointer; min-height:240px; transition:transform .5s cubic-bezier(0.4,0,0.2,1),box-shadow .5s ease; }
 .sh-card:hover { transform:translateY(-10px) scale(1.02); box-shadow:0 30px 70px rgba(26,111,181,.3); }
 .shc-bg-img { position:absolute; inset:0; background-image:var(--bg-url); background-size:cover; background-position:center; transition:transform .7s cubic-bezier(0.4,0,0.2,1); }
 .sh-card:hover .shc-bg-img { transform:scale(1.12); }
@@ -741,8 +739,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   .mva-cards{grid-template-columns:1fr 1fr;}
   .testi-grid{grid-template-columns:1fr 1fr;}
   .footer-inner{grid-template-columns:1fr 1fr;gap:30px;}
-  .services-home-grid{grid-template-columns:1fr 1fr;grid-template-areas:"c1 c2" "c3 c3" "c4 c5";}
-  .sh-card:nth-child(3){min-height:220px;}
+  .services-home-grid{grid-template-columns:1fr 1fr;}
   .dr-profile-inner{gap:40px;}
   .dr-photo-col{flex:0 0 280px;}
 }
@@ -811,7 +808,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   .hero-clinic-brand{justify-content:center;}
   .mva-cards,.benefits-grid{grid-template-columns:1fr;}
   .testi-grid,.testi-grid-all{grid-template-columns:1fr;}
-  .services-home-grid{grid-template-columns:1fr;grid-template-areas:"c1""c2""c3""c4""c5";}
+  .services-home-grid{grid-template-columns:1fr;}
   .booking-wrap,.contact-grid{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr;}
   .mva-cta-banner{flex-direction:column;text-align:center;}
@@ -939,16 +936,16 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         <a href="#" class="nav-link">Services <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="dropdown-menu">
           <a href="#" class="dropdown-item" onclick="showPage('physio');closeMenu();return false;">
-            <div class="dd-icon">💪</div>
-            <div><div class="dd-title">Physiotherapy</div><div class="dd-sub">Pain relief & rehab</div></div>
-          </a>
-          <a href="#" class="dropdown-item" onclick="showPage('gym');closeMenu();return false;">
-            <div class="dd-icon">🏋️</div>
-            <div><div class="dd-title">Fitness Training</div><div class="dd-sub">Personal & group training</div></div>
+            <div class="dd-icon">🩹</div>
+            <div><div class="dd-title">Physiotherapy & Pain Management</div><div class="dd-sub">Manual therapy, advanced modalities</div></div>
           </a>
           <a href="#" class="dropdown-item" onclick="showPage('rehab');closeMenu();return false;">
             <div class="dd-icon">🧠</div>
-            <div><div class="dd-title">Rehabilitation</div><div class="dd-sub">Neuro & sports rehab</div></div>
+            <div><div class="dd-title">Rehabilitation</div><div class="dd-sub">Neuro, ortho & sports rehab</div></div>
+          </a>
+          <a href="#" class="dropdown-item" onclick="showPage('gym');closeMenu();return false;">
+            <div class="dd-icon">💪</div>
+            <div><div class="dd-title">Strength & Conditioning</div><div class="dd-sub">Performance & injury prevention</div></div>
           </a>
         </div>
       </li>
@@ -1570,28 +1567,32 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   <section class="services-home-section">
     <div class="max-wrap">
       <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Our Services</div>
-      <h2 class="section-title text-center">We Provide <span class="color-green">The Best</span> <span class="color-navy">Services</span></h2>
       <div class="services-home-grid">
-        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/manual_therapy.webp')">
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/physio1.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
-          <div class="shc-content"><div class="shc-icon-wrap">🏃</div><h3>Sports Physio &amp; Rehab</h3><p>Expert physiotherapy and rehabilitation for sports injuries &mdash; from sprains to complex athletic recoveries.</p><div class="shc-arrow">→</div></div>
+          <div class="shc-content"><div class="shc-icon-wrap">🩹</div><h3>Pain Management Therapy</h3><p>Evidence-based relief for acute and chronic pain — manual therapy, electrotherapy (IFT/TENS), dry needling, and more.</p><div class="shc-arrow">→</div></div>
         </div>
-        <div class="sh-card" onclick="showPage('rehab')" data-aos="fade-up" data-aos-delay="0" style="--bg-url:url('images/rehabilitation.webp')">
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="50" style="--bg-url:url('images/manual_therapy.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
-          <div class="shc-content"><div class="shc-icon-wrap">🧠</div><h3>Neuro Physio &amp; Rehab</h3><p>Advanced neurological physiotherapy for stroke, Parkinson’s, spinal cord injuries, and developmental conditions.</p><div class="shc-arrow">→</div></div>
+          <div class="shc-content"><div class="shc-icon-wrap">🙌</div><h3>Manual Therapy &amp; Hands-on Techniques</h3><p>Joint mobilisation, soft tissue therapy, myofascial release, and dry needling — for faster, lasting relief.</p><div class="shc-arrow">→</div></div>
         </div>
-        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="100" style="--bg-url:url('images/alignment.webp')">
+        <div class="sh-card" onclick="showPage('rehab')" data-aos="fade-up" data-aos-delay="100" style="--bg-url:url('images/rehabilitation.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
-          <div class="shc-content"><div class="shc-icon-wrap">🦴</div><h3>Ortho Physio &amp; Rehab</h3><p>Orthopaedic physiotherapy for joint pain, fractures, post-surgical recovery, and musculoskeletal conditions.</p><div class="shc-arrow">→</div></div>
+          <div class="shc-content"><div class="shc-icon-wrap">🧠</div><h3>Neurological Rehabilitation</h3><p>Specialist neuro-physio for stroke, Parkinson's, spinal cord injury, and developmental conditions.</p><div class="shc-arrow">→</div></div>
         </div>
-        <div class="sh-card" onclick="showPage('gym')" data-aos="fade-up" data-aos-delay="200" style="--bg-url:url('images/physio2.webp')">
+        <div class="sh-card" onclick="showPage('rehab')" data-aos="fade-up" data-aos-delay="150" style="--bg-url:url('images/alignment.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
-          <div class="shc-content"><div class="shc-icon-wrap">🏋️</div><h3>Personal Fitness Training</h3><p>Personalised fitness programmes designed by physiotherapists &mdash; safe, structured, and results-focused.</p><div class="shc-arrow">→</div></div>
+          <div class="shc-content"><div class="shc-icon-wrap">🏃</div><h3>Sports Injury Rehab &amp; Return-to-Sport</h3><p>From ACL to rotator cuff — structured sports rehab with return-to-sport testing and performance training.</p><div class="shc-arrow">→</div></div>
         </div>
-        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="400" style="--bg-url:url('images/dry_needling.webp')">
+        <div class="sh-card" onclick="showPage('physio')" data-aos="fade-up" data-aos-delay="200" style="--bg-url:url('images/dry_needling.webp')">
           <div class="shc-bg-img"></div><div class="shc-overlay"></div>
-          <div class="shc-content"><div class="shc-icon-wrap">⚡</div><h3>Advanced Physiotherapy</h3><p>TECAR Therapy, Class IV Laser Therapy, Aqua Hydrotherapy, Dry Needling, and more cutting-edge modalities.</p><div class="shc-arrow">→</div></div>
+          <div class="shc-content"><div class="shc-icon-wrap">⚡</div><h3>Advanced Physiotherapy Modalities</h3><p>Class IV LASER, TECAR Therapy, Aqua Therapy, Dry Needling &amp; Cupping — cutting-edge treatment technology.</p><div class="shc-arrow">→</div></div>
         </div>
+        <div class="sh-card" onclick="showPage('gym')" data-aos="fade-up" data-aos-delay="250" style="--bg-url:url('images/physio2.webp')">
+          <div class="shc-bg-img"></div><div class="shc-overlay"></div>
+          <div class="shc-content"><div class="shc-icon-wrap">💪</div><h3>Strength, Conditioning &amp; Performance</h3><p>Physio-guided strength programmes, posture correction, mobility training, and injury prevention — for all levels.</p><div class="shc-arrow">→</div></div>
+        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -2275,12 +2276,14 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         <h2 class="section-title">Evidence-Based <span class="color-navy">Physiotherapy</span> For <span class="color-green">Faster Recovery</span></h2>
         <p class="section-desc">Our physiotherapy services are driven by clinical expertise and the latest evidence-based techniques. Whether you're dealing with acute pain, recovering from surgery, or managing a chronic condition — our 15+ professionals build a personalised plan for you.</p>
         <div class="shs-features">
-          <div class="shs-feat"><span class="sf-dot"></span>Back & Neck Pain</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Post-Surgical Rehab</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Sports Injury Recovery</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Paediatric Physio</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Geriatric Care</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Electrotherapy (TENS/IFT)</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Injury Assessment &amp; Diagnosis</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Pain Management Therapy</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Manual Therapy &amp; Hands-on Techniques</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Post-Surgical Rehabilitation</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Dry Needling &amp; Cupping Therapy</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Aqua Therapy</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Advanced Modalities (Class IV LASER, TECAR)</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Orthopaedic Rehabilitation</div>
         </div>
         <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Book Appointment →</a>
       </div>
@@ -2623,39 +2626,39 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 <!-- ============================== GYM / FITNESS PAGE ============================== -->
 <div id="page-gym" class="page">
   <div class="page-header" style="background:linear-gradient(135deg,#00897B,var(--blue))">
-    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Fitness Training</span></div>
-    <h1>Fitness Training</h1>
-    <p>Physio-guided fitness training for all age groups — safe, structured, and results-focused.</p>
+    <div class="ph-breadcrumb"><a href="#" onclick="showPage('home');return false;" style="color:rgba(255,255,255,.6);text-decoration:none">Home</a> <span style="margin:0 8px;opacity:.4">/</span> <span>Strength &amp; Conditioning</span></div>
+    <h1>Strength, Conditioning &amp; Performance</h1>
+    <p>Physio-guided strength programmes, posture correction, mobility training, and injury prevention — for all ages and levels.</p>
   </div>
 
   <!-- HERO -->
   <section class="service-hero-section">
     <div class="shs-inner max-wrap">
       <div data-aos="fade-right">
-        <img src="images/physio2.webp" alt="Fitness Training" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
+        <img src="images/physio2.webp" alt="Strength & Conditioning" style="width:100%;border-radius:24px;box-shadow:var(--shadow-lg);object-fit:cover;height:420px;object-position:top;">
         <div style="display:flex;gap:16px;margin-top:1.2rem;flex-wrap:wrap;">
-          <div class="shs-badge" style="display:inline-flex"><div class="sb-num">15+</div><div class="sb-label">Fitness Experts</div></div>
-          <div class="shs-badge" style="display:inline-flex;background:linear-gradient(135deg,#00897B,#00695C)"><div class="sb-num">500+</div><div class="sb-label">Happy Members</div></div>
+          <div class="shs-badge" style="display:inline-flex"><div class="sb-num">15+</div><div class="sb-label">Expert Therapists</div></div>
+          <div class="shs-badge" style="display:inline-flex;background:linear-gradient(135deg,#00897B,#00695C)"><div class="sb-num">500+</div><div class="sb-label">Patients Trained</div></div>
         </div>
       </div>
       <div data-aos="fade-left">
-        <div class="section-pill">Physio-Guided Fitness</div>
-        <h2 class="section-title">Fitness Training <span class="color-green">Designed</span> by <span class="color-navy">Physiotherapists</span></h2>
-        <p class="section-desc">What sets our fitness training apart is that every programme is designed and supervised by qualified physiotherapists — making it the safest, most effective way to get fit. Whether you're a complete beginner, an active senior, or an athlete in training, we have a programme for you.</p>
+        <div class="section-pill">Physio-Guided Performance</div>
+        <h2 class="section-title">Strength &amp; Conditioning <span class="color-green">Designed</span> by <span class="color-navy">Physiotherapists</span></h2>
+        <p class="section-desc">Our strength and conditioning programmes are built and supervised by qualified physiotherapists — making them the safest, most effective way to improve performance, correct posture, enhance mobility, and prevent injury. Whether you're rehabilitating, an active professional, or a competitive athlete, we have the right programme for you.</p>
         <div class="shs-features">
-          <div class="shs-feat"><span class="sf-dot"></span>Personal Training</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Group Fitness Classes</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Strength &amp; Conditioning Programs</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Posture Correction &amp; Ergonomic Training</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Mobility &amp; Flexibility Training</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Injury Prevention Programs</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Performance Enhancement</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Return-to-Sport Conditioning</div>
           <div class="shs-feat"><span class="sf-dot"></span>Senior Fitness (60+)</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Weight Management</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Athlete Conditioning</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Runner's Training</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Kids Fitness Workout</div>
-          <div class="shs-feat"><span class="sf-dot"></span>Functional Training</div>
+          <div class="shs-feat"><span class="sf-dot"></span>Athlete-Specific Training</div>
         </div>
         <div style="background:#e8f5e9;border-radius:16px;padding:16px 20px;margin-top:1.5rem;border-left:4px solid var(--green);">
-          <p style="color:#1b5e20;font-size:.88rem;font-weight:600;margin:0;">✅ Every programme begins with a free physiotherapy screening — because safe fitness starts with understanding your body.</p>
+          <p style="color:#1b5e20;font-size:.88rem;font-weight:600;margin:0;">✅ Every programme begins with a physiotherapy screening — because safe performance starts with understanding your body.</p>
         </div>
-        <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Start Training →</a>
+        <a href="#" onclick="showPage('booking');return false;" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">Start Your Programme →</a>
       </div>
     </div>
   </section>
@@ -2686,13 +2689,95 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     <style>@media(max-width:600px){.stat-bar-grid{grid-template-columns:1fr 1fr!important;}}</style>
   </section>
 
-  <!-- TRAINING PROGRAMMES -->
+  <!-- PROGRAMMES -->
   <section style="padding:100px 5%;background:#e3f2fd;">
     <div class="max-wrap">
       <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Our Programmes</div>
-      <h2 class="section-title text-center">Training <span class="color-green">Programmes</span> For Everyone</h2>
-      <p class="section-sub text-center" style="margin:0 auto 3rem">From beginner to advanced — our physio-guided programmes are designed for safe, progressive, and lasting results.</p>
+      <h2 class="section-title text-center">Programmes <span class="color-green">Tailored</span> To You</h2>
+      <p class="section-sub text-center" style="margin:0 auto 3rem">From posture correction to elite athlete conditioning — physio-designed and supervised for safety and results.</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;" class="prog-grid">
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">STRENGTH & CONDITIONING</div></div>
+          <div style="padding:22px 24px;">
+            <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Strength &amp; Conditioning Programs</h4>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Progressive, physio-supervised strength and conditioning tailored to your health history and fitness goals — safe, structured, and results-driven.</p>
+            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
+              <li>Individualised strength programme</li>
+              <li>Progressive overload principles</li>
+              <li>Functional movement training</li>
+              <li>Ongoing progress assessments</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio2.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">POSTURE & ERGONOMICS</div></div>
+          <div style="padding:22px 24px;">
+            <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Posture Correction &amp; Ergonomic Training</h4>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Clinical postural assessment and structured correction plans — ideal for desk workers, students, and anyone suffering from poor posture-related pain.</p>
+            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
+              <li>Full postural assessment</li>
+              <li>Ergonomic workplace evaluation</li>
+              <li>Deep core & spinal stability training</li>
+              <li>Desk worker–specific programme</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/dry_needling.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">MOBILITY & FLEXIBILITY</div></div>
+          <div style="padding:22px 24px;">
+            <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Mobility &amp; Flexibility Training</h4>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Targeted mobility and flexibility programmes to improve joint range of motion, reduce stiffness, and support long-term musculoskeletal health.</p>
+            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
+              <li>Joint mobility assessments</li>
+              <li>Stretch & flexibility routines</li>
+              <li>Foam rolling & myofascial release</li>
+              <li>Integrated movement drills</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/rehabilitation.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">INJURY PREVENTION</div></div>
+          <div style="padding:22px 24px;">
+            <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Injury Prevention &amp; Performance Enhancement</h4>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Proactive physio-designed programmes that identify movement deficits and strengthen vulnerable areas — keeping you training harder for longer.</p>
+            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
+              <li>Movement screening &amp; risk analysis</li>
+              <li>Neuromuscular control drills</li>
+              <li>Sport-specific prevention protocols</li>
+              <li>Load management guidance</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/alignment.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">ATHLETE CONDITIONING</div></div>
+          <div style="padding:22px 24px;">
+            <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Athlete &amp; Performance Training</h4>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Designed by a marathon runner and physiotherapist — advanced conditioning and performance enhancement for recreational to competitive athletes.</p>
+            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
+              <li>Sport-specific conditioning</li>
+              <li>Marathon &amp; running programmes</li>
+              <li>VO₂ max &amp; endurance training</li>
+              <li>Return-to-sport protocols</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
+          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/manual_therapy.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">SENIOR FITNESS</div></div>
+          <div style="padding:22px 24px;">
+            <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Senior Fitness (60+)</h4>
+            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Gentle, safe, and evidence-based fitness for senior citizens — improving strength, balance, flexibility, and independence to enable an active, fulfilling lifestyle.</p>
+            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
+              <li>Fall prevention &amp; balance training</li>
+              <li>Joint mobility &amp; flexibility</li>
+              <li>Low-impact cardiovascular fitness</li>
+              <li>Bone density improvement exercises</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <style>@media(max-width:900px){.prog-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:560px){.prog-grid{grid-template-columns:1fr!important;}}</style>
+    </div>
+  </section>
         <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
           <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">PERSONAL TRAINING</div></div>
           <div style="padding:22px 24px;">
@@ -2744,44 +2829,13 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
               <li>Sustainable long-term results</li>
             </ul>
           </div>
-        </div>
-        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
-          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/physio2.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,137,123,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">CORE & POSTURE</div></div>
-          <div style="padding:22px 24px;">
-            <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Core & Posture Training</h4>
-            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Targeted core strengthening and postural correction programmes — ideal for desk workers, students, and anyone with chronic back or neck discomfort from poor posture.</p>
-            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
-              <li>Ergonomic posture assessment</li>
-              <li>Deep core activation training</li>
-              <li>Spinal stability exercises</li>
-              <li>Desk worker–specific programmes</li>
-            </ul>
-          </div>
-        </div>
-        <div style="background:white;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);transition:transform .35s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform=''">
-          <div style="height:180px;overflow:hidden;position:relative;"><img src="images/manual_therapy.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,58,92,.8) 0%,transparent 60%);"></div><div style="position:absolute;bottom:16px;left:18px;color:white;font-size:.82rem;font-weight:700;letter-spacing:1px;">POST-REHAB FITNESS</div></div>
-          <div style="padding:22px 24px;">
-            <h4 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Post-Rehab Fitness</h4>
-            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Bridging the gap between physiotherapy and independent fitness — progressive training for patients transitioning from clinical rehab to long-term active wellness.</p>
-            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
-              <li>Safe transition from clinical rehab</li>
-              <li>Graduated return-to-activity plan</li>
-              <li>Strength rebuilding & confidence</li>
-              <li>Supervised gym integration</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <style>@media(max-width:900px){.prog-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:560px){.prog-grid{grid-template-columns:1fr!important;}}</style>
-    </div>
-  </section>
 
   <!-- HOW IT WORKS -->
   <section style="padding:90px 5%;background:white;">
     <div class="max-wrap">
       <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Your Journey</div>
-      <h2 class="section-title text-center">How Our <span class="color-green">Fitness Journey</span> Works</h2>
-      <p class="section-sub text-center" style="margin:0 auto 3rem">We don't believe in one-size-fits-all fitness. Every member follows a structured, personalised pathway.</p>
+      <h2 class="section-title text-center">How Our <span class="color-green">Programme</span> Works</h2>
+      <p class="section-sub text-center" style="margin:0 auto 3rem">Every patient follows a structured, personalised pathway — clinically informed from start to finish.</p>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;" class="journey-grid">
         <div style="text-align:center;padding:32px 20px;background:#f0f7ff;border-radius:20px;position:relative;">
           <div style="width:56px;height:56px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.4rem;color:white;font-weight:800;">1</div>
@@ -2889,7 +2943,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   </section>
 
   <div class="mva-cta-banner" style="margin:0;border-radius:0;padding:2.5rem 5%">
-    <div class="mcb-left"><div class="mcb-icon">🏋️</div><div><h4>Start Your Fitness Journey Today</h4><p>Book a free consultation and let our expert team design your personalised training programme.</p></div></div>
+    <div class="mcb-left"><div class="mcb-icon">💪</div><div><h4>Start Your Strength &amp; Conditioning Journey</h4><p>Book a consultation and let our expert team design your personalised programme.</p></div></div>
     <a href="https://wa.me/919429554422" target="_blank" class="btn-primary" onclick="showToast('Booking sent! We\'ll confirm shortly ✅')">Book Free Consultation 💬</a>
   </div>
 </div><!-- end gym -->
@@ -3553,21 +3607,20 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           <div class="form-group"><label>Preferred Service *</label>
             <select id="f-service">
               <option value="">Select a service</option>
-              <option>Sports Physio &amp; Rehab</option>
-              <option>Neuro Physio &amp; Rehab</option>
-              <option>Ortho Physio &amp; Rehab</option>
-              <option>Personal Fitness Training</option>
-              <option>Sports Specific Training</option>
-              <option>Focused Fitness Sessions</option>
-              <option>Antenatal &amp; Postnatal</option>
-              <option>Aqua Hydrotherapy</option>
-              <option>Kids Fitness Workout</option>
-              <option>Weight Loss / Gain</option>
-              <option>Cross Fit Training</option>
-              <option>Functional Training</option>
-              <option>TECAR Therapy</option>
-              <option>Class IV Laser Therapy</option>
-              <option>Advanced Physiotherapy</option>
+              <option>Injury Assessment &amp; Diagnosis</option>
+              <option>Pain Management Therapy</option>
+              <option>Orthopaedic Rehabilitation</option>
+              <option>Neurological Rehabilitation</option>
+              <option>Sports Injury Rehab &amp; Return-to-Sport</option>
+              <option>Post-Surgical Rehabilitation</option>
+              <option>Manual Therapy &amp; Hands-on Techniques</option>
+              <option>Strength &amp; Conditioning Programs</option>
+              <option>Posture Correction &amp; Ergonomic Training</option>
+              <option>Mobility &amp; Flexibility Training</option>
+              <option>Injury Prevention &amp; Performance Enhancement</option>
+              <option>Aqua Therapy</option>
+              <option>Dry Needling &amp; Cupping Therapy</option>
+              <option>Advanced Modalities (Class IV LASER / TECAR Therapy)</option>
             </select>
           </div>
           <div class="form-group"><label>Preferred Slot *</label>
@@ -3660,22 +3713,19 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     <div class="footer-col">
       <h4>Our Services</h4>
       <ul>
-        <li><a href="#" onclick="showPage('physio');return false;">Sports Physio &amp; Rehab</a></li>
-        <li><a href="#" onclick="showPage('rehab');return false;">Neuro Physio &amp; Rehab</a></li>
-        <li><a href="#" onclick="showPage('physio');return false;">Ortho Physio &amp; Rehab</a></li>
-        <li><a href="#" onclick="showPage('gym');return false;">Personal Fitness Training</a></li>
-        <li><a href="#" onclick="showPage('gym');return false;">Sports Specific Training</a></li>
-        <li><a href="#" onclick="showPage('gym');return false;">Focused Fitness Sessions</a></li>
-        <li><a href="#" onclick="showPage('physio');return false;">Antenatal &amp; Postnatal</a></li>
-        <li><a href="#" onclick="showPage('physio');return false;">Aqua Hydrotherapy</a></li>
-        <li><a href="#" onclick="showPage('gym');return false;">Kids Fitness Workout</a></li>
-        <li><a href="#" onclick="showPage('gym');return false;">Weight Loss / Gain</a></li>
-        <li><a href="#" onclick="showPage('gym');return false;">Cross Fit Training</a></li>
-        <li><a href="#" onclick="showPage('gym');return false;">Functional Training</a></li>
-        <li><a href="#" onclick="showPage('physio');return false;">TECAR Therapy</a></li>
-        <li><a href="#" onclick="showPage('physio');return false;">Class IV Laser Therapy</a></li>
-        <li><a href="#" onclick="showPage('physio');return false;">Advanced Physiotherapy</a></li>
-      </ul>
+        <li><a href="#" onclick="showPage('physio');return false;">Pain Management Therapy</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Injury Assessment &amp; Diagnosis</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Orthopaedic Rehabilitation</a></li>
+        <li><a href="#" onclick="showPage('rehab');return false;">Neurological Rehabilitation</a></li>
+        <li><a href="#" onclick="showPage('rehab');return false;">Sports Injury Rehab &amp; Return-to-Sport</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Post-Surgical Rehabilitation</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Manual Therapy &amp; Hands-on Techniques</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Strength &amp; Conditioning Programs</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Posture Correction &amp; Ergonomic Training</a></li>
+        <li><a href="#" onclick="showPage('gym');return false;">Mobility &amp; Flexibility Training</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Aqua Therapy</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Dry Needling &amp; Cupping Therapy</a></li>
+        <li><a href="#" onclick="showPage('physio');return false;">Advanced Modalities (LASER / TECAR)</a></li>
     </div>
     <div class="footer-col">
       <h4>Contact Info</h4>
