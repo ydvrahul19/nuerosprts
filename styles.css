@@ -157,13 +157,13 @@ ul { list-style:none; }
 .hamburger span { width:24px; height:2px; background:var(--navy); border-radius:2px; transition:.3s; display:block; }
 
 /* ===== PAGES ===== */
-.page { display:none; }
+.page { display:none; padding-top:72px; }
 .page.active { display:block; }
 
 /* ===== PAGE HEADER ===== */
 .page-header {
   background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);
-  padding:152px 5% 60px; text-align:center;
+  padding:80px 5% 60px; text-align:center;
 }
 .ph-breadcrumb { font-size:0.82rem; color:rgba(255,255,255,.5); margin-bottom:1rem; }
 .page-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); color:white; margin-bottom:0.8rem; }
