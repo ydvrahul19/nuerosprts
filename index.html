@@ -2179,26 +2179,6 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     </div>
   </section>
 
-  <!-- QUALITY SECTION -->
-  <section class="quality-section" style="background:#e3f2fd">
-    <div class="quality-inner max-wrap">
-      <div class="quality-images" data-aos="fade-right">
-        <div class="qi-photo qi-photo1"><img src="images/physio2.webp" alt="Physiotherapy" style="object-position:top"></div>
-        <div class="qi-photo qi-photo2"><img src="images/rehabilitation.webp" alt="Rehabilitation" style="object-position:top"></div>
-      </div>
-      <div class="quality-text" data-aos="fade-left">
-        <div class="section-pill">Why Choose Us</div>
-        <h2 class="section-title">Quality <span class="color-green">Care</span> That Makes a <span class="color-navy">Difference</span></h2>
-        <p class="section-desc">Neuro Sports Centre is built around a simple belief: every patient deserves personalised, expert care that goes beyond symptom management. With 15+ specialised professionals, we offer a comprehensive approach to health and recovery.</p>
-        <div class="quality-checks">
-          <div class="qcheck"><div class="qc-dot"></div><p>15+ specialised physiotherapists and fitness professionals under one roof.</p></div>
-          <div class="qcheck"><div class="qc-dot"></div><p>Services for all age groups — from paediatric to geriatric care.</p></div>
-          <div class="qcheck"><div class="qc-dot"></div><p>State-of-the-art gym and rehabilitation facility integrated with clinical physiotherapy.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <div class="mva-cta-banner" style="margin:0;border-radius:0;padding:2.5rem 5%">
     <div class="mcb-left"><div class="mcb-icon">🚀</div><div><h4>Ready To Start Your Journey?</h4><p>Book your consultation with Dr. Ruchit Shah and his expert team today.</p></div></div>
@@ -2911,66 +2891,95 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   </section>
 
   <!-- NEUROLOGICAL REHAB CONDITIONS -->
-  <section style="padding:100px 5%;background:#e3f2fd;">
+  <section style="padding:100px 5%;background:linear-gradient(180deg,#f0f7ff 0%,#e3f2fd 100%);">
     <div class="max-wrap">
       <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem">Neurological Rehabilitation</div>
       <h2 class="section-title text-center">Neuro Conditions We <span class="color-green">Specialise In</span></h2>
       <p class="section-sub text-center" style="margin:0 auto 2.5rem">Our neurological rehabilitation team uses the latest evidence-based techniques to help patients regain movement, function, and independence.</p>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="rehab-grid">
-        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
-          <div style="height:180px;overflow:hidden;"><img src="images/physio1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
-          <div style="padding:22px 24px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🧠</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Stroke Rehabilitation</h4></div>
-            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Structured neurological rehabilitation for stroke survivors — focusing on movement restoration, balance re-training, muscle re-education, and functional independence.</p>
-            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
-              <li>Hemiplegia & hemiparesis treatment</li>
-              <li>Gait training & balance re-education</li>
-              <li>Upper limb motor recovery</li>
-              <li>Speech & swallowing coordination support</li>
-            </ul>
-          </div>
+
+      <!-- CARD 1: Full-width featured -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:28px;overflow:hidden;box-shadow:0 16px 48px rgba(26,111,181,.18);margin-bottom:28px;background:white;" class="rehab-card-featured">
+        <div style="height:100%;min-height:340px;overflow:hidden;position:relative;">
+          <img src="images/physio1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,white);"></div>
         </div>
-        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
-          <div style="height:180px;overflow:hidden;"><img src="images/osteopathy.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
-          <div style="padding:22px 24px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🫀</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Parkinson's Disease</h4></div>
-            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Evidence-based physiotherapy for Parkinson's — improving gait, reducing fall risk, maintaining mobility, and slowing functional decline through structured progressive training.</p>
-            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
-              <li>LSVT BIG exercise approach</li>
-              <li>Freezing of gait management</li>
-              <li>Postural stability training</li>
-              <li>Fall prevention & home safety</li>
-            </ul>
+        <div style="padding:40px 36px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:#e3f2fd;border-radius:50px;padding:6px 14px;width:fit-content;margin-bottom:18px;">
+            <span style="font-size:1.3rem;">🧠</span><span style="font-size:.8rem;font-weight:700;color:#1a6fb5;letter-spacing:.5px;">STROKE REHABILITATION</span>
           </div>
-        </div>
-        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
-          <div style="height:180px;overflow:hidden;"><img src="images/dry_needling.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
-          <div style="padding:22px 24px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🦽</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Spinal Cord Injury Rehab</h4></div>
-            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Comprehensive SCI rehabilitation — from acute injury management through to long-term functional training, transfer skills, assistive device use, and community reintegration.</p>
-            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
-              <li>Incomplete & complete SCI management</li>
-              <li>Functional electrical stimulation (FES)</li>
-              <li>Wheelchair skills & transfer training</li>
-              <li>Community reintegration support</li>
-            </ul>
-          </div>
-        </div>
-        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(26,111,181,.12);background:white;border:1px solid rgba(26,111,181,.08);">
-          <div style="height:180px;overflow:hidden;"><img src="images/manual_therapy.webp" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>
-          <div style="padding:22px 24px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👶</div><h4 style="font-size:1rem;font-weight:700;color:var(--navy);">Cerebral Palsy (CP) Rehab</h4></div>
-            <p style="color:var(--muted);font-size:.875rem;line-height:1.75;">Gentle, progressive physiotherapy for children and adults with CP — improving motor function and daily living activities with compassionate, family-centred care.</p>
-            <ul style="color:var(--muted);font-size:.82rem;line-height:1.8;padding-left:1.1rem;margin-top:10px;">
-              <li>Bobath (NDT) approach for motor learning</li>
-              <li>Tone management & spasticity reduction</li>
-              <li>Gross motor skill development</li>
-              <li>Family education & home programme</li>
-            </ul>
+          <h3 style="font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:12px;font-family:'Playfair Display',serif;">Restoring Movement & Independence After Stroke</h3>
+          <p style="color:var(--muted);font-size:.875rem;line-height:1.8;margin-bottom:18px;">Structured neurological rehabilitation for stroke survivors — focusing on movement restoration, balance re-training, muscle re-education, and functional independence.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;"><div style="width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.83rem;color:var(--navy);font-weight:500;">Hemiplegia & hemiparesis treatment</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div style="width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.83rem;color:var(--navy);font-weight:500;">Gait training & balance re-education</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div style="width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.83rem;color:var(--navy);font-weight:500;">Upper limb motor recovery</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div style="width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.83rem;color:var(--navy);font-weight:500;">Speech & swallowing coordination support</span></div>
           </div>
         </div>
       </div>
-      <style>@media(max-width:600px){.rehab-grid{grid-template-columns:1fr!important;}}</style>
+
+      <!-- CARDS 2-4: 3-column row -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="rehab-grid">
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 32px rgba(26,111,181,.13);background:white;">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="images/osteopathy.webp" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,rgba(255,255,255,1),transparent);"></div>
+            <div style="position:absolute;bottom:12px;left:16px;display:flex;align-items:center;gap:8px;background:white;border-radius:50px;padding:5px 12px;box-shadow:0 2px 10px rgba(0,0,0,.1);">
+              <span style="font-size:1.1rem;">🫀</span><span style="font-size:.75rem;font-weight:700;color:#1a6fb5;">PARKINSON'S</span>
+            </div>
+          </div>
+          <div style="padding:20px 22px 24px;">
+            <h4 style="font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:10px;">Parkinson's Disease</h4>
+            <p style="color:var(--muted);font-size:.83rem;line-height:1.75;margin-bottom:14px;">Evidence-based physiotherapy improving gait, reducing fall risk, and maintaining mobility.</p>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">LSVT BIG exercise approach</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">Freezing of gait management</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">Fall prevention & home safety</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 32px rgba(26,111,181,.13);background:white;">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="images/dry_needling.webp" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,rgba(255,255,255,1),transparent);"></div>
+            <div style="position:absolute;bottom:12px;left:16px;display:flex;align-items:center;gap:8px;background:white;border-radius:50px;padding:5px 12px;box-shadow:0 2px 10px rgba(0,0,0,.1);">
+              <span style="font-size:1.1rem;">🦽</span><span style="font-size:.75rem;font-weight:700;color:#1a6fb5;">SPINAL CORD</span>
+            </div>
+          </div>
+          <div style="padding:20px 22px 24px;">
+            <h4 style="font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:10px;">Spinal Cord Injury</h4>
+            <p style="color:var(--muted);font-size:.83rem;line-height:1.75;margin-bottom:14px;">Comprehensive SCI rehab from acute management through functional training and reintegration.</p>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">Functional electrical stimulation</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">Wheelchair skills & transfer training</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">Community reintegration support</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 8px 32px rgba(26,111,181,.13);background:white;">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="images/manual_therapy.webp" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,rgba(255,255,255,1),transparent);"></div>
+            <div style="position:absolute;bottom:12px;left:16px;display:flex;align-items:center;gap:8px;background:white;border-radius:50px;padding:5px 12px;box-shadow:0 2px 10px rgba(0,0,0,.1);">
+              <span style="font-size:1.1rem;">👶</span><span style="font-size:.75rem;font-weight:700;color:#1a6fb5;">CEREBRAL PALSY</span>
+            </div>
+          </div>
+          <div style="padding:20px 22px 24px;">
+            <h4 style="font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:10px;">Cerebral Palsy (CP)</h4>
+            <p style="color:var(--muted);font-size:.83rem;line-height:1.75;margin-bottom:14px;">Gentle, progressive physiotherapy improving motor function with compassionate, family-centred care.</p>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">Bobath (NDT) motor learning</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">Tone & spasticity management</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;"></div><span style="font-size:.8rem;color:var(--muted);">Family education & home programme</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        @media(max-width:768px){.rehab-card-featured{grid-template-columns:1fr!important;} .rehab-card-featured>div:first-child{min-height:220px!important;}}
+        @media(max-width:700px){.rehab-grid{grid-template-columns:1fr 1fr!important;}}
+        @media(max-width:440px){.rehab-grid{grid-template-columns:1fr!important;}}
+      </style>
     </div>
   </section>
 

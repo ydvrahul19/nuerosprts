@@ -1307,3 +1307,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial checks
   setTimeout(checkStatsVisible, 600);
 });
+
+// FAQ Toggle
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const body = item.querySelector('.faq-body');
+  const icon = btn.querySelector('span');
+  const isOpen = body.style.display === 'block';
+
+  // Close all other open FAQs in the same container
+  const container = item.parentElement;
+  container.querySelectorAll('.faq-item').forEach(other => {
+    if (other !== item) {
+      other.querySelector('.faq-body').style.display = 'none';
+      other.querySelector('button span').textContent = '+';
+      other.querySelector('button span').style.transform = 'rotate(0deg)';
+      other.style.borderColor = '#e2e8f0';
+    }
+  });
+
+  if (isOpen) {
+    body.style.display = 'none';
+    icon.textContent = '+';
+    icon.style.transform = 'rotate(0deg)';
+    item.style.borderColor = '#e2e8f0';
+  } else {
+    body.style.display = 'block';
+    icon.textContent = '×';
+    icon.style.transform = 'rotate(0deg)';
+    item.style.borderColor = 'var(--green)';
+  }
+}
