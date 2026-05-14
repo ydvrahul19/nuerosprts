@@ -2088,28 +2088,6 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           </div>
         </div>
 
-        <!-- New patient welcome note -->
-        <div data-aos="fade-left">
-          <div style="background:linear-gradient(135deg,var(--navy),#1a6fb5);border-radius:24px;padding:36px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:rgba(255,255,255,.05);border-radius:50%;"></div>
-            <div style="position:absolute;bottom:-30px;left:-10px;width:80px;height:80px;background:rgba(255,255,255,.04);border-radius:50%;"></div>
-            <div style="position:relative;z-index:2;">
-              <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border-radius:50px;padding:6px 14px;margin-bottom:18px;">
-                <span>💌</span>
-                <span style="color:rgba(255,255,255,.9);font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;">A Note to New Patients</span>
-              </div>
-              <p style="color:white;font-size:1rem;line-height:1.85;margin-bottom:1.2rem;">At Neuro Sports Centre, we take a <strong>personalised and goal-oriented approach</strong> to your recovery. We begin with a detailed assessment to understand your condition, followed by a structured, comprehensive programme focusing on pain relief, mobility, strength, and functional training.</p>
-              <p style="color:rgba(255,255,255,.75);font-size:.88rem;line-height:1.85;margin-bottom:1.5rem;">Our rehabilitation is progressive and condition &amp; sport-specific — ensuring you regain confidence and return safely to your pre-injury level. We don't just treat symptoms. <strong style="color:white;">We work with you every step of the way.</strong></p>
-              <div style="display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);">
-                <img src="images/dr_ruchit.webp" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.3);" alt="Dr. Ruchit Shah">
-                <div>
-                  <div style="color:white;font-weight:700;font-size:.88rem;">Dr. Ruchit Shah</div>
-                  <div style="color:rgba(255,255,255,.6);font-size:.75rem;">BPT · MPT · CMPT · Founder</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <style>@media(max-width:768px){.about-2col{grid-template-columns:1fr!important;gap:32px!important;}}</style>
 
@@ -2762,6 +2740,108 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       </div>
     </div>
   </section>
+
+  <!-- PATIENT NOTE SPOTLIGHT -->
+  <section class="patient-note-section">
+    <div class="pn-bg-blobs">
+      <div class="pn-blob pn-blob1"></div>
+      <div class="pn-blob pn-blob2"></div>
+      <div class="pn-blob pn-blob3"></div>
+    </div>
+    <div class="max-wrap pn-inner" data-aos="fade-up">
+
+      <!-- Left: large quote + message -->
+      <div class="pn-left">
+        <div class="pn-tag">
+          <span class="pn-tag-dot"></span>
+          <span>A Note to New Patients</span>
+        </div>
+        <div class="pn-quote-mark">"</div>
+        <h2 class="pn-heading">You deserve more than<br>just symptom relief.</h2>
+        <p class="pn-body">At Neuro Sports Centre, we take a <strong>personalised and goal-oriented approach</strong> to your recovery. We begin with a detailed assessment to understand your condition, followed by a structured, comprehensive programme focusing on pain relief, mobility, strength, and functional training.</p>
+        <p class="pn-body">Our rehabilitation is progressive and condition &amp; sport-specific — ensuring you regain confidence and return safely to your pre-injury level. We don't just treat symptoms. <strong>We work with you every step of the way.</strong></p>
+        <a href="#contact" class="btn-primary pn-cta">Start Your Recovery Today</a>
+      </div>
+
+      <!-- Right: promise cards + doctor sign-off -->
+      <div class="pn-right">
+
+        <div class="pn-promise-cards">
+          <div class="pn-pcard" data-aos="fade-left" data-aos-delay="0">
+            <div class="pn-pcard-icon">🎯</div>
+            <div>
+              <div class="pn-pcard-title">Goal-Oriented Care</div>
+              <div class="pn-pcard-desc">Every session is planned around your specific recovery milestone — not a generic protocol.</div>
+            </div>
+          </div>
+          <div class="pn-pcard" data-aos="fade-left" data-aos-delay="80">
+            <div class="pn-pcard-icon">🤝</div>
+            <div>
+              <div class="pn-pcard-title">You're Never Alone</div>
+              <div class="pn-pcard-desc">Dr. Ruchit personally oversees your progress from day one to full recovery.</div>
+            </div>
+          </div>
+          <div class="pn-pcard" data-aos="fade-left" data-aos-delay="160">
+            <div class="pn-pcard-icon">📈</div>
+            <div>
+              <div class="pn-pcard-title">Progressive & Proven</div>
+              <div class="pn-pcard-desc">Evidence-based treatment that builds on itself — so each week you're measurably stronger.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor sign-off -->
+        <div class="pn-signoff" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/dr_ruchit.webp" class="pn-doc-img" alt="Dr. Ruchit Shah">
+          <div class="pn-signoff-text">
+            <div class="pn-doc-name">Dr. Ruchit Shah</div>
+            <div class="pn-doc-creds">BPT · MPT · CMPT · Founder, Neuro Sports Centre</div>
+            <div class="pn-signature">— Personally committed to your recovery</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+  .patient-note-section{position:relative;background:linear-gradient(135deg,#0a1f44 0%,#0d3b6e 50%,#0a4a7a 100%);padding:90px 5%;overflow:hidden;}
+  .pn-bg-blobs{position:absolute;inset:0;pointer-events:none;}
+  .pn-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.25;}
+  .pn-blob1{width:400px;height:400px;background:#1a8cff;top:-100px;left:-80px;}
+  .pn-blob2{width:300px;height:300px;background:#00c9a7;bottom:-60px;right:10%;}
+  .pn-blob3{width:200px;height:200px;background:#6c5ce7;top:40%;right:-50px;}
+  .pn-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;position:relative;z-index:2;}
+  /* Left */
+  .pn-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:50px;padding:6px 16px;margin-bottom:20px;}
+  .pn-tag{color:rgba(255,255,255,.9);font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;}
+  .pn-tag-dot{width:7px;height:7px;background:#00e5b0;border-radius:50%;display:inline-block;animation:pn-pulse 2s infinite;}
+  @keyframes pn-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,229,176,.5);}50%{box-shadow:0 0 0 6px rgba(0,229,176,0);}}
+  .pn-quote-mark{font-size:7rem;line-height:.7;color:rgba(255,255,255,.08);font-family:Georgia,serif;margin-bottom:-10px;}
+  .pn-heading{font-size:2rem;font-weight:800;color:white;line-height:1.25;margin-bottom:1.2rem;font-family:'Playfair Display',serif;}
+  .pn-body{color:rgba(255,255,255,.75);font-size:.93rem;line-height:1.9;margin-bottom:1rem;}
+  .pn-body strong{color:white;}
+  .pn-cta{margin-top:1.5rem;display:inline-block;}
+  /* Right promise cards */
+  .pn-promise-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:28px;}
+  .pn-pcard{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px;backdrop-filter:blur(8px);transition:background .25s,transform .25s;}
+  .pn-pcard:hover{background:rgba(255,255,255,.12);transform:translateX(5px);}
+  .pn-pcard-icon{font-size:1.6rem;flex-shrink:0;width:44px;height:44px;background:rgba(255,255,255,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;}
+  .pn-pcard-title{color:white;font-weight:700;font-size:.88rem;margin-bottom:4px;}
+  .pn-pcard-desc{color:rgba(255,255,255,.65);font-size:.78rem;line-height:1.6;}
+  /* Sign-off */
+  .pn-signoff{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 22px;backdrop-filter:blur(8px);}
+  .pn-doc-img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(255,255,255,.3);flex-shrink:0;}
+  .pn-doc-name{color:white;font-weight:700;font-size:.95rem;}
+  .pn-doc-creds{color:rgba(255,255,255,.55);font-size:.72rem;margin:.2rem 0 .4rem;}
+  .pn-signature{color:#00e5b0;font-size:.78rem;font-style:italic;font-weight:500;}
+  /* Mobile */
+  @media(max-width:768px){
+    .pn-inner{grid-template-columns:1fr;gap:40px;}
+    .pn-heading{font-size:1.5rem;}
+    .pn-pcard:hover{transform:none;}
+  }
+  </style>
 
   <!-- WHY CHOOSE US STATS BAR -->
   <section style="background:linear-gradient(135deg,#00897B,#1a6fb5);padding:48px 5%;">
