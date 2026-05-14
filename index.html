@@ -2113,58 +2113,154 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       </div>
       <style>@media(max-width:768px){.about-2col{grid-template-columns:1fr!important;gap:32px!important;}}</style>
 
-      <!-- Treatment Process Steps -->
+      <!-- Treatment Process Steps — Recovery Roadmap -->
       <div data-aos="fade-up" style="margin-bottom:72px;">
         <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem;">Our Treatment Approach</div>
         <h2 class="section-title text-center">6 Steps to <span class="color-navy">Complete Recovery</span></h2>
-        <p class="section-sub text-center" style="margin:0 auto 3rem;">A structured, progressive framework designed to take you from pain to peak performance — safely and completely.</p>
+        <p class="section-sub text-center" style="margin:.5rem auto 3.5rem;">A structured, progressive framework designed to take you from pain to peak performance — safely and completely.</p>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="steps-grid">
+        <!-- Roadmap Container -->
+        <div class="roadmap-wrap">
 
-          <div style="border-radius:20px;border:1.5px solid #e2ecf8;padding:28px 24px;position:relative;overflow:hidden;background:white;" data-aos="fade-up" data-aos-delay="0">
-            <div style="position:absolute;top:-10px;right:-10px;font-size:5rem;font-weight:900;color:#f0f7ff;line-height:1;pointer-events:none;user-select:none;">1</div>
-            <div style="width:48px;height:48px;background:#e3f0ff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px;">🔍</div>
-            <h4 style="color:var(--navy);font-weight:700;font-size:.95rem;margin-bottom:8px;">Detailed Assessment</h4>
-            <p style="color:var(--muted);font-size:.82rem;line-height:1.7;margin:0;">We thoroughly evaluate your injury, movement patterns, strength, and functional limitations to understand your condition fully.</p>
+          <!-- Left column: steps 1, 3, 5 -->
+          <div class="roadmap-col roadmap-col-left">
+
+            <div class="rm-card rm-card-left" data-aos="fade-right" data-aos-delay="0">
+              <div class="rm-card-inner">
+                <div class="rm-icon-wrap" style="background:#e3f0ff;">🔍</div>
+                <div>
+                  <div class="rm-step-label">Step 01</div>
+                  <h4 class="rm-title">Detailed Assessment</h4>
+                  <p class="rm-desc">We thoroughly evaluate your injury, movement patterns, strength, and functional limitations to understand your condition fully.</p>
+                </div>
+              </div>
+              <div class="rm-connector rm-connector-right"></div>
+            </div>
+
+            <div class="rm-card rm-card-left" data-aos="fade-right" data-aos-delay="100">
+              <div class="rm-card-inner">
+                <div class="rm-icon-wrap" style="background:#e0f4f1;">🧘</div>
+                <div>
+                  <div class="rm-step-label">Step 03</div>
+                  <h4 class="rm-title">Mobility & Stability Training</h4>
+                  <p class="rm-desc">Improve joint movement, flexibility, and core stability with progressive exercise protocols tailored to your body.</p>
+                </div>
+              </div>
+              <div class="rm-connector rm-connector-right"></div>
+            </div>
+
+            <div class="rm-card rm-card-left" data-aos="fade-right" data-aos-delay="200">
+              <div class="rm-card-inner">
+                <div class="rm-icon-wrap" style="background:#f3e8ff;">🏃</div>
+                <div>
+                  <div class="rm-step-label">Step 05</div>
+                  <h4 class="rm-title">Functional & Sport-Specific Training</h4>
+                  <p class="rm-desc">Introduce movements that mimic your daily activities or sports demands — preparing you for a complete return to performance.</p>
+                </div>
+              </div>
+              <div class="rm-connector rm-connector-right"></div>
+            </div>
+
           </div>
 
-          <div style="border-radius:20px;border:1.5px solid #e2ecf8;padding:28px 24px;position:relative;overflow:hidden;background:white;" data-aos="fade-up" data-aos-delay="80">
-            <div style="position:absolute;top:-10px;right:-10px;font-size:5rem;font-weight:900;color:#f0f7ff;line-height:1;pointer-events:none;user-select:none;">2</div>
-            <div style="width:48px;height:48px;background:#fce4ec;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px;">🩹</div>
-            <h4 style="color:var(--navy);font-weight:700;font-size:.95rem;margin-bottom:8px;">Pain Management & Early Care</h4>
-            <p style="color:var(--muted);font-size:.82rem;line-height:1.7;margin:0;">Focus on reducing pain, inflammation, and restoring basic mobility through manual therapy, electrotherapy, and targeted techniques.</p>
+          <!-- Centre spine -->
+          <div class="roadmap-spine">
+            <div class="rs-line"></div>
+            <div class="rs-node rs-node-1"><span>1</span></div>
+            <div class="rs-gap"></div>
+            <div class="rs-node rs-node-2"><span>2</span></div>
+            <div class="rs-gap"></div>
+            <div class="rs-node rs-node-3"><span>3</span></div>
+            <div class="rs-gap"></div>
+            <div class="rs-node rs-node-4"><span>4</span></div>
+            <div class="rs-gap"></div>
+            <div class="rs-node rs-node-5"><span>5</span></div>
+            <div class="rs-gap"></div>
+            <div class="rs-node rs-node-6 rs-node-final"><span>6</span></div>
           </div>
 
-          <div style="border-radius:20px;border:1.5px solid #e2ecf8;padding:28px 24px;position:relative;overflow:hidden;background:white;" data-aos="fade-up" data-aos-delay="160">
-            <div style="position:absolute;top:-10px;right:-10px;font-size:5rem;font-weight:900;color:#f0f7ff;line-height:1;pointer-events:none;user-select:none;">3</div>
-            <div style="width:48px;height:48px;background:#e0f4f1;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px;">🧘</div>
-            <h4 style="color:var(--navy);font-weight:700;font-size:.95rem;margin-bottom:8px;">Mobility & Stability Training</h4>
-            <p style="color:var(--muted);font-size:.82rem;line-height:1.7;margin:0;">Improve joint movement, flexibility, and core stability with progressive exercise protocols tailored to your body.</p>
-          </div>
+          <!-- Right column: steps 2, 4, 6 -->
+          <div class="roadmap-col roadmap-col-right">
 
-          <div style="border-radius:20px;border:1.5px solid #e2ecf8;padding:28px 24px;position:relative;overflow:hidden;background:white;" data-aos="fade-up" data-aos-delay="0">
-            <div style="position:absolute;top:-10px;right:-10px;font-size:5rem;font-weight:900;color:#f0f7ff;line-height:1;pointer-events:none;user-select:none;">4</div>
-            <div style="width:48px;height:48px;background:#fff3e0;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px;">💪</div>
-            <h4 style="color:var(--navy);font-weight:700;font-size:.95rem;margin-bottom:8px;">Strength Rehabilitation</h4>
-            <p style="color:var(--muted);font-size:.82rem;line-height:1.7;margin:0;">Gradually build muscle strength and endurance specific to your condition, sport, and daily functional demands.</p>
-          </div>
+            <div class="rm-card rm-card-right" data-aos="fade-left" data-aos-delay="50">
+              <div class="rm-connector rm-connector-left"></div>
+              <div class="rm-card-inner">
+                <div class="rm-icon-wrap" style="background:#fce4ec;">🩹</div>
+                <div>
+                  <div class="rm-step-label">Step 02</div>
+                  <h4 class="rm-title">Pain Management & Early Care</h4>
+                  <p class="rm-desc">Focus on reducing pain, inflammation, and restoring basic mobility through manual therapy, electrotherapy, and targeted techniques.</p>
+                </div>
+              </div>
+            </div>
 
-          <div style="border-radius:20px;border:1.5px solid #e2ecf8;padding:28px 24px;position:relative;overflow:hidden;background:white;" data-aos="fade-up" data-aos-delay="80">
-            <div style="position:absolute;top:-10px;right:-10px;font-size:5rem;font-weight:900;color:#f0f7ff;line-height:1;pointer-events:none;user-select:none;">5</div>
-            <div style="width:48px;height:48px;background:#f3e8ff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px;">🏃</div>
-            <h4 style="color:var(--navy);font-weight:700;font-size:.95rem;margin-bottom:8px;">Functional & Sport-Specific Training</h4>
-            <p style="color:var(--muted);font-size:.82rem;line-height:1.7;margin:0;">Introduce movements that mimic your daily activities or sports demands — preparing you for a complete return to performance.</p>
-          </div>
+            <div class="rm-card rm-card-right" data-aos="fade-left" data-aos-delay="150">
+              <div class="rm-connector rm-connector-left"></div>
+              <div class="rm-card-inner">
+                <div class="rm-icon-wrap" style="background:#fff3e0;">💪</div>
+                <div>
+                  <div class="rm-step-label">Step 04</div>
+                  <h4 class="rm-title">Strength Rehabilitation</h4>
+                  <p class="rm-desc">Gradually build muscle strength and endurance specific to your condition, sport, and daily functional demands.</p>
+                </div>
+              </div>
+            </div>
 
-          <div style="border-radius:20px;border:1.5px solid #e2ecf8;padding:28px 24px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy),#1a6fb5);" data-aos="fade-up" data-aos-delay="160">
-            <div style="position:absolute;top:-10px;right:-10px;font-size:5rem;font-weight:900;color:rgba(255,255,255,.07);line-height:1;pointer-events:none;user-select:none;">6</div>
-            <div style="width:48px;height:48px;background:rgba(255,255,255,.15);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px;">🛡️</div>
-            <h4 style="color:white;font-weight:700;font-size:.95rem;margin-bottom:8px;">Injury Prevention & Maintenance</h4>
-            <p style="color:rgba(255,255,255,.75);font-size:.82rem;line-height:1.7;margin:0;">We educate and train you to avoid future injuries and maintain long-term health — so you stay active, strong, and confident for life.</p>
-          </div>
+            <div class="rm-card rm-card-right rm-card-final" data-aos="fade-left" data-aos-delay="250">
+              <div class="rm-connector rm-connector-left rm-connector-final"></div>
+              <div class="rm-card-inner">
+                <div class="rm-icon-wrap" style="background:rgba(255,255,255,.18);">🛡️</div>
+                <div>
+                  <div class="rm-step-label" style="color:rgba(255,255,255,.65);">Step 06</div>
+                  <h4 class="rm-title" style="color:white;">Injury Prevention & Maintenance</h4>
+                  <p class="rm-desc" style="color:rgba(255,255,255,.75);">We educate and train you to avoid future injuries and maintain long-term health — so you stay active, strong, and confident for life.</p>
+                </div>
+              </div>
+            </div>
 
-        </div>
-        <style>@media(max-width:900px){.steps-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:540px){.steps-grid{grid-template-columns:1fr!important;}}</style>
+          </div>
+        </div><!-- /roadmap-wrap -->
+
+        <style>
+        /* ── Roadmap layout ── */
+        .roadmap-wrap{display:grid;grid-template-columns:1fr 56px 1fr;align-items:start;gap:0;position:relative;margin-top:1rem;}
+        /* Spine */
+        .roadmap-spine{display:flex;flex-direction:column;align-items:center;position:relative;}
+        .rs-line{position:absolute;top:20px;bottom:20px;left:50%;transform:translateX(-50%);width:3px;background:linear-gradient(to bottom,var(--blue),var(--green));border-radius:4px;z-index:0;}
+        .rs-node{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;color:white;position:relative;z-index:1;box-shadow:0 0 0 5px white;}
+        .rs-node-1,.rs-node-3,.rs-node-5{background:var(--blue);}
+        .rs-node-2,.rs-node-4{background:#2e9e82;}
+        .rs-node-final{background:linear-gradient(135deg,var(--navy),#1a6fb5);box-shadow:0 0 0 5px white,0 0 0 8px rgba(26,111,181,.25);}
+        .rs-gap{flex:1;min-height:120px;}
+        /* Cards */
+        .roadmap-col{display:flex;flex-direction:column;gap:0;}
+        .rm-card{position:relative;padding:0 0 40px 0;display:flex;align-items:flex-start;}
+        .rm-card-left{justify-content:flex-end;padding-right:24px;}
+        .rm-card-right{justify-content:flex-start;padding-left:24px;}
+        .rm-card-inner{background:white;border:1.5px solid #e2ecf8;border-radius:18px;padding:20px;display:flex;gap:14px;align-items:flex-start;max-width:320px;box-shadow:0 2px 16px rgba(30,60,120,.06);transition:transform .2s,box-shadow .2s;}
+        .rm-card-inner:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(30,60,120,.12);}
+        .rm-card-final .rm-card-inner{background:linear-gradient(135deg,var(--navy),#1a6fb5);border-color:transparent;box-shadow:0 8px 32px rgba(26,50,100,.25);}
+        .rm-icon-wrap{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+        .rm-step-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--blue);margin-bottom:4px;}
+        .rm-title{font-size:.9rem;font-weight:700;color:var(--navy);margin:0 0 6px;}
+        .rm-desc{font-size:.8rem;color:var(--muted);line-height:1.65;margin:0;}
+        /* Connectors */
+        .rm-connector{position:absolute;top:18px;height:2px;width:24px;background:linear-gradient(to right,var(--blue),#93c5fd);}
+        .rm-connector-right{right:0;}
+        .rm-connector-left{left:0;}
+        .rm-connector-final{background:linear-gradient(to right,#93c5fd,var(--navy));}
+        /* Mobile: single column */
+        @media(max-width:700px){
+          .roadmap-wrap{grid-template-columns:32px 1fr;grid-template-areas:"spine cards";}
+          .roadmap-col-left,.roadmap-col-right{grid-area:cards;display:contents;}
+          .roadmap-spine{grid-area:spine;}
+          .rm-card-left,.rm-card-right{padding-left:16px;padding-right:0;justify-content:flex-start;}
+          .rm-connector-right{display:none;}
+          .rm-connector-left{left:0;}
+          .rm-card-inner{max-width:100%;}
+          .rs-gap{min-height:100px;}
+        }
+        </style>
       </div>
 
       <!-- Services List -->
