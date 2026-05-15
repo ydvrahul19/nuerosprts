@@ -675,16 +675,16 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 @keyframes fabPulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.65);opacity:0;} }
 
 /* ===== CHATBOT ===== */
-.chatbot-fab { position:fixed; bottom:24px; right:90px; z-index:1001; width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg,var(--navy),var(--blue)); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(26,111,181,.5); transition:transform .3s ease,box-shadow .3s; }
-.chatbot-fab:hover { transform:scale(1.1); box-shadow:0 10px 30px rgba(26,111,181,.6); }
+.chatbot-fab { position:fixed; bottom:24px; right:90px; z-index:1001; width:58px; height:58px; border-radius:50%; background:transparent; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:none; transition:transform .3s ease; }
+.chatbot-fab:hover { transform:scale(1.1); box-shadow:none; }
 .chatbot-fab svg { width:24px; height:24px; color:white; }
 .chatbot-fab-badge { position:absolute; top:-4px; right:-4px; width:18px; height:18px; background:#e53935; border-radius:50%; font-size:0.65rem; font-weight:700; color:white; display:flex; align-items:center; justify-content:center; border:2px solid white; }
-.chatbot-fab-pulse { position:absolute; width:100%; height:100%; border-radius:50%; background:rgba(26,111,181,.3); animation:fabPulse 2s infinite; pointer-events:none; }
+.chatbot-fab-pulse { display:none; }
 .chatbot-window { position:fixed; bottom:20px; right:165px; z-index:1002; width:360px; height:520px; background:white; border-radius:20px; box-shadow:0 20px 60px rgba(26,111,181,.22); display:flex; flex-direction:column; overflow:hidden; transform:scale(0.85) translateY(20px); opacity:0; pointer-events:none; transition:all .3s cubic-bezier(0.4,0,0.2,1); transform-origin:bottom right; }
 .chatbot-window.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
 @media (max-width:600px) { .chatbot-window { width:calc(100vw - 16px); right:8px; bottom:90px; } .chatbot-fab { right:80px; } }
 .chatbot-header { background:linear-gradient(135deg,var(--navy),var(--blue)); padding:16px 20px; display:flex; align-items:center; gap:12px; flex-shrink:0; }
-.chatbot-avatar { width:40px; height:40px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; overflow:hidden; padding:2px; }
+.chatbot-avatar { width:44px; height:44px; background:transparent; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden; }
 .chatbot-title { flex:1; }
 .chatbot-title strong { display:block; color:white; font-size:0.92rem; }
 .chatbot-title span { font-size:0.75rem; color:rgba(255,255,255,.6); }
@@ -3689,11 +3689,6 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 <div class="chatbot-window" id="chatbotWindow">
   <div class="chatbot-header">
     <div class="chatbot-avatar"><img src="images/chatbot_avatar.webp" alt="NeuroSports" style="width:44px;height:44px;display:block;border-radius:50%;"></div>
-  <img src="images/logo.webp" alt="NeuroSports Center" style="width:38px;height:38px;border-radius:50%;object-fit:cover;">
-</button>
-<div class="chatbot-window" id="chatbotWindow">
-  <div class="chatbot-header">
-    <div class="chatbot-avatar"><img src="images/logo.webp" alt="NeuroSports" style="width:36px;height:36px;border-radius:50%;object-fit:cover;display:block;"></div>
     <div class="chatbot-title">
       <strong>NeuroSports Assistant</strong>
       <span>🟢 Online 24/7 – Ask me anything</span>
