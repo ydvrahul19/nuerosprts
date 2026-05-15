@@ -748,7 +748,7 @@ function submitBooking() {
   }
 
   const msg =
-    `Hello Neuro Sports Centre!%0A` +
+    `Hello NeuroSports Centre!%0A` +
     `I'd like to book an appointment.%0A%0A` +
     `Name: ${encodeURIComponent(name.trim())}%0A` +
     `Phone: ${encodeURIComponent(phone.trim())}%0A` +
@@ -794,10 +794,10 @@ const clinicKnowledge = {
     "Geriatric Care – balance training, falls prevention, mobility improvement for seniors",
     "Paediatric Physio – developmental delays, scoliosis, childhood sports injuries",
   ],
-  hours:    "Monday to Saturday: 8:00 AM – 8:00 PM",
+  hours:    "Monday to Saturday: 6:15 AM – 8:00 PM | Sunday: 8:00 AM – 12:00 PM\nAppointments (Mon–Fri): 9:00 AM – 12:00 PM & 5:30 PM – 8:00 PM",
   location: "G1,2,3. Ground Floor, Shikhar Apartment, Judges Bungalow Rd, opposite Prestige Towers, Bodakdev, Ahmedabad – 380054, Gujarat",
   phone:    "+91 94295 54422",
-  doctor:   "Dr. Ruchit Shah (MPT) — 10+ years of clinical experience, founder of Neuro Sports Centre, specialist in neurological physiotherapy and sports medicine, and a marathon runner himself.",
+  doctor:   "Dr. Ruchit Shah (MPT) — 18+ years of clinical experience, founder of NeuroSports Centre, specialist in neurological physiotherapy and sports medicine, and a marathon runner himself.",
   team:     "15+ specialised professionals including physiotherapists, fitness trainers, neuro rehab specialists, sports rehab experts, and geriatric care providers.",
   instagram:"@neurosports.in",
   gmaps:    "https://maps.app.goo.gl/ybymUuzAA5N2d6wX8",
@@ -825,13 +825,13 @@ function getBotReply(input) {
   // Services
   if (/service|offer|treat|speciali|condition|physiother|fitness|rehab/.test(q)) {
     const list = clinicKnowledge.services.map(s => `<li style="padding:3px 0;">${s}</li>`).join('');
-    return `${iconBadge(ICONS.activity,'#1a6fb5')} <strong>Our Services at Neuro Sports Centre:</strong><br><ul style="margin:8px 0 8px 16px;">${list}</ul>Would you like details on any specific service?`;
+    return `${iconBadge(ICONS.activity,'#1a6fb5')} <strong>Our Services at NeuroSports Centre:</strong><br><ul style="margin:8px 0 8px 16px;">${list}</ul>Would you like details on any specific service?`;
   }
   if (/locat|address|where|map|direction|find|bodakdev|satellite|ahmedabad/.test(q)) {
     return `${iconBadge(ICONS.pin,'#e53935')} <strong>Our Location</strong><br>${clinicKnowledge.location}<br><br><a href="${clinicKnowledge.gmaps}" target="_blank" style="color:#1a6fb5;font-weight:600;">View on Google Maps →</a>`;
   }
   if (/phone|call|number|contact|whatsapp|reach/.test(q)) {
-    return `${iconBadge(ICONS.phone,'#1a6fb5')} <strong>Contact Us</strong><br><strong>${clinicKnowledge.phone}</strong><br><br>We respond quickly during clinic hours (Mon–Sat, 8 AM – 8 PM).`;
+    return `${iconBadge(ICONS.phone,'#1a6fb5')} <strong>Contact Us</strong><br><strong>${clinicKnowledge.phone}</strong><br><br>We respond quickly during clinic hours (Mon–Sat, 6:15 AM – 8 PM | Sun, 8 AM – 12 PM).`;
   }
   if (/doctor|dr\.|ruchit|shah|founder/.test(q)) {
     return `${iconBadge(ICONS.doctor,'#1a6fb5')} <strong>About Dr. Ruchit Shah</strong><br>${clinicKnowledge.doctor}<br><br>His personal experience as a marathon runner gives him a unique understanding of sports injuries and athlete recovery.`;
@@ -861,16 +861,16 @@ function getBotReply(input) {
     return `${iconBadge(ICONS.heart,'#FF8F00')} <strong>Paediatric Physiotherapy</strong><br>Yes, we offer Paediatric Physio for:<br><ul style="margin:8px 0 8px 16px;"><li>Developmental delays</li><li>Scoliosis</li><li>Cerebral Palsy</li><li>Childhood sports injuries</li></ul>Our team is experienced, gentle, and family-focused.`;
   }
   if (/\bhi\b|hello|hey|good morning|good afternoon|good evening|namaste/.test(q)) {
-    return `${iconBadge(ICONS.smile,'#1a6fb5')} <strong>Hello! Welcome to Neuro Sports Centre.</strong><br><br>I can help you with information about our services, timings, location, appointments, and more. What would you like to know?`;
+    return `${iconBadge(ICONS.smile,'#1a6fb5')} <strong>Hello! Welcome to NeuroSports Centre.</strong><br><br>I can help you with information about our services, timings, location, appointments, and more. What would you like to know?`;
   }
   if (/thank|thanks|great|awesome|helpful|perfect/.test(q)) {
-    return `${iconBadge(ICONS.heart,'#00897B')} You're welcome! We're always here to help. For any further queries, feel free to WhatsApp us at <strong>+91 94295 54422</strong>.<br><br>Looking forward to serving you at Neuro Sports Centre!`;
+    return `${iconBadge(ICONS.heart,'#00897B')} You're welcome! We're always here to help. For any further queries, feel free to WhatsApp us at <strong>+91 94295 54422</strong>.<br><br>Looking forward to serving you at NeuroSports Centre!`;
   }
 
   return `${iconBadge(ICONS.zap,'#1a6fb5')} <strong>How can I help?</strong><br><ul style="margin:8px 0 8px 16px;"><li>Our services & conditions treated</li><li>Location & directions</li><li>Clinic timings</li><li>Contact & booking</li><li>About Dr. Ruchit Shah</li><li>Pricing queries</li></ul>Or WhatsApp us at <strong>+91 94295 54422</strong>!`;
 }
 
-const CHAT_WELCOME = '👋 Hi! I\'m the virtual assistant for <strong>Neuro Sports Centre</strong>, Ahmedabad.<br><br>Ask me anything — services, timings, location, Dr. Ruchit, pricing, or conditions we treat!';
+const CHAT_WELCOME = '👋 Hi! I\'m the virtual assistant for <strong>NeuroSports Centre</strong>, Ahmedabad.<br><br>Ask me anything — services, timings, location, Dr. Ruchit, pricing, or conditions we treat!';
 
 function resetChat() {
   const box       = document.getElementById('chatMessages');
