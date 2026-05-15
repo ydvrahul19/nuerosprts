@@ -761,6 +761,29 @@ function submitBooking() {
   showToast("Booking sent via WhatsApp! We'll confirm shortly", 'success');
 }
 
+function sendContactWhatsApp() {
+  const name  = (document.getElementById('c-name')  || {}).value || '';
+  const phone = (document.getElementById('c-phone') || {}).value || '';
+  const email = (document.getElementById('c-email') || {}).value || '';
+  const msg   = (document.getElementById('c-msg')   || {}).value || '';
+
+  if (!name.trim() && !phone.trim() && !msg.trim()) {
+    showToast('Please fill in at least your name and message', 'error');
+    return;
+  }
+
+  const text =
+    `Hello NeuroSports Center!%0A` +
+    `I have an enquiry.%0A%0A` +
+    (name.trim()  ? `Name: ${encodeURIComponent(name.trim())}%0A`  : '') +
+    (phone.trim() ? `Phone: ${encodeURIComponent(phone.trim())}%0A` : '') +
+    (email.trim() ? `Email: ${encodeURIComponent(email.trim())}%0A` : '') +
+    (msg.trim()   ? `%0AMessage: ${encodeURIComponent(msg.trim())}` : '');
+
+  window.open(`https://wa.me/919429554422?text=${text}`, '_blank');
+  showToast("Opening WhatsApp! We'll reply shortly ✅", 'success');
+}
+
 /* ─────────────────────────────────────────────
    6. FAB GROUP with motion
 ───────────────────────────────────────────── */
