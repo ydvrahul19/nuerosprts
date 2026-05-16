@@ -3253,230 +3253,117 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         </div>
         <style>@media(max-width:600px){.team-photos-grid{grid-template-columns:1fr!important;}}</style>
       </div>
-      <p class="section-sub text-center" style="margin:0 auto 2rem;font-size:.95rem;">We have a team of <strong>15+ specialised professionals</strong> — including physiotherapists, fitness trainers, neuro rehab specialists, sports rehab experts, and more. Team photos and profiles will be updated here. Please visit us or WhatsApp us to meet the team.</p>
-      <!-- INDIVIDUAL TEAM MEMBERS -->
-      <div style="margin-bottom:1rem;" data-aos="fade-up">
-        <div class="section-pill" style="display:block;width:fit-content;margin:0 auto 1rem;">Meet The Team</div>
-        <h2 class="section-title text-center">Physiotherapy &amp; <span class="color-green">Fitness</span> Professionals</h2>
-        <p class="section-sub text-center" style="margin:0 auto 2.5rem;">Each member of our team brings specialised expertise, passion, and dedication to help you achieve your health goals.</p>
-      </div>
+      <!-- EXPERTISE & SPECIALISATIONS -->
+      <div data-aos="fade-up" style="margin-bottom:3rem;">
 
-      <style>
-        .members-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
-          margin-bottom: 3rem;
-        }
-        @media (max-width: 1100px) { .members-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 768px)  { .members-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
-        @media (max-width: 420px)  { .members-grid { grid-template-columns: 1fr; } }
-
-        .member-card {
-          background: #fff;
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 4px 24px rgba(26,111,181,.09);
-          border: 1.5px solid #e8f0f8;
-          transition: transform .3s ease, box-shadow .3s ease;
-        }
-        .member-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 16px 48px rgba(26,111,181,.16);
-        }
-        .member-card-photo {
-          width: 100%;
-          aspect-ratio: 1 / 1;
-          object-fit: cover;
-          object-position: top center;
-          display: block;
-          background: #e3f0ff;
-        }
-        .member-card-body {
-          padding: 18px 18px 20px;
-        }
-        .member-card-role {
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          font-size: .68rem;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: .6px;
-          padding: 3px 10px;
-          border-radius: 20px;
-          margin-bottom: 10px;
-        }
-        .role-physio  { background: #e3f0ff; color: #1a6fb5; }
-        .role-fitness { background: #e0f4f1; color: #00695C; }
-        .role-neuro   { background: #f3e8ff; color: #6a1b9a; }
-        .role-sports  { background: #fff3e0; color: #e65100; }
-        .member-card-name {
-          font-family: 'Playfair Display', serif;
-          font-size: 1.05rem;
-          font-weight: 700;
-          color: var(--navy);
-          margin: 0 0 4px;
-          line-height: 1.25;
-        }
-        .member-card-qual {
-          font-size: .78rem;
-          color: var(--blue);
-          font-weight: 600;
-          margin-bottom: 8px;
-          line-height: 1.4;
-        }
-        .member-card-exp {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          font-size: .75rem;
-          color: var(--muted);
-          font-weight: 500;
-        }
-        .member-card-exp-dot {
-          width: 6px; height: 6px;
-          background: var(--green);
-          border-radius: 50%;
-          flex-shrink: 0;
-        }
-        .member-card-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 5px;
-          margin-top: 10px;
-        }
-        .member-tag {
-          font-size: .67rem;
-          font-weight: 600;
-          padding: 3px 9px;
-          border-radius: 20px;
-          background: #f0f7ff;
-          color: var(--navy);
-          border: 1px solid #d0e4f5;
-        }
-      </style>
-
-      <div class="members-grid">
-
-        <!-- Member 1 — Far left male -->
-        <div class="member-card" data-aos="fade-up" data-aos-delay="0">
-          <img src="images/team_member_1.webp" alt="Team Member — NeuroSports Center" class="member-card-photo">
-          <div class="member-card-body">
-            <div class="member-card-role role-physio">💪 Physiotherapist</div>
-            <h4 class="member-card-name">Dr. Parth Patel</h4>
-            <p class="member-card-qual">BPT · Masters in Orthopaedic Physiotherapy</p>
-            <div class="member-card-exp"><span class="member-card-exp-dot"></span>4 Years Experience</div>
-            <div class="member-card-tags">
-              <span class="member-tag">Manual Therapy</span>
-              <span class="member-tag">Post-Surgical</span>
-              <span class="member-tag">Dry Needling</span>
-            </div>
-          </div>
+        <!-- Section Header -->
+        <div style="text-align:center;margin-bottom:2.5rem;">
+          <div class="section-pill" style="display:inline-block;margin-bottom:1rem;">Our Expertise</div>
+          <h2 class="section-title">What Our Team <span class="color-green">Specialises In</span></h2>
+          <p class="section-sub" style="margin:0 auto;">Every professional on our team is trained in evidence-based techniques across physiotherapy, fitness, and rehabilitation.</p>
         </div>
 
-        <!-- Member 2 — Female, second from left -->
-        <div class="member-card" data-aos="fade-up" data-aos-delay="60">
-          <img src="images/team_member_2.webp" alt="Team Member — NeuroSports Center" class="member-card-photo">
-          <div class="member-card-body">
-            <div class="member-card-role role-neuro">🧠 Neuro Rehab</div>
-            <h4 class="member-card-name">Dr. Priya Sharma</h4>
-            <p class="member-card-qual">BPT · MPT Neurological Physiotherapy</p>
-            <div class="member-card-exp"><span class="member-card-exp-dot"></span>3 Years Experience</div>
-            <div class="member-card-tags">
-              <span class="member-tag">Stroke Rehab</span>
-              <span class="member-tag">Parkinson's</span>
-              <span class="member-tag">CP Care</span>
+        <!-- Specialisation Cards -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:2.5rem;" class="spec-grid">
+
+          <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(26,111,181,.09);border:1.5px solid #e8f0f8;border-top:4px solid #1a6fb5;">
+            <div style="font-size:2rem;margin-bottom:12px;">🧠</div>
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:8px;">Neurological Physiotherapy</h4>
+            <p style="color:var(--muted);font-size:.85rem;line-height:1.75;margin-bottom:14px;">Stroke rehabilitation, Parkinson's, cerebral palsy, spinal cord injury — using task-specific training and neuroplasticity principles.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="background:#e3f0ff;color:#1a6fb5;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Stroke Rehab</span>
+              <span style="background:#e3f0ff;color:#1a6fb5;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Parkinson's</span>
+              <span style="background:#e3f0ff;color:#1a6fb5;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">CP Care</span>
             </div>
           </div>
-        </div>
 
-        <!-- Member 3 — Third from left male -->
-        <div class="member-card" data-aos="fade-up" data-aos-delay="120">
-          <img src="images/team_member_3.webp" alt="Team Member — NeuroSports Center" class="member-card-photo">
-          <div class="member-card-body">
-            <div class="member-card-role role-sports">🏃 Sports Rehab</div>
-            <h4 class="member-card-name">Dr. Rahul Mehta</h4>
-            <p class="member-card-qual">BPT · Diploma in Sports Medicine</p>
-            <div class="member-card-exp"><span class="member-card-exp-dot"></span>5 Years Experience</div>
-            <div class="member-card-tags">
-              <span class="member-tag">ACL Rehab</span>
-              <span class="member-tag">Athlete Conditioning</span>
-              <span class="member-tag">Kinesio Taping</span>
+          <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(26,111,181,.09);border:1.5px solid #e8f0f8;border-top:4px solid #00897B;">
+            <div style="font-size:2rem;margin-bottom:12px;">🏃</div>
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:8px;">Sports & Orthopaedic Rehab</h4>
+            <p style="color:var(--muted);font-size:.85rem;line-height:1.75;margin-bottom:14px;">ACL & ligament injuries, post-surgical rehab, sports-specific conditioning, and return-to-sport protocols for all levels.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="background:#e0f4f1;color:#00695C;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">ACL Rehab</span>
+              <span style="background:#e0f4f1;color:#00695C;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Knee & Shoulder</span>
+              <span style="background:#e0f4f1;color:#00695C;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Return to Sport</span>
             </div>
           </div>
-        </div>
 
-        <!-- Member 4 — Tallest, centre back -->
-        <div class="member-card" data-aos="fade-up" data-aos-delay="180">
-          <img src="images/team_member_4.webp" alt="Team Member — NeuroSports Center" class="member-card-photo">
-          <div class="member-card-body">
-            <div class="member-card-role role-fitness">🏋️ Fitness Trainer</div>
-            <h4 class="member-card-name">Coach Arjun Desai</h4>
-            <p class="member-card-qual">BSc Sports Science · NSCA-CPT Certified</p>
-            <div class="member-card-exp"><span class="member-card-exp-dot"></span>6 Years Experience</div>
-            <div class="member-card-tags">
-              <span class="member-tag">Personal Training</span>
-              <span class="member-tag">Strength & Conditioning</span>
-              <span class="member-tag">Weight Management</span>
+          <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(26,111,181,.09);border:1.5px solid #e8f0f8;border-top:4px solid #FF8F00;">
+            <div style="font-size:2rem;margin-bottom:12px;">💪</div>
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:8px;">Fitness & Strength Training</h4>
+            <p style="color:var(--muted);font-size:.85rem;line-height:1.75;margin-bottom:14px;">Physio-guided strength, conditioning, posture correction, and sport-specific performance — safe, supervised, and results-driven.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="background:#fff3e0;color:#e65100;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Strength & Conditioning</span>
+              <span style="background:#fff3e0;color:#e65100;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Posture Correction</span>
+              <span style="background:#fff3e0;color:#e65100;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Senior Fitness</span>
             </div>
           </div>
-        </div>
 
-        <!-- Member 5 — Centre front male -->
-        <div class="member-card" data-aos="fade-up" data-aos-delay="0">
-          <img src="images/team_member_5.webp" alt="Team Member — NeuroSports Center" class="member-card-photo">
-          <div class="member-card-body">
-            <div class="member-card-role role-physio">💪 Physiotherapist</div>
-            <h4 class="member-card-name">Dr. Kiran Joshi</h4>
-            <p class="member-card-qual">BPT · Cert. Mulligan &amp; Maitland Technique</p>
-            <div class="member-card-exp"><span class="member-card-exp-dot"></span>4 Years Experience</div>
-            <div class="member-card-tags">
-              <span class="member-tag">Spine & Disc</span>
-              <span class="member-tag">Electrotherapy</span>
-              <span class="member-tag">Cupping</span>
+          <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(26,111,181,.09);border:1.5px solid #e8f0f8;border-top:4px solid #6a1b9a;">
+            <div style="font-size:2rem;margin-bottom:12px;">⚡</div>
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:8px;">Advanced Modalities</h4>
+            <p style="color:var(--muted);font-size:.85rem;line-height:1.75;margin-bottom:14px;">Class IV Laser, TECAR therapy, dry needling, cupping, TENS, ultrasound, and electrotherapy — the latest in clinical technology.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="background:#f3e8ff;color:#6a1b9a;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">TECAR Therapy</span>
+              <span style="background:#f3e8ff;color:#6a1b9a;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">IV Laser</span>
+              <span style="background:#f3e8ff;color:#6a1b9a;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Dry Needling</span>
             </div>
           </div>
-        </div>
 
-        <!-- Member 6 — Female, second from right -->
-        <div class="member-card" data-aos="fade-up" data-aos-delay="60">
-          <img src="images/team_member_6.webp" alt="Team Member — NeuroSports Center" class="member-card-photo">
-          <div class="member-card-body">
-            <div class="member-card-role role-fitness">🏋️ Fitness Trainer</div>
-            <h4 class="member-card-name">Coach Sneha Vora</h4>
-            <p class="member-card-qual">BSc Physiotherapy · ACE Certified Trainer</p>
-            <div class="member-card-exp"><span class="member-card-exp-dot"></span>3 Years Experience</div>
-            <div class="member-card-tags">
-              <span class="member-tag">Group Classes</span>
-              <span class="member-tag">Senior Fitness</span>
-              <span class="member-tag">Posture Correction</span>
+          <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(26,111,181,.09);border:1.5px solid #e8f0f8;border-top:4px solid #e53935;">
+            <div style="font-size:2rem;margin-bottom:12px;">🤰</div>
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:8px;">Antenatal & Postnatal Care</h4>
+            <p style="color:var(--muted);font-size:.85rem;line-height:1.75;margin-bottom:14px;">Safe, supervised physiotherapy and fitness for expecting and new mothers — improving comfort, strength, and recovery throughout the journey.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="background:#fce4ec;color:#c62828;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Pregnancy Fitness</span>
+              <span style="background:#fce4ec;color:#c62828;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Postnatal Rehab</span>
+              <span style="background:#fce4ec;color:#c62828;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Pelvic Floor</span>
             </div>
           </div>
-        </div>
 
-        <!-- Member 7 — Far right male -->
-        <div class="member-card" data-aos="fade-up" data-aos-delay="120">
-          <img src="images/team_member_7.webp" alt="Team Member — NeuroSports Center" class="member-card-photo">
-          <div class="member-card-body">
-            <div class="member-card-role role-sports">🏃 Sports Rehab</div>
-            <h4 class="member-card-name">Dr. Nirav Shah</h4>
-            <p class="member-card-qual">BPT · MPT Musculoskeletal Physiotherapy</p>
-            <div class="member-card-exp"><span class="member-card-exp-dot"></span>7 Years Experience</div>
-            <div class="member-card-tags">
-              <span class="member-tag">Ligament Injuries</span>
-              <span class="member-tag">Return to Sport</span>
-              <span class="member-tag">TECAR Therapy</span>
+          <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(26,111,181,.09);border:1.5px solid #e8f0f8;border-top:4px solid #0097A7;">
+            <div style="font-size:2rem;margin-bottom:12px;">🌊</div>
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:8px;">Aqua & Hydrotherapy</h4>
+            <p style="color:var(--muted);font-size:.85rem;line-height:1.75;margin-bottom:14px;">Water-based rehabilitation that reduces joint load while improving strength and mobility — ideal for arthritis, post-surgical cases, and the elderly.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="background:#e0f7fa;color:#006064;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Joint Rehabilitation</span>
+              <span style="background:#e0f7fa;color:#006064;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Arthritis Care</span>
+              <span style="background:#e0f7fa;color:#006064;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;">Elderly Mobility</span>
             </div>
           </div>
-        </div>
 
-        <!-- CTA Card -->
-        <div class="member-card" data-aos="fade-up" data-aos-delay="180" style="background:linear-gradient(135deg,var(--navy),#1a6fb5);border-color:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px;text-align:center;">
-          <div style="font-size:2.8rem;margin-bottom:14px;">👥</div>
-          <h4 style="color:white;font-weight:700;font-size:1rem;margin-bottom:8px;font-family:'Playfair Display',serif;">More Team Members</h4>
-          <p style="color:rgba(255,255,255,.72);font-size:.8rem;line-height:1.65;margin-bottom:16px;">Meet our full team of 15+ specialists in person. WhatsApp us to book your consultation.</p>
-          <a href="https://wa.me/919429554422" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:white;color:var(--navy);padding:10px 20px;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none;">💬 WhatsApp Us</a>
+        </div>
+        <style>@media(max-width:900px){.spec-grid{grid-template-columns:1fr 1fr!important;}}@media(max-width:560px){.spec-grid{grid-template-columns:1fr!important;}}</style>
+
+        <!-- Team Stats Strip -->
+        <div style="background:linear-gradient(135deg,var(--navy),#1a6fb5);border-radius:20px;padding:36px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;" class="team-stats-strip">
+          <div>
+            <div style="font-size:2.2rem;font-weight:800;color:white;font-family:'Playfair Display',serif;">15+</div>
+            <div style="color:rgba(255,255,255,.7);font-size:.82rem;margin-top:4px;font-weight:500;">Specialists on Team</div>
+          </div>
+          <div>
+            <div style="font-size:2.2rem;font-weight:800;color:#4dd0c4;font-family:'Playfair Display',serif;">18+</div>
+            <div style="color:rgba(255,255,255,.7);font-size:.82rem;margin-top:4px;font-weight:500;">Yrs. Lead Experience</div>
+          </div>
+          <div>
+            <div style="font-size:2.2rem;font-weight:800;color:white;font-family:'Playfair Display',serif;">5000+</div>
+            <div style="color:rgba(255,255,255,.7);font-size:.82rem;margin-top:4px;font-weight:500;">Patients Treated</div>
+          </div>
+          <div>
+            <div style="font-size:2.2rem;font-weight:800;color:#4dd0c4;font-family:'Playfair Display',serif;">12+</div>
+            <div style="color:rgba(255,255,255,.7);font-size:.82rem;margin-top:4px;font-weight:500;">Years at NeuroSports</div>
+          </div>
+        </div>
+        <style>@media(max-width:700px){.team-stats-strip{grid-template-columns:1fr 1fr!important;gap:16px!important;padding:24px!important;}}</style>
+
+        <!-- WhatsApp CTA -->
+        <div style="text-align:center;margin-top:2.5rem;padding:36px;background:#f4f9ff;border-radius:20px;border:1.5px solid #d0e8f5;">
+          <p style="font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:6px;font-family:'Playfair Display',serif;">Want to meet the team in person?</p>
+          <p style="color:var(--muted);font-size:.9rem;margin-bottom:20px;">Visit us at NeuroSports Center, Bodakdev, Ahmedabad — or WhatsApp us to know which specialist is right for your condition.</p>
+          <a href="https://wa.me/919429554422" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white;padding:13px 28px;border-radius:50px;font-size:.9rem;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.35);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.553 4.105 1.523 5.824L0 24l6.335-1.499A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.51-5.183-1.401l-.371-.22-3.762.89.941-3.655-.242-.381A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            WhatsApp Us to Connect
+          </a>
         </div>
 
       </div>
