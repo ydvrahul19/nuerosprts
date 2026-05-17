@@ -2068,7 +2068,68 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   </style>
 
   <script>
+    /* ── Build video cards from data attributes ── */
+    document.querySelectorAll('.clinic-video-card').forEach(function(card) {
+      var src   = card.dataset.vid;
+      var thumb = card.dataset.thumb;
+      var label = card.dataset.label;
+      if (!src) return;
 
+      /* Poster image */
+      var img = document.createElement('img');
+      img.src = thumb;
+      img.alt = label;
+      img.className = 'cvc-poster';
+      card.appendChild(img);
+
+      /* Video element — no src yet, loaded on first hover */
+      var vid = document.createElement('video');
+      vid.className = 'cvc-video';
+      vid.muted = true;
+      vid.loop  = true;
+      vid.playsinline = true;
+      vid.preload = 'none';
+      card.appendChild(vid);
+
+      /* Play button overlay */
+      var overlay = document.createElement('div');
+      overlay.className = 'cvc-play-btn';
+      overlay.innerHTML = '<div class="cvc-play-icon"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>';
+      card.appendChild(overlay);
+
+      /* Label chip */
+      var chip = document.createElement('div');
+      chip.className = 'cvc-label';
+      chip.textContent = label;
+      card.appendChild(chip);
+
+      var loaded = false;
+
+      /* HOVER IN → load src if needed, play */
+      card.addEventListener('mouseenter', function() {
+        /* Stop every other card */
+        document.querySelectorAll('.clinic-video-card').forEach(function(c) {
+          if (c !== card) {
+            var v = c.querySelector('.cvc-video');
+            if (v) { v.pause(); v.currentTime = 0; }
+            c.classList.remove('hovered');
+          }
+        });
+
+        /* Load src once */
+        if (!loaded) { vid.src = src; loaded = true; }
+
+        card.classList.add('hovered');
+        vid.play().catch(function(){});
+      });
+
+      /* HOVER OUT → pause, reset, show poster */
+      card.addEventListener('mouseleave', function() {
+        vid.pause();
+        vid.currentTime = 0;
+        card.classList.remove('hovered');
+      });
+    });
 
     /* ── Rich Photo Lightbox ── */
     var lbPhotos = [
@@ -2129,79 +2190,13 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
       }
     });
 
-    /* ── Shared card initialiser (works for any .clinic-video-card) ── */
-    function initVideoCard(card) {
-      if (card.dataset.initialized) return;
-      card.dataset.initialized = '1';
-
-      var src   = card.dataset.vid;
-      var thumb = card.dataset.thumb;
-      var label = card.dataset.label;
-      if (!src) return;
-
-      /* Poster image */
-      var img = document.createElement('img');
-      img.src = thumb;
-      img.alt = label;
-      img.className = 'cvc-poster';
-      card.appendChild(img);
-
-      /* Video element — src loaded lazily on first hover */
-      var vid = document.createElement('video');
-      vid.className  = 'cvc-video';
-      vid.muted      = true;
-      vid.loop       = true;
-      vid.playsinline = true;
-      vid.preload    = 'none';
-      card.appendChild(vid);
-
-      /* Play button overlay */
-      var overlay = document.createElement('div');
-      overlay.className = 'cvc-play-btn';
-      overlay.innerHTML = '<div class="cvc-play-icon"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>';
-      card.appendChild(overlay);
-
-      /* Label chip */
-      var chip = document.createElement('div');
-      chip.className   = 'cvc-label';
-      chip.textContent = label;
-      card.appendChild(chip);
-
-      var loaded = false;
-
-      card.addEventListener('mouseenter', function() {
-        document.querySelectorAll('.clinic-video-card').forEach(function(c) {
-          if (c !== card) {
-            var v = c.querySelector('.cvc-video');
-            if (v) { v.pause(); v.currentTime = 0; }
-            c.classList.remove('hovered');
-          }
-        });
-        if (!loaded) { vid.src = src; loaded = true; }
-        card.classList.add('hovered');
-        vid.play().catch(function(){});
-      });
-
-      card.addEventListener('mouseleave', function() {
-        vid.pause();
-        vid.currentTime = 0;
-        card.classList.remove('hovered');
-      });
-    }
-
-    /* Init all 9 visible cards immediately */
-    document.querySelectorAll('.clinic-video-card').forEach(initVideoCard);
-
-    /* Load more — show 10th card and init it */
+    /* Load more video 10 */
     function toggleVideo10() {
       var wrap = document.getElementById('video10-wrap');
       var btn  = document.getElementById('loadMoreBtn');
       var showing = wrap.style.display !== 'none';
       wrap.style.display = showing ? 'none' : 'block';
       btn.textContent = showing ? '▶ Load More Videos' : '✕ Show Less';
-      if (!showing) {
-        wrap.querySelectorAll('.clinic-video-card').forEach(initVideoCard);
-      }
     }
   </script>
 
