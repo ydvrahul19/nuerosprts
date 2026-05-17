@@ -1632,7 +1632,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
           /* ── FEATURED HERO ── */
           .pg-hero {
             position:relative; border-radius:28px; overflow:hidden;
-            height:520px; margin-bottom:20px; cursor:pointer;
+            height:520px; margin-bottom:20px;
             box-shadow:0 24px 80px rgba(26,111,181,.18);
           }
           .pg-hero img {
@@ -1704,7 +1704,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
             grid-auto-rows:72px;
             gap:16px;
           }
-          .pg-tile { position:relative; border-radius:20px; overflow:hidden; cursor:pointer; background:#e8f4fb; }
+          .pg-tile { position:relative; border-radius:20px; overflow:hidden; background:#e8f4fb; }
           .pg-tile img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s cubic-bezier(.22,1,.36,1); }
           .pg-tile:hover img { transform:scale(1.07); }
 
@@ -1734,20 +1734,6 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
             display:block; color:rgba(255,255,255,.65); font-size:.73rem; margin-top:3px; line-height:1.4;
           }
 
-          /* expand icon on hover — pointer-events:none so it never blocks clicks */
-          .pg-tile::after {
-            content:'⤢';
-            position:absolute; top:12px; right:14px;
-            width:32px; height:32px; border-radius:50%;
-            background:rgba(255,255,255,.18); backdrop-filter:blur(8px);
-            border:1px solid rgba(255,255,255,.25); color:white;
-            font-size:14px; display:flex; align-items:center; justify-content:center;
-            opacity:0; transform:scale(.8);
-            transition:opacity .3s ease, transform .3s ease;
-            line-height:32px; text-align:center;
-            pointer-events:none;
-          }
-          .pg-tile:hover::after { opacity:1; transform:scale(1); }
           /* overlays must never swallow clicks */
           .pg-label, .pg-hero-overlay { pointer-events:none; }
           .pg-hero-content { pointer-events:none; }
@@ -1773,7 +1759,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         </style>
 
         <!-- ── CINEMATIC HERO PHOTO ── -->
-        <div class="pg-hero" onclick="openLightbox('images/clinic/new_img9.jpg','NeuroSports Centre — Bodakdev, Ahmedabad')">
+        <div class="pg-hero">
           <img src="images/clinic/new_img9.jpg" alt="NeuroSports Centre Exterior">
           <div class="pg-hero-overlay"></div>
           <div class="pg-hero-content">
@@ -1785,10 +1771,6 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
               <div class="pg-hero-title">NeuroSports Centre —<br>Where Recovery Begins</div>
               <div class="pg-hero-desc">A purpose-built clinic designed for physiotherapy, rehabilitation, and peak sports performance. Built for athletes and everyday patients alike.</div>
             </div>
-            <button class="pg-hero-cta" onclick="event.stopPropagation();openLightbox('images/clinic/new_img9.jpg','NeuroSports Centre — Bodakdev, Ahmedabad')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-              View Full Photo
-            </button>
           </div>
         </div>
 
@@ -1817,7 +1799,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Wide: Gym Floor -->
           <div class="pg-tile pg-t-wide" data-cat="equipment"
-               onclick="openLightbox('images/clinic/new_img10.jpg','Gym Floor — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img10.jpg" alt="Gym Floor">
             <div class="pg-label">
               <span class="pg-label-cat">Equipment & Training</span>
@@ -1828,7 +1810,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Tall: Clinic Entrance -->
           <div class="pg-tile pg-t-tall" data-cat="spaces"
-               onclick="openLightbox('images/clinic/new_img11.jpg','Clinic Entrance — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img11.jpg" alt="Clinic Entrance">
             <div class="pg-label">
               <span class="pg-label-cat">Our Spaces</span>
@@ -1839,7 +1821,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Half: Gym Equipment -->
           <div class="pg-tile pg-t-half" data-cat="equipment"
-               onclick="openLightbox('images/clinic/new_img1.jpg','Gym Equipment — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img1.jpg" alt="Gym Equipment">
             <div class="pg-label">
               <span class="pg-label-cat">Equipment</span>
@@ -1849,7 +1831,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Half: Free Weights -->
           <div class="pg-tile pg-t-half" data-cat="equipment"
-               onclick="openLightbox('images/clinic/new_img2.jpg','Dumbbell Rack — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img2.jpg" alt="Free Weights">
             <div class="pg-label">
               <span class="pg-label-cat">Equipment</span>
@@ -1859,7 +1841,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Half: Cable Machine -->
           <div class="pg-tile pg-t-half" data-cat="equipment"
-               onclick="openLightbox('images/clinic/new_img7.jpg','Cable Machine — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img7.jpg" alt="Cable Machine">
             <div class="pg-label">
               <span class="pg-label-cat">Equipment</span>
@@ -1869,7 +1851,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Std: Reception -->
           <div class="pg-tile pg-t-std" data-cat="clinic"
-               onclick="openLightbox('images/clinic/new_img3.jpg','Reception — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img3.jpg" alt="Reception">
             <div class="pg-label">
               <span class="pg-label-cat">Clinic & Care</span>
@@ -1880,7 +1862,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Sq: Consultation Room -->
           <div class="pg-tile pg-t-sq" data-cat="clinic"
-               onclick="openLightbox('images/clinic/new_img8.jpg','Doctor\'s Office — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img8.jpg" alt="Consultation Room">
             <div class="pg-label">
               <span class="pg-label-cat">Clinic & Care</span>
@@ -1891,7 +1873,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Sq: Lobby -->
           <div class="pg-tile pg-t-sq" data-cat="spaces"
-               onclick="openLightbox('images/clinic/new_img12.jpg','Lobby — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img12.jpg" alt="Patient Lobby">
             <div class="pg-label">
               <span class="pg-label-cat">Our Spaces</span>
@@ -1902,7 +1884,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Half: Training Area -->
           <div class="pg-tile pg-t-half" data-cat="equipment"
-               onclick="openLightbox('images/clinic/new_img4.jpg','Training Area — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img4.jpg" alt="Training Area">
             <div class="pg-label">
               <span class="pg-label-cat">Training</span>
@@ -1912,7 +1894,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Half: Free Weights Area -->
           <div class="pg-tile pg-t-half" data-cat="equipment"
-               onclick="openLightbox('images/clinic/new_img5.jpg','Free Weights Area — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img5.jpg" alt="Free Weights Area">
             <div class="pg-label">
               <span class="pg-label-cat">Training</span>
@@ -1922,7 +1904,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Half: Equipment Bay -->
           <div class="pg-tile pg-t-half" data-cat="equipment"
-               onclick="openLightbox('images/clinic/new_img6.jpg','Equipment Storage — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img6.jpg" alt="Equipment Bay">
             <div class="pg-label">
               <span class="pg-label-cat">Equipment</span>
@@ -1932,7 +1914,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
           <!-- Half: Lobby 2 -->
           <div class="pg-tile pg-t-half" data-cat="spaces"
-               onclick="openLightbox('images/clinic/new_img3.jpg','Reception — NeuroSports Center')">
+               onclick="">
             <img src="images/clinic/new_img3.jpg" alt="Clinic Interior">
             <div class="pg-label">
               <span class="pg-label-cat">Our Spaces</span>
@@ -2001,8 +1983,8 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     <div onclick="event.stopPropagation()" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:980px;background:#0f1e33;border-radius:20px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.8);display:flex;flex-direction:row;max-height:86vh;height:86vh;" id="lbCard">
 
       <!-- LEFT: Image -->
-      <div style="flex:1.4;min-width:0;position:relative;background:#040d1a;min-height:400px;display:flex;align-items:stretch;" id="lbImgWrap">
-        <img id="lightbox-img" src="" alt="" style="width:100%;height:100%;min-height:0;object-fit:cover;display:block;flex:1;">
+      <div style="flex:1.4;min-width:0;position:relative;background:#040d1a;" id="lbImgWrap">
+        <img id="lightbox-img" src="" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
         <!-- Prev -->
         <button onclick="lbNav(-1)" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.5);border:1.5px solid rgba(255,255,255,.2);color:#fff;font-size:20px;cursor:pointer;z-index:2;line-height:1;">&#8592;</button>
         <!-- Next -->
