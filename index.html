@@ -1734,7 +1734,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
             display:block; color:rgba(255,255,255,.65); font-size:.73rem; margin-top:3px; line-height:1.4;
           }
 
-          /* expand icon on hover */
+          /* expand icon on hover — pointer-events:none so it never blocks clicks */
           .pg-tile::after {
             content:'⤢';
             position:absolute; top:12px; right:14px;
@@ -1745,8 +1745,13 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
             opacity:0; transform:scale(.8);
             transition:opacity .3s ease, transform .3s ease;
             line-height:32px; text-align:center;
+            pointer-events:none;
           }
           .pg-tile:hover::after { opacity:1; transform:scale(1); }
+          /* overlays must never swallow clicks */
+          .pg-label, .pg-hero-overlay { pointer-events:none; }
+          .pg-hero-content { pointer-events:none; }
+          .pg-hero-cta { pointer-events:all; }
 
           @media(max-width:900px){
             .pg-hero { height:380px; }
