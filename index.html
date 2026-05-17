@@ -1610,7 +1610,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
   
   <!-- ============================== CLINIC GALLERY & VIDEO SECTION ============================== -->
-  <section id="clinic-media-section" style="padding:100px 5% 80px;background:white;overflow:visible;position:relative;z-index:1;">
+  <section id="clinic-media-section" style="padding:110px 5%;background:white;overflow:hidden;position:relative;">
 
     <!-- Background accent -->
     <div style="position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(43,124,191,.06),transparent 70%);pointer-events:none;"></div>
@@ -1625,232 +1625,281 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         <p class="section-sub text-center" style="margin:0 auto 3rem;">Take a look at our clinic, our team in action, and real patients on their journey to recovery and fitness.</p>
       </div>
 
-      <!-- ── PHOTO GALLERY (fresh) ── -->
-      <style>
-        /* ─── Gallery Tabs ─── */
-        .gal-tabs { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
-        .gal-tab {
-          padding:8px 22px; border-radius:50px;
-          border:1.5px solid rgba(43,124,191,.2);
-          background:white; color:var(--muted);
-          font-size:.82rem; font-weight:600;
-          cursor:pointer; transition:all .22s ease;
-          letter-spacing:.04em; text-transform:uppercase;
-        }
-        .gal-tab:hover { border-color:var(--blue); color:var(--blue); }
-        .gal-tab.active { background:var(--navy); border-color:var(--navy); color:white; }
+      <!-- ── PHOTO MOSAIC ── -->
+      <div data-aos="fade-up" data-aos-delay="100" style="margin-bottom:70px;">
 
-        /* ─── Masonry Grid ─── */
-        .gal-grid {
-          display:grid;
-          grid-template-columns:repeat(3,1fr);
-          gap:16px;
-          margin-bottom:70px;
-        }
-        @media(max-width:768px) { .gal-grid { grid-template-columns:repeat(2,1fr); } }
-        @media(max-width:480px) { .gal-grid { grid-template-columns:1fr; } }
+        <style>
+          /* ── Category tab filter ── */
+          .gal-tabs { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
+          .gal-tab {
+            padding:8px 20px; border-radius:50px; border:1.5px solid rgba(43,124,191,.2);
+            background:white; color:var(--muted); font-size:.82rem; font-weight:600;
+            cursor:pointer; transition:all .25s ease; letter-spacing:.04em; text-transform:uppercase;
+          }
+          .gal-tab:hover { border-color:var(--blue); color:var(--blue); }
+          .gal-tab.active { background:var(--navy); border-color:var(--navy); color:white; }
 
-        /* Wide cards */
-        .gal-card:nth-child(1),
-        .gal-card:nth-child(4),
-        .gal-card:nth-child(7),
-        .gal-card:nth-child(10) { grid-column:span 2; }
-        .gal-card:nth-child(1) img,
-        .gal-card:nth-child(4) img,
-        .gal-card:nth-child(7) img,
-        .gal-card:nth-child(10) img { aspect-ratio:16/7; }
+          /* ── Mosaic grid ── */
+          .gal-mosaic {
+            display:grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 60px;
+            gap:14px;
+          }
 
-        /* Card base */
-        .gal-card {
-          position:relative; border-radius:18px; overflow:hidden;
-          cursor:pointer; background:#e8f4fb; display:block;
-        }
-        .gal-card img {
-          width:100%; display:block; aspect-ratio:4/3;
-          object-fit:cover;
-          transition:transform .5s cubic-bezier(.22,1,.36,1);
-        }
-        .gal-card:hover img { transform:scale(1.06); }
+          /* Hero tile — spans 7 cols × 7 rows */
+          .gal-tile-hero   { grid-column: span 7; grid-row: span 7; }
+          /* Tall tile — 5 cols × 7 rows */
+          .gal-tile-tall   { grid-column: span 5; grid-row: span 7; }
+          /* Wide tile — 7 cols × 5 rows */
+          .gal-tile-wide   { grid-column: span 7; grid-row: span 5; }
+          /* Standard tile — 5 cols × 5 rows */
+          .gal-tile-std    { grid-column: span 5; grid-row: span 5; }
+          /* Half tile — 6 cols × 4 rows */
+          .gal-tile-half   { grid-column: span 6; grid-row: span 4; }
+          /* Small tile — 4 cols × 4 rows */
+          .gal-tile-small  { grid-column: span 4; grid-row: span 4; }
 
-        /* Hover gradient overlay */
-        .gal-card::after {
-          content:''; position:absolute; inset:0;
-          background:linear-gradient(to top,rgba(10,22,44,.6) 0%,transparent 55%);
-          opacity:0; transition:opacity .3s ease;
-        }
-        .gal-card:hover::after { opacity:1; }
+          .gal-tile {
+            position:relative; border-radius:18px; overflow:hidden; cursor:pointer;
+            background:#e8f4fb;
+          }
+          .gal-tile img {
+            width:100%; height:100%; object-fit:cover; display:block;
+            transition:transform .7s cubic-bezier(.22,1,.36,1);
+          }
+          .gal-tile:hover img { transform:scale(1.06); }
 
-        /* Hover caption */
-        .gal-caption {
-          position:absolute; bottom:0; left:0; right:0;
-          padding:30px 18px 16px; z-index:2;
-          transform:translateY(8px); opacity:0;
-          transition:all .3s cubic-bezier(.22,1,.36,1);
-        }
-        .gal-card:hover .gal-caption { transform:translateY(0); opacity:1; }
-        .gal-caption-tag {
-          display:inline-block; font-size:.65rem; font-weight:700; letter-spacing:.1em;
-          text-transform:uppercase; padding:3px 10px; border-radius:30px;
-          background:rgba(255,255,255,.2); color:rgba(255,255,255,.9);
-          border:1px solid rgba(255,255,255,.25); margin-bottom:5px;
-        }
-        .gal-caption-title {
-          color:white; font-size:.88rem; font-weight:700; display:block;
-          font-family:'Playfair Display',serif; line-height:1.3;
-        }
-        .gal-caption-desc {
-          color:rgba(255,255,255,.7); font-size:.74rem; margin-top:3px; display:block; line-height:1.4;
-        }
+          /* Bottom caption ribbon */
+          .gal-caption {
+            position:absolute; bottom:0; left:0; right:0;
+            background:linear-gradient(to top, rgba(18,32,58,.88) 0%, rgba(18,32,58,.5) 50%, transparent 100%);
+            padding:32px 18px 16px;
+            transform:translateY(8px); opacity:0;
+            transition:all .35s cubic-bezier(.22,1,.36,1);
+          }
+          .gal-tile:hover .gal-caption { transform:translateY(0); opacity:1; }
+          .gal-caption-tag {
+            display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.1em;
+            text-transform:uppercase; padding:3px 10px; border-radius:30px; margin-bottom:6px;
+            background:rgba(255,255,255,.2); color:rgba(255,255,255,.9);
+            border:1px solid rgba(255,255,255,.25);
+          }
+          .gal-caption-title {
+            color:white; font-size:.92rem; font-weight:700; line-height:1.3; display:block;
+            font-family:'Playfair Display',serif;
+          }
+          .gal-caption-desc {
+            color:rgba(255,255,255,.75); font-size:.75rem; margin-top:3px; display:block; line-height:1.4;
+          }
 
-        /* Zoom icon */
-        .gal-zoom {
-          position:absolute; top:12px; right:12px; z-index:3;
-          width:34px; height:34px; background:white; border-radius:50%;
-          display:flex; align-items:center; justify-content:center;
-          opacity:0; transform:scale(.7);
-          transition:opacity .25s, transform .25s;
-          box-shadow:0 2px 10px rgba(0,0,0,.2);
-        }
-        .gal-card:hover .gal-zoom { opacity:1; transform:scale(1); }
-        .gal-zoom svg { width:14px; height:14px; color:var(--navy); }
+          /* Always-visible label for hero tile */
+          .gal-hero-badge {
+            position:absolute; top:20px; left:20px;
+            background:rgba(255,255,255,.12); backdrop-filter:blur(12px);
+            border:1px solid rgba(255,255,255,.25); border-radius:12px;
+            padding:10px 16px; color:white;
+          }
+          .gal-hero-badge-label { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; opacity:.8; }
+          .gal-hero-badge-title { font-size:1rem; font-weight:700; font-family:'Playfair Display',serif; display:block; margin-top:2px; }
 
-        /* Hidden on filter */
-        .gal-card.gal-hidden { display:none !important; }
+          /* Photo count chip */
+          .gal-count-chip {
+            position:absolute; bottom:14px; right:14px;
+            background:rgba(255,255,255,.15); backdrop-filter:blur(8px);
+            border:1px solid rgba(255,255,255,.2); border-radius:50px;
+            padding:5px 12px; color:white; font-size:.72rem; font-weight:600;
+            display:flex; align-items:center; gap:5px;
+          }
 
-        /* ─── Lightbox ─── */
-        #ns-lightbox {
-          display:none;
-          position:fixed; inset:0; z-index:100000;
-          background:rgba(5,12,25,.95);
-          align-items:center; justify-content:center;
-          padding:20px;
-        }
-        #ns-lightbox.lb-open { display:flex; }
-        #ns-lb-inner {
-          position:relative; max-width:960px; width:100%;
-          animation:lbPop .28s cubic-bezier(.22,1,.36,1);
-        }
-        @keyframes lbPop {
-          from { opacity:0; transform:scale(.93); }
-          to   { opacity:1; transform:scale(1); }
-        }
-        #ns-lb-img {
-          width:100%; max-height:82vh; object-fit:contain;
-          display:block; border-radius:14px;
-        }
-        .lb-btn {
-          position:absolute; border:none; cursor:pointer;
-          border-radius:50%; display:flex; align-items:center;
-          justify-content:center; transition:background .2s;
-          background:rgba(255,255,255,.15);
-          color:white; font-size:1.1rem;
-        }
-        .lb-btn:hover { background:rgba(255,255,255,.28); }
-        #ns-lb-close {
-          top:-48px; right:0; width:40px; height:40px; font-size:1rem;
-        }
-        #ns-lb-prev { top:50%; left:-56px; transform:translateY(-50%); width:44px; height:44px; }
-        #ns-lb-next { top:50%; right:-56px; transform:translateY(-50%); width:44px; height:44px; }
-        #ns-lb-counter {
-          text-align:center; margin-top:12px;
-          color:rgba(255,255,255,.45); font-size:.8rem; letter-spacing:.04em;
-        }
-        @media(max-width:700px){
-          #ns-lb-prev { left:6px; }
-          #ns-lb-next { right:6px; }
-        }
-      </style>
+          /* Filter hiding */
+          .gal-tile[data-cat].hidden { display:none; }
 
-      <!-- Filter Tabs -->
-      <div class="gal-tabs" role="tablist">
-        <button class="gal-tab active" onclick="galFilter('all',this)">All Photos</button>
-        <button class="gal-tab" onclick="galFilter('spaces',this)">Our Spaces</button>
-        <button class="gal-tab" onclick="galFilter('equipment',this)">Equipment &amp; Training</button>
-        <button class="gal-tab" onclick="galFilter('clinic',this)">Clinic &amp; Care</button>
-      </div>
+          @media(max-width:900px){
+            .gal-mosaic { grid-template-columns:repeat(6,1fr); grid-auto-rows:55px; gap:10px; }
+            .gal-tile-hero  { grid-column:span 6; grid-row:span 5; }
+            .gal-tile-tall  { grid-column:span 3; grid-row:span 5; }
+            .gal-tile-wide  { grid-column:span 6; grid-row:span 4; }
+            .gal-tile-std   { grid-column:span 3; grid-row:span 4; }
+            .gal-tile-half  { grid-column:span 3; grid-row:span 4; }
+            .gal-tile-small { grid-column:span 3; grid-row:span 4; }
+          }
+          @media(max-width:540px){
+            .gal-mosaic { grid-template-columns:repeat(2,1fr); grid-auto-rows:120px; gap:10px; }
+            .gal-tile-hero,.gal-tile-tall,.gal-tile-wide,.gal-tile-std,.gal-tile-half,.gal-tile-small {
+              grid-column:span 2; grid-row:span 2;
+            }
+          }
+        </style>
 
-      <!-- Photo Grid -->
-      <div class="gal-grid" id="galGrid">
-
-        <div class="gal-card" data-cat="spaces" data-src="images/clinic/new_img9.jpg" data-title="NeuroSports Centre — Exterior" data-tag="Our Spaces" data-desc="A purpose-built clinic where recovery and performance come together in Bodakdev, Ahmedabad.">
-          <img src="images/clinic/new_img9.jpg" alt="Clinic Exterior" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">📍 Our Clinic</span><span class="gal-caption-title">NeuroSports Centre — Exterior</span><span class="gal-caption-desc">A purpose-built space where recovery and performance come together.</span></div>
+        <!-- Category filter tabs -->
+        <div class="gal-tabs" role="tablist">
+          <button class="gal-tab active" onclick="filterGallery('all',this)">All Photos</button>
+          <button class="gal-tab" onclick="filterGallery('spaces',this)">Our Spaces</button>
+          <button class="gal-tab" onclick="filterGallery('equipment',this)">Equipment & Training</button>
+          <button class="gal-tab" onclick="filterGallery('clinic',this)">Clinic & Care</button>
         </div>
 
-        <div class="gal-card" data-cat="spaces" data-src="images/clinic/new_img11.jpg" data-title="Clinic Entrance" data-tag="Our Spaces" data-desc="Welcoming, professional and calm from the moment you arrive. First impressions matter.">
-          <img src="images/clinic/new_img11.jpg" alt="Clinic Entrance" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Spaces</span><span class="gal-caption-title">Clinic Entrance</span><span class="gal-caption-desc">Professional and calm from the moment you arrive.</span></div>
-        </div>
+        <!-- Mosaic grid -->
+        <div class="gal-mosaic" id="galMosaic">
 
-        <div class="gal-card" data-cat="spaces" data-src="images/clinic/new_img12.jpg" data-title="Patient Lobby" data-tag="Our Spaces" data-desc="A calm, comfortable waiting area designed for patient comfort and confidence before sessions.">
-          <img src="images/clinic/new_img12.jpg" alt="Patient Lobby" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Spaces</span><span class="gal-caption-title">Patient Lobby</span><span class="gal-caption-desc">Calm and comfortable — designed to put you at ease.</span></div>
-        </div>
+          <!-- HERO: Clinic Exterior — full-width anchor -->
+          <div class="gal-tile gal-tile-hero" data-cat="spaces"
+               onclick="openLightbox('images/clinic/new_img9.jpg','NeuroSports Centre — Bodakdev, Ahmedabad')">
+            <img src="images/clinic/new_img9.jpg" alt="NeuroSports Centre Exterior" style="object-position:center;">
+            <div class="gal-hero-badge">
+              <span class="gal-hero-badge-label">Our Clinic</span>
+              <span class="gal-hero-badge-title">NeuroSports Centre</span>
+            </div>
+            <div class="gal-caption">
+              <span class="gal-caption-tag">📍 Bodakdev, Ahmedabad</span>
+              <span class="gal-caption-title">NeuroSports Centre — Exterior</span>
+              <span class="gal-caption-desc">A purpose-built space where recovery and performance come together.</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="equipment" data-src="images/clinic/new_img1.jpg" data-title="Gym Equipment" data-tag="Equipment &amp; Training" data-desc="Specialist physiotherapy and fitness equipment carefully selected to support every stage of recovery.">
-          <img src="images/clinic/new_img1.jpg" alt="Gym Equipment" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Equipment</span><span class="gal-caption-title">Gym Equipment</span><span class="gal-caption-desc">Professional-grade machines for rehab and performance.</span></div>
-        </div>
+          <!-- TALL: Clinic Entrance -->
+          <div class="gal-tile gal-tile-tall" data-cat="spaces"
+               onclick="openLightbox('images/clinic/new_img11.jpg','Clinic Entrance — NeuroSports Center')">
+            <img src="images/clinic/new_img11.jpg" alt="Clinic Entrance" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Spaces</span>
+              <span class="gal-caption-title">Clinic Entrance</span>
+              <span class="gal-caption-desc">Welcoming, professional and calm from the moment you arrive.</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="equipment" data-src="images/clinic/new_img2.jpg" data-title="Free Weights Station" data-tag="Equipment &amp; Training" data-desc="Complete range of dumbbells and free weights for functional training, strength building, and sport-specific conditioning.">
-          <img src="images/clinic/new_img2.jpg" alt="Free Weights" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Equipment</span><span class="gal-caption-title">Free Weights Station</span><span class="gal-caption-desc">Full dumbbell range for functional training programs.</span></div>
-        </div>
+          <!-- WIDE: Gym Floor -->
+          <div class="gal-tile gal-tile-wide" data-cat="equipment"
+               onclick="openLightbox('images/clinic/new_img10.jpg','Gym Floor — NeuroSports Center')">
+            <img src="images/clinic/new_img10.jpg" alt="Gym Floor" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Equipment & Training</span>
+              <span class="gal-caption-title">Main Gym Floor</span>
+              <span class="gal-caption-desc">Fully equipped with professional-grade machines for rehabilitation and strength training.</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="equipment" data-src="images/clinic/new_img4.jpg" data-title="Training Area" data-tag="Equipment &amp; Training" data-desc="Open training space for supervised sessions, exercise therapy, and personalised fitness programs.">
-          <img src="images/clinic/new_img4.jpg" alt="Training Area" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Training</span><span class="gal-caption-title">Training Area</span></div>
-        </div>
+          <!-- STD: Reception -->
+          <div class="gal-tile gal-tile-std" data-cat="clinic"
+               onclick="openLightbox('images/clinic/new_img3.jpg','Reception — NeuroSports Center')">
+            <img src="images/clinic/new_img3.jpg" alt="Reception" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Clinic & Care</span>
+              <span class="gal-caption-title">Reception Area</span>
+              <span class="gal-caption-desc">Friendly front desk — your care journey starts here.</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="equipment" data-src="images/clinic/new_img5.jpg" data-title="Free Weights Area" data-tag="Equipment &amp; Training" data-desc="Structured free-weight zone for targeted muscle strengthening and rehabilitation exercises.">
-          <img src="images/clinic/new_img5.jpg" alt="Free Weights Area" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Training</span><span class="gal-caption-title">Free Weights Area</span></div>
-        </div>
+          <!-- HALF: Gym Equipment -->
+          <div class="gal-tile gal-tile-half" data-cat="equipment"
+               onclick="openLightbox('images/clinic/new_img1.jpg','Gym Equipment — NeuroSports Center')">
+            <img src="images/clinic/new_img1.jpg" alt="Gym Equipment" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Equipment</span>
+              <span class="gal-caption-title">Gym Equipment</span>
+              <span class="gal-caption-desc">Specialist physiotherapy and fitness equipment.</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="clinic" data-src="images/clinic/new_img8.jpg" data-title="Consultation Room" data-tag="Clinic &amp; Care" data-desc="Private, clinical setting where Dr. Ruchit Shah assesses your condition and builds your personalised treatment plan.">
-          <img src="images/clinic/new_img8.jpg" alt="Consultation Room" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Clinic &amp; Care</span><span class="gal-caption-title">Consultation Room</span><span class="gal-caption-desc">Private setting for your diagnosis and treatment plan.</span></div>
-        </div>
+          <!-- HALF: Dumbbell Rack -->
+          <div class="gal-tile gal-tile-half" data-cat="equipment"
+               onclick="openLightbox('images/clinic/new_img2.jpg','Dumbbell Rack — NeuroSports Center')">
+            <img src="images/clinic/new_img2.jpg" alt="Dumbbell Rack" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Equipment</span>
+              <span class="gal-caption-title">Free Weights Station</span>
+              <span class="gal-caption-desc">Full range of dumbbells for functional training.</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="clinic" data-src="images/clinic/new_img3.jpg" data-title="Reception Area" data-tag="Clinic &amp; Care" data-desc="Our friendly front desk team is here to guide every patient from booking to discharge.">
-          <img src="images/clinic/new_img3.jpg" alt="Reception" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Clinic &amp; Care</span><span class="gal-caption-title">Reception Area</span><span class="gal-caption-desc">Your care journey starts right here.</span></div>
-        </div>
+          <!-- SMALL: Training Area -->
+          <div class="gal-tile gal-tile-small" data-cat="equipment"
+               onclick="openLightbox('images/clinic/new_img4.jpg','Training Area — NeuroSports Center')">
+            <img src="images/clinic/new_img4.jpg" alt="Training Area" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Training</span>
+              <span class="gal-caption-title">Training Area</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="equipment" data-src="images/clinic/gym_equipment.webp" data-title="Main Gym Floor" data-tag="Equipment &amp; Training" data-desc="Fully equipped with professional-grade machines for rehabilitation, strength, and functional training.">
-          <img src="images/clinic/gym_equipment.webp" alt="Main Gym Floor" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Equipment</span><span class="gal-caption-title">Main Gym Floor</span><span class="gal-caption-desc">Professional-grade machines for every stage of recovery.</span></div>
-        </div>
+          <!-- SMALL: Free Weights Area -->
+          <div class="gal-tile gal-tile-small" data-cat="equipment"
+               onclick="openLightbox('images/clinic/new_img5.jpg','Free Weights Area — NeuroSports Center')">
+            <img src="images/clinic/new_img5.jpg" alt="Free Weights Area" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Training</span>
+              <span class="gal-caption-title">Free Weights</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="spaces" data-src="images/clinic/thumb1.jpg" data-title="Clinic View" data-tag="Our Spaces" data-desc="Another angle of our welcoming, fully equipped clinic designed for patient comfort and clinical precision.">
-          <img src="images/clinic/thumb1.jpg" alt="Clinic View" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Spaces</span><span class="gal-caption-title">Clinic View</span></div>
-        </div>
+          <!-- SMALL: Cable Machine -->
+          <div class="gal-tile gal-tile-small" data-cat="equipment"
+               onclick="openLightbox('images/clinic/new_img7.jpg','Cable Machine — NeuroSports Center')">
+            <img src="images/clinic/new_img7.jpg" alt="Cable Machine" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Equipment</span>
+              <span class="gal-caption-title">Cable Machine</span>
+            </div>
+          </div>
 
-        <div class="gal-card" data-cat="equipment" data-src="images/clinic/thumb3.jpg" data-title="Training Session" data-tag="Equipment &amp; Training" data-desc="Supervised training sessions using evidence-based rehabilitation protocols.">
-          <img src="images/clinic/thumb3.jpg" alt="Training Session" loading="lazy">
-          <div class="gal-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-          <div class="gal-caption"><span class="gal-caption-tag">Training</span><span class="gal-caption-title">Training Session</span></div>
-        </div>
+          <!-- HALF: Doctor's Office -->
+          <div class="gal-tile gal-tile-half" data-cat="clinic"
+               onclick="openLightbox('images/clinic/new_img8.jpg','Doctor\'s Office — NeuroSports Center')">
+            <img src="images/clinic/new_img8.jpg" alt="Doctor's Office" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Clinic & Care</span>
+              <span class="gal-caption-title">Consultation Room</span>
+              <span class="gal-caption-desc">Private, clinical setting for your diagnosis and treatment plan.</span>
+            </div>
+          </div>
 
-      </div><!-- /.gal-grid -->
+          <!-- HALF: Lobby -->
+          <div class="gal-tile gal-tile-half" data-cat="spaces"
+               onclick="openLightbox('images/clinic/new_img12.jpg','Lobby — NeuroSports Center')">
+            <img src="images/clinic/new_img12.jpg" alt="Lobby" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Spaces</span>
+              <span class="gal-caption-title">Patient Lobby</span>
+              <span class="gal-caption-desc">A calm, welcoming space designed for comfort and confidence.</span>
+            </div>
+          </div>
 
+          <!-- HALF: Equipment Storage -->
+          <div class="gal-tile gal-tile-half" data-cat="equipment"
+               onclick="openLightbox('images/clinic/new_img6.jpg','Equipment Storage — NeuroSports Center')">
+            <img src="images/clinic/new_img6.jpg" alt="Equipment Storage" style="object-position:center;">
+            <div class="gal-caption">
+              <span class="gal-caption-tag">Equipment</span>
+              <span class="gal-caption-title">Equipment Bay</span>
+              <span class="gal-caption-desc">Everything organised and ready for your session.</span>
+            </div>
+          </div>
+
+        </div><!-- /.gal-mosaic -->
+
+        <script>
+          function filterGallery(cat, btn) {
+            document.querySelectorAll('.gal-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('#galMosaic .gal-tile').forEach(tile => {
+              if (cat === 'all' || tile.dataset.cat === cat) {
+                tile.classList.remove('hidden');
+                tile.style.display = '';
+              } else {
+                tile.classList.add('hidden');
+                tile.style.display = 'none';
+              }
+            });
+          }
+        </script>
+
+      </div><!-- /.photo-mosaic -->
 
       <!-- ── VIDEO WALL HEADER ── -->
       <div data-aos="fade-up" style="margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
         <div>
-          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);font-weight:700;margin-bottom:4px;">Patient Sessions &amp; Exercises <span style="color:var(--green);">in Action</span></h3>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);font-weight:700;margin-bottom:4px;">Patient Sessions & Exercises <span style="color:var(--green);">in Action</span></h3>
           <p style="color:var(--muted);font-size:.9rem;">Real sessions from our clinic — physiotherapy, rehabilitation, and fitness training.</p>
         </div>
         <div style="display:flex;align-items:center;gap:8px;background:#f0f7ff;border-radius:50px;padding:8px 18px;border:1px solid rgba(43,124,191,.15);">
@@ -1861,6 +1910,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
       <!-- ── VIDEO GRID ── -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="video-wall-grid" data-aos="fade-up" data-aos-delay="150">
+
         <div class="clinic-video-card" data-vid="videos/clinic_video1.mp4" data-thumb="images/clinic/thumb1.jpg" data-label="Session 1"></div>
         <div class="clinic-video-card" data-vid="videos/clinic_video2.mp4" data-thumb="images/clinic/thumb2.jpg" data-label="Session 2"></div>
         <div class="clinic-video-card" data-vid="videos/clinic_video3.mp4" data-thumb="images/clinic/thumb3.jpg" data-label="Session 3"></div>
@@ -1870,6 +1920,7 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
         <div class="clinic-video-card" data-vid="videos/clinic_video7.mp4" data-thumb="images/clinic/thumb7.jpg" data-label="Session 7"></div>
         <div class="clinic-video-card" data-vid="videos/clinic_video8.mp4" data-thumb="images/clinic/thumb8.jpg" data-label="Session 8"></div>
         <div class="clinic-video-card" data-vid="videos/clinic_video9.mp4" data-thumb="images/clinic/thumb9.jpg" data-label="Session 9"></div>
+
       </div><!-- end video grid -->
 
       <!-- Load more -->
@@ -1890,87 +1941,267 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
     </div><!-- end max-wrap -->
   </section>
 
-  <!-- RICH LIGHTBOX — legacy stub (kept for any old openLightbox() calls) -->
-  <div id="photo-lightbox" style="display:none;position:fixed;inset:0;z-index:99998;background:rgba(5,12,25,.96);align-items:center;justify-content:center;padding:20px;">
-    <button onclick="closeLightbox()" style="position:fixed;top:16px;right:16px;z-index:99999;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);color:#fff;font-size:18px;cursor:pointer;line-height:1;">&#x2715;</button>
-    <div onclick="event.stopPropagation()" style="position:relative;max-width:960px;width:100%;background:#0f1e33;border-radius:20px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.8);max-height:86vh;" id="lbCard">
-      <div style="position:relative;min-height:400px;background:#040d1a;" id="lbImgWrap">
-        <img id="lightbox-img" src="" alt="" style="width:100%;max-height:82vh;object-fit:contain;display:block;">
+  <!-- RICH LIGHTBOX -->
+  <div id="photo-lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:rgba(8,18,36,.97);">
+    <!-- Overlay click to close -->
+    <div onclick="closeLightbox()" style="position:absolute;top:0;left:0;width:100%;height:100%;"></div>
+
+    <!-- Close button -->
+    <button onclick="closeLightbox()" style="position:fixed;top:16px;right:16px;z-index:10001;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);color:#fff;font-size:18px;cursor:pointer;line-height:1;">&#x2715;</button>
+
+    <!-- Card wrapper — stops overlay click -->
+    <div onclick="event.stopPropagation()" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:980px;background:#0f1e33;border-radius:20px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.8);display:flex;flex-direction:row;max-height:86vh;" id="lbCard">
+
+      <!-- LEFT: Image -->
+      <div style="flex:1.4;min-width:0;position:relative;background:#040d1a;min-height:400px;" id="lbImgWrap">
+        <img id="lightbox-img" src="" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+        <!-- Prev -->
         <button onclick="lbNav(-1)" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.5);border:1.5px solid rgba(255,255,255,.2);color:#fff;font-size:20px;cursor:pointer;z-index:2;line-height:1;">&#8592;</button>
-        <button onclick="lbNav(1)"  style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.5);border:1.5px solid rgba(255,255,255,.2);color:#fff;font-size:20px;cursor:pointer;z-index:2;line-height:1;">&#8594;</button>
+        <!-- Next -->
+        <button onclick="lbNav(1)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.5);border:1.5px solid rgba(255,255,255,.2);color:#fff;font-size:20px;cursor:pointer;z-index:2;line-height:1;">&#8594;</button>
       </div>
-      <div style="padding:24px 28px;background:#0f1e33;">
-        <div id="lbTag"   style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5db8e8;margin-bottom:8px;"></div>
-        <div id="lbTitle" style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px;"></div>
-        <div id="lbDesc"  style="font-size:.86rem;color:rgba(255,255,255,.55);line-height:1.8;"></div>
-        <div id="lbCounter" style="margin-top:14px;font-size:.75rem;color:rgba(255,255,255,.35);"></div>
+
+      <!-- RIGHT: Info panel -->
+      <div style="flex:0 0 290px;min-width:0;padding:36px 28px;display:flex;flex-direction:column;gap:0;overflow-y:auto;background:#0f1e33;">
+        <div id="lbTag" style="display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:30px;margin-bottom:16px;background:rgba(43,124,191,.18);color:#5db8e8;border:1px solid rgba(43,124,191,.3);width:fit-content;">Category</div>
+        <div id="lbTitle" style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:14px;">Photo Title</div>
+        <div id="lbDesc" style="font-size:.87rem;color:rgba(255,255,255,.55);line-height:1.85;flex:1;margin-bottom:28px;">Description goes here.</div>
+        <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;align-items:center;gap:10px;">
+          <div style="width:32px;height:32px;background:rgba(43,124,191,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5db8e8" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span style="font-size:.74rem;color:rgba(255,255,255,.4);">NeuroSports, Bodakdev</span>
+          <span id="lbCounter" style="font-size:.74rem;color:rgba(255,255,255,.3);margin-left:auto;">1 / 12</span>
+        </div>
       </div>
+
     </div>
   </div>
 
+  <style>
+    @media(max-width:680px){
+      #lbCard{ flex-direction:column !important; max-height:92vh !important; width:96% !important; }
+      #lbImgWrap{ min-height:52vw !important; flex:none !important; }
+      #lbCard > div:last-child{ flex:none !important; padding:18px 16px !important; }
+      #lbTitle{ font-size:1rem !important; }
+      #lbDesc{ font-size:.8rem !important; }
+    }
+  </style>
+
+  <style>
+    @media(max-width:900px){.video-wall-grid{grid-template-columns:1fr 1fr!important;}}
+    @media(max-width:560px){.video-wall-grid{grid-template-columns:1fr!important;}}
+
+    .clinic-video-card {
+      border-radius:18px; overflow:hidden;
+      box-shadow:0 6px 28px rgba(26,46,74,.12);
+      transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+      background:#111;
+      position:relative;
+      aspect-ratio:9/16;
+      cursor:pointer;
+    }
+    .clinic-video-card:hover {
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:0 20px 50px rgba(26,46,74,.22);
+    }
+
+    /* Thumbnail image shown by default */
+    .cvc-poster {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      transition:opacity .35s ease, transform .5s cubic-bezier(.22,1,.36,1);
+      z-index:1;
+    }
+
+    /* Video element hidden until hover */
+    .cvc-video {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      opacity:0;
+      transition:opacity .35s ease;
+      z-index:2;
+    }
+    .clinic-video-card.hovered .cvc-poster { opacity:0; }
+    .clinic-video-card.hovered .cvc-video  { opacity:1; }
+
+    /* Play button overlay — visible on poster state */
+    .cvc-play-btn {
+      position:absolute; inset:0; z-index:3;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      background:linear-gradient(to top, rgba(15,25,50,.7) 0%, rgba(15,25,50,.15) 60%, transparent 100%);
+      transition:opacity .35s ease;
+      pointer-events:none;
+    }
+    .cvc-play-icon {
+      width:58px; height:58px;
+      background:rgba(255,255,255,.18);
+      backdrop-filter:blur(8px);
+      border-radius:50%;
+      border:2px solid rgba(255,255,255,.4);
+      display:flex; align-items:center; justify-content:center;
+      transition:transform .4s cubic-bezier(.34,1.56,.64,1), background .3s ease;
+      margin-bottom:8px;
+    }
+    .clinic-video-card:hover .cvc-play-icon {
+      transform:scale(1.15);
+      background:rgba(43,124,191,.6);
+      border-color:rgba(255,255,255,.6);
+    }
+    /* Hide play btn while playing */
+    .clinic-video-card.hovered .cvc-play-btn { opacity:0; }
+
+    /* Session label chip */
+    .cvc-label {
+      position:absolute; bottom:12px; left:14px; z-index:4;
+      color:white; font-size:.75rem; font-weight:600;
+      background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
+      padding:3px 10px; border-radius:20px;
+      letter-spacing:.5px;
+      pointer-events:none;
+    }
+  </style>
+
   <script>
+
+
+    /* ── Rich Photo Lightbox ── */
     var lbPhotos = [
-      { src:'images/clinic/new_img9.jpg',  tag:'Our Spaces',           title:'NeuroSports Centre — Exterior',  desc:'The first thing you see — a purpose-built clinic designed for recovery, performance, and total well-being. Located in Bodakdev, Ahmedabad.' },
-      { src:'images/clinic/new_img11.jpg', tag:'Our Spaces',           title:'Clinic Entrance',                desc:'Welcoming, professional and calm from the moment you step in. Every detail is designed to put patients at ease.' },
-      { src:'images/clinic/new_img12.jpg', tag:'Our Spaces',           title:'Patient Lobby',                  desc:'A calm, comfortable waiting area where patients can relax before and after sessions.' },
-      { src:'images/clinic/new_img3.jpg',  tag:'Clinic & Care',        title:'Reception Area',                 desc:'Our friendly front desk team is here to guide every patient from booking to discharge.' },
-      { src:'images/clinic/new_img8.jpg',  tag:'Clinic & Care',        title:'Consultation Room',              desc:'Private, clinical setting where Dr. Ruchit Shah and his team build your personalised treatment plan.' },
-      { src:'images/clinic/new_img1.jpg',  tag:'Equipment & Training', title:'Gym Equipment',                  desc:'Specialist physiotherapy and fitness equipment carefully selected to support every stage of recovery.' },
-      { src:'images/clinic/new_img2.jpg',  tag:'Equipment & Training', title:'Free Weights Station',           desc:'A complete range of dumbbells and free weights for functional training and sport-specific conditioning.' },
-      { src:'images/clinic/new_img4.jpg',  tag:'Equipment & Training', title:'Training Area',                  desc:'Open training space used for supervised sessions, exercise therapy, and personalised fitness programs.' },
-      { src:'images/clinic/new_img5.jpg',  tag:'Equipment & Training', title:'Free Weights Area',              desc:'Structured free-weight zone for targeted muscle strengthening and rehabilitation exercises.' }
+      { src:'images/clinic/new_img9.jpg',  tag:'Our Spaces',          title:'NeuroSports Centre — Exterior',  desc:'The first thing you see — a purpose-built clinic designed for recovery, performance, and total well-being. Located in Bodakdev, Ahmedabad.' },
+      { src:'images/clinic/new_img11.jpg', tag:'Our Spaces',          title:'Clinic Entrance',                desc:'Welcoming, professional and calm from the moment you step in. Every detail is designed to put patients at ease before their session.' },
+      { src:'images/clinic/new_img12.jpg', tag:'Our Spaces',          title:'Patient Lobby',                  desc:'A calm, comfortable waiting area where patients can relax before and after sessions. Thoughtfully designed for comfort and confidence.' },
+      { src:'images/clinic/new_img3.jpg',  tag:'Clinic & Care',       title:'Reception Area',                 desc:'Our friendly front desk team is here to guide every patient from booking to discharge. Your care journey starts right here.' },
+      { src:'images/clinic/new_img8.jpg',  tag:'Clinic & Care',       title:'Consultation Room',              desc:'Private, clinical setting where Dr. Ruchit Shah and his team assess your condition, explain your diagnosis, and build your personalised treatment plan.' },
+      { src:'images/clinic/new_img10.jpg', tag:'Equipment & Training', title:'Main Gym Floor',                 desc:'Fully equipped with professional-grade machines spanning rehabilitation, strength, and functional training — everything needed for a complete recovery journey.' },
+      { src:'images/clinic/new_img1.jpg',  tag:'Equipment & Training', title:'Gym Equipment',                  desc:'Specialist physiotherapy and fitness equipment carefully selected to support every stage of recovery — from initial rehabilitation to peak performance.' },
+      { src:'images/clinic/new_img2.jpg',  tag:'Equipment & Training', title:'Free Weights Station',           desc:'A complete range of dumbbells and free weights for functional training, strength building, and sport-specific conditioning programs.' },
+      { src:'images/clinic/new_img4.jpg',  tag:'Equipment & Training', title:'Training Area',                  desc:'Open training space used for supervised sessions, exercise therapy, and personalised fitness programs guided by our specialist team.' },
+      { src:'images/clinic/new_img5.jpg',  tag:'Equipment & Training', title:'Free Weights Area',              desc:'Structured free-weight zone designed for targeted muscle strengthening and rehabilitation exercises under expert supervision.' },
+      { src:'images/clinic/new_img7.jpg',  tag:'Equipment & Training', title:'Cable Machine Station',          desc:'Versatile cable machines allow precise, controlled movement — essential for shoulder rehabilitation, sports recovery, and functional strength training.' },
+      { src:'images/clinic/new_img6.jpg',  tag:'Equipment & Training', title:'Equipment Bay',                  desc:'Every piece of equipment is organised and maintained to the highest standard — clean, ready, and set up for your session before you arrive.' }
     ];
     var lbIndex = 0;
 
     function openLightbox(src, caption) {
       var idx = lbPhotos.findIndex(function(p){ return p.src === src; });
       lbIndex = idx >= 0 ? idx : 0;
-      lbRender(lbIndex);
-      var lb = document.getElementById('photo-lightbox');
-      lb.style.display = 'flex';
+      lbShow(lbIndex);
+      document.getElementById('photo-lightbox').style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
 
-    function lbRender(i) {
+    function lbShow(i) {
       var p = lbPhotos[i];
       document.getElementById('lightbox-img').src = p.src;
       document.getElementById('lightbox-img').alt = p.title;
-      document.getElementById('lbTag').textContent   = p.tag;
+      document.getElementById('lbTag').textContent = p.tag;
       document.getElementById('lbTitle').textContent = p.title;
-      document.getElementById('lbDesc').textContent  = p.desc;
+      document.getElementById('lbDesc').textContent = p.desc;
       document.getElementById('lbCounter').textContent = (i+1) + ' / ' + lbPhotos.length;
     }
 
     function lbNav(dir) {
       lbIndex = (lbIndex + dir + lbPhotos.length) % lbPhotos.length;
-      lbRender(lbIndex);
+      lbShow(lbIndex);
+    }
+
+    function lbBgClick(e) {
+      if (e.target === document.getElementById('photo-lightbox') || e.target === document.getElementById('lbInner')) {
+        closeLightbox();
+      }
     }
 
     function closeLightbox() {
       document.getElementById('photo-lightbox').style.display = 'none';
       document.body.style.overflow = '';
-      document.getElementById('lightbox-img').src = '';
     }
 
-    document.getElementById('photo-lightbox').addEventListener('click', function(e){
-      if (e.target === this) closeLightbox();
-    });
-
     document.addEventListener('keydown', function(e){
-      if (document.getElementById('photo-lightbox').style.display === 'flex') {
-        if (e.key === 'Escape')     closeLightbox();
-        if (e.key === 'ArrowLeft')  lbNav(-1);
+      if (document.getElementById('photo-lightbox').style.display === 'block') {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') lbNav(-1);
         if (e.key === 'ArrowRight') lbNav(1);
       }
     });
 
-    /* Load more video 10 */
+    /* ── Shared card initialiser (works for any .clinic-video-card) ── */
+    function initVideoCard(card) {
+      if (card.dataset.initialized) return;
+      card.dataset.initialized = '1';
+
+      var src   = card.dataset.vid;
+      var thumb = card.dataset.thumb;
+      var label = card.dataset.label;
+      if (!src) return;
+
+      /* Poster image */
+      var img = document.createElement('img');
+      img.src = thumb;
+      img.alt = label;
+      img.className = 'cvc-poster';
+      card.appendChild(img);
+
+      /* Video element — src loaded lazily on first hover */
+      var vid = document.createElement('video');
+      vid.className  = 'cvc-video';
+      vid.muted      = true;
+      vid.loop       = true;
+      vid.playsinline = true;
+      vid.preload    = 'none';
+      card.appendChild(vid);
+
+      /* Play button overlay */
+      var overlay = document.createElement('div');
+      overlay.className = 'cvc-play-btn';
+      overlay.innerHTML = '<div class="cvc-play-icon"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>';
+      card.appendChild(overlay);
+
+      /* Label chip */
+      var chip = document.createElement('div');
+      chip.className   = 'cvc-label';
+      chip.textContent = label;
+      card.appendChild(chip);
+
+      var loaded = false;
+
+      card.addEventListener('mouseenter', function() {
+        document.querySelectorAll('.clinic-video-card').forEach(function(c) {
+          if (c !== card) {
+            var v = c.querySelector('.cvc-video');
+            if (v) { v.pause(); v.currentTime = 0; }
+            c.classList.remove('hovered');
+          }
+        });
+        if (!loaded) { vid.src = src; loaded = true; }
+        card.classList.add('hovered');
+        vid.play().catch(function(){});
+      });
+
+      card.addEventListener('mouseleave', function() {
+        vid.pause();
+        vid.currentTime = 0;
+        card.classList.remove('hovered');
+      });
+    }
+
+    /* Init all 9 visible cards immediately */
+    document.querySelectorAll('.clinic-video-card').forEach(initVideoCard);
+
+    /* Load more — show 10th card and init it */
     function toggleVideo10() {
       var wrap = document.getElementById('video10-wrap');
       var btn  = document.getElementById('loadMoreBtn');
       var showing = wrap.style.display !== 'none';
       wrap.style.display = showing ? 'none' : 'block';
       btn.textContent = showing ? '▶ Load More Videos' : '✕ Show Less';
+      if (!showing) {
+        wrap.querySelectorAll('.clinic-video-card').forEach(initVideoCard);
+      }
     }
   </script>
 
@@ -3679,155 +3910,6 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
 
 <div class="toast" id="toast">✅ Sent! We'll contact you shortly.</div>
 <style>@keyframes scrollAnim{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(12px)}}</style>
-
-
-<!-- ═══ GALLERY LIGHTBOX — body level, outside all page divs ═══ -->
-<style>
-  #ns-lightbox {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%; height: 100%;
-    z-index: 2147483647; /* max possible z-index */
-    background: rgba(5, 12, 25, 0.96);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  #ns-lightbox.lb-open { display: flex !important; }
-  #ns-lb-inner {
-    position: relative;
-    max-width: 960px;
-    width: 100%;
-    animation: lbPop .28s cubic-bezier(.22,1,.36,1);
-  }
-  @keyframes lbPop {
-    from { opacity: 0; transform: scale(.93); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-  #ns-lb-img {
-    width: 100%;
-    max-height: 82vh;
-    object-fit: contain;
-    display: block;
-    border-radius: 14px;
-  }
-  .ns-lb-btn {
-    position: absolute;
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background .2s;
-    background: rgba(255,255,255,.15);
-    color: white;
-    line-height: 1;
-  }
-  .ns-lb-btn:hover { background: rgba(255,255,255,.3); }
-  #ns-lb-close { top: -52px; right: 0; width: 40px; height: 40px; font-size: 1.1rem; }
-  #ns-lb-prev  { top: 50%; left: -60px; transform: translateY(-50%); width: 46px; height: 46px; font-size: 1.3rem; }
-  #ns-lb-next  { top: 50%; right: -60px; transform: translateY(-50%); width: 46px; height: 46px; font-size: 1.3rem; }
-  #ns-lb-counter { text-align: center; margin-top: 14px; color: rgba(255,255,255,.4); font-size: .8rem; }
-  @media (max-width: 720px) {
-    #ns-lb-prev { left: 6px; }
-    #ns-lb-next { right: 6px; }
-  }
-</style>
-
-<div id="ns-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <div id="ns-lb-inner">
-    <button id="ns-lb-close" class="ns-lb-btn" aria-label="Close">&#x2715;</button>
-    <button id="ns-lb-prev"  class="ns-lb-btn" aria-label="Previous">&#8592;</button>
-    <img id="ns-lb-img" src="" alt="Gallery photo">
-    <button id="ns-lb-next"  class="ns-lb-btn" aria-label="Next">&#8594;</button>
-    <p id="ns-lb-counter"></p>
-  </div>
-</div>
-
-<script>
-(function() {
-  var lbVisible = [];
-  var lbIdx = 0;
-
-  function getVisibleCards() {
-    return Array.from(document.querySelectorAll('#galGrid .gal-card:not(.gal-hidden)'));
-  }
-
-  function lbShow(i) {
-    var cards = lbVisible;
-    if (!cards.length) return;
-    var card = cards[i];
-    var img  = document.getElementById('ns-lb-img');
-    img.src  = card.dataset.src || card.querySelector('img').src;
-    img.alt  = card.dataset.title || '';
-    document.getElementById('ns-lb-counter').textContent = (i + 1) + ' / ' + cards.length;
-    lbIdx = i;
-  }
-
-  function lbOpen(card) {
-    lbVisible = getVisibleCards();
-    var idx   = lbVisible.indexOf(card);
-    if (idx < 0) idx = 0;
-    lbShow(idx);
-    document.getElementById('ns-lightbox').classList.add('lb-open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function lbClose() {
-    document.getElementById('ns-lightbox').classList.remove('lb-open');
-    document.body.style.overflow = '';
-    setTimeout(function(){ document.getElementById('ns-lb-img').src = ''; }, 300);
-  }
-
-  /* Wire up after DOM is ready */
-  function wireCards() {
-    document.querySelectorAll('#galGrid .gal-card').forEach(function(card) {
-      card.addEventListener('click', function() { lbOpen(card); });
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', wireCards);
-  } else {
-    wireCards();
-  }
-
-  document.getElementById('ns-lb-close').addEventListener('click', lbClose);
-  document.getElementById('ns-lb-prev').addEventListener('click', function(){
-    lbShow((lbIdx - 1 + lbVisible.length) % lbVisible.length);
-  });
-  document.getElementById('ns-lb-next').addEventListener('click', function(){
-    lbShow((lbIdx + 1) % lbVisible.length);
-  });
-
-  document.getElementById('ns-lightbox').addEventListener('click', function(e){
-    if (e.target === this) lbClose();
-  });
-
-  document.addEventListener('keydown', function(e){
-    if (!document.getElementById('ns-lightbox').classList.contains('lb-open')) return;
-    if (e.key === 'Escape')     lbClose();
-    if (e.key === 'ArrowLeft')  lbShow((lbIdx - 1 + lbVisible.length) % lbVisible.length);
-    if (e.key === 'ArrowRight') lbShow((lbIdx + 1) % lbVisible.length);
-  });
-
-  /* Also expose galFilter globally for the filter tabs */
-  window.galFilter = function(cat, btn) {
-    document.querySelectorAll('.gal-tab').forEach(function(t){ t.classList.remove('active'); });
-    btn.classList.add('active');
-    document.querySelectorAll('#galGrid .gal-card').forEach(function(card){
-      if (cat === 'all' || card.dataset.cat === cat) {
-        card.classList.remove('gal-hidden');
-      } else {
-        card.classList.add('gal-hidden');
-      }
-    });
-  };
-})();
-</script>
-<!-- ═══ END GALLERY LIGHTBOX ═══ -->
 
 <script src="script.js"></script>
 </body>
