@@ -1945,20 +1945,20 @@ footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1
   <div id="photo-lightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,18,36,.96);backdrop-filter:blur(6px);" onclick="lbBgClick(event)">
     <style>
       #lbInner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;}
-      #lbCard{display:flex;flex-direction:row;background:#0f1e33;border-radius:24px;overflow:hidden;max-width:1050px;width:100%;box-shadow:0 40px 120px rgba(0,0,0,.7);max-height:88vh;}
-      #lbImgWrap{flex:1.4;position:relative;background:#060f1e;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-      #lbImgWrap img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s ease;}
-      #lbInfo{flex:0 0 300px;padding:36px 28px;display:flex;flex-direction:column;justify-content:space-between;background:#0f1e33;overflow-y:auto;}
+      #lbCard{display:flex;flex-direction:row;background:#0f1e33;border-radius:24px;overflow:hidden;max-width:1050px;width:100%;box-shadow:0 40px 120px rgba(0,0,0,.7);height:82vh;max-height:640px;}
+      #lbImgWrap{flex:1.4;position:relative;background:#060f1e;overflow:hidden;height:100%;}
+      #lbImgWrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+      #lbInfo{flex:0 0 300px;padding:36px 28px;display:flex;flex-direction:column;justify-content:space-between;background:#0f1e33;overflow-y:auto;height:100%;}
       #lbTag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:30px;margin-bottom:14px;background:rgba(43,124,191,.18);color:#5db8e8;border:1px solid rgba(43,124,191,.3);width:fit-content;}
       #lbTitle{font-family:"Playfair Display",serif;font-size:1.45rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:10px;}
       #lbDesc{font-size:.88rem;color:rgba(255,255,255,.58);line-height:1.8;flex:1;margin-bottom:22px;}
-      #lbMeta{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;align-items:center;gap:10px;}
-      #lbClose{position:absolute;top:16px;right:16px;z-index:10;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:white;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(8px);}
-      #lbClose:hover{background:rgba(255,255,255,.22);}
-      .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:white;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(8px);z-index:5;}
-      .lb-nav:hover{background:rgba(43,124,191,.5);}
+      #lbMeta{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+      #lbClose{position:fixed;top:20px;right:20px;z-index:10001;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:white;width:42px;height:42px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+      #lbClose:hover{background:rgba(255,255,255,.3);}
+      .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);color:white;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:5;}
+      .lb-nav:hover{background:rgba(43,124,191,.7);}
       #lbPrev{left:14px;}#lbNext{right:14px;}
-      @media(max-width:700px){#lbCard{flex-direction:column;max-height:92vh;}#lbInfo{flex:none;padding:20px 18px;}#lbImgWrap{min-height:200px;flex:none;height:44vw;}#lbTitle{font-size:1.05rem;}}
+      @media(max-width:700px){#lbCard{flex-direction:column;height:90vh;max-height:90vh;}#lbInfo{flex:0 0 200px;padding:18px 16px;}#lbImgWrap{flex:1;height:auto;}#lbTitle{font-size:1rem;}}
     </style>
     <div id="lbInner">
       <button id="lbClose" onclick="closeLightbox()">&#x2715;</button>
